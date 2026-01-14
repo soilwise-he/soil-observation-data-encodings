@@ -1,0 +1,405 @@
+{
+ "@id": "https://soilwise-he.github.io/soilhealth#soveur.csv",
+ "@context": [
+  "https://raw.githubusercontent.com/CLARIAH/COW/master/csvw.json",
+  {
+   "@language": "en",
+   "@base": "https://soilwise-he.github.io/soil-health#"
+  },
+  {
+   "sh": "https://soilwise-he.github.io/soil-health#",
+   "csvw": "http://www.w3.org/ns/csvw#",
+   "dc": "http://purl.org/dc/terms/",
+   "dc11": "http://purl.org/dc/elements/1.1/",
+   "dcterms": "http://purl.org/dc/terms/",
+   "foaf": "http://xmlns.com/foaf/0.1/",
+   "owl": "http://www.w3.org/2002/07/owl#",
+   "prov": "http://www.w3.org/ns/prov#",
+   "qb": "http://purl.org/linked-data/cube#",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "schema": "http://schema.org/",
+   "skos": "http://www.w3.org/2004/02/skos/core#",
+   "time": "http://www.w3.org/2006/time#",
+   "xml": "http://www.w3.org/XML/1998/namespace/",
+   "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+ ],
+ "url": "./soveur.csv",
+ "dialect": {
+  "delimiter": ",",
+  "encoding": "UTF-8-SIG",
+  "quoteChar": "\""
+ },
+ "dc:title": "soveur.csv",
+ "dc:license": {
+  "@id": "http://opendefinition.org/licenses/cc-by/"
+ },
+ "dc:modified": {
+  "@value": "2025-09-12",
+  "@type": "xsd:date"
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#PRID",
+    "name": "PRID",
+    "titles": [
+     "PRID"
+    ],
+    "dc:description": "PRID",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#HONU",
+    "propertyUrl": "https://soilwise-he.github.io/soil-health#SoilHorizons",
+    "name": "HONU",
+    "titles": "HONU",
+    "dc:description": "HONU",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#HBUP",
+    "name": "HBUP",
+    "sdmx-attribute:unitMeasure": {
+		"@id": "http://qudt.org/vocab/unit/CentiM"
+	},
+    "propertyUrl": "https://soilwise-he.github.io/soil-health#HorizonUpper",
+    "titles": "Horizon Upper",
+    "dc:description": "HBUP",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#HBDE",
+    "name": "HBDE",
+    "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure": {
+		"@id": "http://qudt.org/vocab/unit/CentiM"
+	},
+    "propertyUrl": "https://soilwise-he.github.io/soil-health#HorizonLower",
+    "titles": "Horizon Lower",
+    "dc:description": "HBDE",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#DIAH",
+    "name": "DIAH",
+    "titles": [
+     "DIAH"
+    ],
+    "dc:description": "DIAH",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#DIAP",
+    "name": "DIAP",
+    "titles": [
+     "DIAP"
+    ],
+    "dc:description": "DIAP",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#HODE",
+    "name": "HODE",
+    "titles": [
+     "HODE"
+    ],
+    "dc:description": "HODE",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#SCMO",
+    "name": "SCMO",
+    "titles": [
+     "SCMO"
+    ],
+    "dc:description": "SCMO",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#SCDR",
+    "name": "SCDR",
+    "titles": [
+     "SCDR"
+    ],
+    "dc:description": "SCDR",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#STTY",
+    "name": "STTY",
+    "titles": [
+     "STTY"
+    ],
+    "dc:description": "STTY",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#MINA",
+    "name": "MINA",
+    "titles": [
+     "MINA"
+    ],
+    "dc:description": "MINA",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#SDTO",
+    "name": "SDTO",
+    "titles": [
+     "SDTO"
+    ],
+    "dc:description": "SDTO",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#STPC",
+    "name": "STPC",
+    "titles": [
+     "STPC"
+    ],
+    "dc:description": "STPC",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#CLPC",
+    "name": "CLPC",
+    "titles": [
+     "CLPC"
+    ],
+    "dc:description": "CLPC",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#PSCL",
+    "name": "PSCL",
+    "titles": [
+     "PSCL"
+    ],
+    "dc:description": "PSCL",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#PHAQ",
+    "name": "PHAQ",
+    "titles": [
+     "PHAQ"
+    ],
+    "dc:description": "PHAQ",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#PHKC",
+    "name": "PHKC",
+    "titles": [
+     "PHKC"
+    ],
+    "dc:description": "PHKC",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#ELCO",
+    "name": "ELCO",
+    "titles": [
+     "ELCO"
+    ],
+    "dc:description": "ELCO",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#EXCA",
+    "name": "EXCA",
+    "titles": [
+     "EXCA"
+    ],
+    "dc:description": "EXCA",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#EXMG",
+    "name": "EXMG",
+    "titles": [
+     "EXMG"
+    ],
+    "dc:description": "EXMG",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#EXNA",
+    "name": "EXNA",
+    "titles": [
+     "EXNA"
+    ],
+    "dc:description": "EXNA",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#EXCK",
+    "name": "EXCK",
+    "titles": [
+     "EXCK"
+    ],
+    "dc:description": "EXCK",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#EXAL",
+    "name": "EXAL",
+    "titles": [
+     "EXAL"
+    ],
+    "dc:description": "EXAL",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#EXAC",
+    "name": "EXAC",
+    "titles": [
+     "EXAC"
+    ],
+    "dc:description": "EXAC",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#CECS",
+    "name": "CECS",
+    "titles": [
+     "CECS"
+    ],
+    "dc:description": "CECS",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#TOTC",
+    "name": "TOTC",
+    "titles": [
+     "TOTC"
+    ],
+    "dc:description": "TOTC",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#TOTN",
+    "name": "TOTN",
+    "titles": [
+     "TOTN"
+    ],
+    "dc:description": "TOTN",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#TCEQ",
+    "name": "TCEQ",
+    "titles": [
+     "TCEQ"
+    ],
+    "dc:description": "TCEQ",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#GYPS",
+    "name": "GYPS",
+    "titles": [
+     "GYPS"
+    ],
+    "dc:description": "GYPS",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#BULK",
+    "name": "BULK",
+    "titles": [
+     "BULK"
+    ],
+    "dc:description": "BULK",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#WR17",
+    "name": "WR17",
+    "titles": [
+     "WR17"
+    ],
+    "dc:description": "WR17",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#WR20",
+    "name": "WR20",
+    "titles": [
+     "WR20"
+    ],
+    "dc:description": "WR20",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#WR25",
+    "name": "WR25",
+    "titles": [
+     "WR25"
+    ],
+    "dc:description": "WR25",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#WR37",
+    "name": "WR37",
+    "titles": [
+     "WR37"
+    ],
+    "dc:description": "WR37",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#WR42",
+    "name": "WR42",
+    "titles": [
+     "WR42"
+    ],
+    "dc:description": "WR42",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#LATI",
+    "name": "LATI",
+    "propertyUrl": "schema:latitude",
+    "titles": [
+     "Latitude"
+    ],
+    "dc:description": "LATI",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#LNGI",
+    "name": "LNGI",
+    "propertyUrl": "schema:longitude",
+    "titles": [
+     "Longitude"
+    ],
+    "dc:description": "LNGI",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#LABO",
+    "name": "LABO",
+    "titles": [
+     "LABO"
+    ],
+    "dc:description": "LABO",
+    "datatype": "string"
+   },
+   {
+    "@id": "https://soilwise-he.github.io/soilhealth#ELEV",
+    "name": "ELEV",
+    "propertyUrl": "schema:elevation",
+    "titles": [
+     "Elevation"
+    ],
+    "dc:description": "ELEV",
+    "datatype": "string"
+   }
+  ],
+  "primaryKey": "PRID",
+  "aboutUrl": "{_row}"
+ }
+}

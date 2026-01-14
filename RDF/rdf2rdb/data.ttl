@@ -1,0 +1,150 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/ns/rdfs/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://soilwise.example.com/example3/AIZ34/K> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/AIZ34> ;
+    sosa:hasResult <https://soilwise.example.com/example3/AIZ34/K/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp> .
+
+<https://soilwise.example.com/example3/AIZ34/N> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/AIZ34> ;
+    sosa:hasResult <https://soilwise.example.com/example3/AIZ34/N/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
+
+<https://soilwise.example.com/example3/AIZ34/P> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/AIZ34> ;
+    sosa:hasResult <https://soilwise.example.com/example3/AIZ34/P/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure> .
+
+<https://soilwise.example.com/example3/BS385/K> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/BS385> ;
+    sosa:hasResult <https://soilwise.example.com/example3/BS385/K/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp> .
+
+<https://soilwise.example.com/example3/BS385/N> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/BS385> ;
+    sosa:hasResult <https://soilwise.example.com/example3/BS385/N/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
+
+<https://soilwise.example.com/example3/BS385/P> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/BS385> ;
+    sosa:hasResult <https://soilwise.example.com/example3/BS385/P/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure> .
+
+<https://soilwise.example.com/example3/TS325/K> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/TS325> ;
+    sosa:hasResult <https://soilwise.example.com/example3/TS325/K/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp> .
+
+<https://soilwise.example.com/example3/TS325/N> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/TS325> ;
+    sosa:hasResult <https://soilwise.example.com/example3/TS325/N/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
+
+<https://soilwise.example.com/example3/TS325/P> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/TS325> ;
+    sosa:hasResult <https://soilwise.example.com/example3/TS325/P/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure> .
+
+<https://soilwise.example.com/example3/UAI234/K> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/UAI234> ;
+    sosa:hasResult <https://soilwise.example.com/example3/UAI234/K/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp> .
+
+<https://soilwise.example.com/example3/UAI234/N> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/UAI234> ;
+    sosa:hasResult <https://soilwise.example.com/example3/UAI234/N/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
+
+<https://soilwise.example.com/example3/UAI234/P> a sosa:Observation ;
+    sosa:featureOfInterest <https://soilwise.example.com/example3/UAI234> ;
+    sosa:hasResult <https://soilwise.example.com/example3/UAI234/P/QV> ;
+    sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext> ;
+    sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure> .
+
+<https://soilwise.example.com/example3/AIZ34/K/QV> a sosa:Result ;
+    qudt:numericValue 7.2e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/AIZ34/N/QV> a sosa:Result ;
+    qudt:numericValue 1.5e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/AIZ34/P/QV> a sosa:Result ;
+    qudt:numericValue 1.8e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/BS385/K/QV> a sosa:Result ;
+    qudt:numericValue 1.4e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/BS385/N/QV> a sosa:Result ;
+    qudt:numericValue 8.2e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/BS385/P/QV> a sosa:Result ;
+    qudt:numericValue 2.2e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/TS325/K/QV> a sosa:Result ;
+    qudt:numericValue 2.4e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/TS325/N/QV> a sosa:Result ;
+    qudt:numericValue 8e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/TS325/P/QV> a sosa:Result ;
+    qudt:numericValue 1.2e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/UAI234/K/QV> a sosa:Result ;
+    qudt:numericValue 1.2e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/UAI234/N/QV> a sosa:Result ;
+    qudt:numericValue 5e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/UAI234/P/QV> a sosa:Result ;
+    qudt:numericValue 8e-01 ;
+    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+
+<https://soilwise.example.com/example3/AIZ34> a <http://w3id.org/glosis/model/iso28258/2013/Layer> ;
+    rdfs:label "AIZ34" .
+
+<https://soilwise.example.com/example3/BS385> a <http://w3id.org/glosis/model/iso28258/2013/Layer> ;
+    rdfs:label "BS385" .
+
+<https://soilwise.example.com/example3/TS325> a <http://w3id.org/glosis/model/iso28258/2013/Layer> ;
+    rdfs:label "TS325" .
+
+<https://soilwise.example.com/example3/UAI234> a <http://w3id.org/glosis/model/iso28258/2013/Layer> ;
+    rdfs:label "UAI234" .
+

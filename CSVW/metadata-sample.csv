@@ -1,0 +1,5 @@
+table,column,title,type,property,unit,procedure
+obs.csv,id,Identifier,String,,,
+obs.csv,N,Nitrogen content,numeric,http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot,micromole/kg,http://w3id.org/glosis/model/procedure/TotalN_dc
+obs.csv,P,Phosphorus content,numeric,http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext,micromole/kg,http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure
+obs.csv,K,Potasium content,numeric,http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext,micromole/kg,http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp 

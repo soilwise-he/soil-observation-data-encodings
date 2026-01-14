@@ -1,0 +1,36 @@
+
+metadata:
+    identifier: 3f342f64-9348-11df-ba6a-0014c2c00eab
+    hierarchylevel: dataset
+    datestamp: 2014-11-11
+    dataseturi: http://some/minted/uri
+
+identification:
+    title: example
+    abstract: abstract in English
+    dates:
+        creation: 2000-09-01
+    license:
+        name: CC BY 4.0
+
+content_info:
+    attributes:
+        - name: id
+        - name: N  
+          url: http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot
+          units: micromole/kg
+          procedure: http://w3id.org/glosis/model/procedure/TotalN_dc
+        - name: P
+          url: http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext
+          units: micromole/kg
+          procedure: http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure
+        - name: K
+          url: http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext
+          units: micromole/kg
+          procedure: http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp 
+
+distribution:
+    example:
+        url: //my-share/data/2013/example.shp
+        name: example.shp
+

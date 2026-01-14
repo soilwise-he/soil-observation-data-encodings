@@ -1,0 +1,34 @@
+{
+  "title" : "example",
+  "abstract": "abstract in English",
+  "licenses" : [{"name": "ODC-PDDL-1.0"}],
+  "resources": [
+    {
+      "name": "example",
+      "path": "//my-share/data/kensis/2013/example.shp",
+      "title": "The Solar System",
+      "description": "My favourite data about the solar system.",
+      "mediatype": "text/csv",
+      "schema": {
+         "fields": [
+            {
+              "name": "name of field (e.g. column name)",
+              "title": "A nicer human readable label or title for the field",
+              "type": "string",
+              "rdfType": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext",
+              "unit": "micromole/kg",
+              "procedure": "http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp"
+            },
+            {
+              "name": "name of field (e.g. column name)",
+              "title": "A nicer human readable label or title for the field",
+              "type": "string",
+              "rdfType": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext",
+              "unit": "micromole/kg",
+              "procedure": "http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure"
+            }
+          ]
+      }
+    }
+  ]
+}

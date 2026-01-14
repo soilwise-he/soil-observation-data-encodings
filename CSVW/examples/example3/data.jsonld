@@ -1,0 +1,634 @@
+[
+  {
+    "@id": "https://soilwise.example.com/example3/UAI234/N",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/TotalN_dc"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/UAI234"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/UAI234/N/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/TS325/P/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.12
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/TS325/P",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/TS325"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/TS325/P/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/AIZ34/N",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/TotalN_dc"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/AIZ34"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/AIZ34/N/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/TS325/K/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.24
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/UAI234/N/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.5
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/TS325",
+    "@type": [
+      "http://schema.org/Thing"
+    ],
+    "http://schema.org/identifier": [
+      {
+        "@value": "TS325"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/BS385/K/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.14
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/TS325/N",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/TotalN_dc"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/TS325"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/TS325/N/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/BS385/P",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/BS385"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/BS385/P/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/AIZ34",
+    "@type": [
+      "http://schema.org/Thing"
+    ],
+    "http://schema.org/identifier": [
+      {
+        "@value": "AIZ34"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/AIZ34/P",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/AIZ34"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/AIZ34/P/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/BS385/N",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/TotalN_dc"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/BS385"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/BS385/N/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/AIZ34/K",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/AIZ34"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/AIZ34/K/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/BS385/P/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.22
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/TS325/N/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.8
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/AIZ34/K/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.72
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/UAI234/P/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.8
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/BS385/N/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.82
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/AIZ34/N/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.15
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/BS385",
+    "@type": [
+      "http://schema.org/Thing"
+    ],
+    "http://schema.org/identifier": [
+      {
+        "@value": "BS385"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/UAI234",
+    "@type": [
+      "http://schema.org/Thing"
+    ],
+    "http://schema.org/identifier": [
+      {
+        "@value": "UAI234"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/AIZ34/P/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.18
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/UAI234/P",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/UAI234"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/UAI234/P/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/UAI234/K",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/UAI234"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/UAI234/K/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/UAI234/K/QV",
+    "@type": [
+      "http://schema.org/PropertyValue"
+    ],
+    "http://schema.org/propertyID": [
+      {
+        "@id": "http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext"
+      }
+    ],
+    "http://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
+      }
+    ],
+    "http://schema.org/value": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 0.12
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/TS325/K",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/TS325"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/TS325/K/QV"
+      }
+    ]
+  },
+  {
+    "@id": "https://soilwise.example.com/example3/BS385/K",
+    "@type": [
+      "http://schema.org/Observation"
+    ],
+    "http://schema.org/measurementMethod": [
+      {
+        "@id": "http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp"
+      }
+    ],
+    "http://schema.org/observationAbout": [
+      {
+        "@id": "https://soilwise.example.com/example3/BS385"
+      }
+    ],
+    "http://schema.org/observationDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2025-03-01T00:00:00+00:00"
+      }
+    ],
+    "http://schema.org/variableMeasured": [
+      {
+        "@id": "https://soilwise.example.com/example3/BS385/K/QV"
+      }
+    ]
+  }
+]
