@@ -40,9 +40,7 @@ Over the years challenges have been identified with this encoding, such as compl
 
 ### Sensor Things API (STA)
 
-The SensorThings API provides a modern mechanism to interact with observation data (advanced select and filter options). STA builds on [ODATA protocol](https://odata.org) and REST principles.
-
-[SensorThings API](https://www.ogc.org/standards/sensorthings/) is based on [ODATA protocol](https://www.odata.org/). An efficient implementation of the API is provided by the [Frost Server](https://github.com/FraunhoferIOSB/FROST-Server) software.
+The [SensorThings API](https://www.ogc.org/standards/sensorthings/) provides a modern mechanism to interact with observation data (advanced select and filter options). STA builds on [ODATA protocol](https://odata.org) and REST principles. An efficient implementation of the API is provided by the [Frost Server](https://github.com/FraunhoferIOSB/FROST-Server) software. Recent version of QGIS include a [STA interface](https://docs.qgis.org/3.40/en/docs/user_manual/working_with_ogc/ogc_client_support.html#sensorthings) to visualise observation data from STA services. 
 
 Beyond the API definition, STA has introduced some conventions on top of OMS, which could be interesting to explore in the scope of using STA model in a file format.
 
@@ -53,7 +51,7 @@ Beyond the API definition, STA has introduced some conventions on top of OMS, wh
 
 Over time various groups have worked on initiatives to encode observation data following the OMS UML model in a relational database such as SQLite (GeoPackage), MS Access or PostGreSQL.
 
-Based on the [INSPIRE good practice for geopackage encoding](https://github.com/INSPIRE-MIF/gp-geopackage-encodings) CREA, in the scope of the EJP Soil project, explored options to encode INSPIRE soil data in a GeoPackage format. GeoPackage is a spatial extension to the common SQLite database format. In the SoilWise project [this work](https://github.com/ejpsoil/inspire_soil_gpkg_template) is further [extended and tested](https://github.com/soilwise-he/Geopackage-so). The SQLite format is focussed on data exchange.
+Based on the [INSPIRE good practice for geopackage encoding](https://github.com/INSPIRE-MIF/gp-geopackage-encodings) CREA, in the scope of the EJP Soil project, explored [options to encode INSPIRE soil data in a GeoPackage format](https://github.com/ejpsoil/inspire_soil_gpkg_template). GeoPackage is a spatial extension to the common SQLite database format. In the SoilWise project the work is further [extended and tested](https://github.com/soilwise-he/Geopackage-so). The SQLite format is focussed on data exchange.
 
 At ISRIC - World Soil Information, a [relational database model for soil data](https://github.com/ISRICWorldSoil/iso-28258) based on ISO28258:2013 has been developed. This model is targetting the PostGreSQL database. The model is optimised for use in an operational multi user Soil Information System.  
 
