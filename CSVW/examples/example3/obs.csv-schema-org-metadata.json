@@ -10,25 +10,24 @@
       "tableSchema": {
         "columns": [
           {
-            "titles": "Id",
-            "name": "SAMPLE",
+            "titles": "SAMPLE",
             "datatype": "string",
             "propertyUrl": "schema:identifier"
           },
            {
-            "name": "N",
+            "titles": "N",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N/QV", 
             "propertyUrl": "schema:value",
             "datatype": "number"
           },
            {
-            "name": "P",
+            "titles": "P",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P/QV", 
             "propertyUrl": "schema:value",
             "datatype": "number"
           },
           {
-            "name": "K",
+            "titles": "K",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K/QV", 
             "propertyUrl": "schema:value",
             "datatype": "number"

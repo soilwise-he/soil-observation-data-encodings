@@ -3,30 +3,26 @@
         "http://www.w3.org/ns/csvw"
     ],
     "tables": [{
-            "url": "https://raw.githubusercontent.com/soilwise-he/soilwise-ontology/refs/heads/main/CSVW-Excel-Template/example2/trees.csv",
+            "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/refs/heads/main/CSVW/examples/example2/trees.csv",
             "aboutUrl": "https://soilwise.example.org/tree/{TREEID}",
             "tableSchema": {
                 "columns": [{
-                        "titles": "ID",
-                        "name": "TREEID",
+                        "titles": "TREEID",
                         "datatype": "string",
                         "propertyUrl": "dcterms:identifier"
                     }, {
-                        "name": "lat",
+                        "titles": "lat",
                         "propertyUrl": "schema:latitude",
-                        "titles": "Latitude",
                         "datatype": "number"
                     }, {
-                        "name": "long",
+                        "titles": "long",
                         "propertyUrl": "schema:longitude",
                         "sdmx-attribute:unitMeasure": {
                             "@id": "<http://qudt.org/vocab/unit/KiloM>"
                         },
-                        "titles": "Longitude",
                         "datatype": "number"
                     }, {
                         "virtual": true,
-                        "titles": "type",
                         "dc:description": "shoot system, specifically tree",
                         "propertyUrl": "rdf:type",
                         "valueUrl": "http://purl.obolibrary.org/obo/PO_0009006"
@@ -34,35 +30,30 @@
                 ]
             }
         }, {
-            "url": "https://raw.githubusercontent.com/soilwise-he/soilwise-ontology/refs/heads/main/CSVW-Excel-Template/example2/leaves.csv",
+            "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/refs/heads/main/CSVW/examples/example2/leaves.csv",
             "tableSchema": {
                 "aboutUrl": "https://soilwise.example.org/leaf/{LEAFID}",
                 "columns": [{
-                        "titles": "ID",
-                        "name": "LEAFID",
+                        "titles": "LEAFID",
                         "propertyUrl": "dcterms:identifier",
                         "datatype": "string"
                     }, {
-                        "name": "TREEID",
-                        "titles": "Tree identifier",
+                        "titles": "TREEID",
                         "datatype": "string",
                         "propertyUrl": "dcterms:isPartOf",
                         "valueUrl": "https://soilwise.example.org/tree/{TREEID}"
                     }, {
-                        "name": "SIZE",
-                        "titles": "Size",
+                        "titles": "SIZE",
                         "dct:description": "Our largest size",
                         "propertyUrl": "schema:size",
                         "datatype": "number"
                     }, {
-                        "name": "COLOR",
-                        "titles": "Color",
+                        "titles": "COLOR",
                         "dct:description": "my favourite color",
                         "propertyUrl": "schema:color",
                         "datatype": "string"
                     }, {
                         "virtual": true,
-                        "titles": "type",
                         "dc:description": "leaf",
                         "propertyUrl": "rdf:type",
                         "valueUrl": "http://purl.obolibrary.org/obo/PO_0025034"
