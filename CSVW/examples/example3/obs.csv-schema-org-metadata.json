@@ -5,7 +5,7 @@
   ],
   "tables": [
     {
-      "url": "obs.csv",
+      "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/refs/heads/main/CSVW/examples/example3/obs.csv",
       "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}",
       "tableSchema": {
         "columns": [
