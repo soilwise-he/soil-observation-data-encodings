@@ -33,7 +33,13 @@
             "propertyUrl": "qudt:numericValue",
             "datatype": "number"
           },
-
+          {
+            "titles": "TIME",
+            "name": "restime",
+            "propertyUrl": "sosa:resultTime",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N",
+            "datatype": "dateTime"
+          },
           {
             "virtual": true,
             "propertyUrl": "rdf:type",
@@ -67,13 +73,6 @@
           },
           {
             "virtual": true,
-            "propertyUrl": "sosa:resultTime",
-            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N",
-            "default": "2025-03-01T00:00:00Z",
-            "datatype": "dateTime"
-          },
-          {
-            "virtual": true,
             "propertyUrl": "rdf:type",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P",
             "valueUrl": "sosa:Observation"
@@ -82,7 +81,7 @@
             "virtual": true,
             "propertyUrl": "sosa:resultTime",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P",
-            "default": "2025-03-01T00:00:00Z",
+            "valueUrl": "{restime}",
             "datatype": "dateTime"
           },
           {
@@ -95,7 +94,7 @@
             "virtual": true,
             "propertyUrl": "sosa:resultTime",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K",
-            "default": "2025-03-01T00:00:00Z",
+            "valueUrl": "{restime}",
             "datatype": "dateTime"
           },
           {
