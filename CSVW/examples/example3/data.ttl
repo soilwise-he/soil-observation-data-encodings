@@ -4,84 +4,84 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://soilwise.example.com/example3/AIZ34/K> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/AIZ34> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/AIZ34> ;
     sosa:hasResult <https://soilwise.example.com/example3/AIZ34/K/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp> .
 
 <https://soilwise.example.com/example3/AIZ34/N> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/AIZ34> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/AIZ34> ;
     sosa:hasResult <https://soilwise.example.com/example3/AIZ34/N/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
 
 <https://soilwise.example.com/example3/AIZ34/P> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/AIZ34> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/AIZ34> ;
     sosa:hasResult <https://soilwise.example.com/example3/AIZ34/P/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure> .
 
 <https://soilwise.example.com/example3/BS385/K> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/BS385> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/BS385> ;
     sosa:hasResult <https://soilwise.example.com/example3/BS385/K/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp> .
 
 <https://soilwise.example.com/example3/BS385/N> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/BS385> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/BS385> ;
     sosa:hasResult <https://soilwise.example.com/example3/BS385/N/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
 
 <https://soilwise.example.com/example3/BS385/P> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/BS385> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/BS385> ;
     sosa:hasResult <https://soilwise.example.com/example3/BS385/P/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure> .
 
 <https://soilwise.example.com/example3/TS325/K> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/TS325> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/TS325> ;
     sosa:hasResult <https://soilwise.example.com/example3/TS325/K/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp> .
 
 <https://soilwise.example.com/example3/TS325/N> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/TS325> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/TS325> ;
     sosa:hasResult <https://soilwise.example.com/example3/TS325/N/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
 
 <https://soilwise.example.com/example3/TS325/P> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/TS325> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/TS325> ;
     sosa:hasResult <https://soilwise.example.com/example3/TS325/P/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure> .
 
 <https://soilwise.example.com/example3/UAI234/K> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/UAI234> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/UAI234> ;
     sosa:hasResult <https://soilwise.example.com/example3/UAI234/K/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Potext> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/exchangeableBasesProcedure-ExchBases_ph7-nh4oac-fp> .
 
 <https://soilwise.example.com/example3/UAI234/N> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/UAI234> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/UAI234> ;
     sosa:hasResult <https://soilwise.example.com/example3/UAI234/N/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
 
 <https://soilwise.example.com/example3/UAI234/P> a sosa:Observation ;
-    sosa:featureOfInterest <https://soilwise.example.com/example3/UAI234> ;
+    sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/UAI234> ;
     sosa:hasResult <https://soilwise.example.com/example3/UAI234/P/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Phoext> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
