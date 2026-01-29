@@ -6,43 +6,35 @@
   ],
   "tables": [
     {
-      "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/refs/heads/main/CSVW/examples/example3/obs.csv",
+      "url": "https://github.com/soilwise-he/soilwise-ontology/raw/refs/heads/main/CSVW-Excel-Template/example3/obs.csv",
       "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}",
       "tableSchema": {
         "columns": [
           {
-            "titles": "SAMPLE",
+            "titles": "Id",
+            "name": "SAMPLE",
             "datatype": "string",
             "propertyUrl": "dcterms:identifier"
           },
            {
-            "titles": "N",
+            "name": "N",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N/QV", 
             "propertyUrl": "qudt:numericValue",
             "datatype": "number"
           },
            {
-            "titles": "P",
+            "name": "P",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P/QV", 
             "propertyUrl": "qudt:numericValue",
             "datatype": "number"
           },
           {
-            "titles": "K",
+            "name": "K",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K/QV", 
             "propertyUrl": "qudt:numericValue",
             "datatype": "number"
           },
-          {
-            "titles": "TIME",
-            "name": "restime",
-            "propertyUrl": "sosa:resultTime",
-            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N",
-            "datatype": {
-              "base": "dateTime",
-              "format": "yyyy-MM-ddTHH:mm:ssZ"
-            }
-          },
+
           {
             "virtual": true,
             "propertyUrl": "rdf:type",
@@ -76,6 +68,13 @@
           },
           {
             "virtual": true,
+            "propertyUrl": "sosa:resultTime",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N",
+            "default": "2025-03-01T00:00:00Z",
+            "datatype": "dateTime"
+          },
+          {
+            "virtual": true,
             "propertyUrl": "rdf:type",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P",
             "valueUrl": "sosa:Observation"
@@ -84,7 +83,7 @@
             "virtual": true,
             "propertyUrl": "sosa:resultTime",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P",
-            "valueUrl": "{restime}",
+            "default": "2025-03-01T00:00:00Z",
             "datatype": "dateTime"
           },
           {
@@ -97,7 +96,7 @@
             "virtual": true,
             "propertyUrl": "sosa:resultTime",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K",
-            "valueUrl": "{restime}",
+            "default": "2025-03-01T00:00:00Z",
             "datatype": "dateTime"
           },
           {
@@ -144,19 +143,19 @@
           },
           {
             "virtual": true,
-            "propertyUrl": "qudt:unit",
+            "propertyUrl": "qudt:value",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N/QV",
             "valueUrl": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
           },
           {
             "virtual": true,
-            "propertyUrl": "qudt:unit",
+            "propertyUrl": "qudt:value",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P/QV",
             "valueUrl": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
           },
           {
             "virtual": true,
-            "propertyUrl": "qudt:unit",
+            "propertyUrl": "qudt:value",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K/QV",
             "valueUrl": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
           },
@@ -182,7 +181,7 @@
             "virtual": true,
             "propertyUrl": "sosa:usedProcedure",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N",
-            "valueUrl": "http://w3id.org/glosis/model/procedure/TotalN_dc"
+            "valueUrl": "http://w3id.org/glosis/model/procedure/nitrogenTotalProcedure-TotalN_dc"
           },
           {
             "virtual": true,

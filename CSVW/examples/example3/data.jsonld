@@ -6,7 +6,7 @@
     ],
     "http://schema.org/measurementMethod": [
       {
-        "@id": "http://w3id.org/glosis/model/procedure/TotalN_dc"
+        "@id": "http://w3id.org/glosis/model/procedure/nitrogenTotalProcedure-TotalN_dc"
       }
     ],
     "http://schema.org/observationAbout": [
@@ -82,7 +82,7 @@
     ],
     "http://schema.org/measurementMethod": [
       {
-        "@id": "http://w3id.org/glosis/model/procedure/TotalN_dc"
+        "@id": "http://w3id.org/glosis/model/procedure/nitrogenTotalProcedure-TotalN_dc"
       }
     ],
     "http://schema.org/observationAbout": [
@@ -186,7 +186,7 @@
     ],
     "http://schema.org/measurementMethod": [
       {
-        "@id": "http://w3id.org/glosis/model/procedure/TotalN_dc"
+        "@id": "http://w3id.org/glosis/model/procedure/nitrogenTotalProcedure-TotalN_dc"
       }
     ],
     "http://schema.org/observationAbout": [
@@ -278,7 +278,7 @@
     ],
     "http://schema.org/measurementMethod": [
       {
-        "@id": "http://w3id.org/glosis/model/procedure/TotalN_dc"
+        "@id": "http://w3id.org/glosis/model/procedure/nitrogenTotalProcedure-TotalN_dc"
       }
     ],
     "http://schema.org/observationAbout": [

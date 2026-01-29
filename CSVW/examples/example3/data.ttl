@@ -15,7 +15,7 @@
     sosa:hasResult <https://soilwise.example.com/example3/AIZ34/N/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
-    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/nitrogenTotalProcedure-TotalN_dc> .
 
 <https://soilwise.example.com/example3/AIZ34/P> a sosa:Observation ;
     sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/AIZ34> ;
@@ -36,7 +36,7 @@
     sosa:hasResult <https://soilwise.example.com/example3/BS385/N/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
-    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/nitrogenTotalProcedure-TotalN_dc> .
 
 <https://soilwise.example.com/example3/BS385/P> a sosa:Observation ;
     sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/BS385> ;
@@ -57,7 +57,7 @@
     sosa:hasResult <https://soilwise.example.com/example3/TS325/N/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
-    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/nitrogenTotalProcedure-TotalN_dc> .
 
 <https://soilwise.example.com/example3/TS325/P> a sosa:Observation ;
     sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/TS325> ;
@@ -78,7 +78,7 @@
     sosa:hasResult <https://soilwise.example.com/example3/UAI234/N/QV> ;
     sosa:observedProperty <http://w3id.org/glosis/model/codelists/physioChemicalPropertyCode-Nittot> ;
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
-    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/TotalN_dc> .
+    sosa:usedProcedure <http://w3id.org/glosis/model/procedure/nitrogenTotalProcedure-TotalN_dc> .
 
 <https://soilwise.example.com/example3/UAI234/P> a sosa:Observation ;
     sosa:hasFeatureOfInterest <https://soilwise.example.com/example3/UAI234> ;
