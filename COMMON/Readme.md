@@ -17,7 +17,8 @@ This deficit was recognized in recent updates of both OMS and SOSA, new properti
 
 _We still need to discuss which exact properties and inverses we use_
 
-<img width="903" height="449" alt="grafik" src="https://github.com/user-attachments/assets/5b3ecfdc-8c14-405e-a928-2e43e49d817d" />
+<img width="919" height="437" alt="grafik" src="https://github.com/user-attachments/assets/1d7c741c-c706-4b75-9fbe-24104b1cf491" />
+
 
 ### Conversion between UoM
 
