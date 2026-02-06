@@ -87,53 +87,53 @@
     sosa:resultTime "2025-03-01T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure <http://w3id.org/glosis/model/procedure/PhosphorusRetentionProcedure> .
 
-<https://soilwise.example.com/example3/AIZ34/K/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/AIZ34/K/QV> a qudt:QuantityValue ;
     qudt:value 7.2e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/AIZ34/N/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/AIZ34/N/QV> a qudt:QuantityValue ;
     qudt:value 1.5e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/AIZ34/P/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/AIZ34/P/QV> a qudt:QuantityValue ;
     qudt:value 1.8e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/BS385/K/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/BS385/K/QV> a qudt:QuantityValue ;
     qudt:value 1.4e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/BS385/N/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/BS385/N/QV> a qudt:QuantityValue ;
     qudt:value 8.2e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/BS385/P/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/BS385/P/QV> a qudt:QuantityValue ;
     qudt:value 2.2e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/TS325/K/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/TS325/K/QV> a qudt:QuantityValue ;
     qudt:value 2.4e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/TS325/N/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/TS325/N/QV> a qudt:QuantityValue ;
     qudt:value 8e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/TS325/P/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/TS325/P/QV> a qudt:QuantityValue ;
     qudt:value 1.2e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/UAI234/K/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/UAI234/K/QV> a qudt:QuantityValue ;
     qudt:value 1.2e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/UAI234/N/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/UAI234/N/QV> a qudt:QuantityValue ;
     qudt:value 5e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
-<https://soilwise.example.com/example3/UAI234/P/QV> a sosa:Result ;
+<https://soilwise.example.com/example3/UAI234/P/QV> a qudt:QuantityValue ;
     qudt:value 8e-01 ;
-    qudt:unit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
+    qudt:hasUnit <http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM> .
 
 <https://soilwise.example.com/example3/AIZ34> a <http://w3id.org/glosis/model/iso28258/2013/Layer> ;
     dcterms:identifier "AIZ34" .

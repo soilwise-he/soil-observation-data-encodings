@@ -120,42 +120,42 @@
           {
             "virtual": true,
             "propertyUrl": "rdf:type",
-            "valueUrl": "sosa:Result",
+            "valueUrl": "qudt:QuantityValue",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N/QV"
           },
           {
             "virtual": true,
             "propertyUrl": "rdf:type",
-            "valueUrl": "sosa:Result",
+            "valueUrl": "qudt:QuantityValue",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P/QV"
           },
           {
             "virtual": true,
             "propertyUrl": "rdf:type",
-            "valueUrl": "sosa:Result",
+            "valueUrl": "qudt:QuantityValue",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P/QV"
           },
           {
             "virtual": true,
             "propertyUrl": "rdf:type",
-            "valueUrl": "sosa:Result",
+            "valueUrl": "qudt:QuantityValue",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K/QV"
           },
           {
             "virtual": true,
-            "propertyUrl": "qudt:value",
+            "propertyUrl": "qudt:hasUnit",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N/QV",
             "valueUrl": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
           },
           {
             "virtual": true,
-            "propertyUrl": "qudt:value",
+            "propertyUrl": "qudt:hasUnit",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P/QV",
             "valueUrl": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
           },
           {
             "virtual": true,
-            "propertyUrl": "qudt:value",
+            "propertyUrl": "qudt:hasUnit",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K/QV",
             "valueUrl": "http://qudt.org/vocab/unit/MicroMOL-PER-KiloGM"
           },
