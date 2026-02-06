@@ -19,19 +19,19 @@
            {
             "name": "N",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N/QV", 
-            "propertyUrl": "qudt:numericValue",
+            "propertyUrl": "qudt:value",
             "datatype": "number"
           },
            {
             "name": "P",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P/QV", 
-            "propertyUrl": "qudt:numericValue",
+            "propertyUrl": "qudt:value",
             "datatype": "number"
           },
           {
             "name": "K",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K/QV", 
-            "propertyUrl": "qudt:numericValue",
+            "propertyUrl": "qudt:value",
             "datatype": "number"
           },
 
