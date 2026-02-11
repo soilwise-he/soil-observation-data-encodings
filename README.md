@@ -80,3 +80,5 @@ In the soil science domain it is quite common to share soil observation data in 
 In [CSVW](./CSVW/) we're exploring a [CSV-W approach](https://csvw.org/) to annotate tabular data, to make it  interoperable. 
 
 [Read more](./CSVW/)
+
+Different CSV formats are utilized for different data collection concerns. When collecting data in the field, determining individual attributes, long table format is useful, with an Observable Property per row. When reporting data from laboratories or historic databases, wide format, with an Observable Property per column is often useful.
