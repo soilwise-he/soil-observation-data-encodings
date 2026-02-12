@@ -27,7 +27,7 @@ Different organizations traditionally survey data with different units of measur
 As lossless conversion between SI units is trivial, there is no reason to mandate the exact UoM to be used, only the category. Initial attempt at utilizing QUDT Dimensions failed, as too many units become dimensionless (e.g. mg/g or ml/l).
 We thus agreed to use the QUDT unit utilizing SI base units as far as possible, provide conversion factors from the unit provided to this base unit, enabling conversion between all units referencing the same base unit.
 
-Details on this work are currently available via the [GPkg Repo](https://github.com/soilwise-he/Geopackage-so/blob/main/geopackage/UoM/readme.md).
+Details on this work are currently available via the [GPkg Repo UoM Conversion Table](https://github.com/soilwise-he/Geopackage-so/blob/main/geopackage/UoM/readme.md).
 
 ### Common Repo for Observed Property, Observing Procedure and UoM
 
