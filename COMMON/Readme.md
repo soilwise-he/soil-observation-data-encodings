@@ -1,6 +1,6 @@
-## Common Elements across encodings
+## Common Elements across encodings for observation data
 
-While SoilWise supports an array of different encodings, each tailored for different usage areas, these models are united through the underlying conceptual [OGC/ISO Observations, Measurements and Samples Standard](https://www.ogc.org/standards/om/), 
+While SoilWise supports an array of different encodings for observation data, each tailored for different usage areas, these models are united through the underlying conceptual [OGC/ISO Observations, Measurements and Samples Standard](https://www.ogc.org/standards/om/), 
 semantically formalized under [W3C SSN/SOSA](https://w3c.github.io/sdw-sosa-ssn/ssn/). This model entails the use of the Observation concept, that unites:
 - Feature of Interest: target of the Observation, what exactly is being Observed
 - Result: the actual value being conveyed by the Observation, e.g. a value representing Bulk Density, Organic Carbon, pH at the Feature of Interest
