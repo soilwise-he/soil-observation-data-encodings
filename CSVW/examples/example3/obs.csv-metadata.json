@@ -34,14 +34,42 @@
             "propertyUrl": "qudt:value",
             "datatype": "number"
           },
-
+          {
+            "name": "LAT",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}", 
+            "propertyUrl": "geo:lat",
+            "datatype": "number"
+          },
+          {
+            "name": "LON",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}", 
+            "propertyUrl": "geo:lon",
+            "datatype": "number"
+          },
+          {
+            "name": "TOP",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}", 
+            "propertyUrl": "http://w3id.org/glosis/model/iso28258/2013/ProfileElement.upperDepth",
+            "datatype": "number"
+          },
+          {
+            "name": "BOTTOM",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}", 
+            "propertyUrl": "http://w3id.org/glosis/model/iso28258/2013/ProfileElement.lowerDepth",
+            "datatype": "number"
+          },
+          {
+            "name": "TIME",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}", 
+            "propertyUrl": "sosa:resultTime",
+            "datatype": "dateTime"
+          },
           {
             "virtual": true,
             "propertyUrl": "rdf:type",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}",
             "valueUrl": "http://w3id.org/glosis/model/iso28258/2013/Layer"
           },
-
           {
             "virtual": true,
             "propertyUrl": "sosa:hasFeatureOfInterest",
