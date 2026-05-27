@@ -1,0 +1,910 @@
+{
+    "metadataIdentifier": "025b61e6-5e9b-4c03-9e48-fa22be02106f",
+    "language": "German",
+    "characterSet": "utf8",
+    "parentIdentifier": "e1562f46-4a0d-4d8a-ac13-44cb47366e36",
+    "hierarchyLevel": "dataset",
+    "hierarchyLevelName": [
+        "  LTFE",
+        "  V140 Müncheberg (Germany)"
+    ],
+    "dateStamp": "2021-05-03",
+    "metadataContact_1": {
+        "individualName": "BonaRes Data Centre",
+        "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+        "positionName": "Agricultural Landscape Data Centre",
+        "role": "pointOfContact",
+        "phone": "+49 33432 82 171",
+        "facsimile": "+49 33432 82 4082",
+        "deliveryPoint": "Eberswalder Strasse 84",
+        "city": "Müncheberg",
+        "administrativeArea": "Brandenburg",
+        "postalCode": "15374",
+        "country": "Germany",
+        "electronicMailAddress": "bonares-datenzentrum@zalf.de",
+        "onlineResource": "https://www.bonares.de/research-data"
+    },
+    "metadataStandardName": "BonaRes Metadata Schema (https://doi.org/10.20387/BonaRes-5PGG-8YRP)",
+    "metadataStandardVersion": "Version 1.0",
+    "referenceSystemInfo_1": {
+        "code": "ETRS89 / UTM zone 33N",
+        "codeSpace": "urn:ogc:def:crs:EPSG",
+        "version": "6.11.2"
+    },
+    "resourceInfo": {
+        "title": "Long-term field experiment V140 Muencheberg (launched in 1963) - Plot information",
+        "title_de": "Landwirtschaftlicher Dauerfeldversuch V140 Müncheberg - Parzelleninformationen",
+        "alternateTitle": "",
+        "issuedDate": "2017-10-27",
+        "creationDate": "2017-10-27",
+        "publicationDate": "2021-04-29",
+        "revisionDate": "2021-04-29",
+        "resourceIdentifier_1": {
+            "code": "Table 'V2_0_2012_PARZELLE_V140' of dataset https://doi.org/10.20387/bonares-8fhj-r52g",
+            "codeSpace": "",
+            "version": ""
+        },
+        "otherCitationDetails": "",
+        "presentationForm": [
+            "tableDigital"
+        ],
+        "isbn": "",
+        "abstract": "Child table of long-term field experiment V140 Muencheberg. Spatial information of the trial plots (coordinates, altitude). Further general information about the plot, e.g. grain size distribution of the soil.. General description about the V140 experiment can be found in the table V140 - Plots. More information about database schema, assorted literature overview, the detailed location plan, etc.can be found in the supplemental material.",
+        "abstract_de": "Tochter-Tabelle des Langzeit-Feldversuchs V140 Müncheberg. Generelle räumliche Informationen zu den Versuchsparzellen (Koordinaten, Höhenlage). Weitere generelle Informationen über die Parzellen, z.B. zur Textur des Bodens.. Generelle Beschreibungen des V140er Experiments finden sich in der Muttertabelle V140 - Parzelle. Weitere Informationen über das Datenbankschema, eine ausgewählte Literaturübersicht, den detaillierten Lageplan und mehr finden Sie in den in den Zusatzmaterialien.",
+        "abstractType": "Abstract",
+        "abstractType_de": "Abstract",
+        "purpose": "",
+        "status": "",
+        "pointOfContact_1": {
+            "individualName": "BonaRes Data Centre",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "Research Platform 'Data Analysis & Simulation' - WG Geodata",
+            "role": "publisher",
+            "phone": "+49 33432 82 171",
+            "facsimile": "+49 33432 82 4082",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "bonares-datenzentrum@zalf.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_2": {
+            "individualName": "Experimental Station Müncheberg (Service)",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "Experimental Infrastructure Platform",
+            "role": "projectLeader",
+            "phone": "+49 33432 82 168",
+            "facsimile": "+49 33432 82 186",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "dbarkusky@zalf.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_3": {
+            "individualName": "BonaRes Data Centre",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "",
+            "role": "author",
+            "phone": "+49 33432 82 171",
+            "facsimile": "+49 33432 82 4082",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "bonares-datenzentrum@zalf.de",
+            "onlineResource": ""
+        },
+        "descriptiveKeywords": {
+            "none": [],
+            "temporal": [],
+            "stratum": [],
+            "discipline": [
+                "Boden",
+                "Landwirtschaft",
+                "Langzeitversuch",
+                "site factors",
+                "agriculture",
+                "experimental design"
+            ],
+            "place": [],
+            "theme": [
+                "Dauerfeldversuch",
+                "Dauerversuch",
+                "Langzeitfeldversuch",
+                "Langzeitversuch",
+                "Dauerdüngungversuch",
+                "Langzeitdüngungsversuch",
+                "DFV",
+                "DDV",
+                "DV",
+                "Long-Term Field Experiment",
+                "Long-Term Experiment",
+                "Long-Term Trial",
+                "Long-Term Field Trial",
+                "Long-Term Fertilizer Experiment",
+                "Long-Term Soil Experiment",
+                "LTFE",
+                "LTE",
+                "LTSE",
+                "Koordinaten"
+            ]
+        },
+        "useLimitation_1": "Reports, articles, papers, scientific and non-scientific works of any form, including tables, maps, or any other kind of output, in printed or electronic form, based in whole or in part on the data supplied, must contain an acknowledgement of the form: ‘Data re-used from the BonaRes Data Centre (www.bonares.de). These data were created as part of ZALF research activities‘. Although every care has been taken in preparing and testing the data, ZALF and BonaRes Data Centre cannot guarantee that the data are correct; neither does ZALF and BonaRes Data Centre accept any liability whatsoever for any error, missing data or omission in the data, or for any loss or damage arising from its use. The ZALF and Data Centre will not be responsible for any direct or indirect use which might be made of the data. If access to actual data is requested, please contact the data owner/author because these underlay an embargo. Please cite as: Barkusky et al. 2018, LTFE V140, ZALF Müncheberg, Shape ‘Plot information‘. 10.20387/BonaRes-BSVY-R418 To cite the complete datacollection: Barkusky et al. (2021). LTE V140, ZALF Müncheberg, (Version 2.0). Leibniz Centre for Agricultural Landscape Research (ZALF). DOI: 10.20387/bonares-8fhj-r52g To cite the individual table: Barkusky et al. (2021). LTE V140, ZALF Müncheberg, (Version 2.0). Table: V2_0_2012_PARZELLE_V140. Leibniz Centre for Agricultural Landscape Research (ZALF). DOI: 10.20387/bonares-8fhj-r52g",
+        "accessConstraints": [
+            "  restricted"
+        ],
+        "useConstraints": [
+            "  intellectualPropertyRights",
+            "  copyright",
+            "  license"
+        ],
+        "otherConstraint_1": "CC BY",
+        "securityClassifications": [],
+        "aggregationInfo_1": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=562631db-640b-4f13-8a08-2c2813d91be7",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_2": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=e1562f46-4a0d-4d8a-ac13-44cb47366e36",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "HasPart"
+        },
+        "aggregationInfo_3": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=9c3c372c-27f4-4a52-ae45-ce4d4bf54a18",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_4": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=da7aee62-ddb5-4ca3-91ce-a5003c4a703a",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_5": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=c3aa559f-55e8-442c-ba00-4b5f315a353c",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_6": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=1ce4cb2e-36c0-48e6-9cb4-39b8e830ea9e",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_7": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=0ad61816-fb22-4ba1-9721-05e079f129c3",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_8": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=f6a60156-1358-4288-9ed7-91ed0c54321b",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_9": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=5e41d7a7-6867-4a01-86b3-26b7e38fbaed",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_10": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=d97cbd98-58a4-4f22-93cf-17b3dbfc4aec",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_11": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=8464b0f4-aa51-42b5-bf7c-b090ab846cec",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_12": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=a309d647-0439-453b-a779-d0690449d4fa",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_13": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=9cb76dad-54bb-4916-9d4f-0bce8fec23a0",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_14": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=c29c0372-3e73-4834-9adb-05002272449e",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_15": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=dfd76707-ce6f-4070-8f97-63ee67aa32d3",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_16": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=18fcbcf5-6ac8-4c5f-9a53-7bf5c294badb",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_17": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=8a0a521f-2188-48b3-b199-7b7447e2211c",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_18": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=214c8cc0-d95d-47e6-82f3-b4b04382ef98",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_19": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=677c2cf4-fc3c-4dbd-a35a-e40d61fe9bc6",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_20": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=0374373d-7928-4422-b012-264eae21e75e",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_21": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=73ddfeb0-ffc7-4fe5-a30d-07ebbde40707",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_22": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=ebd43194-21ea-4884-81e4-c38e9dd13c34",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_23": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=056db80c-ef70-4a14-8161-fc795a0518e8",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_24": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=3ba6c56a-39dc-4660-b48a-c81bf32d9cb5",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_25": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=e6621805-d558-43ce-931f-e6d13374ead3",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_26": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=f6d89fad-97dc-402d-8312-6239b49806c5",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_27": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=1ae61f6d-06f5-4113-9271-4eed3fb36b58",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_28": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=b7e135bc-d334-4cac-837a-1b816e1ed201",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_29": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=1a6b8487-017d-4546-88d1-9666d0c64a56",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_30": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=e1562f46-4a0d-4d8a-ac13-44cb47366e36",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "serviceType": [],
+        "serviceTypeVersions": [],
+        "equivalentScales": [],
+        "distances": [],
+        "resourceLanguages": [
+            "German"
+        ],
+        "resourceCharacterSet": [
+            "utf8"
+        ],
+        "topicCategories": [
+            "farming"
+        ],
+        "environmentDescription": "",
+        "extentDescription": "",
+        "supplementalInformation": "https://metadata.bonares.de/smartEditor/rest/upload/Supplemental_Material_V140_2021.zip",
+        "temporalExtent_1": {
+            "begin": "1963-01-01",
+            "end": "2012-12-31",
+            "description": ""
+        },
+        "geographicExtent_1": {
+            "extentTypeCode": "true",
+            "west": "14.11",
+            "east": "14.13",
+            "south": "52.51",
+            "north": "52.52",
+            "description": ""
+        },
+        "spatialRepresentationType": "vector",
+        "graphicOverview_1": {
+            "fileName": "https://metadata.bonares.de:443/smartEditor/preview/v140_mun_v2.jpg",
+            "fileDescription": "Graphical overview of the V140 LTFE data"
+        },
+        "citationNote": "BonaRes Data Centre (2017). <i>Long-term field experiment V140 Muencheberg (launched in 1963) - Plot information</i>, Dataset, BonaRes Repository, DOI: Table 'V2_0_2012_PARZELLE_V140' of dataset https://doi.org/10.20387/bonares-8fhj-r52g"
+    },
+    "dataQualityInfo": {
+        "scope": {
+            "level": "dataset"
+        },
+        "lineage": {
+            "statement": "25.05.2018 - Version 1.1 published; 18.01.2021 - Version 1.1 withdrawn; 12.04.2021 - Version 2.0 published with data from additional years (2010-2012) and improved usability of the tables; Attention: Starting with version 2.0 the experiment can be analyzed as a single factorial experiment. The tables FAKTOR_1_STUFE and FAKTOR_2_STUFE were not longer necessary."
+        },
+        "conformance_1": {
+            "type": "Domain Consistency",
+            "nameOfMeasure": "",
+            "measureIdentification": "",
+            "measureDescription": "",
+            "valueUnit": "",
+            "errorStatistic": "",
+            "value": "",
+            "title": "Bonares",
+            "title_de": "",
+            "alternateTitle": "",
+            "creationDate": "2017-10-27",
+            "otherCitationDetails": "",
+            "presentationForm": [],
+            "isbn": "",
+            "explanation": "",
+            "pass": "true"
+        }
+    },
+    "distributionInfo": {
+        "distributionFormat_1": {
+            "name": "CSV",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributionFormat_2": {
+            "name": "Microsoft Excel (xlsx)",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributionFormat_3": {
+            "name": "File-Geodatabase",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributor_1": {
+            "individualName": "BonaRes Data Centre",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "Research Platform 'Data Analysis & Simulation' - WG Geodata",
+            "role": "distributor",
+            "phone": "+49 33432 82 171",
+            "facsimile": "+49 33432 82 4082",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "bonares-datenzentrum@zalf.de",
+            "onlineResource": ""
+        },
+        "transferOption_1": {
+            "linkage": "https://ltfe-map.bonares.de/",
+            "functionCode": "information",
+            "mediumName": "",
+            "mediumNote": ""
+        },
+        "transferOption_2": {
+            "linkage": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=025b61e6-5e9b-4c03-9e48-fa22be02106f",
+            "functionCode": "download",
+            "mediumName": "",
+            "mediumNote": ""
+        }
+    },
+    "bonaresInfo": {
+        "thumbnail": "",
+        "datamodelAttribute_1": {
+            "name": "OBJECTID",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "NULL",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Integer",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_2": {
+            "name": "Parzelle",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Plot number of the trial area",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Integer",
+            "domain": "",
+            "missingValue": "Blank",
+            "foreignKey_1": {
+                "identifier": "e1562f46-4a0d-4d8a-ac13-44cb47366e36",
+                "table": "v140_mun.V2_0_2012_PARZELLE",
+                "column": "Parzelle_ID"
+            }
+        },
+        "datamodelAttribute_3": {
+            "name": "Sw_X_Etrs89",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Easting of southwesternn plot corner (ETRS89 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_4": {
+            "name": "Sw_Y_Etrs89",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Northing of southwestern plot corner (ETRS89 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_5": {
+            "name": "Soe_X_Etrs89",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Easting of southeastern plot corner (ETRS89 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_6": {
+            "name": "Soe_Y_Etrs89",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Northing of southeastern plot corner (ETRS89 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_7": {
+            "name": "Nw_X_Etrs89",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Easting of northwestern plot corner (ETRS89 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_8": {
+            "name": "Nw_Y_Etrs89",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Northing of northwestern plot corner (ETRS89 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_9": {
+            "name": "Noe_X_Etrs89",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Easting of northeastern plot corner (ETRS89 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_10": {
+            "name": "Noe_Y_Etrs89",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Northing of northeastern plot corner (ETRS89 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_11": {
+            "name": "Sw_Lat_Wgs84",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Latidude of southwestern plot corner (WGS84 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_12": {
+            "name": "Sw_Lon_Wgs84",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Longitude of southwestern plot corner (WGS84 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_13": {
+            "name": "Soe_Lat_Wgs84",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Latidude of southeastern plot corner (WGS84 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_14": {
+            "name": "Soe_Lon_Wgs84",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Longitude of southeastern plot corner (WGS84 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_15": {
+            "name": "Nw_Lat_Wgs84",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Latidude of northwestern plot corner (WGS84 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_16": {
+            "name": "Nw_Lon_Wgs84",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Longitude of northwestern plot corner (WGS84 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_17": {
+            "name": "Noe_Lat_Wgs84",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Latidude of northeastern plot corner (WGS84 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_18": {
+            "name": "Noe_Lon_Wgs84",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Longitude of northeastern plot corner (WGS84 reference system)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_19": {
+            "name": "Grobsand__0_bis_25__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of coarse sand in 0-25 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_20": {
+            "name": "Grobsand__25_bis_50__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of coarse sand in 25-50 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_21": {
+            "name": "Mittelsand__0_bis_25__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of medium sand in 0-25 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_22": {
+            "name": "Mittelsand__25_bis_50__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of medium sand in 25-50 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_23": {
+            "name": "Feinsand__0_bis_25__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of fine sand in 0-25 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_24": {
+            "name": "Feinsand__25_bis_50__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of fine sand in 25-50 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_25": {
+            "name": "Grobschluff__0_bis_25__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of coarse silt in 0-25 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_26": {
+            "name": "Grobschluff__25_bis_50__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of coarse silt in 25-50 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_27": {
+            "name": "Mittelschluff__0_bis_25__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of medium silt in 0-25 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_28": {
+            "name": "Mittelschluff__25_bis_50_1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of medium sand in 25-50 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_29": {
+            "name": "Feinschluff__0_bis_25__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of fine silt in 0-25 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_30": {
+            "name": "Feinschluff__25_bis_50__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of fine silt in 25-50 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_31": {
+            "name": "Ton__0_bis_25__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of clay in 0-25 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_32": {
+            "name": "Ton__25_bis_50__1980",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "Content of clay in 25-50 cm depth",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_33": {
+            "name": "SHAPE",
+            "tableName": "v140_mun.V2_0_2012_PARZELLE_V140",
+            "longName": "",
+            "description": "This field/coumn is a part of feature data format and does not belongs from the original data. The shape, geometry data type indicates the type of geometry—point, line, polygon, multipoint, or multipatch—the table stores. The field stored as geometry type is called SHAPE when created through ArcGIS.",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        }
+    },
+    "fundingReference_1": {
+        "name": "ZALF",
+        "identifier": "",
+        "identifierType": "",
+        "awardNumber": "ZALF",
+        "awardTitle": "",
+        "uri": ""
+    }
+}
