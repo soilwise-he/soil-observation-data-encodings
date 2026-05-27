@@ -1,0 +1,792 @@
+{
+  "@context": {
+    "@vocab": "http://www.w3.org/ns/csvw#",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "dc": "http://purl.org/dc/terms/",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "unit": "http://qudt.org/vocab/unit/"
+  },
+  "tables": [
+    {
+      "url": "signal.ID_7036_SIGNAL_SITE_POINTS.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "OBJECTID",
+            "titles": "OBJECTID",
+            "datatype": "integer",
+            "dc:description": "Object ID",
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Object_ID"
+            }
+          },
+          {
+            "name": "id",
+            "titles": "id",
+            "datatype": "integer",
+            "dc:description": "ID",
+            "null": [
+              "NULL"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/ID"
+            }
+          },
+          {
+            "name": "name",
+            "titles": "name",
+            "datatype": "string",
+            "dc:description": "nomenclature of measuring points within SIGNAL project",
+            "null": [
+              "NULL"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/nomenclature_of_measuring_points_within_SIGNAL_project"
+            }
+          },
+          {
+            "name": "descriptio",
+            "titles": "descriptio",
+            "datatype": "string",
+            "dc:description": "not used",
+            "null": [
+              "NULL"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/not_used"
+            }
+          },
+          {
+            "name": "SHAPE",
+            "titles": "SHAPE",
+            "datatype": "string",
+            "dc:description": "information of shape file",
+            "null": [
+              "NULL"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/information_of_shape_file"
+            }
+          }
+        ],
+        "foreignKeys": [
+          {
+            "columnReference": "id",
+            "reference": {
+              "resource": "signal.ID_7052_BETA_GLUCOSIDASE_SYNTH_DATA.csv",
+              "columnReference": "SIGNAL_CODE"
+            }
+          },
+          {
+            "columnReference": "id",
+            "reference": {
+              "resource": "signal.ID_7053_METADATA_SYNTHESE_BEULE.csv",
+              "columnReference": "SIGNAL_CODE"
+            }
+          },
+          {
+            "columnReference": "id",
+            "reference": {
+              "resource": "signal.ID_7054_SIGNAL_KSAT.csv",
+              "columnReference": "SIGNAL_CODE"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "url": "signal.ID_7053_METADATA_SYNTHESE_BEULE.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "Site_long",
+            "titles": "Site_long",
+            "datatype": "string",
+            "dc:description": "Site name",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Site_name"
+            }
+          },
+          {
+            "name": "Site",
+            "titles": "Site",
+            "datatype": "string",
+            "dc:description": "Site abbreviation",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Site_abbreviation"
+            }
+          },
+          {
+            "name": "distance",
+            "titles": "distance",
+            "datatype": "string",
+            "dc:description": "Distance from the tree rows (MC = monoculture)",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Distance_from_the_tree_rows_(MC_=_monoculture)"
+            }
+          },
+          {
+            "name": "SIGNAL_code",
+            "titles": "SIGNAL_code",
+            "datatype": "string",
+            "dc:description": "SIGNAL internal code for the sampling locations",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/SIGNAL_internal_code_for_the_sampling_locations"
+            }
+          },
+          {
+            "name": "plot",
+            "titles": "plot",
+            "datatype": "string",
+            "dc:description": "SIGNAL internal plot ID",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/SIGNAL_internal_plot_ID"
+            }
+          },
+          {
+            "name": "year",
+            "titles": "year",
+            "datatype": "string",
+            "dc:description": "Sampling year",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Sampling_year"
+            }
+          },
+          {
+            "name": "nifH_gene_copies",
+            "titles": "nifH_gene_copies",
+            "datatype": "string",
+            "dc:description": "Gene copies of nifH genes per gram dry soil",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Gene_copies_of_nifH_genes_per_gram_dry_soil"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/Real-time_PCR"
+            }
+          },
+          {
+            "name": "Fus_graminearum_barley_z_sc_std",
+            "titles": "Fus_graminearum_barley_z_sc_std",
+            "datatype": "string",
+            "dc:description": "Z-score standardised Fusarium graminearum in barley grain",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Z-score_standardised_Fusarium_graminearum_in_barley_grain"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/Real-time_PCR"
+            }
+          },
+          {
+            "name": "Fus_tricinctum_barley_z_sc_std",
+            "titles": "Fus_tricinctum_barley_z_sc_std",
+            "datatype": "string",
+            "dc:description": "Z-score standardised Fusarium tricinctum in barley grain",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Z-score_standardised_Fusarium_tricinctum_in_barley_grain"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/Real-time_PCR"
+            }
+          },
+          {
+            "name": "Fus_graminearum_wheat_z_sc_std",
+            "titles": "Fus_graminearum_wheat_z_sc_std",
+            "datatype": "string",
+            "dc:description": "Z-score standardised Fusarium graminearum in wheat grain",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Z-score_standardised_Fusarium_graminearum_in_wheat_grain"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/Real-time_PCR"
+            }
+          },
+          {
+            "name": "Fus_tricinctum_wheat_z_sc_std",
+            "titles": "Fus_tricinctum_wheat_z_sc_std",
+            "datatype": "string",
+            "dc:description": "Z-score standardised Fusarium tricinctum in wheat grain",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Z-score_standardised_Fusarium_tricinctum_in_wheat_grain"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/Real-time_PCR"
+            }
+          },
+          {
+            "name": "Ver_longisporum_oil_rp_z_sc_std",
+            "titles": "Ver_longisporum_oil_rp_z_sc_std",
+            "datatype": "string",
+            "dc:description": "Z-score standardised Verticillium longisporum in oilseed rape plants",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Z-score_standardised_Verticillium_longisporum_in_oilseed_rape_plants"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/Real-time_PCR"
+            }
+          },
+          {
+            "name": "Lep_maculans_oil_rape_z_sc_std",
+            "titles": "Lep_maculans_oil_rape_z_sc_std",
+            "datatype": "string",
+            "dc:description": "Z-score standardised Leptosphaeria maculans in oilseed rape plants",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Z-score_standardised_Leptosphaeria_maculans_in_oilseed_rape_plants"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/Real-time_PCR"
+            }
+          }
+        ],
+        "foreignKeys": [
+          {
+            "columnReference": "SIGNAL_code",
+            "reference": {
+              "resource": "signal.ID_7036_SIGNAL_SITE_POINTS.csv",
+              "columnReference": "ID"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "url": "signal.ID_7054_SIGNAL_KSAT.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "Site_long",
+            "titles": "Site_long",
+            "datatype": "string",
+            "dc:description": "Full site name",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Full_site_name"
+            }
+          },
+          {
+            "name": "Site",
+            "titles": "Site",
+            "datatype": "string",
+            "dc:description": "Site",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Site"
+            }
+          },
+          {
+            "name": "Dist",
+            "titles": "Dist",
+            "datatype": "string",
+            "dc:description": "Distance from tree row",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Distance_from_tree_row"
+            }
+          },
+          {
+            "name": "SIGNAL_code",
+            "titles": "SIGNAL_code",
+            "datatype": "string",
+            "dc:description": "SIGNAL internal ID",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/SIGNAL_internal_ID"
+            }
+          },
+          {
+            "name": "plot",
+            "titles": "plot",
+            "datatype": "string",
+            "dc:description": "SIGNAL internal plot number",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/SIGNAL_internal_plot_number"
+            }
+          },
+          {
+            "name": "WAT_ksat_19_mm_d1",
+            "titles": "WAT_ksat_19_mm_d1",
+            "datatype": "string",
+            "dc:description": "Saturated Hydraulic Conductivity",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Saturated_Hydraulic_Conductivity"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/Values_for_soil_saturated_hydraulic_conductivity_(KSAT)_obtained_from_paired_cropland_agroforestry_and_monoculture_systems_in_Dornburg,_Forst,_and_Wendhausen_during_2019_are_included_in_this_dataset._In-tact_soil_cores_(250_ml)_were_collected_from_12.5_cm_depth_in_the_soil_from_replicate_plots_in_monocultures_and_within_the_crop_row_at_7_m_distance_from_the_tree_row_and_within_the_tree_row_of_agroforesatry_systems._Data_was_collected_using_falling_or_constant_head_method_with_a_KSAT_instrument_(Meter_Group_Inc.,_Pullman_WA_USA)."
+            }
+          }
+        ],
+        "foreignKeys": [
+          {
+            "columnReference": "SIGNAL_code",
+            "reference": {
+              "resource": "signal.ID_7036_SIGNAL_SITE_POINTS.csv",
+              "columnReference": "ID"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "url": "signal.ID_7064_DATASET_JIE_LUO.csv",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "OBJECTID",
+            "titles": "OBJECTID",
+            "datatype": "integer",
+            "dc:description": "Signal ID of point measured",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Signal_ID_of_point_measured"
+            }
+          },
+          {
+            "name": "ID",
+            "titles": "ID",
+            "datatype": "integer",
+            "dc:description": "Signal ID",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Signal_ID"
+            }
+          },
+          {
+            "name": "signal_ID",
+            "titles": "signal_ID",
+            "datatype": "string",
+            "dc:description": "Signal ID",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/Signal_ID"
+            }
+          },
+          {
+            "name": "personal_ID",
+            "titles": "personal_ID",
+            "datatype": "string",
+            "dc:description": "personal coding",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/personal_coding"
+            }
+          },
+          {
+            "name": "Date",
+            "titles": "Date",
+            "datatype": "date",
+            "dc:description": "sampling date",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/sampling_date"
+            }
+          },
+          {
+            "name": "year_month",
+            "titles": "year_month",
+            "datatype": "string",
+            "dc:description": "sampling month",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/sampling_month"
+            }
+          },
+          {
+            "name": "site",
+            "titles": "site",
+            "datatype": "string",
+            "dc:description": "site",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/site"
+            }
+          },
+          {
+            "name": "plot",
+            "titles": "plot",
+            "datatype": "string",
+            "dc:description": "plot",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/plot"
+            }
+          },
+          {
+            "name": "day",
+            "titles": "day",
+            "datatype": "integer",
+            "dc:description": "day",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/day"
+            }
+          },
+          {
+            "name": "position",
+            "titles": "position",
+            "datatype": "string",
+            "dc:description": "sampling location",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/sampling_location"
+            }
+          },
+          {
+            "name": "component",
+            "titles": "component",
+            "datatype": "string",
+            "dc:description": "the composition of agroforestry (tree row, crop row = 1, 7, 24 m)",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/the_composition_of_agroforestry_(tree_row,_crop_row_=_1,_7,_24_m)"
+            }
+          },
+          {
+            "name": "management",
+            "titles": "management",
+            "datatype": "string",
+            "dc:description": "land use",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/land_use"
+            }
+          },
+          {
+            "name": "season",
+            "titles": "season",
+            "datatype": "string",
+            "dc:description": "season",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/season"
+            }
+          },
+          {
+            "name": "net_flux",
+            "titles": "net_flux",
+            "datatype": "string",
+            "dc:description": "net N2O flux",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/net_N2O_flux"
+            }
+          },
+          {
+            "name": "gross_emission",
+            "titles": "gross_emission",
+            "datatype": "string",
+            "dc:description": "gross N2O emission",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/gross_N2O_emission"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/15N2O_pool_dilution"
+            }
+          },
+          {
+            "name": "gross_uptake",
+            "titles": "gross_uptake",
+            "datatype": "string",
+            "dc:description": "gross N2O uptake",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/gross_N2O_uptake"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/15N2O_pool_dilution"
+            }
+          },
+          {
+            "name": "CO2_flux",
+            "titles": "CO2_flux",
+            "datatype": "string",
+            "dc:description": "CO2 emission",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/CO2_emission"
+            }
+          },
+          {
+            "name": "ST",
+            "titles": "ST",
+            "datatype": "string",
+            "dc:description": "soil temperature",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/soil_temperature"
+            }
+          },
+          {
+            "name": "WFPS",
+            "titles": "WFPS",
+            "datatype": "string",
+            "dc:description": "water-filled pore space",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/water-filled_pore_space"
+            }
+          },
+          {
+            "name": "BD",
+            "titles": "BD",
+            "datatype": "string",
+            "dc:description": "bulk density",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/bulk_density"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/core_method"
+            }
+          },
+          {
+            "name": "NH4",
+            "titles": "NH4",
+            "datatype": "string",
+            "dc:description": "NH4",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/NH4"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/salicylate_and_dichloroisocyanuric_acid_reaction"
+            }
+          },
+          {
+            "name": "NO3",
+            "titles": "NO3",
+            "datatype": "string",
+            "dc:description": "NO3",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/NO3"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/cadmium_reduction_method_with_NH4Cl_buffer"
+            }
+          },
+          {
+            "name": "mineral_N",
+            "titles": "mineral_N",
+            "datatype": "string",
+            "dc:description": "mineral N",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/mineral_N"
+            }
+          },
+          {
+            "name": "MIN_CO2",
+            "titles": "MIN_CO2",
+            "datatype": "string",
+            "dc:description": "the ratio of mineral N to CO2 emission",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/the_ratio_of_mineral_N_to_CO2_emission"
+            }
+          },
+          {
+            "name": "MBN",
+            "titles": "MBN",
+            "datatype": "string",
+            "dc:description": "microbial biomass nitrogen",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/microbial_biomass_nitrogen"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/fumigation"
+            }
+          },
+          {
+            "name": "MBC",
+            "titles": "MBC",
+            "datatype": "string",
+            "dc:description": "microbial biomass carbon",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/microbial_biomass_carbon"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/fumigation"
+            }
+          },
+          {
+            "name": "nirK",
+            "titles": "nirK",
+            "datatype": "string",
+            "dc:description": "nirK",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/nirK"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/real-time_PCR"
+            }
+          },
+          {
+            "name": "nirS",
+            "titles": "nirS",
+            "datatype": "string",
+            "dc:description": "nirS",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/nirS"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/real-time_PCR"
+            }
+          },
+          {
+            "name": "nosZI",
+            "titles": "nosZI",
+            "datatype": "string",
+            "dc:description": "nosZ clade I",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/nosZ_clade_I"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/real-time_PCR"
+            }
+          },
+          {
+            "name": "nosZII",
+            "titles": "nosZII",
+            "datatype": "string",
+            "dc:description": "nosZ clade I",
+            "null": [
+              "Blank"
+            ],
+            "sosa:observedProperty": {
+              "@id": "http://example.org/observedProperty/nosZ_clade_I"
+            },
+            "sosa:usedProcedure": {
+              "@id": "http://example.org/procedure/real-time_PCR"
+            }
+          }
+        ],
+        "foreignKeys": [
+          {
+            "columnReference": "signal_ID",
+            "reference": {
+              "resource": "signal.ID_7036_SIGNAL_SITE_POINTS.csv",
+              "columnReference": "ID"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

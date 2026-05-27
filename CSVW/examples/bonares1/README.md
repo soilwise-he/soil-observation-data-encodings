@@ -10,3 +10,14 @@ The [BonaRes SIGNAL](https://doi.org/10.20387/bonares-4984-ZWYR) dataset has bee
 
 We selected 4 tables from the [signal database](https://doi.org/10.20387/bonares-4984-ZWYR) for this experiment
 
+## bonares.py
+
+[bonares.py](../../bonares.py) is a script which generates a csvw context or metadata file for a set of related csv's in a folder.
+
+Run bonares.py as:
+
+```python
+python bonares.py examples/bonares1
+```
+
+The script will write a [csvw context file](./csv-metadata.json) in examples/bonares1. Use [csvwlib](https://pypi.org/project/csvwlib/) to serialise the csvw as rdf.

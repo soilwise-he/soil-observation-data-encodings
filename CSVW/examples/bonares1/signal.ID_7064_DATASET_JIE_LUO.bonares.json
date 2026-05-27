@@ -1,1 +1,690 @@
-{"metadataIdentifier":"4dd7c40f-0fb9-4229-aaee-408d118856f0","language":"English","characterSet":"utf8","hierarchyLevel":"dataset","hierarchyLevelName":["  SIGNAL"],"dateStamp":"2021-11-03","metadataContact_1":{"individualName":"Jie Luo","organisationName":"Georg-August-University of Goettingen","positionName":"","role":"pointOfContact","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"jluo@gwdg.de","onlineResource":""},"metadataStandardName":"BonaRes Metadata Schema (https://doi.org/10.20387/BonaRes-5PGG-8YRP)","metadataStandardVersion":"1.0","referenceSystemInfo_1":{"code":"WGS84","codeSpace":"urn:ogc:def:crs:EPSG","version":"6.11.2"},"resourceInfo":{"title":"Gross N2O emission and uptake in cropland agroforestry and monoculture systems","title_de":"Brutto-N2O-Emission und -Aufnahme in Agroforstwirtschaft und Monokultur","alternateTitle":"","issuedDate":"2021-09-14","creationDate":"2021-09-14","revisionDate":"2021-09-14","publicationDate":"2021-11-02","resourceIdentifier_1":{"code":"https://doi.org/10.20387/bonares-x13m-z796","codeSpace":"","version":""},"otherCitationDetails":"","presentationForm":["tableDigital"],"isbn":"","abstract":"This data set includes data on gross N2O emission and uptake measured by 15N2O pool dilution, net N2O flux, CO2 emission, soil temperature, water-filled pore space, mineral N (NH4+ and NO3-), microbial biomass N and C, and denitrification gene abundance (nirK, nirS, nosZ clade I and II) were measured on three sites in Germany in cropland agroforestry and monocultures. Each site is represented by 4 replicates per land use, at the following distances from the tree row for agroforestry: 1m, 7m and 24m. Research domain: Soil Sciences Research question: Does agroforestry reduce gross N2O emission from the soil and increase gross N2O uptake from the atmosphere into the soil compared to monoculture system? Dataset version: 1.0","abstract_de":"Dieser Datensatz umfasst Daten zur Brutto-N2O-Emission und -Aufnahme, gemessen durch 15N2O-Pool-Verdünnung, Netto-N2O-Fluss, CO2-Emission, Bodentemperatur, wassergefüllter Porenraum, mineralisches N (NH4+ und NO3-), mikrobielle Biomasse N und C und Denitrifikations-Genabundanz (nirK, nirS, nosZ clade I und II) wurde an drei Standorten in Deutschland in Agroforstwirtschaft und Monokulturen gemessen. Jeder Standort wird durch 4 Replikate pro Landnutzung repräsentiert, in den folgenden Abständen von der Baumreihe für die Agroforstwirtschaft: 1 m, 7 m und 24 m. Forschungsbereich: Bodenwissenschaften Fragestellung: Verringert die Agroforstwirtschaft die Brutto-N2O-Emission aus dem Boden und erhöht die Brutto-N2O-Aufnahme aus der Atmosphäre in den Boden im Vergleich zum Monokultursystem? Datensatz Version: 1.0","abstractType":"Abstract","abstractType_de":"Abstract","purpose":"","status":"","pointOfContact_1":{"individualName":"Jie Luo","organisationName":"Georg-August-University of Goettingen, Soil Sciences of Tropical and Subtropical Ecosystems","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"jluo@gwdg.de","onlineResource":""},"pointOfContact_2":{"individualName":"Edzo Veldkamp","organisationName":"Georg-August-University of Goettingen, Soil Sciences of Tropical and Subtropical Ecosystems","positionName":"","role":"projectLeader","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"eveldka@gwd.de","onlineResource":""},"pointOfContact_3":{"individualName":"BonaRes Data Centre","organisationName":"Leibniz Centre for Agricultural Landscape Research (ZALF)","positionName":"Research Platform 'Data Analysis & Simulation' - WG Geodata","role":"publisher","phone":"+49 33432 82 171","facsimile":"+49 33432 82 4082","deliveryPoint":"Eberswalder Strasse 84","city":"Müncheberg","administrativeArea":"Brandenburg","postalCode":"15374","country":"Germany","electronicMailAddress":"bonares-datenzentrum@zalf.de","onlineResource":""},"pointOfContact_4":{"individualName":"Edzo Veldkamp","organisationName":"Georg-August-University of Goettingen, Soil Sciences of Tropical and Subtropical Ecosystems","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"eveldka@gwdg.de","onlineResource":""},"pointOfContact_5":{"individualName":"Guodong Shao","organisationName":"Georg-August-University of Goettingen, Soil Sciences of Tropical and Subtropical Ecosystems","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"sguadon@gwdg.de","onlineResource":""},"pointOfContact_6":{"individualName":"Lukas Beule","organisationName":"Julius Kühn Institute (JKI)—Federal Research Centre for Cultivated Plants, Institute for Ecological Chemistry, Plant Analysis and Stored Product Protection","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"Berlin","administrativeArea":"","postalCode":"","country":"Germany","electronicMailAddress":"lukas.beule@julius-kuehn.de","onlineResource":""},"pointOfContact_7":{"individualName":"Marife D. Corre","organisationName":"Georg-August-University of Goettingen, Soil Sciences of Tropical and Subtropical Ecosystems","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"mcorre@gwdg.de","onlineResource":""},"descriptiveKeywords":{"none":[],"temporal":[],"stratum":[],"discipline":["opendata"],"place":[],"theme":["Soil","agroforestry","greenhouse gases","isotope dilution method","nitrous oxide","denitrification","arable soils","agricultural soils","greenhouse gas emissions","monoculture","Boden"]},"useLimitation_1":"Restrictions applied to assure the protection of privacy or intellectual property, and any special restrictions or limitations or warnings on using the resource or metadata. Reports, articles, papers, scientific and non - scientific works of any form, including tables, maps, or any other kind of output, in printed or electronic form, based in whole or in part on the data supplied, must contain an acknowledgement of the form: ‘Data reused from the BonaRes Data Centre www.bonares.de. This data were created as part of the BonaRes Module A-Project - SIGNAL's research activities.‘ Although every care has been taken in preparing and testing the data, the BonaRes Module A-Project - SIGNAL and the BonaRes Data Centre cannot guarantee that the data are correct; neither does the BonaRes Module A-Project - SIGNAL and the BonaRes Data Centre accept any liability whatsoever for any error, missing data or omission in the data, or for any loss or damage arising from its use. The BonaRes Module A-Project - SIGNAL and BonaRes Data Centre will not be responsible for any direct or indirect use which might be made of the data. The access to this data is restricted during embargo time. If prior access is requested, contact the data owner / author.","accessConstraints":["  copyright","  intellectualPropertyRights","  restricted"],"useConstraints":["  license"],"otherConstraint_1":"CC BY","securityClassifications":[],"aggregationInfo_1":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=98a99b69-eec4-4208-9a33-b71b2b1cc81f","codeSpace":"URL","version":""},"associationType":"References"},"aggregationInfo_2":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=0ca456d9-707b-46a9-9c3d-1607853a525f","codeSpace":"URL","version":""},"associationType":"IsVariantFormOf"},"aggregationInfo_3":{"aggregateDataSetIdentifier":{"code":"10.20387/bonares-4984-ZWYR","codeSpace":"DOI","version":""},"associationType":"References"},"serviceType":[],"serviceTypeVersions":[],"equivalentScales":[],"distances":[],"resourceLanguages":["English"],"resourceCharacterSet":[],"topicCategories":["farming"],"environmentDescription":"","extentDescription":"","supplementalInformation":"","geographicExtent_1":{"extentTypeCode":"false","west":"5.81","east":"15.77","south":"47.26","north":"54.76","description":""},"spatialRepresentationType":"","graphicOverview_1":{"fileName":"https://metadata.bonares.de:443/smartEditor/preview/thumbnail-to-graph-abstract.jpg","fileDescription":"View into agroforestry site, Dornburg Germany. Photo: Jie Luo"},"citationNote":"Jie Luo, Edzo Veldkamp, Guodong Shao, Lukas Beule, Marife D. Corre (2021). <i>Gross N2O emission and uptake in cropland agroforestry and monoculture systems</i>, Dataset, BonaRes Repository, DOI: 10.20387/bonares-x13m-z796"},"dataQualityInfo":{"scope":{"level":"dataset"},"lineage":{"statement":"2018-2019 gross N2O emission and uptake, net N2O flux, CO2 emission, soil temperature, water-filled pore space, mineral N (NH4+ and NO3-), microbial biomass N and C, and denitrification gene abundance (nirK, nirS, nosZ clade I and II) were measured 2021-09-14 Data submitted to the BonaRes Data Centre 2021-09-15 Data imported to database 2021-09-21 Metadata xml for dataset created 2021-10-06 Metadata reviewed 2021-11-02 Dataset published in BonaRes Repository"},"conformance_1":{"type":"Domain Consistency","nameOfMeasure":"","measureIdentification":"","measureDescription":"","valueUnit":"","errorStatistic":"","value":"","title":"individual","title_de":"","alternateTitle":"","creationDate":"2021-09-23","otherCitationDetails":"","presentationForm":[],"isbn":"","explanation":"unknown","pass":""}},"distributionInfo":{"distributionFormat_1":{"name":"CSV","version":"","specification":"","fileDecompressionTechnique":""},"distributionFormat_2":{"name":"Microsoft Excel (xlsx)","version":"","specification":"","fileDecompressionTechnique":""},"distributionFormat_3":{"name":"File-Geodatabase","version":"","specification":"","fileDecompressionTechnique":""},"distributor_1":{"individualName":"BonaRes Data Centre","organisationName":"Leibniz Centre for Agricultural Landscape Research (ZALF)","positionName":"Research Platform 'Data Analysis & Simulation' - WG Geodata","role":"distributor","phone":"+49 33432 82 171","facsimile":"+49 33432 82 4082","deliveryPoint":"Eberswalder Strasse 84","city":"Müncheberg","administrativeArea":"Brandenburg","postalCode":"15374","country":"Germany","electronicMailAddress":"bonares-datenzentrum@zalf.de","onlineResource":"https://www.bonares.de/research-data"},"transferOption_1":{"linkage":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=4dd7c40f-0fb9-4229-aaee-408d118856f0","functionCode":"information","mediumName":"","mediumNote":""}},"bonaresInfo":{"thumbnail":"","datamodelAttribute_1":{"name":"OBJECTID","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"Signal ID of point measured","unit":"","methods":"","quality":"","dataType":"Integer","domain":"","missingValue":"Blank"},"datamodelAttribute_2":{"name":"ID","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"Signal ID","unit":"","methods":"","quality":"","dataType":"Integer","domain":"","missingValue":"Blank"},"datamodelAttribute_3":{"name":"signal_ID","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"Signal ID","unit":"","methods":"","quality":"","dataType":"Text","domain":"","missingValue":"Blank","foreignKey_1":{"identifier":"98a99b69-eec4-4208-9a33-b71b2b1cc81f","table":"signal.ID_7036_SIGNAL_SITE_POINTS","column":"ID"}},"datamodelAttribute_4":{"name":"personal_ID","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"personal coding","unit":"","methods":"","quality":"","dataType":"Text","domain":"","missingValue":"Blank"},"datamodelAttribute_5":{"name":"Date","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"sampling date","unit":"YYYYDDMM","methods":"","quality":"","dataType":"Date","domain":"","missingValue":"Blank"},"datamodelAttribute_6":{"name":"year_month","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"sampling month","unit":"","methods":"","quality":"","dataType":"Text","domain":"","missingValue":"Blank"},"datamodelAttribute_7":{"name":"site","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"site","unit":"","methods":"","quality":"","dataType":"Text","domain":"","missingValue":"Blank"},"datamodelAttribute_8":{"name":"plot","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"plot","unit":"","methods":"","quality":"","dataType":"Text","domain":"","missingValue":"Blank"},"datamodelAttribute_9":{"name":"day","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"day","unit":"","methods":"","quality":"","dataType":"Integer","domain":"","missingValue":"Blank"},"datamodelAttribute_10":{"name":"position","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"sampling location","unit":"","methods":"","quality":"","dataType":"Text","domain":"","missingValue":"Blank"},"datamodelAttribute_11":{"name":"component","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"the composition of agroforestry (tree row, crop row = 1, 7, 24 m)","unit":"","methods":"","quality":"","dataType":"Text","domain":"","missingValue":"Blank"},"datamodelAttribute_12":{"name":"management","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"land use","unit":"","methods":"","quality":"","dataType":"Text","domain":"","missingValue":"Blank"},"datamodelAttribute_13":{"name":"season","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"season","unit":"","methods":"","quality":"","dataType":"Text","domain":"","missingValue":"Blank"},"datamodelAttribute_14":{"name":"net_flux","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"net N2O flux","unit":"µg N kg-1 h-1","methods":"","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_15":{"name":"gross_emission","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"gross N2O emission","unit":"µg N kg-1 h-1","methods":"15N2O pool dilution","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_16":{"name":"gross_uptake","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"gross N2O uptake","unit":"µg N kg-1 h-1","methods":"15N2O pool dilution","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_17":{"name":"CO2_flux","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"CO2 emission","unit":"mg C kg-1 h-1","methods":"","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_18":{"name":"ST","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"soil temperature","unit":"","methods":"","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_19":{"name":"WFPS","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"water-filled pore space","unit":"","methods":"","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_20":{"name":"BD","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"bulk density","unit":"g cm-3","methods":"core method","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_21":{"name":"NH4","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"NH4","unit":"mg kg-1","methods":"salicylate and dichloroisocyanuric acid reaction","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_22":{"name":"NO3","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"NO3","unit":"mg kg-1","methods":"cadmium reduction method with NH4Cl buffer","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_23":{"name":"mineral_N","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"mineral N","unit":"mg kg-1","methods":"","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_24":{"name":"MIN_CO2","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"the ratio of mineral N to CO2 emission","unit":"","methods":"","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_25":{"name":"MBN","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"microbial biomass nitrogen","unit":"mg kg-1","methods":"fumigation","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_26":{"name":"MBC","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"microbial biomass carbon","unit":"mg kg-1","methods":"fumigation","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_27":{"name":"nirK","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"nirK","unit":"gene copy number g-1 dry soil","methods":"real-time PCR","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_28":{"name":"nirS","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"nirS","unit":"gene copy number g-1 dry soil","methods":"real-time PCR","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_29":{"name":"nosZI","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"nosZ clade I","unit":"gene copy number g-1 dry soil","methods":"real-time PCR","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"},"datamodelAttribute_30":{"name":"nosZII","tableName":"signal.ID_7064_DATASET_JIE_LUO","longName":"","description":"nosZ clade I","unit":"gene copy number g-1 dry soil","methods":"real-time PCR","quality":"","dataType":"Numeric","domain":"","missingValue":"Blank"}},"fundingReference_1":{"name":"Federal Ministry of Education and Research","identifier":"https://doi.org/10.13039/501100002347","identifierType":"Crossref","awardNumber":"031A562A / 031B0510A","awardTitle":"SIGNAL","uri":""}}
+{
+    "metadataIdentifier": "4dd7c40f-0fb9-4229-aaee-408d118856f0",
+    "language": "English",
+    "characterSet": "utf8",
+    "hierarchyLevel": "dataset",
+    "hierarchyLevelName": [
+        "  SIGNAL"
+    ],
+    "dateStamp": "2021-11-03",
+    "metadataContact_1": {
+        "individualName": "Jie Luo",
+        "organisationName": "Georg-August-University of Goettingen",
+        "positionName": "",
+        "role": "pointOfContact",
+        "phone": "",
+        "facsimile": "",
+        "deliveryPoint": "",
+        "city": "",
+        "administrativeArea": "",
+        "postalCode": "",
+        "country": "",
+        "electronicMailAddress": "jluo@gwdg.de",
+        "onlineResource": ""
+    },
+    "metadataStandardName": "BonaRes Metadata Schema (https://doi.org/10.20387/BonaRes-5PGG-8YRP)",
+    "metadataStandardVersion": "1.0",
+    "referenceSystemInfo_1": {
+        "code": "WGS84",
+        "codeSpace": "urn:ogc:def:crs:EPSG",
+        "version": "6.11.2"
+    },
+    "resourceInfo": {
+        "title": "Gross N2O emission and uptake in cropland agroforestry and monoculture systems",
+        "title_de": "Brutto-N2O-Emission und -Aufnahme in Agroforstwirtschaft und Monokultur",
+        "alternateTitle": "",
+        "issuedDate": "2021-09-14",
+        "creationDate": "2021-09-14",
+        "revisionDate": "2021-09-14",
+        "publicationDate": "2021-11-02",
+        "resourceIdentifier_1": {
+            "code": "https://doi.org/10.20387/bonares-x13m-z796",
+            "codeSpace": "",
+            "version": ""
+        },
+        "otherCitationDetails": "",
+        "presentationForm": [
+            "tableDigital"
+        ],
+        "isbn": "",
+        "abstract": "This data set includes data on gross N2O emission and uptake measured by 15N2O pool dilution, net N2O flux, CO2 emission, soil temperature, water-filled pore space, mineral N (NH4+ and NO3-), microbial biomass N and C, and denitrification gene abundance (nirK, nirS, nosZ clade I and II) were measured on three sites in Germany in cropland agroforestry and monocultures. Each site is represented by 4 replicates per land use, at the following distances from the tree row for agroforestry: 1m, 7m and 24m. Research domain: Soil Sciences Research question: Does agroforestry reduce gross N2O emission from the soil and increase gross N2O uptake from the atmosphere into the soil compared to monoculture system? Dataset version: 1.0",
+        "abstract_de": "Dieser Datensatz umfasst Daten zur Brutto-N2O-Emission und -Aufnahme, gemessen durch 15N2O-Pool-Verdünnung, Netto-N2O-Fluss, CO2-Emission, Bodentemperatur, wassergefüllter Porenraum, mineralisches N (NH4+ und NO3-), mikrobielle Biomasse N und C und Denitrifikations-Genabundanz (nirK, nirS, nosZ clade I und II) wurde an drei Standorten in Deutschland in Agroforstwirtschaft und Monokulturen gemessen. Jeder Standort wird durch 4 Replikate pro Landnutzung repräsentiert, in den folgenden Abständen von der Baumreihe für die Agroforstwirtschaft: 1 m, 7 m und 24 m. Forschungsbereich: Bodenwissenschaften Fragestellung: Verringert die Agroforstwirtschaft die Brutto-N2O-Emission aus dem Boden und erhöht die Brutto-N2O-Aufnahme aus der Atmosphäre in den Boden im Vergleich zum Monokultursystem? Datensatz Version: 1.0",
+        "abstractType": "Abstract",
+        "abstractType_de": "Abstract",
+        "purpose": "",
+        "status": "",
+        "pointOfContact_1": {
+            "individualName": "Jie Luo",
+            "organisationName": "Georg-August-University of Goettingen, Soil Sciences of Tropical and Subtropical Ecosystems",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "jluo@gwdg.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_2": {
+            "individualName": "Edzo Veldkamp",
+            "organisationName": "Georg-August-University of Goettingen, Soil Sciences of Tropical and Subtropical Ecosystems",
+            "positionName": "",
+            "role": "projectLeader",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "eveldka@gwd.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_3": {
+            "individualName": "BonaRes Data Centre",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "Research Platform 'Data Analysis & Simulation' - WG Geodata",
+            "role": "publisher",
+            "phone": "+49 33432 82 171",
+            "facsimile": "+49 33432 82 4082",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "bonares-datenzentrum@zalf.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_4": {
+            "individualName": "Edzo Veldkamp",
+            "organisationName": "Georg-August-University of Goettingen, Soil Sciences of Tropical and Subtropical Ecosystems",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "eveldka@gwdg.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_5": {
+            "individualName": "Guodong Shao",
+            "organisationName": "Georg-August-University of Goettingen, Soil Sciences of Tropical and Subtropical Ecosystems",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "sguadon@gwdg.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_6": {
+            "individualName": "Lukas Beule",
+            "organisationName": "Julius Kühn Institute (JKI)—Federal Research Centre for Cultivated Plants, Institute for Ecological Chemistry, Plant Analysis and Stored Product Protection",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "Berlin",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "Germany",
+            "electronicMailAddress": "lukas.beule@julius-kuehn.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_7": {
+            "individualName": "Marife D. Corre",
+            "organisationName": "Georg-August-University of Goettingen, Soil Sciences of Tropical and Subtropical Ecosystems",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "mcorre@gwdg.de",
+            "onlineResource": ""
+        },
+        "descriptiveKeywords": {
+            "none": [],
+            "temporal": [],
+            "stratum": [],
+            "discipline": [
+                "opendata"
+            ],
+            "place": [],
+            "theme": [
+                "Soil",
+                "agroforestry",
+                "greenhouse gases",
+                "isotope dilution method",
+                "nitrous oxide",
+                "denitrification",
+                "arable soils",
+                "agricultural soils",
+                "greenhouse gas emissions",
+                "monoculture",
+                "Boden"
+            ]
+        },
+        "useLimitation_1": "Restrictions applied to assure the protection of privacy or intellectual property, and any special restrictions or limitations or warnings on using the resource or metadata. Reports, articles, papers, scientific and non - scientific works of any form, including tables, maps, or any other kind of output, in printed or electronic form, based in whole or in part on the data supplied, must contain an acknowledgement of the form: ‘Data reused from the BonaRes Data Centre www.bonares.de. This data were created as part of the BonaRes Module A-Project - SIGNAL's research activities.‘ Although every care has been taken in preparing and testing the data, the BonaRes Module A-Project - SIGNAL and the BonaRes Data Centre cannot guarantee that the data are correct; neither does the BonaRes Module A-Project - SIGNAL and the BonaRes Data Centre accept any liability whatsoever for any error, missing data or omission in the data, or for any loss or damage arising from its use. The BonaRes Module A-Project - SIGNAL and BonaRes Data Centre will not be responsible for any direct or indirect use which might be made of the data. The access to this data is restricted during embargo time. If prior access is requested, contact the data owner / author.",
+        "accessConstraints": [
+            "  copyright",
+            "  intellectualPropertyRights",
+            "  restricted"
+        ],
+        "useConstraints": [
+            "  license"
+        ],
+        "otherConstraint_1": "CC BY",
+        "securityClassifications": [],
+        "aggregationInfo_1": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=98a99b69-eec4-4208-9a33-b71b2b1cc81f",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "References"
+        },
+        "aggregationInfo_2": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=0ca456d9-707b-46a9-9c3d-1607853a525f",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsVariantFormOf"
+        },
+        "aggregationInfo_3": {
+            "aggregateDataSetIdentifier": {
+                "code": "10.20387/bonares-4984-ZWYR",
+                "codeSpace": "DOI",
+                "version": ""
+            },
+            "associationType": "References"
+        },
+        "serviceType": [],
+        "serviceTypeVersions": [],
+        "equivalentScales": [],
+        "distances": [],
+        "resourceLanguages": [
+            "English"
+        ],
+        "resourceCharacterSet": [],
+        "topicCategories": [
+            "farming"
+        ],
+        "environmentDescription": "",
+        "extentDescription": "",
+        "supplementalInformation": "",
+        "geographicExtent_1": {
+            "extentTypeCode": "false",
+            "west": "5.81",
+            "east": "15.77",
+            "south": "47.26",
+            "north": "54.76",
+            "description": ""
+        },
+        "spatialRepresentationType": "",
+        "graphicOverview_1": {
+            "fileName": "https://metadata.bonares.de:443/smartEditor/preview/thumbnail-to-graph-abstract.jpg",
+            "fileDescription": "View into agroforestry site, Dornburg Germany. Photo: Jie Luo"
+        },
+        "citationNote": "Jie Luo, Edzo Veldkamp, Guodong Shao, Lukas Beule, Marife D. Corre (2021). <i>Gross N2O emission and uptake in cropland agroforestry and monoculture systems</i>, Dataset, BonaRes Repository, DOI: 10.20387/bonares-x13m-z796"
+    },
+    "dataQualityInfo": {
+        "scope": {
+            "level": "dataset"
+        },
+        "lineage": {
+            "statement": "2018-2019 gross N2O emission and uptake, net N2O flux, CO2 emission, soil temperature, water-filled pore space, mineral N (NH4+ and NO3-), microbial biomass N and C, and denitrification gene abundance (nirK, nirS, nosZ clade I and II) were measured 2021-09-14 Data submitted to the BonaRes Data Centre 2021-09-15 Data imported to database 2021-09-21 Metadata xml for dataset created 2021-10-06 Metadata reviewed 2021-11-02 Dataset published in BonaRes Repository"
+        },
+        "conformance_1": {
+            "type": "Domain Consistency",
+            "nameOfMeasure": "",
+            "measureIdentification": "",
+            "measureDescription": "",
+            "valueUnit": "",
+            "errorStatistic": "",
+            "value": "",
+            "title": "individual",
+            "title_de": "",
+            "alternateTitle": "",
+            "creationDate": "2021-09-23",
+            "otherCitationDetails": "",
+            "presentationForm": [],
+            "isbn": "",
+            "explanation": "unknown",
+            "pass": ""
+        }
+    },
+    "distributionInfo": {
+        "distributionFormat_1": {
+            "name": "CSV",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributionFormat_2": {
+            "name": "Microsoft Excel (xlsx)",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributionFormat_3": {
+            "name": "File-Geodatabase",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributor_1": {
+            "individualName": "BonaRes Data Centre",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "Research Platform 'Data Analysis & Simulation' - WG Geodata",
+            "role": "distributor",
+            "phone": "+49 33432 82 171",
+            "facsimile": "+49 33432 82 4082",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "bonares-datenzentrum@zalf.de",
+            "onlineResource": "https://www.bonares.de/research-data"
+        },
+        "transferOption_1": {
+            "linkage": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=4dd7c40f-0fb9-4229-aaee-408d118856f0",
+            "functionCode": "information",
+            "mediumName": "",
+            "mediumNote": ""
+        }
+    },
+    "bonaresInfo": {
+        "thumbnail": "",
+        "datamodelAttribute_1": {
+            "name": "OBJECTID",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "Signal ID of point measured",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Integer",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_2": {
+            "name": "ID",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "Signal ID",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Integer",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_3": {
+            "name": "signal_ID",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "Signal ID",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Text",
+            "domain": "",
+            "missingValue": "Blank",
+            "foreignKey_1": {
+                "identifier": "98a99b69-eec4-4208-9a33-b71b2b1cc81f",
+                "table": "signal.ID_7036_SIGNAL_SITE_POINTS",
+                "column": "ID"
+            }
+        },
+        "datamodelAttribute_4": {
+            "name": "personal_ID",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "personal coding",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Text",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_5": {
+            "name": "Date",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "sampling date",
+            "unit": "YYYYDDMM",
+            "methods": "",
+            "quality": "",
+            "dataType": "Date",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_6": {
+            "name": "year_month",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "sampling month",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Text",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_7": {
+            "name": "site",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "site",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Text",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_8": {
+            "name": "plot",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "plot",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Text",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_9": {
+            "name": "day",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "day",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Integer",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_10": {
+            "name": "position",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "sampling location",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Text",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_11": {
+            "name": "component",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "the composition of agroforestry (tree row, crop row = 1, 7, 24 m)",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Text",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_12": {
+            "name": "management",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "land use",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Text",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_13": {
+            "name": "season",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "season",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Text",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_14": {
+            "name": "net_flux",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "net N2O flux",
+            "unit": "µg N kg-1 h-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_15": {
+            "name": "gross_emission",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "gross N2O emission",
+            "unit": "µg N kg-1 h-1",
+            "methods": "15N2O pool dilution",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_16": {
+            "name": "gross_uptake",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "gross N2O uptake",
+            "unit": "µg N kg-1 h-1",
+            "methods": "15N2O pool dilution",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_17": {
+            "name": "CO2_flux",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "CO2 emission",
+            "unit": "mg C kg-1 h-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_18": {
+            "name": "ST",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "soil temperature",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_19": {
+            "name": "WFPS",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "water-filled pore space",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_20": {
+            "name": "BD",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "bulk density",
+            "unit": "g cm-3",
+            "methods": "core method",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_21": {
+            "name": "NH4",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "NH4",
+            "unit": "mg kg-1",
+            "methods": "salicylate and dichloroisocyanuric acid reaction",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_22": {
+            "name": "NO3",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "NO3",
+            "unit": "mg kg-1",
+            "methods": "cadmium reduction method with NH4Cl buffer",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_23": {
+            "name": "mineral_N",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "mineral N",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_24": {
+            "name": "MIN_CO2",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "the ratio of mineral N to CO2 emission",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_25": {
+            "name": "MBN",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "microbial biomass nitrogen",
+            "unit": "mg kg-1",
+            "methods": "fumigation",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_26": {
+            "name": "MBC",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "microbial biomass carbon",
+            "unit": "mg kg-1",
+            "methods": "fumigation",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_27": {
+            "name": "nirK",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "nirK",
+            "unit": "gene copy number g-1 dry soil",
+            "methods": "real-time PCR",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_28": {
+            "name": "nirS",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "nirS",
+            "unit": "gene copy number g-1 dry soil",
+            "methods": "real-time PCR",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_29": {
+            "name": "nosZI",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "nosZ clade I",
+            "unit": "gene copy number g-1 dry soil",
+            "methods": "real-time PCR",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_30": {
+            "name": "nosZII",
+            "tableName": "signal.ID_7064_DATASET_JIE_LUO",
+            "longName": "",
+            "description": "nosZ clade I",
+            "unit": "gene copy number g-1 dry soil",
+            "methods": "real-time PCR",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        }
+    },
+    "fundingReference_1": {
+        "name": "Federal Ministry of Education and Research",
+        "identifier": "https://doi.org/10.13039/501100002347",
+        "identifierType": "Crossref",
+        "awardNumber": "031A562A / 031B0510A",
+        "awardTitle": "SIGNAL",
+        "uri": ""
+    }
+}

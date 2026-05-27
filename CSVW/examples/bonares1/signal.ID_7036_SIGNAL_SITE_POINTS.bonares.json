@@ -1,1 +1,506 @@
-{"metadataIdentifier":"98a99b69-eec4-4208-9a33-b71b2b1cc81f","language":"English","characterSet":"utf8","hierarchyLevel":"dataset","hierarchyLevelName":["  SIGNAL"],"dateStamp":"2021-04-13","metadataContact_1":{"individualName":"Marcus Schmidt","organisationName":"University of Goettingen, PTS","positionName":"","role":"pointOfContact","phone":"0049-551-3933513","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"mschmidh@gwdg.de","onlineResource":""},"metadataStandardName":"BonaRes Metadata Schema: https://doi.org/10.20387/BonaRes-5PGG-8YRP","metadataStandardVersion":"1.0","referenceSystemInfo_1":{"code":"WGS84","codeSpace":"urn:ogc:def:crs:EPSG","version":"6.11.2"},"resourceInfo":{"title":"BonaRes SIGNAL, sites, measuring points","title_de":"BonaRes SIGNAL, Standorte, Messpunkte","alternateTitle":"","creationDate":"2017-10-19","issuedDate":"2019-03-28","revisionDate":"2019-03-28","publicationDate":"2019-03-28","resourceIdentifier_1":{"code":"https://doi.org/10.20387/bonares-4984-ZWYR","codeSpace":"","version":""},"otherCitationDetails":"","presentationForm":[],"isbn":"","abstract":"Parent Table of BonaRes SIGNAL, sites, measuring shapes. This data set shows the sites and measuring points used by the SIGNAL project during it's first phase form 2015-2018 - as well as the new site (Vechta), which was established in 2018.","abstract_de":"Der Datensatz zeigt die vom SIGNAL Projekt in der ersten Phase von 2015-2018 genutzen Flächen und Messpunkte - sowie einen neuen Standort (Vechta), welcher 2018 etabliert wurde.","abstractType":"Abstract","abstractType_de":"Abstract","purpose":"","status":"","pointOfContact_1":{"individualName":"Marcus Schmidt","organisationName":"University of Goettingen, PTS","positionName":"","role":"author","phone":"0049-551-3933513","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"mschmidh@gwdg.de","onlineResource":""},"pointOfContact_2":{"individualName":"Edzo Veldkamp","organisationName":"University of Göttingen, PTS","positionName":"","role":"projectLeader","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"eveldka@gwdg.de","onlineResource":""},"pointOfContact_3":{"individualName":"BonaRes Data Centre","organisationName":"Leibniz Centre for Agricultural Landscape Research (ZALF)","positionName":"Research Platform 'Data' - WG Geodata","role":"publisher","phone":"+49 33432 82 171","facsimile":"+49 33432 82 4082","deliveryPoint":"Eberswalder Strasse 84","city":"Müncheberg","administrativeArea":"Brandenburg","postalCode":"15374","country":"Germany","electronicMailAddress":"bonares-datenzentrum@zalf.de","onlineResource":""},"pointOfContact_4":{"individualName":"Anita Swieter","organisationName":"JKI Braunschweig","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"anita.swieter@julius-kuehn.de","onlineResource":""},"pointOfContact_5":{"individualName":"Maren Langhof","organisationName":"JKI Braunschweig","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"maren.langhof@julius-kuehn.de","onlineResource":""},"pointOfContact_6":{"individualName":"Diana Seserman","organisationName":"BTU Cottbus","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"seserman@b-tu.de","onlineResource":""},"pointOfContact_7":{"individualName":"Rüdiger Graß","organisationName":"University of Kassel - Witzenhausen","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"grass@wiz.uni-kassel.de","onlineResource":""},"pointOfContact_8":{"individualName":"Christine Wachendorf","organisationName":"University of Kassel - Witzenhausen","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"c.wachendorf@uni-kassel.de","onlineResource":""},"pointOfContact_9":{"individualName":"Xenia Bischel","organisationName":"University of Goettingen, PTS","positionName":"","role":"author","phone":"","facsimile":"","deliveryPoint":"","city":"","administrativeArea":"","postalCode":"","country":"","electronicMailAddress":"xenia.bischel@uni-goettingen.de","onlineResource":""},"descriptiveKeywords":{"none":["research","Agricultural research","agroforestry systems","Boden","Agroforstwirtschaft","Anbausystem","Nutzung der landwirtschaftlichen Fläche"],"temporal":[],"stratum":[],"discipline":[],"place":[],"theme":[]},"useLimitation_1":"Reports, articles, papers, scientific and non - scientific works of any form, including tables, maps, or any other kind of output, in printed or electronic form, based in whole or in part on the data supplied, must contain an acknowledgement of the form: ‘Data reused from the BonaRes Data Centre www.bonares.de. This data were created as part of BonaRes Module A-Project - SIGNAL's research activities. Although every care has been taken in preparing and testing the data, BonaRes Module A - Project - SIGNAL and BonaRes Data Centre cannot guarantee that the data are correct; neither does BonaRes Module A - Project and BonaRes Data Centre accept any liability whatsoever for any error, missing data or omission in the data, or for any loss or damage arising from its use. The BonaRes Module A-Project-SIGNAL and BonaRes Data Centre will not be responsible for any direct or indirect use which might be made of the data. To cite the complete datacollection: Schmidt et al. (2019). BonaRes SIGNAL, sites, mea-suring points, (Version 1.0). Leibniz Centre for Agricultural Landscape Research (ZALF). https://doi.org/10.20387/bonares-4984-ZWYR To cite the individual table: Schmidt et al. (2019). BonaRes SIGNAL, sites, measuring points, (Version 1.0). Table: BonaRes-SIGNAL: Research site shapes. Leibniz Centre for Agricultural Landscape Research (ZALF). https://doi.org/10.20387/bonares-4984-ZWYR","accessConstraints":["  copyright","  intellectualPropertyRights","  restricted"],"useConstraints":["  license"],"otherConstraint_1":"CC BY","securityClassifications":[],"aggregationInfo_1":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=0ca456d9-707b-46a9-9c3d-1607853a525f","codeSpace":"URL","version":""},"associationType":"IsVariantFormOf"},"aggregationInfo_2":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=79e0b10a-9154-418b-b56a-11f1b839c6e4","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_3":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=ab1e118f-7551-4d1c-bc35-ae839f23e875","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_4":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=f84f4083-ec8b-4e91-8f3f-484d8eaa9478","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_5":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=1d2bcffe-e95f-4578-9b16-047834bc4724","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_6":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid= f163f6ec-8359-47bc-b78b-828d6fdb3fd4","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_7":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=6960be9a-0726-4478-8501-749f88e81ff8","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_8":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=18a9c2ec-e49d-4fcc-b16a-7bf61d54e26a","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_9":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=18897d6f-015d-4085-b3b0-5aa92eb073fa","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_10":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=1c276ada-742c-4390-9a07-8d278d0afdeb","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_11":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=98a99b69-eec4-4208-9a33-b71b2b1cc81f","codeSpace":"URL","version":""},"associationType":"IsPartOf"},"aggregationInfo_12":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=2fa214f3-8d6d-4f8c-bd99-d73b67f0d270","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_13":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=3e5ac979-3675-4652-818e-67b6f42f2c67","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"aggregationInfo_14":{"aggregateDataSetIdentifier":{"code":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=c6e9a483-2f91-4e4d-851a-6a26e3f27de8","codeSpace":"URL","version":""},"associationType":"IsReferencedBy"},"serviceType":[],"serviceTypeVersions":[],"equivalentScales":[],"distances":[],"resourceLanguages":["English"],"resourceCharacterSet":[],"topicCategories":["environment"],"environmentDescription":"","extentDescription":"","supplementalInformation":"","geographicExtent_1":{"extentTypeCode":"true","west":"7.93","east":"15.06","south":"50.64","north":"53.47","description":""},"spatialRepresentationType":"","citationNote":"Marcus Schmidt, Anita Swieter, Maren Langhof, Diana Seserman, Rüdiger Graß, Christine Wachendorf, Xenia Bischel (2017). <i>BonaRes SIGNAL, sites, measuring points</i>, Dataset, BonaRes Repository, DOI: 10.20387/bonares-4984-ZWYR"},"dataQualityInfo":{"scope":{"level":"dataset"},"lineage":{"statement":"none"},"conformance_1":{"type":"Domain Consistency","nameOfMeasure":"","measureIdentification":"","measureDescription":"","valueUnit":"","errorStatistic":"","value":"","title":"unknown","title_de":"","alternateTitle":"","creationDate":"2019-03-29","otherCitationDetails":"","presentationForm":[],"isbn":"","explanation":"","pass":"true"}},"distributionInfo":{"distributionFormat_1":{"name":"CSV","version":"","specification":"","fileDecompressionTechnique":""},"distributionFormat_2":{"name":"Microsoft Excel (xlsx)","version":"","specification":"","fileDecompressionTechnique":""},"distributionFormat_3":{"name":"File-Geodatabase","version":"","specification":"","fileDecompressionTechnique":""},"distributor_1":{"individualName":"BonaRes Data Centre","organisationName":"Leibniz Centre for Agricultural Landscape Research (ZALF)","positionName":"Research Platform 'Data' - WG Geodata","role":"distributor","phone":"+49 33432 82 171","facsimile":"+49 33432 82 4082","deliveryPoint":"Eberswalder Strasse 84","city":"Müncheberg","administrativeArea":"Brandenburg","postalCode":"15374","country":"Germany","electronicMailAddress":"bonares-datenzentrum@zalf.de","onlineResource":"https://www.bonares.de/research-data"},"transferOption_1":{"linkage":"https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&doi=https://doi.org/10.20387/bonares-4984-ZWYR","functionCode":"download","mediumName":"","mediumNote":""}},"bonaresInfo":{"thumbnail":"","datamodelAttribute_1":{"name":"OBJECTID","tableName":"signal.ID_7036_SIGNAL_SITE_POINTS","longName":"","description":"Object ID","unit":"","methods":"","quality":"","dataType":"int","domain":"","missingValue":"no missing values"},"datamodelAttribute_2":{"name":"id","tableName":"signal.ID_7036_SIGNAL_SITE_POINTS","longName":"","description":"ID","unit":"","methods":"","quality":"","dataType":"int","domain":"","missingValue":"NULL","foreignKey_1":{"identifier":"2fa214f3-8d6d-4f8c-bd99-d73b67f0d270","table":"signal.ID_7052_BETA_GLUCOSIDASE_SYNTH_DATA","column":"SIGNAL_CODE"},"foreignKey_2":{"identifier":"3e5ac979-3675-4652-818e-67b6f42f2c67","table":"signal.ID_7053_METADATA_SYNTHESE_BEULE","column":"SIGNAL_CODE"},"foreignKey_3":{"identifier":"c6e9a483-2f91-4e4d-851a-6a26e3f27de8","table":"signal.ID_7054_SIGNAL_KSAT","column":"SIGNAL_CODE"}},"datamodelAttribute_3":{"name":"name","tableName":"signal.ID_7036_SIGNAL_SITE_POINTS","longName":"","description":"nomenclature of measuring points within SIGNAL project","unit":"","methods":"","quality":"","dataType":"nvarchar(80)","domain":"","missingValue":"NULL"},"datamodelAttribute_4":{"name":"descriptio","tableName":"signal.ID_7036_SIGNAL_SITE_POINTS","longName":"","description":"not used","unit":"","methods":"","quality":"","dataType":"nvarchar(80)","domain":"","missingValue":"NULL"},"datamodelAttribute_5":{"name":"SHAPE","tableName":"signal.ID_7036_SIGNAL_SITE_POINTS","longName":"","description":"information of shape file","unit":"","methods":"","quality":"","dataType":"geometry","domain":"","missingValue":"NULL"}},"fundingReference_1":{"name":"Federal Ministry of Education and Research","identifier":"https://doi.org/10.13039/501100002347","identifierType":"Other","awardNumber":"031A562A","awardTitle":"SIGNAL- Sustainable intensification of agriculture through agroforestry","uri":""}}
+{
+    "metadataIdentifier": "98a99b69-eec4-4208-9a33-b71b2b1cc81f",
+    "language": "English",
+    "characterSet": "utf8",
+    "hierarchyLevel": "dataset",
+    "hierarchyLevelName": [
+        "  SIGNAL"
+    ],
+    "dateStamp": "2021-04-13",
+    "metadataContact_1": {
+        "individualName": "Marcus Schmidt",
+        "organisationName": "University of Goettingen, PTS",
+        "positionName": "",
+        "role": "pointOfContact",
+        "phone": "0049-551-3933513",
+        "facsimile": "",
+        "deliveryPoint": "",
+        "city": "",
+        "administrativeArea": "",
+        "postalCode": "",
+        "country": "",
+        "electronicMailAddress": "mschmidh@gwdg.de",
+        "onlineResource": ""
+    },
+    "metadataStandardName": "BonaRes Metadata Schema: https://doi.org/10.20387/BonaRes-5PGG-8YRP",
+    "metadataStandardVersion": "1.0",
+    "referenceSystemInfo_1": {
+        "code": "WGS84",
+        "codeSpace": "urn:ogc:def:crs:EPSG",
+        "version": "6.11.2"
+    },
+    "resourceInfo": {
+        "title": "BonaRes SIGNAL, sites, measuring points",
+        "title_de": "BonaRes SIGNAL, Standorte, Messpunkte",
+        "alternateTitle": "",
+        "creationDate": "2017-10-19",
+        "issuedDate": "2019-03-28",
+        "revisionDate": "2019-03-28",
+        "publicationDate": "2019-03-28",
+        "resourceIdentifier_1": {
+            "code": "https://doi.org/10.20387/bonares-4984-ZWYR",
+            "codeSpace": "",
+            "version": ""
+        },
+        "otherCitationDetails": "",
+        "presentationForm": [],
+        "isbn": "",
+        "abstract": "Parent Table of BonaRes SIGNAL, sites, measuring shapes. This data set shows the sites and measuring points used by the SIGNAL project during it's first phase form 2015-2018 - as well as the new site (Vechta), which was established in 2018.",
+        "abstract_de": "Der Datensatz zeigt die vom SIGNAL Projekt in der ersten Phase von 2015-2018 genutzen Flächen und Messpunkte - sowie einen neuen Standort (Vechta), welcher 2018 etabliert wurde.",
+        "abstractType": "Abstract",
+        "abstractType_de": "Abstract",
+        "purpose": "",
+        "status": "",
+        "pointOfContact_1": {
+            "individualName": "Marcus Schmidt",
+            "organisationName": "University of Goettingen, PTS",
+            "positionName": "",
+            "role": "author",
+            "phone": "0049-551-3933513",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "mschmidh@gwdg.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_2": {
+            "individualName": "Edzo Veldkamp",
+            "organisationName": "University of Göttingen, PTS",
+            "positionName": "",
+            "role": "projectLeader",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "eveldka@gwdg.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_3": {
+            "individualName": "BonaRes Data Centre",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "Research Platform 'Data' - WG Geodata",
+            "role": "publisher",
+            "phone": "+49 33432 82 171",
+            "facsimile": "+49 33432 82 4082",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "bonares-datenzentrum@zalf.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_4": {
+            "individualName": "Anita Swieter",
+            "organisationName": "JKI Braunschweig",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "anita.swieter@julius-kuehn.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_5": {
+            "individualName": "Maren Langhof",
+            "organisationName": "JKI Braunschweig",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "maren.langhof@julius-kuehn.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_6": {
+            "individualName": "Diana Seserman",
+            "organisationName": "BTU Cottbus",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "seserman@b-tu.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_7": {
+            "individualName": "Rüdiger Graß",
+            "organisationName": "University of Kassel - Witzenhausen",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "grass@wiz.uni-kassel.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_8": {
+            "individualName": "Christine Wachendorf",
+            "organisationName": "University of Kassel - Witzenhausen",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "c.wachendorf@uni-kassel.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_9": {
+            "individualName": "Xenia Bischel",
+            "organisationName": "University of Goettingen, PTS",
+            "positionName": "",
+            "role": "author",
+            "phone": "",
+            "facsimile": "",
+            "deliveryPoint": "",
+            "city": "",
+            "administrativeArea": "",
+            "postalCode": "",
+            "country": "",
+            "electronicMailAddress": "xenia.bischel@uni-goettingen.de",
+            "onlineResource": ""
+        },
+        "descriptiveKeywords": {
+            "none": [
+                "research",
+                "Agricultural research",
+                "agroforestry systems",
+                "Boden",
+                "Agroforstwirtschaft",
+                "Anbausystem",
+                "Nutzung der landwirtschaftlichen Fläche"
+            ],
+            "temporal": [],
+            "stratum": [],
+            "discipline": [],
+            "place": [],
+            "theme": []
+        },
+        "useLimitation_1": "Reports, articles, papers, scientific and non - scientific works of any form, including tables, maps, or any other kind of output, in printed or electronic form, based in whole or in part on the data supplied, must contain an acknowledgement of the form: ‘Data reused from the BonaRes Data Centre www.bonares.de. This data were created as part of BonaRes Module A-Project - SIGNAL's research activities. Although every care has been taken in preparing and testing the data, BonaRes Module A - Project - SIGNAL and BonaRes Data Centre cannot guarantee that the data are correct; neither does BonaRes Module A - Project and BonaRes Data Centre accept any liability whatsoever for any error, missing data or omission in the data, or for any loss or damage arising from its use. The BonaRes Module A-Project-SIGNAL and BonaRes Data Centre will not be responsible for any direct or indirect use which might be made of the data. To cite the complete datacollection: Schmidt et al. (2019). BonaRes SIGNAL, sites, mea-suring points, (Version 1.0). Leibniz Centre for Agricultural Landscape Research (ZALF). https://doi.org/10.20387/bonares-4984-ZWYR To cite the individual table: Schmidt et al. (2019). BonaRes SIGNAL, sites, measuring points, (Version 1.0). Table: BonaRes-SIGNAL: Research site shapes. Leibniz Centre for Agricultural Landscape Research (ZALF). https://doi.org/10.20387/bonares-4984-ZWYR",
+        "accessConstraints": [
+            "  copyright",
+            "  intellectualPropertyRights",
+            "  restricted"
+        ],
+        "useConstraints": [
+            "  license"
+        ],
+        "otherConstraint_1": "CC BY",
+        "securityClassifications": [],
+        "aggregationInfo_1": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=0ca456d9-707b-46a9-9c3d-1607853a525f",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsVariantFormOf"
+        },
+        "aggregationInfo_2": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=79e0b10a-9154-418b-b56a-11f1b839c6e4",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_3": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=ab1e118f-7551-4d1c-bc35-ae839f23e875",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_4": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=f84f4083-ec8b-4e91-8f3f-484d8eaa9478",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_5": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=1d2bcffe-e95f-4578-9b16-047834bc4724",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_6": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid= f163f6ec-8359-47bc-b78b-828d6fdb3fd4",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_7": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=6960be9a-0726-4478-8501-749f88e81ff8",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_8": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=18a9c2ec-e49d-4fcc-b16a-7bf61d54e26a",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_9": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=18897d6f-015d-4085-b3b0-5aa92eb073fa",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_10": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=1c276ada-742c-4390-9a07-8d278d0afdeb",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_11": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=98a99b69-eec4-4208-9a33-b71b2b1cc81f",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_12": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=2fa214f3-8d6d-4f8c-bd99-d73b67f0d270",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_13": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=3e5ac979-3675-4652-818e-67b6f42f2c67",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "aggregationInfo_14": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=c6e9a483-2f91-4e4d-851a-6a26e3f27de8",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsReferencedBy"
+        },
+        "serviceType": [],
+        "serviceTypeVersions": [],
+        "equivalentScales": [],
+        "distances": [],
+        "resourceLanguages": [
+            "English"
+        ],
+        "resourceCharacterSet": [],
+        "topicCategories": [
+            "environment"
+        ],
+        "environmentDescription": "",
+        "extentDescription": "",
+        "supplementalInformation": "",
+        "geographicExtent_1": {
+            "extentTypeCode": "true",
+            "west": "7.93",
+            "east": "15.06",
+            "south": "50.64",
+            "north": "53.47",
+            "description": ""
+        },
+        "spatialRepresentationType": "",
+        "citationNote": "Marcus Schmidt, Anita Swieter, Maren Langhof, Diana Seserman, Rüdiger Graß, Christine Wachendorf, Xenia Bischel (2017). <i>BonaRes SIGNAL, sites, measuring points</i>, Dataset, BonaRes Repository, DOI: 10.20387/bonares-4984-ZWYR"
+    },
+    "dataQualityInfo": {
+        "scope": {
+            "level": "dataset"
+        },
+        "lineage": {
+            "statement": "none"
+        },
+        "conformance_1": {
+            "type": "Domain Consistency",
+            "nameOfMeasure": "",
+            "measureIdentification": "",
+            "measureDescription": "",
+            "valueUnit": "",
+            "errorStatistic": "",
+            "value": "",
+            "title": "unknown",
+            "title_de": "",
+            "alternateTitle": "",
+            "creationDate": "2019-03-29",
+            "otherCitationDetails": "",
+            "presentationForm": [],
+            "isbn": "",
+            "explanation": "",
+            "pass": "true"
+        }
+    },
+    "distributionInfo": {
+        "distributionFormat_1": {
+            "name": "CSV",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributionFormat_2": {
+            "name": "Microsoft Excel (xlsx)",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributionFormat_3": {
+            "name": "File-Geodatabase",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributor_1": {
+            "individualName": "BonaRes Data Centre",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "Research Platform 'Data' - WG Geodata",
+            "role": "distributor",
+            "phone": "+49 33432 82 171",
+            "facsimile": "+49 33432 82 4082",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "bonares-datenzentrum@zalf.de",
+            "onlineResource": "https://www.bonares.de/research-data"
+        },
+        "transferOption_1": {
+            "linkage": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&doi=https://doi.org/10.20387/bonares-4984-ZWYR",
+            "functionCode": "download",
+            "mediumName": "",
+            "mediumNote": ""
+        }
+    },
+    "bonaresInfo": {
+        "thumbnail": "",
+        "datamodelAttribute_1": {
+            "name": "OBJECTID",
+            "tableName": "signal.ID_7036_SIGNAL_SITE_POINTS",
+            "longName": "",
+            "description": "Object ID",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "int",
+            "domain": "",
+            "missingValue": "no missing values"
+        },
+        "datamodelAttribute_2": {
+            "name": "id",
+            "tableName": "signal.ID_7036_SIGNAL_SITE_POINTS",
+            "longName": "",
+            "description": "ID",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "int",
+            "domain": "",
+            "missingValue": "NULL",
+            "foreignKey_1": {
+                "identifier": "2fa214f3-8d6d-4f8c-bd99-d73b67f0d270",
+                "table": "signal.ID_7052_BETA_GLUCOSIDASE_SYNTH_DATA",
+                "column": "SIGNAL_CODE"
+            },
+            "foreignKey_2": {
+                "identifier": "3e5ac979-3675-4652-818e-67b6f42f2c67",
+                "table": "signal.ID_7053_METADATA_SYNTHESE_BEULE",
+                "column": "SIGNAL_CODE"
+            },
+            "foreignKey_3": {
+                "identifier": "c6e9a483-2f91-4e4d-851a-6a26e3f27de8",
+                "table": "signal.ID_7054_SIGNAL_KSAT",
+                "column": "SIGNAL_CODE"
+            }
+        },
+        "datamodelAttribute_3": {
+            "name": "name",
+            "tableName": "signal.ID_7036_SIGNAL_SITE_POINTS",
+            "longName": "",
+            "description": "nomenclature of measuring points within SIGNAL project",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "nvarchar(80)",
+            "domain": "",
+            "missingValue": "NULL"
+        },
+        "datamodelAttribute_4": {
+            "name": "descriptio",
+            "tableName": "signal.ID_7036_SIGNAL_SITE_POINTS",
+            "longName": "",
+            "description": "not used",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "nvarchar(80)",
+            "domain": "",
+            "missingValue": "NULL"
+        },
+        "datamodelAttribute_5": {
+            "name": "SHAPE",
+            "tableName": "signal.ID_7036_SIGNAL_SITE_POINTS",
+            "longName": "",
+            "description": "information of shape file",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "geometry",
+            "domain": "",
+            "missingValue": "NULL"
+        }
+    },
+    "fundingReference_1": {
+        "name": "Federal Ministry of Education and Research",
+        "identifier": "https://doi.org/10.13039/501100002347",
+        "identifierType": "Other",
+        "awardNumber": "031A562A",
+        "awardTitle": "SIGNAL- Sustainable intensification of agriculture through agroforestry",
+        "uri": ""
+    }
+}
