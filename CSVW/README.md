@@ -87,14 +87,14 @@ A variety in data scenario's can be identified, which are commonly used in shari
 
 All observation data and sample identification are captured in a single table.
 
-| ID | Label | X | Y | Profile | Label | Upper | Lower | Date | N | P | K |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ID | Label | X | Y | Profile | Upper | Lower | Date | N | P | K |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | uae438 | 10m from street | 2.35 | 50.35 | O | 0 | 10 | 2025-10-04 | 0.3 | 0.01 | 0.01 |
 | fte218 | 30m bhind barn | 2.45 | 51.15 | A | 10 | 30 | 2025-10-04 | 0.1 | 0.01 | 0.01 |
 
 ### Linked table scenario 
 
-Assumes soil observation data in 1 or 2 related tables
+Soil observation data in 2 or more related tables. Typical case is when sampling details (location, date, surveyor) are captured in 1 table, and the lab results are in captured in a linked table.
 
 `Sample locations`
 
@@ -105,7 +105,7 @@ Assumes soil observation data in 1 or 2 related tables
 
 `Observation data`
 
-| Profile | Label | Upper | Lower |  N | P | K |
+| Sample | Label | Upper | Lower |  N | P | K |
 | --- | --- | --- | --- | --- | --- | --- | 
 | uae438 | O | 0 | 10 |  0.3 | 0.01 | 0.01 |
 | uae438 | A | 10 | 30  | 0.1 | 0.01 | 0.01 |
