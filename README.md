@@ -2,7 +2,7 @@
 
 Observation data on soil samples is typically captured accoring to Observations, Measurements and Samples (OMS) principles. Various encoding conventions exist to store or exchange such observation data. In this repository we explore a number of these conventions. Including sample code, data and tools.
 
-Soil data models such as [ISO28258:2013](https://www.iso.org/standard/44595.html) and [INSPIRE Soil](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) are based on the OMS datamodel.
+Soil data models such as [ISO28258:2013](https://www.iso.org/standard/44595.html), [FAO-GLOSIS](https://github.com/FAO-SID/SIS-dev/blob/main/sis-database/Entity_Relationship_Diagram.png) and [INSPIRE Soil](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) are based on the OMS datamodel. General aspects of OMS are covered in a [dedicated common topic](https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/COMMON).
 
 The encodings explored are: 
 
@@ -14,7 +14,7 @@ The encodings explored are:
 
 ## Background
 
-The [Observations Measurements and Samples](https://www.ogc.org/standards/om/) (previously `observations & measurements`) working group of the Open Geospatial Consortium has a long history of interoperability of (sensor) observation data. Over time the group has prepared various editions of the OMS UML model. A model to exchange interoperable observation data. Soil data models such as [ISO28258:2013](https://www.iso.org/standard/44595.html) and [INSPIRE Soil](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) are based on the OMS datamodel.
+The [Observations Measurements and Samples](https://www.ogc.org/standards/om/) (previously `observations & measurements`) working group of the Open Geospatial Consortium has a long history of interoperability of (sensor) observation data. Over time the group has prepared various editions of the OMS UML model. A model to exchange interoperable observation data. 
 
 Adopting one of the models for your (research) data has three benefits.
 
@@ -22,6 +22,7 @@ Adopting one of the models for your (research) data has three benefits.
 - When you encode the above information in standardised ways, other users (humans and machines) can easily locate and understand the information
 - Various software tools are available which support workflows on standardised observation data, such as conversion tools, validation tools, visualisation tools. So you don't need to write custom software or data models.
 
+[Read more about OMS principles](./COMMON)
 
 ## Which data models
 
