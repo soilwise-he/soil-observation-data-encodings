@@ -6,11 +6,12 @@ Soil data models such as [ISO28258:2013](https://www.iso.org/standard/44595.html
 
 The encodings explored are: 
 
+- [Simple CSV](#simple-csv)
+- [Annotated tabular data (CSVW)](#annotated-tabular-data)
 - [OMS as GML](#oms-as-gml)
 - [SensorThings API](#sensor-things-api-sta)
 - [Relational databases](#relational-databases)
 - [Semantic web](#semantic-web)
-- [Annotated tabular data (CSVW)](#annotated-tabular-data)
 
 ## Background
 
@@ -28,6 +29,29 @@ Adopting one of the models for your (research) data has three benefits.
 
 In the SoilWise project we're exploring the following data encodings to capture soil observation data.
 
+### Simple CSV
+
+Simple CSV is the most basic approach, where providers are suggested to populate a pre configured Excel template with their data, provide relevant metadata and 
+run the excel sheet through a validation and conversion utility. The results of this effort can be published in any of SOSA RDF, INSPIRE GPKG, INSPIRE GML or SensorThingsAPI. 
+
+The Simple CSV approach is an interesting starting point to understand the OMS conventions. The template illustrates the aspects involved in capturing data about an observation 
+on a soil profile or measurement on a prepared soil sample.
+
+[Read more](./SimpleCSV/)
+
+### Annotated tabular data
+
+In the soil science domain it is quite common to share soil observation data in a tabular format (Excel, CSV, DBF). Where samples are listed as rows and observed properties as columns. Column contents are further explained in a readme file or report. Various initiatives exist to standardise the syntax of these readme documents, so also machines can parse this information. We are aware of the following initiatives:
+
+- [CSV-W](./CSVW/) a json-ld alike initiative to annotate CSV files (as rdf)
+- [TableSchema](./CSVW/README.md#okfn-datapackage) of the DataPackage inititative (OKFN Frictionless data).
+- [ISO19110:2016](./CSVW/README.md#iso19110--iso19115) which can be embedded in a ISO19115 document
+
+In [CSVW](./CSVW/) we're exploring a [CSV-W approach](https://csvw.org/) to annotate tabular data, to make it  interoperable. The above Simple CSV approach internally uses this technology.
+
+[Read more](./CSVW/)
+
+
 ### OMS as GML
 
 Traditionally data following the UML based models are exchanged via a GML/XML encoding. The OGC [Web Feature Service (WFS)](https://www.ogc.org/standards/wfs) protocol is typically used to exchange such GML documents. Because the Soil data model builds on OMS, also the Senser Observation Service (SOS) protocol can be used to exchange soil observation data.
@@ -35,6 +59,8 @@ Traditionally data following the UML based models are exchanged via a GML/XML en
 On the web various datasets are available in this encoding. For example via the [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/).
 
 The [Hale Desktop](https://github.com/halestudio/hale) software is an interesting utility to create or consume these GML documents.
+
+The CSVW approach mentioned above, is able to serialize a dataset in this INSPIRE GML format.
 
 Over the years challenges have been identified with this encoding, such as complexity of the GML syntax, large file sizes, limited support in common software tools. Newer encodings are explored below to address these challenges.
 
@@ -70,16 +96,4 @@ Other relevant ontologies in this domain are [iMash](https://archive.researchdat
 [Read more](./RDF/)
 
 
-### Annotated tabular data
 
-In the soil science domain it is quite common to share soil observation data in a tabular format (Excel, CSV, DBF). Where samples are listed as rows and observed properties as columns. Column contents are further explained in a readme file or report. Various initiatives exist to standardise the syntax of these readme documents, so also machines can parse this information. We are aware of the following initiatives:
-
-- [CSV-W](./CSVW/) a json-ld alike initiative to annotate CSV files (as rdf)
-- [TableSchema](./CSVW/README.md#okfn-datapackage) of the DataPackage inititative (OKFN Frictionless data).
-- [ISO19110:2016](./CSVW/README.md#iso19110--iso19115) which can be embedded in a ISO19115 document
-
-In [CSVW](./CSVW/) we're exploring a [CSV-W approach](https://csvw.org/) to annotate tabular data, to make it  interoperable. 
-
-[Read more](./CSVW/)
-
-Different CSV formats are utilized for different data collection concerns. When collecting data in the field, determining individual attributes, long table format is useful, with an Observable Property per row. When reporting data from laboratories or historic databases, wide format, with an Observable Property per column is often useful.
