@@ -1,0 +1,218 @@
+mcf:
+  version: '2.0'
+metadata:
+  identifier: 147b1b33-7e6c-4f1f-b750-bddac2616807
+  language: en
+  charset: utf8
+  hierarchylevel: dataset
+  dates:
+    creation: '2026-05-26'
+spatial:
+  datatype: textTable
+  geomtype: point
+identification:
+  title: laos_soil_bulk_density_attapeu_khammouane_2024-2025_v1.csv
+  abstract: No description available.
+  url: laos_soil_bulk_density_attapeu_khammouane_2024-2025_v1.csv
+  status: ''
+  rights: ''
+  extents:
+    spatial:
+    - bbox:
+      - 105.15932
+      - 14.643168
+      - 106.63576
+      - 17.588679
+      crs: 4326
+    temporal:
+    - begin: '2024-01-01T00:00:00'
+      end: '2025-11-01T00:00:00'
+content_info:
+  type: feature_catalogue
+  attributes:
+  - name: sample_ID
+    informationRole: sosa:FeatureOfInterest
+    title:
+      en: sample_ID
+    abstract:
+      en: Unique identifier assigned to each soil sample, constructed from various
+        elements to ensure traceability.
+    type: string
+  - name: sample_name
+    title:
+      en: field sample
+    abstract:
+      en: Unique identifier assigned to each soil sample, combining field number,
+        replicate number, depth interval, and location.
+    usedProcedure: 'null'
+    type: string
+    url: https://data.geoscience.earth/ncl/ISO11074v2025/3.167
+  - name: ID_field
+    informationRole: sosa:FeatureOfInterest
+    title:
+      en: identifier
+    abstract:
+      en: Identifier representing the specific field from which the soil sample was
+        collected.
+    usedProcedure: 'null'
+    type: string
+    url: schema:identifier
+  - name: ID_profile
+    informationRole: sosa:FeatureOfInterest
+    title:
+      en: identifier
+    abstract:
+      en: Identifier indicating the within-field replicate number for the soil sample.
+    usedProcedure: 'null'
+    type: string
+    url: schema:identifier
+  - name: ID_depth
+    informationRole: sosa:FeatureOfInterest
+    title:
+      en: ID_depth
+    abstract:
+      en: Identifier denoting the depth interval from which the soil sample was taken,
+        with 'A' for 0–5 cm and 'B' for 15–20 cm.
+    usedProcedure: 'null'
+    type: string
+    url: schema:identifier
+  - name: ID_location
+    informationRole: sosa:FeatureOfInterest
+    title:
+      en: identifier
+    abstract:
+      en: Identifier representing the administrative location of the sample, where
+        'ATP' corresponds to Attapeu and 'KHA' corresponds to Khammouane.
+    usedProcedure: 'null'
+    type: string
+    url: schema:identifier
+  - name: depth
+    informationRole: sosa:observedProperty
+    title:
+      en: soil depth
+    abstract:
+      en: Soil depth interval from the soil surface over which the soil sample was
+        collected, measured in centimeters.
+    usedProcedure: 'null'
+    type: string
+    units: http://qudt.org/vocab/unit/CentiM
+    url: http://w3id.org/glosis/model/common/soilDepthProperty
+  - name: landuse
+    informationRole: ssn:Property
+    title:
+      en: landuse
+    abstract:
+      en: Categorical variable indicating the land-use type under which the soil sample
+        was collected.
+    type: string
+  - name: volum_cylinder_cm3
+    informationRole: sosa:observedProperty
+    title:
+      en: sample volume
+    abstract:
+      en: Volume of the soil sampling cylinder used to collect an undisturbed soil
+        sample for bulk density determination, measured in cubic centimeters.
+    usedProcedure: 'null'
+    type: integer
+    units: http://qudt.org/vocab/unit/CentiM3
+    url: https://data.geoscience.earth/ncl/ISO11074v2025/3.409
+  - name: wet_mass_soil_g
+    informationRole: sosa:observedProperty
+    title:
+      en: soil water content
+    abstract:
+      en: Mass of the soil sample immediately after collection, including water content,
+        measured in grams.
+    usedProcedure: ENVO – soil sample mass
+    type: number
+    units: http://qudt.org/vocab/unit/GM
+    url: http://aims.fao.org/aos/agrovoc/c_7208
+  - name: dry_mass_soil_g
+    informationRole: sosa:observedProperty
+    title:
+      en: soil sample
+    abstract:
+      en: Mass of the soil sample after oven-drying at 105 °C until constant weight,
+        representing the dry mass of soil, measured in grams.
+    usedProcedure: ENVO – soil sample mass
+    type: number
+    units: http://qudt.org/vocab/unit/GM
+    url: http://opendata.inrae.fr/thesaurusINRAE/c_17874
+  - name: bulk_density
+    informationRole: sosa:observedProperty
+    title:
+      en: bulk density
+    abstract:
+      en: Dry mass of soil per unit volume, including pore space, measured using a
+        soil sampling cylinder and expressed in grams per cubic centimeter.
+    usedProcedure: ENVO – soil bulk density (ENVO:09200004)
+    type: number
+    units: http://qudt.org/vocab/unit/GM-PER-CentiM3
+    url: https://data.geoscience.earth/ncl/ISO11074v2025/3.62
+  - name: water_content
+    informationRole: sosa:observedProperty
+    title:
+      en: soil water content
+    abstract:
+      en: Mass of water in the soil per unit dry mass of soil, determined by oven-drying
+        the soil, expressed as a percentage (w/w).
+    usedProcedure: ENVO – soil gravimetric water content
+    type: integer
+    units: http://qudt.org/vocab/unit/PERCENT
+    url: http://aims.fao.org/aos/agrovoc/c_7208
+  - name: collection_date
+    informationRole: sosa:phenomenonTime
+    title:
+      en: dateSent
+    abstract:
+      en: Date when the soil sampling was conducted, formatted as YYYY-MM.
+    usedProcedure: OBOE – sampling event
+    type: string
+    url: schema:dateSent
+  - name: latitude
+    informationRole: geo:Feature
+    title:
+      en: latitude
+    abstract:
+      en: Latitude of the geographic location where the soil sample was collected,
+        expressed in decimal degrees (WGS84).
+    type: number
+    units: http://qudt.org/vocab/unit/DEG
+    url: schema:latitude
+  - name: longitude
+    informationRole: geo:Feature
+    title:
+      en: longitude
+    abstract:
+      en: Longitude of the geographic location where the soil sample was collected,
+        expressed in decimal degrees (WGS84).
+    type: number
+    units: http://qudt.org/vocab/unit/DEG
+    url: schema:longitude
+  - name: elevation
+    informationRole: geo:Feature
+    title:
+      en: elevation
+    abstract:
+      en: Elevation of the location where the soil sample was collected, measured
+        relative to sea level in meters.
+    usedProcedure: ENVO – elevation (ENVO:01000322)
+    type: integer
+    units: http://qudt.org/vocab/unit/M
+    url: schema:elevation
+  - name: location
+    informationRole: ssn:Property
+    title:
+      en: location
+    abstract:
+      en: Administrative province where the soil sample was collected.
+    type: string
+  - name: country
+    informationRole: ssn:Property
+    title:
+      en: Country
+    abstract:
+      en: Country in which the soil sample was collected, represented by the ISO country
+        code for Laos (LA).
+    type: string
+    url: schema:Country
