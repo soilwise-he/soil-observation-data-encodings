@@ -2,46 +2,100 @@
   "@context": [
     "http://www.w3.org/ns/csvw",
     {"sosa": "http://www.w3.org/ns/sosa/", 
-     "qudt": "http://qudt.org/1.1/schema/qudt#"}
+     "qudt": "http://qudt.org/1.1/schema/qudt#",
+     "schema": "https://schema.org/",
+     "dcterms": "http://purl.org/dc/terms/"}
   ],
   "tables": [
     {
-      "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/refs/heads/main/CSVW/examples/example3/obs.csv",
+      "url": "http://localhost:8080/example3/obs.csv",
       "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}",
       "tableSchema": {
         "columns": [
           {
-            "titles": "Id",
+            "titles": "SAMPLE",
             "name": "SAMPLE",
             "datatype": "string",
             "propertyUrl": "dcterms:identifier"
           },
+          {
+            "titles": "LAT",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/geo", 
+            "propertyUrl": "schema:latitude",
+            "datatype": "number"
+          },
+          {
+            "titles": "LON",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/geo", 
+            "propertyUrl": "schema:longitude",
+            "datatype": "number"
+          },
+          {
+            "titles": "TOP",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}", 
+            "propertyUrl": "http://w3id.org/glosis/model/iso28258/2013/ProfileElement.upperDepth",
+            "datatype": "number"
+          },
+          {
+            "titles": "BOTTOM",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}", 
+            "propertyUrl": "http://w3id.org/glosis/model/iso28258/2013/ProfileElement.lowerDepth",
+            "datatype": "number"
+          },
            {
-            "name": "N",
+            "titles": "N",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N/QV", 
             "propertyUrl": "qudt:value",
             "datatype": "number"
           },
            {
-            "name": "P",
+            "titles": "P",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P/QV", 
             "propertyUrl": "qudt:value",
             "datatype": "number"
           },
           {
-            "name": "K",
+            "titles": "K",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K/QV", 
             "propertyUrl": "qudt:value",
             "datatype": "number"
           },
-
+          {
+            "titles": "TIME",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N", 
+            "propertyUrl": "sosa:resultTime",
+            "datatype": "date"
+          },
+          {
+            "titles": "TIME",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P",
+            "propertyUrl": "sosa:resultTime",
+            "datatype": "date"
+          },
+          {
+            "titles": "TIME",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K",
+            "propertyUrl": "sosa:resultTime",
+            "datatype": "date"
+          },
           {
             "virtual": true,
             "propertyUrl": "rdf:type",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}",
             "valueUrl": "http://w3id.org/glosis/model/iso28258/2013/Layer"
           },
-
+          {
+            "virtual": true,
+            "propertyUrl": "rdf:type",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/geo",
+            "valueUrl": "schema:GeoCoordinates"
+          },
+          {
+            "virtual": true,
+            "propertyUrl": "schema:geo",
+            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}",
+            "valueUrl": "https://soilwise.example.com/example3/{SAMPLE}/geo"
+          },
           {
             "virtual": true,
             "propertyUrl": "sosa:hasFeatureOfInterest",
@@ -68,36 +122,15 @@
           },
           {
             "virtual": true,
-            "propertyUrl": "sosa:resultTime",
-            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N",
-            "default": "2025-03-01T00:00:00Z",
-            "datatype": "dateTime"
-          },
-          {
-            "virtual": true,
             "propertyUrl": "rdf:type",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P",
             "valueUrl": "sosa:Observation"
           },
           {
             "virtual": true,
-            "propertyUrl": "sosa:resultTime",
-            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P",
-            "default": "2025-03-01T00:00:00Z",
-            "datatype": "dateTime"
-          },
-          {
-            "virtual": true,
             "propertyUrl": "rdf:type",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K",
             "valueUrl": "sosa:Observation"
-          },
-          {
-            "virtual": true,
-            "propertyUrl": "sosa:resultTime",
-            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K",
-            "default": "2025-03-01T00:00:00Z",
-            "datatype": "dateTime"
           },
           {
             "virtual": true,
