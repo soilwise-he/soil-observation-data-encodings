@@ -49,9 +49,10 @@ erDiagram
 
 ## Test the template on your data
 
-- Download the [sample Excel sheet](https://github.com/soilwise-he/soil-observation-data-encodings/raw/refs/heads/main/SimpleCSV/SoilTemplate.xlsx) using the template.
+- Download the [sample Excel sheet](https://github.com/soilwise-he/soil-observation-data-encodings/raw/refs/heads/main/SimpleCSV/SoilTemplate.xlsx).
 - Copy your observation data to the `data` tab.
 - Copy your samples data to the `samples` tab (make sure the samples are properly referenced from the data tab).
 - For each observed property column in the data tab, add a line to the ObservableProperties tab, and complete the field metadata. 
 - Check vocabularies such as the [soilvoc](https://w3id.org/eusoilvoc) if relevant uri's are available for the properties and procedures you have used.
-- Upload your excel into the annotator tool to validate the excel and download the dataset in alternate formats.
+- Export each of the tabs to a CSV file and upload them to Zenodo or upload your excel into the Soilwise annotator tool to validate the excel and download
+  the dataset in alternate formats, before uploading to Zenodo.
