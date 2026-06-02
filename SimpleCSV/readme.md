@@ -1,10 +1,15 @@
 # Simple CSV
-As a very simple approach to providing soil data, we describe an approach where all data is stored within a set of CSV files or a single Excel sheet with tabs:
+A simple approach to providing soil data, describe an approach where all data is stored within a set of linked CSV files or an Excel sheet with tabs.
 
-- Metadata: general metadata applicable to the entire dataset. Includes concepts like title, author, license and CRS for spatial data.
-- Observable Properties: list of all column headers describing an observed property. Includes methodology, Unit of Measurement, sample preparation. 
-- Samples: description of the samples on which observations are made, samples refer to the features of interest (site, plot, profile, layer/horizon, sample).
-- Data: the values in columns describe Observable Properties, rows describe Samples or Sites where observations are made on.
+Notice that this approach is valid for a single campaign only. Only a single method and unit can be used for all observations in a single column. 
+If you need to capture data from different campaigns, using different units or procedures, then use one of the other suggested approaches (or split the data per campaign).
+
+The following tables are proposed:
+
+- Metadata: general metadata applicable to the entire dataset. Includes concepts like title, author, license.
+- Observable Properties: list of all observed properties (which are the columns in the Data table). For each property you can provide the used Methodology and Unit of Measurement. 
+- Samples: description of the samples or locations on which observations are made, samples refer a concept for which the sample is representative (site, profile, layer/horizon).
+- Data: the actual observation data, columns are the observed properties, rows the samples.
 
 ## Diagram
 
@@ -43,9 +48,6 @@ erDiagram
 ```
 
 ## Test the template on your data
-
-Notice that this approach is valid for a single campaign only, using the same method and unit for all observations in a single column. 
-If you need to capture data from different campaigns, using different units or procedures, use one of the other suggested approaches (or split the data per campaign).
 
 - Download the [sample Excel sheet](https://github.com/soilwise-he/soil-observation-data-encodings/raw/refs/heads/main/SimpleCSV/SoilTemplate.xlsx) using the template.
 - Copy your observation data to the `data` tab.
