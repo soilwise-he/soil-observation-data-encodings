@@ -1,8 +1,8 @@
 # Simple CSV
-A simple approach to providing soil data, describe an approach where all data is stored within a set of linked CSV files or an Excel sheet with tabs.
+A simple approach to providing soil data, where all data is stored within a set of linked CSV files or an Excel sheet with tabs.
 
 Notice that this approach is valid for a single campaign only. Only a single method and unit can be used for all observations in a single column. 
-If you need to capture data from different campaigns, using different units or procedures, then use one of the other suggested approaches (or split the data per campaign).
+If you need to capture data from different campaigns, using different units or procedures, consider to split the data per campaign.
 
 The following tables are proposed:
 
