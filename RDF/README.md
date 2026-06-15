@@ -11,12 +11,13 @@ They also support consistent representation of units of measure, often aligned w
 In addition, SKOS vocabularies can describe soil observation procedures, including sampling protocols, laboratory methods, and sensor calibration techniques.
 Together, SOSA/SSN and SKOS provide a robust semantic infrastructure for interoperable, machine-readable soil observation data within linked data ecosystems.
 
-Alternatively [schema.org/Observation](https://schema.org/Observation) offers similar capabilities in the schema.org cmmuni.
+Alternatively [schema.org/Observation](https://schema.org/Observation) offers similar capabilities in the schema.org community.
 
 ## SoilWise efforts
 
 - Semantic web formats can be created using the [CSV-W](../CSVW/) approach.
-- the [soil vocabulary](https://w3id.eusoilvoc) lists soil properties and procedures and their relations.
+- The Soilwise csvw api is able to select common observation aspects from a SOSA/SSN based knowledge graph and persist it in the Soilwise GeoPackage format. 
+- the [soil vocabulary](https://w3id.org/eusoilvoc) lists soil properties and procedures and their relations.
 
 ## Related works
 
