@@ -1,0 +1,37 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": { "@id": "https://w3id.org/ro/crate/1.1" },
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "description": "a nice description",
+      "license": "CC-BY-4.0",
+      "datePublished": "2026-05-05",
+      "name": "Research Dataset with Tabular Data",
+      "hasPart": [
+        { "@id": "obs.csv" },
+        { "@id": "obs.csv-metadata.json" }
+      ]
+    },
+    {
+      "@id": "obs.csv",
+      "@type": "File",
+      "name": "Primary experimental data",
+      "encodingFormat": "text/csv",
+      "description": "Raw measurements collected during the June 2026 campaign."
+    },
+    {
+      "@id": "obs.csv-metadata.json",
+      "@type": ["File", "Dataset"], 
+      "name": "CSVW Schema for obs.csv",
+      "encodingFormat": "application/json",
+      "description": "Describes the tabular structure and column mappings for data.csv"
+    }
+  ]
+}

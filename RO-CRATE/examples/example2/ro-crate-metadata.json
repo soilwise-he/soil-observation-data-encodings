@@ -1,0 +1,97 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+      {
+      "@vocab": "https://schema.org/",
+      "csvw": "http://www.w3.org/ns/csvw",
+      "qudt": "http://qudt.org/schema/qudt/",
+      "unit": "http://qudt.org/vocab/unit/",
+      "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": { "@id": "https://w3id.org/ro/crate/1.1" },
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Soil Nutrient Observation Dataset 2026",
+      "description": "a nice description",
+      "license": "CC-BY-4.0",
+      "datePublished": "2026-05-05",
+      "hasPart": [{ "@id": "obs.csv" }],
+      "variableMeasured": ["Soil Nitrogen", "Soil Phosphorus", "Soil Potassium", "Latitude", "Longitude"]
+    },
+    {
+      "@id": "obs.csv",
+      "@type": "File",
+      "name": "obs.csv",
+      "encodingFormat": "text/csv",
+      "csvw:tableSchema": { "@id": "#tableSchema" }
+    },
+    {
+      "@id": "#tableSchema",
+      "@type": "csvw:Schema",
+      "csvw:column": [
+        { "@id": "#col_lat" },
+        { "@id": "#col_lon" },
+        { "@id": "#col_N" },
+        { "@id": "#col_P" },
+        { "@id": "#col_K" }
+      ]
+    },
+    {
+      "@id": "#col_lat",
+      "@type": "csvw:Column",
+      "csvw:name": "lat",
+      "csvw:titles": "Latitude",
+      "csvw:propertyUrl": "geo:lat",
+      "description": "WGS84 decimal latitude of the soil core extraction point"
+    },
+    {
+      "@id": "#col_lon",
+      "@type": "csvw:Column",
+      "csvw:name": "lon",
+      "csvw:titles": "Longitude",
+      "csvw:propertyUrl": "geo:lon",
+      "description": "WGS84 decimal longitude of the soil core extraction point"
+    },
+    {
+      "@id": "#col_N",
+      "@type": "csvw:Column",
+      "csvw:name": "N",
+      "csvw:titles": "Total Nitrogen",
+      "csvw:propertyUrl": "chmo:0002511",
+      "valueUrl": "agro:00000388",
+      "unitText": "mg/kg",
+      "qudt:hasUnit": { "@id": "unit:MilliGM-PER-KG" },
+      "measurementMethod": { "@id": "http://obolibrary.org_0001550" }
+    },
+    {
+      "@id": "#col_P",
+      "@type": "csvw:Column",
+      "csvw:name": "P",
+      "csvw:titles": "Extractable Phosphorus",
+      "csvw:propertyUrl": "chmo:0002521",
+      "valueUrl": "agro:00000390",
+      "unitText": "mg/kg",
+      "qudt:hasUnit": { "@id": "unit:MilliGM-PER-KG" },
+      "measurementMethod": { "@id": "http://w3id.org/glosis/model/procedure/extractableElementsProcedure-Extr_nahco3-olsen-dabin" }
+    },
+    {
+      "@id": "#col_K",
+      "@type": "csvw:Column",
+      "csvw:name": "K",
+      "csvw:titles": "Exchangeable Potassium",
+      "csvw:propertyUrl": "chmo:0002498",
+      "valueUrl": "agro:00000392",
+      "unitText": "ppm",
+      "qudt:hasUnit": { "@id": "unit:PPM" },
+      "measurementMethod": { "@id": "http://obolibrary.org_0001091" }
+    }
+  ]
+}

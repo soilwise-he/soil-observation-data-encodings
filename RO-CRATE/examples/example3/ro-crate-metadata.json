@@ -1,0 +1,51 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": { "@id": "https://w3id.org/ro/crate/1.1" },
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "description": "a nice description",
+      "license": "CC-BY-4.0",
+      "datePublished": "2026-05-05",
+      "hasPart": [
+        { "@id": "studies/study_01.csv" }
+      ]
+    },
+    {
+      "@id": "studies/study_01.csv",
+      "@type": "File",
+      "name": "Study 01 Data Sheet",
+      "description": "De tabel met alle experimentele metadata, inclusief monsters, behandelingen en kweeklocaties.",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "#sampling-process-01",
+      "@type": "LabProcess",
+      "name": "Monsterneming conform data sheet",
+      "description": "Fysieke monsterneming waarbij de omgevingsvariabelen (zoals locatie) zijn vastgelegd in study_01.csv.",
+      "executesLabProtocol": { "@id": "#sampling-protocol" },
+      "object": { "@id": "studies/study_01.csv#column=Source%20Name" },
+      "result": { "@id": "studies/study_01.csv#column=Sample%20Name" }
+    },
+    {
+      "@id": "studies/study_01.csv#sample_root_N_low_01",
+      "@type": "Sample",
+      "name": "Wortelmonster - Laag stikstof - Replica 1",
+      "description": "Dit specifieke monster mapt naar rij 2 in het data sheet.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Sampling Location Source",
+          "value": "Gedefinieerd in study_01.csv onder kolom 'Characteristics[Location]'",
+          "valueReference": { "@id": "studies/study_01.csv" }
+        }
+      ]
+    }
+  ]
+}
