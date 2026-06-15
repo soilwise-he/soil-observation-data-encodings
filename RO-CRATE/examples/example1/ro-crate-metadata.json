@@ -29,6 +29,8 @@
     {
       "@id": "obs.csv-metadata.json",
       "@type": ["File", "Dataset"], 
+      "mainEntity": { "@id": "obs.csv" },
+      "conformsTo": { "@id": "http://www.w3.org/ns/csvw" },
       "name": "CSVW Schema for obs.csv",
       "encodingFormat": "application/json",
       "description": "Describes the tabular structure and column mappings for data.csv"
