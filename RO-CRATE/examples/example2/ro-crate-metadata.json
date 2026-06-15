@@ -3,8 +3,11 @@
     "https://w3id.org/ro/crate/1.1/context",
       {
       "@vocab": "https://schema.org/",
+      "sosa": "http://www.w3.org/ns/sosa/",
       "csvw": "http://www.w3.org/ns/csvw",
       "qudt": "http://qudt.org/schema/qudt/",
+      "chmo": "http://purl.obolibrary.org/obo/CHMO_",
+      "agro": "http://purl.obolibrary.org/obo/AGRO_",
       "unit": "http://qudt.org/vocab/unit/",
       "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
     }
@@ -65,8 +68,8 @@
       "@type": "csvw:Column",
       "csvw:name": "N",
       "csvw:titles": "Total Nitrogen",
-      "csvw:propertyUrl": "chmo:0002511",
-      "valueUrl": "agro:00000388",
+      "csvw:propertyUrl": "sosa:observedProperty",
+      "csvw:valueUrl": "agro:00000388",
       "unitText": "mg/kg",
       "qudt:hasUnit": { "@id": "unit:MilliGM-PER-KG" },
       "measurementTechnique": { "@id": "http://obolibrary.org_0001550" }
@@ -76,8 +79,8 @@
       "@type": "csvw:Column",
       "csvw:name": "P",
       "csvw:titles": "Extractable Phosphorus",
-      "csvw:propertyUrl": "chmo:0002521",
-      "valueUrl": "agro:00000390",
+      "csvw:propertyUrl": "sosa:observedProperty",
+      "csvw:valueUrl": "agro:00000390",
       "unitText": "mg/kg",
       "qudt:hasUnit": { "@id": "unit:MilliGM-PER-KG" },
       "measurementTechnique": { "@id": "http://w3id.org/glosis/model/procedure/extractableElementsProcedure-Extr_nahco3-olsen-dabin" }
@@ -87,8 +90,8 @@
       "@type": "csvw:Column",
       "csvw:name": "K",
       "csvw:titles": "Exchangeable Potassium",
-      "csvw:propertyUrl": "chmo:0002498",
-      "valueUrl": "agro:00000392",
+      "csvw:propertyUrl": "sosa:observedProperty",
+      "csvw:valueUrl": "agro:00000392",
       "unitText": "ppm",
       "qudt:hasUnit": { "@id": "unit:PPM" },
       "measurementTechnique": { "@id": "http://obolibrary.org_0001091" }

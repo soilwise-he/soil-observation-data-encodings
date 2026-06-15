@@ -1,5 +1,10 @@
 {
-  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@context": ["https://w3id.org/ro/crate/1.1/context",
+  {
+    "executesLabProtocol": "https://bioschemas.org",
+    "LabProcess": "https://bioschemas.org",
+    "LabProtocol": "https://bioschemas.org"
+  }],
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
@@ -10,6 +15,7 @@
     {
       "@id": "./",
       "@type": "Dataset",
+      "name": "hello world",
       "description": "a nice description",
       "license": "CC-BY-4.0",
       "datePublished": "2026-05-05",
@@ -34,18 +40,17 @@
       "result": { "@id": "studies/study_01.csv#column=Sample%20Name" }
     },
     {
-      "@id": "studies/study_01.csv#sample_root_N_low_01",
+      "@id": "#sample_root_N_low_01",
       "@type": "Sample",
       "name": "Wortelmonster - Laag stikstof - Replica 1",
       "description": "Dit specifieke monster mapt naar rij 2 in het data sheet.",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Sampling Location Source",
-          "value": "Gedefinieerd in study_01.csv onder kolom 'Characteristics[Location]'",
-          "valueReference": { "@id": "studies/study_01.csv" }
-        }
-      ]
+      "additionalProperty": [{"@id": "#sample-prop-N-low"}]
+    },
+    {
+        "@id": "#sample-prop-N-low",
+        "@type": "PropertyValue",
+        "name": "Sampling Property Value",
+        "value": ""
     }
   ]
 }
