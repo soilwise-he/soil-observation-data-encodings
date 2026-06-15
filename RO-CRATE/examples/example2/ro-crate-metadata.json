@@ -69,7 +69,7 @@
       "valueUrl": "agro:00000388",
       "unitText": "mg/kg",
       "qudt:hasUnit": { "@id": "unit:MilliGM-PER-KG" },
-      "measurementMethod": { "@id": "http://obolibrary.org_0001550" }
+      "measurementTechnique": { "@id": "http://obolibrary.org_0001550" }
     },
     {
       "@id": "#col_P",
@@ -80,7 +80,7 @@
       "valueUrl": "agro:00000390",
       "unitText": "mg/kg",
       "qudt:hasUnit": { "@id": "unit:MilliGM-PER-KG" },
-      "measurementMethod": { "@id": "http://w3id.org/glosis/model/procedure/extractableElementsProcedure-Extr_nahco3-olsen-dabin" }
+      "measurementTechnique": { "@id": "http://w3id.org/glosis/model/procedure/extractableElementsProcedure-Extr_nahco3-olsen-dabin" }
     },
     {
       "@id": "#col_K",
@@ -91,7 +91,7 @@
       "valueUrl": "agro:00000392",
       "unitText": "ppm",
       "qudt:hasUnit": { "@id": "unit:PPM" },
-      "measurementMethod": { "@id": "http://obolibrary.org_0001091" }
+      "measurementTechnique": { "@id": "http://obolibrary.org_0001091" }
     }
   ]
 }
