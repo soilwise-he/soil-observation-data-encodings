@@ -1,0 +1,77 @@
+{
+  "@context": "https://w3id.org",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": { "@id": "https://w3id.org" },
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Laboratory Chemical Analysis Dataset",
+      "description": "Each row represents a unique sample; columns represent observed chemical substances.",
+      "hasPart": [
+        { "@id": "lab_results.csv" }
+      ]
+    },
+    {
+      "@id": "lab_results.csv",
+      "@type": ["File", "Dataset"],
+      "name": "lab_results.csv",
+      "encodingFormat": "text/csv",
+      "description": "CSV containing chemical analysis results per sample.",
+      "variableMeasured": [
+        { "@id": "#column_ethanol" },
+        { "@id": "#column_glucose" }
+      ]
+    },
+    {
+      "@id": "#column_ethanol",
+      "@type": "PropertyValueSpecification",
+      "name": "Ethanol Concentration",
+      "description": "Measures the mass concentration of ethanol in the sample.",
+      "valueRequired": "http://obolibrary.org",
+      "unitCode": { "@id": "https://qudt.org" },
+      "measurementTechnique": { "@id": "#procedure_gas_chromatography" }
+    },
+    {
+      "@id": "#column_glucose",
+      "@type": "PropertyValueSpecification",
+      "name": "Glucose Level",
+      "description": "Measures enzymatic glucose concentration.",
+      "valueRequired": "http://obolibrary.org",
+      "unitCode": { "@id": "https://qudt.org" },
+      "measurementTechnique": { "@id": "#procedure_enzymatic_assay" }
+    },
+    {
+      "@id": "#procedure_gas_chromatography",
+      "@type": "CreateAction",
+      "name": "Gas Chromatography-Mass Spectrometry (GC-MS)",
+      "description": "Standard operating procedure SOP-CHEM-042 for volatile compound separation and quantification.",
+      "instrument": {
+        "@type": "Thing",
+        "name": "Agilent 7890 GC System"
+      }
+    },
+    {
+      "@id": "#procedure_enzymatic_assay",
+      "@type": "CreateAction",
+      "name": "Hexokinase Enzymatic Assay",
+      "description": "Spectrophotometric determination of glucose at 340 nm using standard SOP-BIO-101."
+    },
+    {
+      "@id": "https://qudt.org",
+      "@type": "DefinedTerm",
+      "name": "mg/dL",
+      "alternateName": "milligram per deciliter"
+    },
+    {
+      "@id": "https://qudt.org",
+      "@type": "DefinedTerm",
+      "name": "mol/L",
+      "alternateName": "moles per liter"
+    }
+  ]
+}
