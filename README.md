@@ -8,6 +8,7 @@ The encodings explored are:
 
 - [Simple CSV](#simple-csv)
 - [Annotated tabular data (CSVW)](#annotated-tabular-data)
+- [RO-Crate](#ro-crate---isa-profile)
 - [OMS as GML](#oms-as-gml)
 - [SensorThings API](#sensor-things-api-sta)
 - [Relational databases](#relational-databases)
@@ -70,7 +71,7 @@ Relationships between soil samples, derived datasets, workflows, and publication
 Using the ISA RO-Crate Profile can improve interoperability between soil databases, observatories, and data repositories while supporting FAIR data stewardship.
 This makes it a promising approach for describing, exchanging, and reusing soil observational data across research infrastructures and international soil monitoring initiatives.
 
-[Read more](./ro-crate)
+[Read more](./RO-CRATE/)
 
 ### OMS as GML
 
