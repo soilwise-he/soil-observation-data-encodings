@@ -1,12 +1,11 @@
 # ro-crate - ISA/ARC profile
 
-ndfiplant endorses a [ro-crate profile adopting aspects of the ISA/ARC community](https://github.com/nfdi4plants/arc-ro-crate-profile). In iscussion with the LTE community, this profile was suggested as relevant, also to the soil domain.
+ndfiplant endorses a [ro-crate profile adopting aspects of the ISA/ARC community](https://github.com/nfdi4plants/arc-ro-crate-profile). In discussion with the LTE community, this profile was suggested as relevant, also to the soil domain.
 
-ro-crate is an approach to package a data file with metadata, so it becomes machine actionable.
-ro-crate focusses on the context in which a data file is procuded. It links the data file to its project, 
-experiment setup and workflows.
+[Ro-crate](https://www.researchobject.org/ro-crate/specification/1.1/) is an approach to package a data file with complete metadata on the context in which the file is procuded. It links the data file to its project, 
+experiment setup and processing workflows.
 
-the ro-crate can be deposited in Zenodo or in dedicated ro-crate hubs
+The ro-crate can be deposited in Zenodo or in dedicated ro-crate hubs, like [fairdomhub](https://fairdomhub.org/)
 
 The ISA/ARC profile adds labprocesses from the life sciences, using bioschemas.org. Basic principles such as data-referencing are explained in [this webpage](https://arc-rdm.org/details/documentation-principle/)
 
@@ -16,6 +15,9 @@ This repository contains some ongoing examples to study different ro-crate imple
 
 For basic ro-crate creation, use the LDACA [crate-o editor](https://language-research-technology.github.io/crate-o/#/), which allows to select a local folder and start annotating the files present
 
+ro-crates can be validated using [roc-validator](https://pypi.org/project/roc-validator/)
+
+Structure of ro-crate ARC profile
 
 ```mermaid
 graph TD
