@@ -8,7 +8,7 @@ experiment setup and workflows.
 
 the ro-crate can be deposited in Zenodo or in dedicated ro-crate hubs
 
-The ISA/ARC profile adds labprocesses from the life sciences, using bioschemas.org
+The ISA/ARC profile adds labprocesses from the life sciences, using bioschemas.org. Basic principles such as data-referencing are explained in [this webpage](https://arc-rdm.org/details/documentation-principle/)
 
 A nice visualisation of labprocess is available at <https://bioschemas.org/useCases/LabProcess>
 
