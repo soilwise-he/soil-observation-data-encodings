@@ -51,6 +51,26 @@ In [CSVW](./CSVW/) we're exploring a [CSV-W approach](https://csvw.org/) to anno
 
 [Read more](./CSVW/)
 
+### RO-Crate - ISA profile
+
+RO-Crate (Research Object Crate) is a lightweight, machine-readable packaging standard for research data, metadata, workflows, and related digital objects.
+It builds on web standards such as JSON-LD and schema.org to create FAIR (Findable, Accessible, Interoperable, Reusable) research assets.
+An RO-Crate bundles data files together with rich metadata describing their contents, provenance, creators, and relationships.
+The approach is domain-agnostic and has been adopted across multiple scientific disciplines.
+By using linked data principles, RO-Crate enables both human and machine interpretation of research outputs.
+Community-developed profiles extend the core specification for particular research domains and use cases.
+
+The ISA RO-Crate Profile combines RO-Crate with the ISA (Investigation–Study–Assay) metadata framework widely used in life and environmental sciences.
+It provides a structured way to describe research projects, studies, samples, observations, and analytical processes.
+The profile captures experimental design, sampling activities, measured variables, protocols, and data provenance in a standardized format.
+For soil sciences, the ISA profile can represent field campaigns, soil sampling schemes, laboratory analyses, and environmental measurements.
+Individual soil observations can be linked to sampling locations, depths, horizons, dates, instruments, and analytical methods.
+The model supports integration of physical, chemical, biological, and spectroscopic soil measurements within a common metadata framework.
+Relationships between soil samples, derived datasets, workflows, and publications can be explicitly recorded and traced.
+Using the ISA RO-Crate Profile can improve interoperability between soil databases, observatories, and data repositories while supporting FAIR data stewardship.
+This makes it a promising approach for describing, exchanging, and reusing soil observational data across research infrastructures and international soil monitoring initiatives.
+
+[Read more](./ro-crate)
 
 ### OMS as GML
 
