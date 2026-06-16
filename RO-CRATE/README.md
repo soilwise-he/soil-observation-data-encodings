@@ -15,3 +15,11 @@ A nice visualisation of labprocess is available at <https://bioschemas.org/useCa
 This repository contains some ongoing examples to study different ro-crate implementations, their validation and transformation.
 
 For basic ro-crate creation, use the LDACA [crate-o editor](https://language-research-technology.github.io/crate-o/#/), which allows to select a local folder and start annotating the files present
+
+```mermaid
+flowchart TD
+  Sample-->Process
+  Agent-->Process
+  Protocol-->Process
+  Process-->Data
+```
