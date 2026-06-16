@@ -7,7 +7,7 @@ This repository contains some ongoing examples to study different ro-crate imple
 [Ro-crate](https://www.researchobject.org/ro-crate/specification/1.1/) is an approach to package a data file with complete metadata on the context in which the file is procuded. It links the data file to its project, 
 experiment setup and processing workflows.
 
-The ro-crate can be deposited in Zenodo or in dedicated ro-crate hubs, like [fairdomhub](https://fairdomhub.org/)
+The ro-crate can be deposited in Zenodo or in dedicated ro-crate hubs, like [fairdomhub](https://fairdomhub.org/). Datasets published via fairdomhub are ingested by OpenAire.
 
 The ISA/ARC profile adds labprocesses from the life sciences, using bioschemas.org. Basic principles such as data-referencing are explained in [this webpage](https://arc-rdm.org/details/documentation-principle/)
 
