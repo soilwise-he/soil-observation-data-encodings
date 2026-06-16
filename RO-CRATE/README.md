@@ -13,3 +13,5 @@ The ISA/ARC profile adds labprocesses from the life sciences, using bioschemas.o
 A nice visualisation of labprocess is available at <https://bioschemas.org/useCases/LabProcess>
 
 This repository contains some ongoing examples to study different ro-crate implementations, their validation and transformation.
+
+For basic ro-crate creation, use the LDACA [crate-o editor](https://language-research-technology.github.io/crate-o/#/), which allows to select a local folder and start annotating the files present
