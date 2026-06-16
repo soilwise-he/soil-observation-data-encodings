@@ -16,10 +16,44 @@ This repository contains some ongoing examples to study different ro-crate imple
 
 For basic ro-crate creation, use the LDACA [crate-o editor](https://language-research-technology.github.io/crate-o/#/), which allows to select a local folder and start annotating the files present
 
+
 ```mermaid
-flowchart TD
-  Sample-->Process
-  Agent-->Process
-  Protocol-->Process
-  Process-->Data
+graph TD
+
+    ARC[ARC RO-Crate]
+
+    ARC --> INV[Investigation]
+
+    INV --> ST1[Study]
+    INV --> ST2[Study]
+    INV --> WF[Computational Workflow]
+
+    ST1 --> AS1[Assay]
+    ST2 --> AS2[Assay]
+
+    AS1 --> LP1[LabProcess]
+    AS2 --> LP2[LabProcess]
+
+    LP1 --> S1[Samples]
+    LP1 --> D1[Data Files]
+
+    LP2 --> S2[Samples]
+    LP2 --> D2[Data Files]
+
+    WF --> PROTO[LabProtocol]
+    PROTO --> RUN[Workflow Run / LabProcess]
+
+    RUN --> IN[Input Data]
+    RUN --> OUT[Output Data]
+
+    D1 -. used by .-> RUN
+    D2 -. used by .-> RUN
+
+    classDef isa fill:#e1f5fe,stroke:#0277bd;
+    classDef process fill:#fff3e0,stroke:#ef6c00;
+    classDef data fill:#e8f5e9,stroke:#2e7d32;
+
+    class INV,ST1,ST2,AS1,AS2 isa;
+    class LP1,LP2,PROTO,RUN process;
+    class S1,S2,D1,D2,IN,OUT data;
 ```
