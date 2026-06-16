@@ -1,4 +1,4 @@
-# ro-crate - ISA/ARC profile
+# RO-Crate - ISA/ARC profile
 
 ndfiplant endorses a [ro-crate profile adopting aspects of the ISA/ARC community](https://github.com/nfdi4plants/arc-ro-crate-profile). 
 In discussion with the LTE community, this profile was suggested as relevant, also to the soil domain.
@@ -20,12 +20,15 @@ For basic ro-crate creation, use the LDACA [crate-o editor](https://language-res
 ## FAIR data station
 
 For more advanced uses of ARC/ISA profile, use [FAIR datastation](https://fairds.fairbydesign.nl/). Fair data station enables researchers to set up an excel template for their research. 
-It uses existing vocabularies of observable properties and observation procedures to populate the Excel sheet.Researchers then populate the excel sheet with their results and upload it to the FAIR data station again.
-There the file will be validated and observations poperly anootated follwing the ro-crate conventions. The crate can then be downloaded from the data station and deposited in Zenodo/Dataverse.
+It uses existing vocabularies of observable properties and observation procedures to populate the Excel template. Researchers then populate the excel template with their results and upload it to the FAIR data station again.
+There the file will be validated and observations properly annotated following the ro-crate conventions. Data station can convert the crate to RDF or the excel can directyle be deposited in Zenodo/Dataverse. 
+Interesting to invesitgate if also SOSA can be used as a base for the RDF serialisation (currently ro-crate is mainly schema.org/bioschemas.org based).
 
 FAIR datastation uses common [vocabularies from the ENA](https://www.ebi.ac.uk/ena/browser/checklists) including soil, but these vocabularies can be extended in a tailored package.
 
 <img width="1348" height="247" alt="image" src="https://github.com/user-attachments/assets/51852662-2c54-4b89-bbbc-f6fff8f9b3d8" />
+
+At the moment discussion is taking place on a new ISA/ARC version of the profile. The FAIR data station experiences will certainly be integrated in the new profile.
 
 ## validator
 
