@@ -1,6 +1,6 @@
 # ro-crate - ISA/ARC profile
 
-ndfiplant endorses a [ro-crate profile adopting aspects of the ISA/ARC community](https://github.com/nfdi4plants/arc-ro-crate-profile).
+ndfiplant endorses a [ro-crate profile adopting aspects of the ISA/ARC community](https://github.com/nfdi4plants/arc-ro-crate-profile). In iscussion with the LTE community, this profile was suggested as relevant, also to the soil domain.
 
 ro-crate is an approach to package a data file with metadata, so it becomes machine actionable.
 ro-crate focusses on the context in which a data file is procuded. It links the data file to its project, 
