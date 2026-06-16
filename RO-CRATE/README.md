@@ -57,3 +57,34 @@ graph TD
     class LP1,LP2,PROTO,RUN process;
     class S1,S2,D1,D2,IN,OUT data;
 ```
+
+Crate file structure
+
+```mermaid
+graph TD
+
+    ARC["ARC Root"]
+
+    ARC --> INV["isa.investigation.xlsx"]
+    ARC --> STUDIES["studies/"]
+    ARC --> ASSAYS["assays/"]
+    ARC --> WFS["workflows/"]
+    ARC --> RUNS["runs/"]
+
+    INV --> I["Investigation"]
+
+    STUDIES --> S["Study entities"]
+    ASSAYS --> A["Assay entities"]
+
+    WFS --> WP["LabProtocol / Workflow"]
+    RUNS --> RP["LabProcess / Workflow Run"]
+
+    S --> LP1["Experimental LabProcess"]
+    A --> LP1
+
+    WP --> RP
+
+    RP --> OUT["Derived datasets"]
+
+    LP1 --> RAW["Assay datasets"]
+```
