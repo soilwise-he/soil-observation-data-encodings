@@ -2,13 +2,13 @@
 ASAJA CASE STUDY
 ================================================================================
 DOI:            https://doi.org/10.5281/zenodo.17423881
-Project:        SoilWise - Horizon Europe Soil Mission
+Project:        Novasoil - Horizon Europe Soil Mission
 Partner:        ASAJA (Spain)
 Prepared by:    (insert author names and ORCID)
 Date:           2026-04-30
 License:        Creative Commons Attribution 4.0 International (CC-BY 4.0)
                 https://creativecommons.org/licenses/by/4.0/
-Keywords:       SoilWise, Soil Mission, Horizon Europe, soil organic carbon,
+Keywords:       Novasoil, Soil Mission, Horizon Europe, soil organic carbon,
                 soil texture, olive, integrated production, FAIR data,
                 EPSG:4326, Spain, ASAJA
 --------------------------------------------------------------------------------
