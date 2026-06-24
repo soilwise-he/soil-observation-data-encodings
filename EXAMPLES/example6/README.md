@@ -1,8 +1,10 @@
 # Dataset of soil and cacao leaf samples collected in all regions of Côte d'Ivoire
 
-authors: Snoeck, Didier; Koko, Louis; N'Guessan, Kouamé; Kassin, Émmanuel
-source: https://doi.org/10.18167/DVN1/PWM9WW
-license: CC-BY
+| Metadata | |
+| --- | --- |
+| authors | Snoeck, Didier; Koko, Louis; N'Guessan, Kouamé; Kassin, Émmanuel |
+| source | https://doi.org/10.18167/DVN1/PWM9WW |
+| license | CC-BY |
 
 [EN]Data of chemical analysis of soil and cacao (Theobroma cacao L.) leaf samples collected in adult cacao plantations selected in all regions of Southern Côte d'Ivoire.
 

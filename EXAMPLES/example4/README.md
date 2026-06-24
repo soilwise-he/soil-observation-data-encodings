@@ -1,5 +1,11 @@
 # A real-world soil observation dataset with geodata, IDs, attributes and observed properties
 
+| Metadata | |
+| --- | --- |
+| authors | |
+| source  | |
+| license | | 
+
 This example is based on a real-world dataset of soil bulk density measurements collected across land-use types in Lao PDR (Attapeu and Khammouane provinces, 2024–2025).
 
 It demonstrates a more complete and realistic case with:

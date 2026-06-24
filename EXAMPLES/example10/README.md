@@ -1,8 +1,10 @@
 # Long-term field experiment V140 Muencheberg (launched in 1963) - Laboratory data (soil)
 
-authors: [Dietmar Barkusky](https://orcid.org/0000-0001-5241-8060), Leibniz Centre for Agricultural Landscape Research (ZALF)
-source: https://doi.org/10.20387/bonares-8fhj-r52g
-license: CC-BY license
+| Metadata | |
+| --- | --- |
+| authors | [Dietmar Barkusky](https://orcid.org/0000-0001-5241-8060), Leibniz Centre for Agricultural Landscape Research (ZALF) |
+| source | https://doi.org/10.20387/bonares-8fhj-r52g |
+| license | CC-BY |
  
 The metadata with table schema is available as *.bonares.json (extracted from bonares platform)
 

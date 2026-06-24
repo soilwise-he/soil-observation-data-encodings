@@ -1,8 +1,10 @@
 # Determination of N mineralization of Tropical soils amended with compost and bokashi generated from water hyacinth and hippo grass
 
-Authors: Chindi Kapembwa , Victor Shitumbanuma, Jones Yengwe , Sijmen E. Schoustra , Gerlinde De Deyn 
-Source: https://doi.org/10.4121/f0539cee-c288-42ff-872d-af11320e183c
-License: CC-BY
+| Metadata | |
+| --- | --- |
+| Authors | Chindi Kapembwa , Victor Shitumbanuma, Jones Yengwe , Sijmen E. Schoustra , Gerlinde De Deyn |
+| Source | https://doi.org/10.4121/f0539cee-c288-42ff-872d-af11320e183c |
+| License | CC-BY |
 
 The dataset monitors crop growth under a series of maintenance strategies
 A single set of observations is provided for the soil at that location.
