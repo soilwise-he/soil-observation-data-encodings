@@ -1,0 +1,1061 @@
+{
+    "metadataIdentifier": "e6621805-d558-43ce-931f-e6d13374ead3",
+    "language": "English",
+    "characterSet": "utf8",
+    "parentIdentifier": "e1562f46-4a0d-4d8a-ac13-44cb47366e36",
+    "hierarchyLevel": "dataset",
+    "hierarchyLevelName": [
+        "  LTFE",
+        "  V140 Müncheberg (Germany)"
+    ],
+    "dateStamp": "2021-05-03",
+    "metadataContact_1": {
+        "individualName": "Dietmar Barkusky",
+        "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+        "positionName": "",
+        "role": "pointOfContact",
+        "phone": "+49 33432 82 168",
+        "facsimile": "+49 33432 82 186",
+        "deliveryPoint": "Eberswalder Strasse 84",
+        "city": "Muencheberg",
+        "administrativeArea": "Brandenburg",
+        "postalCode": "15374",
+        "country": "Germany",
+        "electronicMailAddress": "dbarkusky@zalf.de",
+        "onlineResource": "http://www.zalf.de/en/ueber_uns/mitarbeiter/Pages/barkusky_d.aspx"
+    },
+    "metadataStandardName": "BonaRes Metadata Schema (https://doi.org/10.20387/BonaRes-5PGG-8YRP)",
+    "metadataStandardVersion": "Version 1.0",
+    "resourceInfo": {
+        "title": "Long-term field experiment V140 Muencheberg from (launched in 1963) - Laboratory data (soil)",
+        "title_de": "Landwirtschaftlicher Dauerfeldversuch V140 Müncheberg von (gestartet in 1963) - Bodenlaborwerte",
+        "alternateTitle": "",
+        "issuedDate": "2018-05-17",
+        "creationDate": "2018-05-17",
+        "publicationDate": "2021-04-29",
+        "revisionDate": "2021-04-29",
+        "resourceIdentifier_1": {
+            "code": "Table 'V2_0_2012_BODENLABORWERTE' of dataset https://doi.org/10.20387/bonares-8fhj-r52g",
+            "codeSpace": "",
+            "version": ""
+        },
+        "otherCitationDetails": "",
+        "presentationForm": [
+            "tableDigital"
+        ],
+        "isbn": "",
+        "abstract": "Child table of long-term field experiment V140 Muencheberg. Table with laboratory data of soil samples. General description about the V140 experiment can be found in the table V140 - Plots. More information about database schema, assorted literature overview, the detailed location plan, etc.can be found in the supplemental material.",
+        "abstract_de": "Tochter-Tabelle des Langzeit-Feldversuchs V140 Müncheberg. Tabelle mit Laborwerten von Bodenproben. Generelle Beschreibungen des V140er Experiments finden sich in der Muttertabelle V140 - Parzelle. Weitere Informationen über das Datenbankschema, eine ausgewählte Literaturübersicht, den detaillierten Lageplan und mehr finden Sie in den in den Zusatzmaterialien.",
+        "abstractType": "Abstract",
+        "abstractType_de": "Abstract",
+        "purpose": "",
+        "status": "",
+        "pointOfContact_1": {
+            "individualName": "BonaRes Data Centre",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "Research Platform 'Data Analysis & Simulation' - WG Geodata",
+            "role": "publisher",
+            "phone": "+49 33432 82 171",
+            "facsimile": "+49 33432 82 4082",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "bonares-datenzentrum@zalf.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_2": {
+            "individualName": "Experimental Station Müncheberg (Service)",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "Experimental Infrastructure Platform",
+            "role": "projectLeader",
+            "phone": "+49 33432 82 168",
+            "facsimile": "+49 33432 82 186",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "dbarkusky@zalf.de",
+            "onlineResource": ""
+        },
+        "pointOfContact_3": {
+            "individualName": "Dietmar Barkusky",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "",
+            "role": "author",
+            "phone": "+49 33432 82 168",
+            "facsimile": "+49 33432 82 186",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "dbarkusky@zalf.de",
+            "onlineResource": ""
+        },
+        "descriptiveKeywords": {
+            "none": [],
+            "temporal": [],
+            "stratum": [],
+            "discipline": [
+                "Landwirtschaft",
+                "Langzeitversuch",
+                "Laboruntersuchung",
+                "Boden",
+                "Field experimentation",
+                "agriculture",
+                "Soil analysis",
+                "Dauerfeldversuch",
+                "Dauerversuch",
+                "Langzeitfeldversuch",
+                "Langzeitversuch",
+                "Dauerdüngungversuch",
+                "Langzeitdüngungsversuch",
+                "DFV",
+                "DDV",
+                "DV",
+                "Long-Term Field Experiment",
+                "Long-Term Experiment",
+                "Long-Term Trial",
+                "Long-Term Field Trial",
+                "Long-Term Fertilizer Experiment",
+                "Long-Term Soil Experiment",
+                "LTFE",
+                "LTE",
+                "LTSE",
+                "Aqua regia"
+            ],
+            "place": [],
+            "theme": [
+                "Soil analysis",
+                "Soil analysis",
+                "Elements",
+                "Carbon",
+                "Nitrogen",
+                "Sulphur",
+                "Phosphorus",
+                "analysis",
+                "composition",
+                "aquaculture",
+                "methodology",
+                "Potassium",
+                "Magnesium",
+                "Manganese",
+                "Lead",
+                "Calcium",
+                "Calcium carbonate",
+                "Texture",
+                "Sand",
+                "silt",
+                "Clay",
+                "Ammonium",
+                "Titanium",
+                "Cadmium",
+                "Ions",
+                "Nitrates",
+                "Copper",
+                "Molybdenum",
+                "Zinc",
+                "Nitrates"
+            ]
+        },
+        "useLimitation_1": "Reports, articles, papers, scientific and non-scientific works of any form, including tables, maps, or any other kind of output, in printed or electronic form, based in whole or in part on the data supplied, must contain an acknowledgement of the form: ‘Data re-used from the BonaRes Data Centre (www.bonares.de). These data were created as part of ZALF research activities‘. Although every care has been taken in preparing and testing the data, ZALF and BonaRes Data Centre cannot guarantee that the data are correct; neither does ZALF and BonaRes Data Centre accept any liability whatsoever for any error, missing data or omission in the data, or for any loss or damage arising from its use. The ZALF and Data Centre will not be responsible for any direct or indirect use which might be made of the data. If access to actual data is requested, please contact the data owner/author because these underlay an embargo. Please cite as: Barkusky et al. 2018, LTFE V140, ZALF Müncheberg, Table ‘Laboratory data (soil)‘. 10.20387/BonaRes-BSVY-R418 This data/file was excluded from further dissemination and should no longer be used. To cite the complete datacollection: Barkusky et al. (2021). LTE V140, ZALF Müncheberg, (Version 2.0). Leibniz Centre for Agricultural Landscape Research (ZALF). DOI: 10.20387/bonares-8fhj-r52g To cite the individual table: Barkusky et al. (2021). LTE V140, ZALF Müncheberg, (Version 2.0). Table: V2_0_2012_BODENLABORWERTE. Leibniz Centre for Agricultural Landscape Research (ZALF). DOI: 10.20387/bonares-8fhj-r52g",
+        "accessConstraints": [
+            "  copyright",
+            "  intellectualPropertyRights",
+            "  restricted"
+        ],
+        "useConstraints": [
+            "  license"
+        ],
+        "otherConstraint_1": "CC BY",
+        "securityClassifications": [],
+        "aggregationInfo_1": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=562631db-640b-4f13-8a08-2c2813d91be7",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_2": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=e1562f46-4a0d-4d8a-ac13-44cb47366e36",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "HasPart"
+        },
+        "aggregationInfo_3": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=025b61e6-5e9b-4c03-9e48-fa22be02106f",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_4": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=9c3c372c-27f4-4a52-ae45-ce4d4bf54a18",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_5": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=da7aee62-ddb5-4ca3-91ce-a5003c4a703a",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_6": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=c3aa559f-55e8-442c-ba00-4b5f315a353c",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_7": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=1ce4cb2e-36c0-48e6-9cb4-39b8e830ea9e",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_8": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=0ad61816-fb22-4ba1-9721-05e079f129c3",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_9": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=f6a60156-1358-4288-9ed7-91ed0c54321b",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_10": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=5e41d7a7-6867-4a01-86b3-26b7e38fbaed",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_11": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=d97cbd98-58a4-4f22-93cf-17b3dbfc4aec",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_12": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=8464b0f4-aa51-42b5-bf7c-b090ab846cec",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_13": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=a309d647-0439-453b-a779-d0690449d4fa",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_14": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=9cb76dad-54bb-4916-9d4f-0bce8fec23a0",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_15": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=c29c0372-3e73-4834-9adb-05002272449e",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_16": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=dfd76707-ce6f-4070-8f97-63ee67aa32d3",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_17": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=18fcbcf5-6ac8-4c5f-9a53-7bf5c294badb",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_18": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=8a0a521f-2188-48b3-b199-7b7447e2211c",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_19": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=214c8cc0-d95d-47e6-82f3-b4b04382ef98",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_20": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=677c2cf4-fc3c-4dbd-a35a-e40d61fe9bc6",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_21": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=0374373d-7928-4422-b012-264eae21e75e",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_22": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=73ddfeb0-ffc7-4fe5-a30d-07ebbde40707",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_23": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=ebd43194-21ea-4884-81e4-c38e9dd13c34",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_24": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=056db80c-ef70-4a14-8161-fc795a0518e8",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_25": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=3ba6c56a-39dc-4660-b48a-c81bf32d9cb5",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_26": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=f6d89fad-97dc-402d-8312-6239b49806c5",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_27": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=1ae61f6d-06f5-4113-9271-4eed3fb36b58",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_28": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=b7e135bc-d334-4cac-837a-1b816e1ed201",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_29": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=1a6b8487-017d-4546-88d1-9666d0c64a56",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "aggregationInfo_30": {
+            "aggregateDataSetIdentifier": {
+                "code": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=e1562f46-4a0d-4d8a-ac13-44cb47366e36",
+                "codeSpace": "URL",
+                "version": ""
+            },
+            "associationType": "IsPartOf"
+        },
+        "serviceType": [],
+        "serviceTypeVersions": [],
+        "equivalentScales": [],
+        "distances": [],
+        "resourceLanguages": [
+            "English"
+        ],
+        "resourceCharacterSet": [
+            "utf8"
+        ],
+        "topicCategories": [
+            "farming"
+        ],
+        "environmentDescription": "",
+        "extentDescription": "",
+        "supplementalInformation": "https://metadata.bonares.de/smartEditor/rest/upload/Supplemental_Material_V140_2021.zip",
+        "temporalExtent_1": {
+            "begin": "1963-01-01",
+            "end": "2012-12-31",
+            "description": ""
+        },
+        "geographicExtent_1": {
+            "extentTypeCode": "true",
+            "west": "14.107",
+            "east": "14.126",
+            "south": "52.513",
+            "north": "52.520",
+            "description": ""
+        },
+        "spatialRepresentationType": "textTable",
+        "graphicOverview_1": {
+            "fileName": "https://metadata.bonares.de:443/smartEditor/preview/v140_mun_v2.jpg",
+            "fileDescription": "Graphical overview of the V140 LTFE data"
+        },
+        "citationNote": "Dietmar Barkusky (2018). <i>Long-term field experiment V140 Muencheberg from (launched in 1963) - Laboratory data (soil)</i>, Dataset, BonaRes Repository, DOI: Table 'V2_0_2012_BODENLABORWERTE' of dataset https://doi.org/10.20387/bonares-8fhj-r52g"
+    },
+    "dataQualityInfo": {
+        "scope": {
+            "level": "dataset"
+        },
+        "lineage": {
+            "statement": "25.05.2018 - Version 1.1 published; 18.01.2021 - Version 1.1 withdrawn; 12.04.2021 - Version 2.0 published with data from additional years (2010-2012) and improved usability of the tables; Attention: Starting with version 2.0 the experiment can be analyzed as a single factorial experiment. The tables FAKTOR_1_STUFE and FAKTOR_2_STUFE were not longer necessary."
+        },
+        "conformance_1": {
+            "type": "Domain Consistency",
+            "nameOfMeasure": "",
+            "measureIdentification": "",
+            "measureDescription": "",
+            "valueUnit": "",
+            "errorStatistic": "",
+            "value": "",
+            "title": "Bonares",
+            "title_de": "",
+            "alternateTitle": "",
+            "creationDate": "2018-05-17",
+            "otherCitationDetails": "",
+            "presentationForm": [],
+            "isbn": "",
+            "explanation": "",
+            "pass": "true"
+        }
+    },
+    "distributionInfo": {
+        "distributionFormat_1": {
+            "name": "CSV",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributionFormat_2": {
+            "name": "Microsoft Excel (xlsx)",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributionFormat_3": {
+            "name": "File-Geodatabase",
+            "version": "",
+            "specification": "",
+            "fileDecompressionTechnique": ""
+        },
+        "distributor_1": {
+            "individualName": "BonaRes Data Centre",
+            "organisationName": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+            "positionName": "Research Platform 'Data Analysis & Simulation' - WG Geodata",
+            "role": "distributor",
+            "phone": "+49 33432 82 171",
+            "facsimile": "+49 33432 82 4082",
+            "deliveryPoint": "Eberswalder Strasse 84",
+            "city": "Müncheberg",
+            "administrativeArea": "Brandenburg",
+            "postalCode": "15374",
+            "country": "Germany",
+            "electronicMailAddress": "bonares-datenzentrum@zalf.de",
+            "onlineResource": ""
+        },
+        "transferOption_1": {
+            "linkage": "https://ltfe-map.bonares.de/",
+            "functionCode": "information",
+            "mediumName": "",
+            "mediumNote": ""
+        },
+        "transferOption_2": {
+            "linkage": "https://maps.bonares.de/mapapps/resources/apps/bonares/index.html?lang=en&mid=e6621805-d558-43ce-931f-e6d13374ead3",
+            "functionCode": "download",
+            "mediumName": "",
+            "mediumNote": ""
+        }
+    },
+    "bonaresInfo": {
+        "thumbnail": "",
+        "datamodelAttribute_1": {
+            "name": "Bodenlaborwerte_ID",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Unique ID of soil laboratory values",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Integer",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_2": {
+            "name": "Probenahme_Boden_ID",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "ID of soil sample",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Integer",
+            "domain": "",
+            "missingValue": "Blank",
+            "foreignKey_1": {
+                "identifier": "3ba6c56a-39dc-4660-b48a-c81bf32d9cb5",
+                "table": "v140_mun.V2_0_2012_PROBENAHME_BODEN",
+                "column": "Probenahme_Boden_ID"
+            }
+        },
+        "datamodelAttribute_3": {
+            "name": "Ph_Wert",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "pH-value of soil sample",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_4": {
+            "name": "Ct",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of total carbon (re-analyses planned)",
+            "unit": "mg 100g-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_5": {
+            "name": "C_hwl",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of hot-water soluble carbon",
+            "unit": "mg 100g-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_6": {
+            "name": "Nt",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of total nitrogen in soil (re-analyses planned)",
+            "unit": "mg 100g-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_7": {
+            "name": "NO3_N",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Nitrate-nitrogen content",
+            "unit": "mg 100g-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_8": {
+            "name": "NH4_N",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Ammonium-nitrogen content",
+            "unit": "mg 100g-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_9": {
+            "name": "CaCO3_C",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Carbon content as bonded to calcium carbonate",
+            "unit": "g kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_10": {
+            "name": "P",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of phosphorus in soil",
+            "unit": "mg 100g-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_11": {
+            "name": "K",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of potassium in soil",
+            "unit": "mg 100g-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_12": {
+            "name": "Mg",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of magnesium in soil",
+            "unit": "mg 100g-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_13": {
+            "name": "Ca",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of calcium in soil",
+            "unit": "unknown",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_14": {
+            "name": "B",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of boron in soil",
+            "unit": "ppm",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_15": {
+            "name": "Cu",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of copper in soil",
+            "unit": "ppm",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_16": {
+            "name": "Mn",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of manganese in soil",
+            "unit": "ppm",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_17": {
+            "name": "Mo",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of molybdenum in soil",
+            "unit": "ppm",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_18": {
+            "name": "Zn",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of zinc in soil",
+            "unit": "ppm",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_19": {
+            "name": "F",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of fluorine in soil (used method and units are not known yet)",
+            "unit": "unknown",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_20": {
+            "name": "Grobsand",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of coarse sand (in %, according to the German standard ‘KA5‘)",
+            "unit": "%",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_21": {
+            "name": "Mittelsand",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of medium sand (in %, according to the German standard ‘KA5‘)",
+            "unit": "%",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_22": {
+            "name": "Feinsand",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of fine sand (in %, according to the German standard ‘KA5‘)",
+            "unit": "%",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_23": {
+            "name": "Grobschluff",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of coarse silt (in %, according to the German standard ‘KA5‘)",
+            "unit": "%",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_24": {
+            "name": "Mittelschluff",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of medium silt (in %, according to the German standard ‘KA5‘)",
+            "unit": "%",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_25": {
+            "name": "Feinschluff",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of fine silt (in %, according to the German standard ‘KA5‘)",
+            "unit": "%",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_26": {
+            "name": "Ton",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of clay (in %, according to the German standard ‘KA5‘)",
+            "unit": "%",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_27": {
+            "name": "P_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of phosphorus in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_28": {
+            "name": "Mg_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of magnesium in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_29": {
+            "name": "Ca_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of calcium in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_30": {
+            "name": "B_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of boron in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_31": {
+            "name": "Cu_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of copper in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_32": {
+            "name": "Mn_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of manganese in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_33": {
+            "name": "Mo_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of molybdenum in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_34": {
+            "name": "Zn_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of zinc in soil (measured by aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_35": {
+            "name": "Al_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of aluminium in soil (Aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_36": {
+            "name": "Fe_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of iron in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_37": {
+            "name": "S_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of sulfur in soil (Aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_38": {
+            "name": "Sr_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of strontium in soil (Aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_39": {
+            "name": "Ti_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of titanium in soil (Aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_40": {
+            "name": "Cd_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of cadmium in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_41": {
+            "name": "Ni_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of nickel in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_42": {
+            "name": "Pb_Koenigswasser",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "Content of lead in soil (aqua regia)",
+            "unit": "mg kg-1",
+            "methods": "",
+            "quality": "",
+            "dataType": "Numeric",
+            "domain": "",
+            "missingValue": "Blank"
+        },
+        "datamodelAttribute_43": {
+            "name": "Bemerkungen_ID",
+            "tableName": "v140_mun.V2_0_2012_BODENLABORWERTE",
+            "longName": "",
+            "description": "ID of extra information",
+            "unit": "",
+            "methods": "",
+            "quality": "",
+            "dataType": "Integer",
+            "domain": "",
+            "missingValue": "Blank",
+            "foreignKey_1": {
+                "identifier": "b7e135bc-d334-4cac-837a-1b816e1ed201",
+                "table": "v140_mun.V2_0_2012_BEMERKUNGEN",
+                "column": "Bemerkungen_ID"
+            }
+        }
+    },
+    "fundingReference_1": {
+        "name": "Leibniz Centre for Agricultural Landscape Research (ZALF)",
+        "identifier": "",
+        "identifierType": "",
+        "awardNumber": "ZALF funding",
+        "awardTitle": "",
+        "uri": ""
+    }
+}
