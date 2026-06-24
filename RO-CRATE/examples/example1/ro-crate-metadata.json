@@ -24,7 +24,10 @@
       "@type": "File",
       "name": "Primary experimental data",
       "encodingFormat": "text/csv",
-      "description": "Raw measurements collected during the June 2026 campaign."
+      "description": "Raw measurements collected during the June 2026 campaign.",
+      "schema": {
+        "@id": "obs.csv-metadata.json"
+      }
     },
     {
       "@id": "obs.csv-metadata.json",
