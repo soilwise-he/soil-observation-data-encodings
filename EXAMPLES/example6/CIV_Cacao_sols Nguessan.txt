@@ -1,0 +1,22 @@
+CIV_Cacao_sols Nguessan
+-----------------------
+ID	Identifiant
+Lon	Longitude
+Lat	Latitude
+region	Région
+Clay	 (%) Argile 
+C_org	(%) 	Walkley-Black method 
+N_tot	(%) 	Kjeldahl method / Méthode
+P_avail	(ppm)	Olsen, modified Dabin method 
+K	(cmol·kg-1) Metson (pH=7) method 
+Ca	(cmol·kg-1) Metson (pH=7) method 
+Mg	(cmol·kg-1) Metson (pH=7) method 
+CEC 	(cmol·kg-1) Metson (pH=7) method 
+pH_water 	at 1:2.5 soil:water ratio
+Satur	(%)
+C_N	C:N ratio
+Fe 	(ppm) EDTA method 
+Mn 	(ppm) EDTA method 
+Cu 	(ppm) EDTA method 
+Zn 	(ppm) EDTA method 
+B	(ppm) hot water dilution method 

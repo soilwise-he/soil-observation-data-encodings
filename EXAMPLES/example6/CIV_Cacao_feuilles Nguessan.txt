@@ -1,0 +1,18 @@
+CIV_Cacao_sols Nguessan
+-----------------------
+ID	Identifiant
+Lon	Longitude
+Lat	Latitude
+region	Région
+Produc  (kg/ha) Yield of dry beans
+N	(%)
+P	(%)
+K	(%)
+Ca	(%)
+Mg	(%)
+Fe	(ppm)
+Mn	(ppm)
+B	(ppm)
+Cu	(ppm)
+Mo	(ppm)
+Zn	(ppm)
