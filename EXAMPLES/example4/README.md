@@ -13,9 +13,9 @@ It demonstrates a more complete and realistic case with:
 - **Geodata** — `latitude`, `longitude` and `elevation` per sample point (WGS84, decimal degrees / metres)
 - **Sample Information** — `depth` at which the sample was taken as well as the volume of the sample as `volum_cylinder_cm3`
 - **Multiple IDs** — a composite `sample_name` plus separate component identifiers (`ID_field`, `ID_profile`, `ID_depth`, `ID_location`), in addition a sequential `sample_ID` 
-- **Categorical attributes** — `landuse`, `location`, `country`
+- **Categorical attributes** — `landuse`, `location`, `country`. Landuse categories provided in readme.txt
 - **Observed properties with Units of Measure (UoM)** — `wet_mass_soil_g`, `dry_mass_soil_g`, `bulk_density`, `water_content` each linked to a QUDT unit URI and a quantity kind
-- **Procedures** — observed properties reference named laboratory methods
+- **Procedures** — observed properties reference short procedure descriptions and UoM in readme.txt
 - **Phenomenon time** — `collection_date` 
 
 
