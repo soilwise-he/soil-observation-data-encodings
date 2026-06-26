@@ -11,3 +11,22 @@
 The soil and cacao (Theobroma cacao L.) leaf samples were collected in adult cacao plantations selected in all pedological units of all regions of Southern Côte d'Ivoire. Soil samples were taken in the 0-30 cm horizon at 1 m from the cacao trees. The soil samples were analysed for their clay content and chemical parameters; i‧e. pH, C, N, P, K, Ca, Mg, CEC, Al, Zn, B, Mo, Mn.
 Leaf samples were collected in March 2015. The harvests for the year 2015 were estimated from pod counting.
 Each sampled cacao plot was geolocated to be associated with the corresponding soil pedological unit. The information was further used to build a thematic map providing localised fertilizer recommendations for cacao cultivation (see N'Guessan et al., 2017). (2017-09-12) 
+
+**Soil Samples (CIV_Cacao_sols Nguessan)**
+- **Geodata** — Provided by the columns `Lon` & `Lat`, no CRS
+- **Sample Information** — 
+- **ID** — Provided in column `ID`
+- **Categorical attributes** — `region`
+- **Observed properties with Units of Measure (UoM)** — `Clay` `C_org` `N_tot` `P_avail` `K` `Ca` `Mg` `CEC` `pH_water` `Satur` `C_N` `Fe` `Mn` `Cu` `Zn` `B`, UoM provided in readme.txt
+- **Procedures** — Procedures for all Observed Properties provided in readme.txt
+- **Phenomenon time** — NO time
+
+
+**Leaf Samples (CIV_Cacao_feuilles Nguessan)**
+- **Geodata** — Provided by the columns `Lon` & `Lat`, no CRS
+- **Sample Information** — 
+- **ID** — Provided in column `ID`
+- **Categorical attributes** — `region`
+- **Observed properties with Units of Measure (UoM)** — `Produc` `N` `P` `K` `Ca` `Mg` `Fe` `Mn` `B` `Cu` `Mo` `Zn`, UoM provided in readme.txt
+- **Procedures** — Procedures for all Observed Properties provided in readme.txt
+- **Phenomenon time** — NO time
