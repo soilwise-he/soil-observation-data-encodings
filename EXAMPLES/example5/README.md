@@ -20,3 +20,13 @@ rates were highest for compost (0.412 mg kg⁻¹ day⁻¹), intermediate for bok
 day⁻¹). Across amendments, N mineralization rates were strongly correlated to sorghum N uptake (r = 0.808) and to sorghum DMY (r = 0.844). 
 Relative agronomic effectiveness for sorghum biomass production was 163% for compost, 97% for bokashi, and 2% for dried weeds. Both aquatic 
 weeds can supply sufficient N for sorghum when processed into compost or bokashi, with compost providing faster mineral N release.
+
+The Excel file is quite complex, consisting of the following sheets (Including treatments or amendments that were added to the soils):
+- Metadata
+- Amendment characterization
+- Mineralization data
+- Sorghum dry mass
+- Total N amendments
+- Total P amendments
+- CN Ratio
+- Application of amendments (not clean CSV)
