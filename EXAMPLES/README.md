@@ -7,7 +7,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 1. | [Soveur](example1) | CC-BY | location, depth and observations in a single table | Y | N |
 | 2. | [Leafy Tree](example2) | CC-BY | locations (trees) and observations (leafs) in separate tables | Y | Y |
-| 3. | [NPK](example3) | CC-BY | location and observations in a single table |  | |
+| 3. | [NPK](example3) | CC-BY | location and observations in a single table | Y | Y |
 | 4. | [Laos](example4) | CC-BY | location and observations in a single table | Y | Y |
 | 5. | [N mineralization of Tropical soils amended with compost](example5) | CC-BY | Complex experimental design, Excel with 8 tabs. KS: Not sure relevant | N | N |
 | 6. | [Soil of Côte d'Ivoire](example6) | CC-BY |Two tables with location and observations in a single table | Y | N |
