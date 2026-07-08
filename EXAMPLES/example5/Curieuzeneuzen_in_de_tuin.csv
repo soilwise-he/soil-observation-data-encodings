@@ -1,0 +1,8 @@
+sep=;
+Laag:;Curieuzeneuzen in de tuin
+Datum:;30/06/2026
+Bron:;Databank Ondergrond Vlaanderen <https://www.dov.vlaanderen.be>
+Aansprakelijkheidsclausule:;De gegevens worden enkel meegedeeld ter informatie. De Vlaamse overheid kan niet verantwoordelijk worden gesteld voor de gevolgen van welk gebruik dan ook.
+
+Naam;Bodemlocatiefiche;Ga naar acties voor de tijdsmeetreeksgrafiek;Van;Tot;Jaar;Min T bodem;Max T bodem;Min Vocht;Max Vocht;T lucht;T maaiveld;T bodem;Vochtgehalte;X;Y;Z
+CN_223031_2021;=HYPERLINK("https://www.dov.vlaanderen.be/data/bodemlocatie/2021-032627");=HYPERLINK("https://www.dov.vlaanderen.be/data/bodemlocatie/2021-032627#6");06/04/2021;01/10/2021;2021,00;5,13;23,75;21,75;51,91;=HYPERLINK("https://www.dov.vlaanderen.be/data/observatie/2023-12439665");=HYPERLINK("https://www.dov.vlaanderen.be/data/observatie/2023-12439666");=HYPERLINK("https://www.dov.vlaanderen.be/data/observatie/2023-12439667");=HYPERLINK("https://www.dov.vlaanderen.be/data/observatie/2023-12439664");192490,23;181688,53;41,90

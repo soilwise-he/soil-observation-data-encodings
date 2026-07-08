@@ -1,32 +1,26 @@
-# Determination of N mineralization of Tropical soils amended with compost and bokashi generated from water hyacinth and hippo grass
+
+# Curieuzeneuzen in de tuin (DOV) - Soil time-series example
 
 | Metadata | |
 | --- | --- |
-| Authors | Chindi Kapembwa , Victor Shitumbanuma, Jones Yengwe , Sijmen E. Schoustra , Gerlinde De Deyn |
-| Source | https://doi.org/10.4121/f0539cee-c288-42ff-872d-af11320e183c |
-| License | CC-BY |
+| source | Databank Ondergrond Vlaanderen (DOV): https://www.dov.vlaanderen.be |
+| dataset export date | 2026-06-30 |
+| language | Dutch |
 
-The dataset monitors crop growth under a series of maintenance strategies
-A single set of observations is provided for the soil at that location.
+This example demonstrates a compact but realistic setup with one location table and high-frequency time-series observations split over monthly files.
 
-The spread of aquatic weeds, notably water hyacinth and hippo grass, in rivers of tropical regions cause serious problems. Using these 
-weeds as soil amendments could promote their utilization and help reduce their spread. We investigated their use when dried, composted, 
-and fermented (bokashi), to supply nitrogen (N) to tropical soils and to improve sorghum N uptake and dry matter yield (DMY). Our objectives 
-were to determine: (i) the N mineralization rates for the different aquatic weed amendments; (ii) the correlation between N mineralization 
-rates and sorghum N uptake; and (iii) the correlation between N mineralization rate and sorghum DMY. In an incubation greenhouse experiment, 
-we used a Typic Kandiustalf and applied: (i) dried, (ii) fermented, and (iii) composted water hyacinth or hippo grass, (iv) mineral fertilizer, 
-and (v) no amendment. Nitrogen application in treatments i-iv was standardized to rates equivalent to 90 kg N ha-1. Overall, N mineralization 
-rates were highest for compost (0.412 mg kg⁻¹ day⁻¹), intermediate for bokashi (0.265 mg kg⁻¹ day⁻¹), and lowest for dried weeds (0.211 mg kg⁻¹ 
-day⁻¹). Across amendments, N mineralization rates were strongly correlated to sorghum N uptake (r = 0.808) and to sorghum DMY (r = 0.844). 
-Relative agronomic effectiveness for sorghum biomass production was 163% for compost, 97% for bokashi, and 2% for dried weeds. Both aquatic 
-weeds can supply sufficient N for sorghum when processed into compost or bokashi, with compost providing faster mineral N release.
+It contains:
 
-The Excel file is quite complex, consisting of the following sheets (Including treatments or amendments that were added to the soils):
-- Metadata
-- Amendment characterization
-- Mineralization data
-- Sorghum dry mass
-- Total N amendments
-- Total P amendments
-- CN Ratio
-- Application of amendments (not clean CSV)
+- **Location metadata** - `Curieuzeneuzen_in_de_tuin.csv` with one monitoring point (`CN_223031_2021`), start/end dates, summary min/max values, links to DOV pages, and coordinates (`X`, `Y`, `Z`) in Lambert72; `Z` is height in mTAW
+- **Two observed properties** - separate folders for time-series exports:
+	- `meetpunten_bodemlocatie_2021-032627_1911_CN_T1`: temperature series (`Parameter: Temperatuur`)
+	- `meetpunten_bodemlocatie_2021-032627_1912_CN_SWC`: volumetric soil moisture series (`Parameter: Volumetrisch vochtgehalte`)
+- **Phenomenon time** - timestamps in ISO 8601 with timezone offset (e.g. `2021-04-06T02:00:00.000+02:00`)
+- **Sampling interval** - 15-minute observations in monthly CSV files (`202104.csv` to `202110.csv`)
+- **Sensor/instrument metadata** - per file header lines include sensor identification and instrument validity window
+- **Data quality indicator** - third value column appears to be a quality/status flag (typically `1`)
+
+Notes for encoding:
+
+- Coordinate reference system is Lambert72; elevation is expressed as mTAW.
+
