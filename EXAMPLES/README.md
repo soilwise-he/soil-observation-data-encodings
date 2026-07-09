@@ -15,3 +15,21 @@
 | 8. | [Novasoil](example8) | CC-BY | 1 location in metadata, observations in table | Y | N |
 | 9. | [AFSIS](example9) | CC-BY | locations (profiles) and observations (smples) in separate tables | Y | Y |
 | 10. | [Bonares](example10) | CC-BY | locations and samples and observations in 3 separate tables | Y | Y |
+
+
+| Spatial | Sample | Observations | ObsProp | Time | Sampling Time | Example # |
+| --- | --- | --- | --- | --- | --- | --- | 
+| 1 | | 1 | X | X	|  |  | 
+| X |  | 1 | X | X |  |  | 
+|1 |  | 2 | X | X |  |  | 
+|1 | 2 | 3 | X | X | X |  | 
+|1 |  | 1 | X | 1 |  |  | 
+|X |  | 1 | X | 1 |  |  | 
+|1 |  | 2 | X | 1 |  |  | 
+|1 | 2 | 3 | X | 2 | 2 |  | 
+|1 |  | 2 | X | 2 |  |  | 
+|1 | 2 | 3 | X | 3 |  |  | 
+|1 | 2 | 3 | X | 3 | 2 |  | 
+
+
+
