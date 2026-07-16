@@ -1,3 +1,4 @@
+<img width="1275" height="519" alt="ObsPropProcModel" src="https://github.com/user-attachments/assets/1159f129-a012-4ebd-afbf-bcca9eb4b6fd" />
 ## Common Elements across encodings for observation data
 
 While SoilWise supports an array of different encodings for observation data, each tailored for different usage areas, these models are united through the underlying conceptual [OGC/ISO Observations, Measurements and Samples Standard](https://www.ogc.org/standards/om/), 
@@ -13,21 +14,20 @@ semantically formalized under [W3C SSN/SOSA](https://w3c.github.io/sdw-sosa-ssn/
 ### Special Relationship between Observed Property, Observing Procedure and UoM
 
 In previous versions of OMS and SOSA, the only relation between Observed Property, Observing Procedure and UoM was provided through actual Observations utilizing these concepts.
-This deficit was recognized in recent updates of both OMS and SOSA, new properties proposed. This enables direct links between Observed Property, Observing Procedure, and via QUDT we can add information on the UoM.
+This deficit was recognized in recent updates of both OMS and SOSA, new properties proposed. This enables direct links between Observed Property, Observing Procedure, and via QUDT we can add information on the QuantityKind to determine applicable UoM.
 
 _We still need to discuss which exact properties and inverses we use_
 
-<img width="659" height="413" alt="grafik" src="https://github.com/user-attachments/assets/7141ec42-e538-419a-b7dd-45d514fdd225" />
+<img width="1275" height="519" alt="ObsPropProcModel" src="https://github.com/user-attachments/assets/400b7d8f-d046-4be4-aa89-0e145a0e2b1b" />
+
 
 
 
 ### Conversion between UoM
 
 Different organizations traditionally survey data with different units of measurement. A simple example pertains to length, some report this in meters, some in centimeters.
-As lossless conversion between SI units is trivial, there is no reason to mandate the exact UoM to be used, only the category. Initial attempt at utilizing QUDT Dimensions failed, as too many units become dimensionless (e.g. mg/g or ml/l).
-We thus agreed to use the QUDT unit utilizing SI base units as far as possible, provide conversion factors from the unit provided to this base unit, enabling conversion between all units referencing the same base unit.
+As lossless conversion between SI units is trivial, there is no reason to mandate the exact UoM to be used, only the category, thus the decision to utilize QUDT QuantityKind. When using  QUDT QuantityKind, one must take care not to select dimensionless, but instead provide the correct fraction or ration type (e.g. [MassRatio](https://qudt.org/vocab/quantitykind/MassRatio) for mg/g or [VolumeFraction](https://qudt.org/vocab/quantitykind/VolumeFraction) for ml/l).
 
-Details on this work are currently available via the [GPkg Repo UoM Conversion Table](https://github.com/soilwise-he/Geopackage-so/blob/main/geopackage/UoM/readme.md).
 
 ### Common Repo for Observed Property, Observing Procedure and UoM
 
