@@ -1,4 +1,3 @@
-<img width="1275" height="519" alt="ObsPropProcModel" src="https://github.com/user-attachments/assets/1159f129-a012-4ebd-afbf-bcca9eb4b6fd" />
 ## Common Elements across encodings for observation data
 
 While SoilWise supports an array of different encodings for observation data, each tailored for different usage areas, these models are united through the underlying conceptual [OGC/ISO Observations, Measurements and Samples Standard](https://www.ogc.org/standards/om/), 
