@@ -1,5 +1,7 @@
 # GeoPackage
 
+This work is being done under the [GeoPackage Repo of SoilWise](https://github.com/soilwise-he/Geopackage-so)
+
 This work builds on the work of EJP Soil project, which crafted a [geopackage for soil data based on the INSPIRE model](https://github.com/ejpsoil/inspire_soil_gpkg_template).
 
 While testing the geopackage in real world scenario's, some observations were made
