@@ -4,15 +4,12 @@ Observation data on soil samples is typically captured accoring to Observations,
 
 Soil data models such as [ISO28258:2013](https://www.iso.org/standard/44595.html), [FAO-GLOSIS](https://github.com/FAO-SID/SIS-dev/blob/main/sis-database/Entity_Relationship_Diagram.png) (derived from ISO 28258) and [INSPIRE Soil](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) are based on the OMS datamodel. General aspects of OMS are covered in a [dedicated common topic](https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/COMMON).
 
-The encodings explored are: 
-
-- [Simple CSV](#simple-csv)
-- [Annotated tabular data (CSVW)](#annotated-tabular-data)
-- [RO-Crate](#ro-crate---isa-profile)
-- [OMS as GML](#oms-as-gml)
-- [SensorThings API](#sensor-things-api-sta)
-- [Relational databases](#relational-databases)
-- [Semantic web](#semantic-web)
+Some alternative/complemetary models used to describe observation data in our domains are:
+- The [ISA (Investigation, Study, Assay)](https://isa-tools.org) framework is a platform designed for managing experimental metadata in life sciences, environmental, and biomedical research.
+- The Observation class in [schema.org](https://schema.org/Observation) aims to capture observation data, including unit and measurement method
+- [GBIF/EML](https://doi.org/10.35035/doc-ynvs-eh84) aims to collect information about biological organisms observed in a specific area at a given time
+- [MIAPPE (Minimum Information About Plant Phenotyping Experiments)](https://www.miappe.org/) is a data standard designed to harmonize data from plant phenotyping experiments
+- [I-ADOPT](https://doi.org/10.15497/RDA00071) aims to create a common framework for naming and conceptualizing observable properties—variables that describe measured, simulated, or qualitative observations in scientific datasets
 
 ## Background
 
@@ -26,7 +23,8 @@ Adopting one of the models for your (research) data has three benefits.
 
 [Read more about OMS principles](./COMMON)
 
-## Differences between the INSPIRE, ISO 28258 and GloSIS data models
+
+### Differences between INSPIRE Soil, ISO 28258 and GloSIS data models
 
 The main difference between the INSPIRE and ISO 28258 models pertains to the spatial features defined to represent aspects of soil investigations. While there is clear consensus on the core FeatureTypes required, specifically Site, Plot, Profile and ProfileElements (Layers and Horizons), the 2 models then diverge on various aspects:
 - Specimen: only provided under ISO 28258
@@ -34,9 +32,20 @@ The main difference between the INSPIRE and ISO 28258 models pertains to the spa
 - Soil Mapping: SoilMap with the associated classes SoilMappingUnitCategory, SoilTypologicalUnit and SoilMappingUnit are only provided under ISO 28258
 - Projects and related Analysis Requests are only provided under ISO 28258
 
-## Which data models
 
-In the SoilWise project we're exploring the following data encodings to capture soil observation data.
+## Soil observation data encodings
+
+In this repository we explore some of the commonly used encodings and how to traverse between them.
+The encodings explored are: 
+
+- [Simple CSV](#simple-csv)
+- [Annotated tabular data (CSVW)](#annotated-tabular-data)
+- [RO-Crate](#ro-crate---isa-profile)
+- [OMS as GML](#oms-as-gml)
+- [SensorThings API](#sensor-things-api-sta)
+- [Relational databases](#relational-databases)
+- [Semantic web](#semantic-web)
+
 
 ### Simple CSV
 
