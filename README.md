@@ -2,7 +2,7 @@
 
 Observation data on soil samples is typically captured accoring to Observations, Measurements and Samples (OMS) principles. Various encoding conventions exist to store or exchange such observation data. In this repository we explore a number of these conventions. Including sample code, data and tools.
 
-Soil data models such as [ISO28258:2013](https://www.iso.org/standard/44595.html), [FAO-GLOSIS](https://github.com/FAO-SID/SIS-dev/blob/main/sis-database/Entity_Relationship_Diagram.png) and [INSPIRE Soil](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) are based on the OMS datamodel. General aspects of OMS are covered in a [dedicated common topic](https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/COMMON).
+Soil data models such as [ISO28258:2013](https://www.iso.org/standard/44595.html), [FAO-GLOSIS](https://github.com/FAO-SID/SIS-dev/blob/main/sis-database/Entity_Relationship_Diagram.png) (derived from ISO 28258) and [INSPIRE Soil](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) are based on the OMS datamodel. General aspects of OMS are covered in a [dedicated common topic](https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/COMMON).
 
 The encodings explored are: 
 
@@ -25,6 +25,14 @@ Adopting one of the models for your (research) data has three benefits.
 - Various software tools are available which support workflows on standardised observation data, such as conversion tools, validation tools, visualisation tools. So you don't need to write custom software or data models.
 
 [Read more about OMS principles](./COMMON)
+
+## Differences between the INSPIRE, ISO 28258 and GloSIS data models
+
+The main difference between the INSPIRE and ISO 28258 models pertains to the spatial features defined to represent aspects of soil investigations. While there is clear consensus on the core FeatureTypes required, specifically Site, Plot, Profile and ProfileElements (Layers and Horizons), the 2 models then diverge on various aspects:
+- Specimen: only provided under ISO 28258
+- Derived Types: DerivedSoilProfile, SoilDerivedObject, SoilBody only available under INSPIRE
+- Soil Mapping: SoilMap with the associated classes SoilMappingUnitCategory, SoilTypologicalUnit and SoilMappingUnit are only provided under ISO 28258
+- Projects and related Analysis Requests are only provided under ISO 28258
 
 ## Which data models
 
