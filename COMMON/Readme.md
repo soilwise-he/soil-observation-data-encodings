@@ -15,7 +15,7 @@ semantically formalized under [W3C SSN/SOSA](https://w3c.github.io/sdw-sosa-ssn/
 ### Special Relationship between Observed Property, Observing Procedure and UoM
 
 In previous versions of OMS and SOSA, the only relation between Observed Property, Observing Procedure and UoM was provided through actual Observations utilizing these concepts.
-This deficit was recognized in recent updates of both OMS and SOSA, new properties proposed. This enables direct links between Observed Property, Observing Procedure, and via [QUDT][ (https://www.qudt.org) we can add information on the [QuantityKind] (https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html) to determine applicable [UoM](https://qudt.org/schema/qudt/Unit).
+This deficit was recognized in recent updates of both OMS and SOSA, new properties proposed. This enables direct links between Observed Property, Observing Procedure, and via [QUDT](https://www.qudt.org) we can add information on the [QuantityKind](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html) to determine applicable [UoM](https://qudt.org/schema/qudt/Unit).
 
 _We still need to discuss which exact properties and inverses we use_
 
