@@ -38,7 +38,7 @@ Through the unique IDs, partial updates of existing systems with new concepts be
 In addition, as we have links between Observed Property, Observing Procedure and UoM, data entry systems can take this into account. 
 Once a user has selected an Observed Property, the Observing Procedure and UoM options provided are limited to those aligned with the selected Observed Property.
 
-## Feature-of-Interest types
+## New Feature-of-Interest types
 Under O&M (ISO 19156:2011), there was only the basic Feature-of-Interest (FoI) association between an Observation and it's object of measurement. Over time it became clear that more detail is required here, especially in the case of Specimens that have a different location than the real-world object they are representative of. While it has always been possible to traverse from the actual object of measurement via the sampledFeature association to the real-world object the FoI is representative of, this has often caused issues in correctly identifying Observations and their context. In the update from O&M to OMS leading to ISO 19156:2023 (as well as under the ongoing SOSA/SSN update), the FoI concept was split into two concepts:
 - Proximate FoI: the actual object on which the observation or measurement is performed, e.g. often a sample or specimen
 - Ultimate FoI: the real-world object that the Proximate FoI is representative of
