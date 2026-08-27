@@ -10,12 +10,20 @@ semantically formalized under [W3C SSN/SOSA](https://w3c.github.io/sdw-sosa-ssn/
   - Unit of Measurement: in what unit is the result being conveyed
   - Additional concepts, e.g. Sensor used in measurement, Host at which this Sensor was deployed... Currently not being utilized in SoilWise
 
+## Soil Data Models
+At present, there are three closely related soil data models to chose from:
+- INSPIRE Soil: defined under the European INSPIRE Initiative, this model provides a set of spatial features for which soil data can be provided using the Observations and Measurements model-
+- ISO 28258:2013 - Digital exchange of soil-related data describes how to digitally exchange soil-related data. This model is a refinement of the INSPIRE model, whereby feature type definitions have been modified.
+- GloSIS (FAO Global Soil Information System) extends the ISO 28258 model with Observable Properties and Observing Procedures suitable for the spatial feature types defined.
+
+For a more detailed description of these soil data models, please see the section on [Soil Data Standards](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/COMMON/SoilDataModels.md).
+
 ## Observed Property++
 
 ### Special Relationship between Observed Property, Observing Procedure and UoM
 
 In previous versions of OMS and SOSA, the only relation between Observed Property, Observing Procedure and UoM was provided through actual Observations utilizing these concepts.
-This deficit was recognized in recent updates of both OMS and SOSA, new properties proposed. This enables direct links between Observed Property, Observing Procedure, and via QUDT we can add information on the QuantityKind to determine applicable UoM.
+This deficit was recognized in recent updates of both OMS and SOSA, new properties proposed. This enables direct links between Observed Property, Observing Procedure, and via [QUDT](https://www.qudt.org) we can add information on the [QuantityKind](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html) to determine applicable [UoM](https://qudt.org/schema/qudt/Unit).
 
 _We still need to discuss which exact properties and inverses we use_
 
