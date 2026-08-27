@@ -1,15 +1,20 @@
 # Soil observation encodings
 
+Authors: Kathi Schleidt, Max Vercruyssen, Paul van Genuchten
+
+This effort explores a number of encodings for soil observation data, as well as options to traverse 
+between these encodings. The effort originates from the SoilWise project, a project funded by Horizon Europe.
+
 Observation data on soil samples is typically captured accoring to Observations, Measurements and Samples (OMS) principles. Various encoding conventions exist to store or exchange such observation data. In this repository we explore a number of these conventions. Including sample code, data and tools.
 
-Soil data models such as [ISO28258:2013](https://www.iso.org/standard/44595.html), [FAO-GLOSIS](https://github.com/FAO-SID/SIS-dev/blob/main/sis-database/Entity_Relationship_Diagram.png) (derived from ISO 28258) and [INSPIRE Soil](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) are based on the OMS datamodel. General aspects of OMS are covered in a [dedicated common topic](https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/COMMON).
+Soil data models such as [ISO28258:2013](https://www.iso.org/standard/44595.html), [FAO-GLOSIS](https://github.com/FAO-SID/SIS-dev/blob/main/sis-database/Entity_Relationship_Diagram.png) (derived from ISO 28258) and [INSPIRE Soil](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) are based on the OMS datamodel. General aspects of OMS are covered in a [dedicated common topic](./COMMON).
 
-Some alternative/complemetary models used to describe observation data in our domains are:
+Some alternative/complemetary models used to describe observation data in our domains, but not further explored here, are:
 - The [ISA (Investigation, Study, Assay)](https://isa-tools.org) framework is a platform designed for managing experimental metadata in life sciences, environmental, and biomedical research.
 - The Observation class in [schema.org](https://schema.org/Observation) aims to capture observation data, including unit and measurement method
 - [GBIF/EML](https://doi.org/10.35035/doc-ynvs-eh84) aims to collect information about biological organisms observed in a specific area at a given time
 - [MIAPPE (Minimum Information About Plant Phenotyping Experiments)](https://www.miappe.org/) is a data standard designed to harmonize data from plant phenotyping experiments
-- [I-ADOPT](https://doi.org/10.15497/RDA00071) aims to create a common framework for naming and conceptualizing observable properties—variables that describe measured, simulated, or qualitative observations in scientific datasets
+
 
 ## Background
 
@@ -62,8 +67,8 @@ on a soil profile or measurement on a prepared soil sample.
 In the soil science domain it is quite common to share soil observation data in a tabular format (Excel, CSV, DBF). Where samples are listed as rows and observed properties as columns. Column contents are further explained in a readme file or report. Various initiatives exist to standardise the syntax of these readme documents, so also machines can parse this information. We are aware of the following initiatives:
 
 - [CSV-W](./CSVW/) a json-ld alike initiative to annotate CSV files (as rdf)
-- [TableSchema](./CSVW/README.md#okfn-datapackage) of the DataPackage inititative (OKFN Frictionless data).
-- [ISO19110:2016](./CSVW/README.md#iso19110--iso19115) which can be embedded in a ISO19115 document
+- [TableSchema](./CSVW#okfn-datapackage) of the DataPackage inititative (OKFN Frictionless data).
+- [ISO19110:2016](./CSVW#iso19110--iso19115) which can be embedded in a ISO19115 document
 
 In [CSVW](./CSVW/) we're exploring a [CSV-W approach](https://csvw.org/) to annotate tabular data, to make it  interoperable. The above Simple CSV approach internally uses this technology.
 
