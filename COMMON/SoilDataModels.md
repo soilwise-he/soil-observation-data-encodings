@@ -1,7 +1,7 @@
 # Soil Data Standards
-When discussing soil data models confusion often arises as there are three different models to choose from (INSPIRE, ISO 28258, GloSIS). However, upon closer examination, it becomes clear that these models are very closely related. All three models utilize the Observations and Measurements standard for provision of soil data values. The minor differences between these three models pertain to the spatial features defined for representing parts of soils.
+When discussing soil data models confusion often arises as there are three different models to choose from (INSPIRE, ISO 28258, GloSIS). However, upon closer examination, it becomes clear that these models are very closely related. All three models utilize the Observations and Measurements standard for provision of soil data values. The minor differences between these three models pertain to the spatial features (features of interest) defined for representing parts of soils.
 ## INSPIRE
-The first of these data models is the INSPIRE Soil model, defined under the European INSPIRE Initiative. The main spatial features defined in this model are:
+The first of these data models is the [INSPIRE Soil model](https://knowledge-base.inspire.ec.europa.eu/publications/inspire-data-specification-soil-technical-guidelines_en), defined under the European INSPIRE Initiative. The main spatial features defined in this model are:
 - Soil site: area within a larger survey, study or monitored area, where a specific soil investigation is carried out.
 - Soil plot: spot where a specific soil investigation is carried out.
 - Soil profile: description of the soil that is characterized by a vertical succession of profile elements. Specialized into
@@ -10,7 +10,7 @@ The first of these data models is the INSPIRE Soil model, defined under the Euro
 - Profile element: An abstract spatial object type grouping soil layers and / or horizons for functional/operational aims. Specialized into
   - Soil horizon: Domain of a soil with a certain vertical extension, more or less parallel to the surface and homogeneous for most morphological and analytical characteristics, developed in a parent material layer through pedogenic processes or made up of in-situ sedimented organic residues of up-growing plants (peat).
   - Soil layer: domain of a soil with a certain vertical extension developed through non-pedogenic processes, displaying a change in structure and/or composition to possibly over- or underlying adjacent domains, or a grouping of soil horizons or other sub-domains with a special purpose.
-- Soil derived object: A spatial object type for representing spatial objects with soil-related property derived from one or more soil and possibly other non soil properties.
+- Soil derived object: A spatial object type for representing spatial objects with soil-related property derived from one or more soil and possibly other non soil properties. Typically used when creating a soil map, where soil bodies are derived by soil sampling and landscape analysis.
 - Soil body: Part of the soil cover that is delineated and that is homogeneous with regard to certain soil properties and/or spatial patterns.
 
 While the INSPIRE model formally specifies Observations only on the spatial features SoilSite, SoilProfile, ProfileElement and SoilDerivedObject, nothing hinders applying Observations to any feature type, so not only limited to the 4 types listed.
@@ -19,7 +19,7 @@ While the INSPIRE model formally specifies Observations only on the spatial feat
 INSPIRE Soil Spatial Feature Types
 
 ## ISO 28258
-ISO 28258:2013 - Digital exchange of soil-related data describes how to digitally exchange soil-related data. This model is a refinement of the INSPIRE model described above, also utilizing the Observations and Measurements standard for provision of soil data values. While relying on the same cascade of the spatial features Site, Plot, Profile and Profile Elements (Layers and Horizons) defined under INSPIRE, there are some subtle refinements. The derived types have been removed, replaced by soil mapping. Divergences from INSPIRE as follows:
+[ISO 28258:2013 - Soil quality — Digital exchange of soil-related data](https://www.iso.org/obp/ui#iso:std:iso:28258:ed-1:v1:en) describes how to digitally exchange soil-related data. This model is a refinement of the INSPIRE model described above, also utilizing the Observations and Measurements standard for provision of soil data values. While relying on the same cascade of the spatial features Site, Plot, Profile and Profile Elements (Layers and Horizons) defined under INSPIRE, there are some subtle refinements. The derived types have been removed, replaced by soil mapping. Divergences from INSPIRE as follows:
 - Project: The project holds the background information for soil studies. A project does not describe the soil as such. It is of importance to exchange project data along with other soil quality data in order to know the aim and circumstances of data collection. The project provides the context of the data collection as a prerequisite for the proper use or reuse of these data.
 The project information also may be the starting point to retrieve further information that cannot be exchanged using soil quality. For example, the name of an author or the project number may be the key for finding a report or decision document.
 - Soil Plot is further specialized as follows:
@@ -38,12 +38,15 @@ The project information also may be the starting point to retrieve further infor
 ISO 28258 Soil Mapping
 
 ## GloSIS (FAO Global Soil Information System)
-GloSIS is a further refinement of ISO 28258 implemented by the FAO under the Global Soil Partnership. Leaving the spatial features untouched, GloSIS focuses on defining Observable Properties for which soil data is to be provided, together with applicable Observing Procedures, detailing how these Observable Properties have been ascertained.
+
+A decade ago, FAO constructed a UML model for sharing soil data as part of the [Global Soil Information System](https://data.apps.fao.org/glosis/) (GloSIS) under the [Global Soil Partnership](https://www.fao.org/global-soil-partnership/en/). Unfortunately this model has not been openly published, but has been used by other initiatives to build implementations.
+
+GloSIS is a further refinement of ISO 28258. Leaving the spatial features untouched, GloSIS focuses on defining Observable Properties for which soil data is to be provided, together with applicable Observing Procedures, detailing how these Observable Properties have been ascertained.
 It is often difficult to understand which Observable Properties apply to which spatial object when utilizing Observations and Measurements, as theoretically, any type of Observation can be applied to any spatial object. Under GloSIS, this was constrained through the use of helper classes that clearly tie Observable Properties to specific spatial features, as shown in the example of the Surface feature type in the diagram below.
 
 <img width="945" height="704" alt="grafik" src="https://github.com/user-attachments/assets/dcdcc7c3-3222-4024-a70b-eb41afc19495" />
 GloSIS Surface Helper Classes illustrating applicable Observations.
 
-Under the SIEU-Soil Project, [GloSIS was refined to an Ontology](https://glosis-ld.github.io/glosis/), retaining all relations defined under the UML version.
+Under the [SIEU-Soil Project](https://cordis.europa.eu/project/id/818346), the GloSIS model was refined to an Ontology, [GloSIS-ld](http://w3id.org/glosis/model/), retaining all relations defined under the UML version.
 
 
