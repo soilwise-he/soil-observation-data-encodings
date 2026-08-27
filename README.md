@@ -2,7 +2,7 @@
 
 Authors: Kathi Schleidt, Max Vercruyssen, Paul van Genuchten
 
-Observation data from the field or on soil samples in laboratories is typically captured according to the Observations, Measurements and Samples (OMS) principles. Various encoding conventions exist to store or exchange such observation data. In this effort we explore a number of these conventions. Including sample code, data and tools.
+Observation data from field campaigns or analysis on soil samples from laboratories is typically captured according to the Observations, Measurements and Samples (OMS) principles. Various encoding conventions exist to store or exchange such observation data. In this effort we explore a number of these conventions. Including sample code, data and tools.
 
 ## Background
 
@@ -18,6 +18,8 @@ Adopting one of the models for your (research) data has three benefits.
 
 
 ### Differences between INSPIRE Soil, ISO 28258 and GloSIS data models
+
+The INSPIRE Soil, ISO 28258 and GloSIS data models are each based on the OMS core datamodel, and thus largely interoperable. But there are also notable differences between the models.
 
 The main difference between the INSPIRE and ISO 28258 models pertains to the spatial features defined to represent aspects of soil investigations. While there is clear consensus on the core FeatureTypes required, specifically Site, Plot, Profile and ProfileElements (Layers and Horizons), the 2 models then diverge on various aspects:
 - Specimen: only provided under ISO 28258
