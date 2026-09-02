@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<hale-project version="5.4.0.release">
+    <name>SoilWise-gpkg-to-STA</name><author>RonaldKilian</author>
+    <created>2026-07-10T11:19:40.533+02:00</created><modified>2026-07-13T19:00:00.000+02:00</modified>
+    <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
+        <setting name="charset">UTF-8</setting><setting name="projectFiles.separate">false</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
+        <setting name="target">SoilWise-gpkg-to-STA.halex</setting>
+    </save-config>
+    <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.common.schema.persist.hsd.json.read">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">src-gpkg-0001</setting>
+    <setting name="source">schemas/source-schema.hsd.json</setting><setting name="contentType">eu.esdihumboldt.hale.common.schema.hsd.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0000-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/ObservedPropertyRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0001-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/SensorRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0002-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/ObservingProcedureRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0003-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/ThingRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0004-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/FtSoilsiteRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0005-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/FtSoilderivedobjectRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0006-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/FtSoilbodyRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0007-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/FtSoilprofileRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0008-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/FtProfileelementRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0009-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/SoilsiteFeatureRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0010-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/SoilderivedobjectFeatureRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0011-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/SoilbodyFeatureRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0012-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/SoilprofileFeatureRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0013-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/ProfileelementFeatureRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0014-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/DatastreamRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource><resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.json.reader.dataschema">
+    <setting name="charset">UTF-8</setting><setting name="resourceId">tgt-0015-0000-4000-8000-000000000000</setting>
+    <setting name="source">schemas/requests/ObservationRequest.json</setting><setting name="contentType">eu.esdihumboldt.hale.io.json</setting>
+</resource>
+    <file name="alignment.xml" location="SoilWise-gpkg-to-STA.halex.alignment.xml"/>
+    <file name="styles.sld" location="SoilWise-gpkg-to-STA.halex.styles.sld"/>
+</hale-project>

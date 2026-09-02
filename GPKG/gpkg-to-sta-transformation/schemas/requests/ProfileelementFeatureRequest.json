@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sample-guid",
+    "method": "post",
+    "url": "Features",
+    "atomicityGroup": "g1",
+    "body": {
+      "name": "profileelement:sample-guid",
+      "encodingType": "application/geo+json",
+      "feature": {
+        "type": "Point",
+        "coordinates": [
+          11.25,
+          43.77
+        ]
+      },
+      "properties": {
+        "guid": "sample-guid",
+        "source_format": "GeoPackage",
+        "source_media_type": "application/geopackage+sqlite3",
+        "source_table": "profileelement",
+        "srs": "EPSG:3035",
+        "geometry_3035": "POINT(4321000 2612000)",
+        "inspireid_localid": "sample",
+        "inspireid_namespace": "sample",
+        "inspireid_versionid": "sample",
+        "profileelementdepthrange_uppervalue": "sample",
+        "profileelementdepthrange_lowervalue": "sample",
+        "beginlifespanversion": "sample",
+        "endlifespanversion": "sample",
+        "layertype": "sample",
+        "layerrocktype": "sample",
+        "layergenesisprocess": "sample",
+        "layergenesisenviroment": "sample",
+        "layergenesisprocessstate": "sample",
+        "profileelementtype": "sample",
+        "ispartof": "sample",
+        "fao_horizon": {
+          "source_table": "faohorizonnotationtype",
+          "faohorizondiscontinuity": 1,
+          "faohorizonmaster_1": "sample",
+          "faohorizonmaster_2": "sample",
+          "faohorizonsubordinate_1": "sample",
+          "faohorizonsubordinate_2": "sample",
+          "faohorizonsubordinate_3": "sample",
+          "faohorizonvertical": 1,
+          "faoprime": "sample",
+          "isoriginalclassification": "sample"
+        }
+      },
+      "FeatureTypes": [
+        {
+          "@id": "$ft-profileelement"
+        }
+      ]
+    }
+  }
+]

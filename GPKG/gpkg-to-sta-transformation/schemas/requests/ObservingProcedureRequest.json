@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sample-guid",
+    "method": "post",
+    "url": "ObservingProcedures",
+    "atomicityGroup": "g1",
+    "if": "not $sample-guid",
+    "body": {
+      "name": "sample",
+      "definition": "sample",
+      "description": "sample",
+      "properties": {
+        "guid": "sample-guid",
+        "source_format": "GeoPackage",
+        "source_media_type": "application/geopackage+sqlite3",
+        "source_table": "observingprocedure"
+      },
+      "Sensors": [ { "@id": "sample-guid" } ],
+      "ObservedProperties": [ { "@id": "sample-guid" } ]
+    }
+  }
+]

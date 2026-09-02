@@ -1,0 +1,20 @@
+[
+  {
+    "id": "thing-sample",
+    "method": "post",
+    "url": "Things",
+    "atomicityGroup": "g1",
+    "if": "not $thing-sample",
+    "body": {
+      "name": "thing:sample",
+      "description": "Soil site as observed Thing (synthesized).",
+      "properties": {
+        "guid": "thing-sample",
+        "source_format": "GeoPackage",
+        "source_media_type": "application/geopackage+sqlite3",
+        "source_table": "soilsite",
+        "source_soilsite_guid": "sample-guid"
+      }
+    }
+  }
+]

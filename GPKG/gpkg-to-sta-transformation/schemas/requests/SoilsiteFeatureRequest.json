@@ -1,0 +1,56 @@
+[
+  {
+    "id": "sample-guid",
+    "method": "post",
+    "url": "Features",
+    "atomicityGroup": "g1",
+    "body": {
+      "name": "soilsite:sample-guid",
+      "encodingType": "application/geo+json",
+      "feature": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              11.25,
+              43.77
+            ],
+            [
+              11.26,
+              43.77
+            ],
+            [
+              11.26,
+              43.78
+            ],
+            [
+              11.25,
+              43.77
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "guid": "sample-guid",
+        "source_format": "GeoPackage",
+        "source_media_type": "application/geopackage+sqlite3",
+        "source_table": "soilsite",
+        "srs": "EPSG:3035",
+        "geometry_3035": "POINT(4321000 2612000)",
+        "inspireid_localid": "sample",
+        "inspireid_namespace": "sample",
+        "inspireid_versionid": "sample",
+        "soilinvestigationpurpose": "sample",
+        "validfrom": "sample",
+        "validto": "sample",
+        "beginlifespanversion": "sample",
+        "endlifespanversion": "sample"
+      },
+      "FeatureTypes": [
+        {
+          "@id": "$ft-soilsite"
+        }
+      ]
+    }
+  }
+]

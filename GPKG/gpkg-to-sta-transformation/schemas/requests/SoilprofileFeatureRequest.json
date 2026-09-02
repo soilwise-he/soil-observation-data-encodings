@@ -1,0 +1,69 @@
+[
+  {
+    "id": "sample-guid",
+    "method": "post",
+    "url": "Features",
+    "atomicityGroup": "g1",
+    "body": {
+      "name": "soilprofile:sample-guid",
+      "encodingType": "application/geo+json",
+      "feature": {
+        "type": "Point",
+        "coordinates": [
+          11.25,
+          43.77
+        ]
+      },
+      "properties": {
+        "guid": "sample-guid",
+        "source_format": "GeoPackage",
+        "source_media_type": "application/geopackage+sqlite3",
+        "source_table": "soilprofile",
+        "srs": "EPSG:3035",
+        "geometry_3035": "POINT(4321000 2612000)",
+        "inspireid_localid": "sample",
+        "inspireid_namespace": "sample",
+        "inspireid_versionid": "sample",
+        "localidentifier": "sample",
+        "beginlifespanversion": "sample",
+        "endlifespanversion": "sample",
+        "validfrom": "sample",
+        "validto": "sample",
+        "isderived": "sample",
+        "wrbversion": "sample",
+        "wrbreferencesoilgroup": "sample",
+        "isoriginalclassification": "sample",
+        "wrb_qualifiers": {
+          "source_table": "wrbqualifiergroup_profile",
+          "related_source_table": "wrbqualifiergrouptype",
+          "records": [
+            {
+              "qualifiergrouptype_guid": "sample",
+              "qualifierposition": 1,
+              "wrbversion": "sample",
+              "qualifierplace": "sample",
+              "wrbqualifier": "sample",
+              "wrbspecifier_1": "sample",
+              "wrbspecifier_2": "sample"
+            }
+          ]
+        },
+        "isderivedfrom": {
+          "source_table": "isderivedfrom",
+          "related_source_table": "soilprofile",
+          "records": [
+            {
+              "source_guid": "sample",
+              "isderived": true
+            }
+          ]
+        }
+      },
+      "FeatureTypes": [
+        {
+          "@id": "$ft-soilprofile"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ft-soilderivedobject",
+    "method": "post",
+    "url": "FeatureTypes",
+    "atomicityGroup": "g1",
+    "if": "not $ft-soilderivedobject",
+    "body": {
+      "name": "Soil Derived Object",
+      "definition": "https://inspire.ec.europa.eu/featureconcept/SoilDerivedObject",
+      "description": "INSPIRE Soil Derived Object feature concept."
+    }
+  }
+]

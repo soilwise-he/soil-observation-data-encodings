@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ds-sample",
+    "method": "post",
+    "url": "Datastreams",
+    "atomicityGroup": "g1",
+    "body": {
+      "name": "sample",
+      "resultType": {
+        "type": "Quantity",
+        "definition": "$op-sample",
+        "label": "sample",
+        "uom": {
+          "code": "x",
+          "label": "x",
+          "symbol": "x",
+          "qudt_unit": "x",
+          "base_qudt_unit": "x",
+          "base_qudt_label": "x",
+          "conversionoffset": 0.0,
+          "conversionmultiplier": 1.0
+        }
+      },
+      "phenomenonTime": {
+        "start": "2020-01-01T00:00:00Z",
+        "end": "2020-01-01T00:00:00Z"
+      },
+      "resultTime": {
+        "start": "2020-01-01T00:00:00Z",
+        "end": "2020-01-01T00:00:00Z"
+      },
+      "properties": {
+        "guid": "ds-sample",
+        "source_format": "GeoPackage",
+        "source_media_type": "application/geopackage+sqlite3",
+        "source_table": "datastream"
+      },
+      "Thing": {
+        "@id": "$thing-sample"
+      },
+      "Sensor": {
+        "@id": "$sen-sample"
+      },
+      "ObservedProperties": [
+        {
+          "@id": "$op-sample"
+        }
+      ],
+      "ObservingProcedure": {
+        "@id": "$proc-sample"
+      },
+      "ProximateFeatureOfInterest": {
+        "@id": "$pe-sample"
+      },
+      "UltimateFeaturesOfInterest": [
+        {
+          "@id": "$site-sample"
+        }
+      ]
+    }
+  }
+]

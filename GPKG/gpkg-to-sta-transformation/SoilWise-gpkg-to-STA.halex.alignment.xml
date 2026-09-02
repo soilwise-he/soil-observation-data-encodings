@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000001-4000-8000-000000000000" priority="normal">
+    <source><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000002-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000003-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000004-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="ObservedProperties" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000005-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000006-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="if"/></property></target>
+    <parameter value="not ${guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000007-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="name"/></property></source><target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000008-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="definition"/></property></source><target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="definition"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000009-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="description"/></property></source><target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="description"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000010-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="guid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000011-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_format"/></property></target><parameter value="GeoPackage" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000012-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_media_type"/></property></target><parameter value="application/geopackage+sqlite3" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000013-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_table"/></property></target><parameter value="observedproperty" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000014-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="source"/></property></source><target><property><type name="ObservedPropertyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000015-4000-8000-000000000000" priority="normal">
+    <source><class><type name="sensor" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000016-4000-8000-000000000000" priority="normal">
+    <source><property><type name="sensor" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000017-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000018-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="Sensors" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000019-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000020-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="sensor" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="if"/></property></target>
+    <parameter value="not ${guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000021-4000-8000-000000000000" priority="normal">
+    <source><property><type name="sensor" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="name"/></property></source><target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000022-4000-8000-000000000000" priority="normal">
+    <source><property><type name="sensor" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="definition"/></property></source><target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="definition"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000023-4000-8000-000000000000" priority="normal">
+    <source><property><type name="sensor" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="description"/></property></source><target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="description"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000024-4000-8000-000000000000" priority="normal">
+    <source><property><type name="sensor" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="encodingtype"/></property></source><target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="encodingType"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000025-4000-8000-000000000000" priority="normal">
+    <source><property><type name="sensor" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="metadata"/></property></source><target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="metadata"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000026-4000-8000-000000000000" priority="normal">
+    <source><property><type name="sensor" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="guid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000027-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_format"/></property></target><parameter value="GeoPackage" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000028-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_media_type"/></property></target><parameter value="application/geopackage+sqlite3" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000029-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SensorRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_table"/></property></target><parameter value="sensor" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.join" id="Cjn-000000000901-4000-8000-000000000000" priority="normal">
+    <source name="types"><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="obsprocedure_obsdproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="innerJoin"/>
+    <complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="obsprocedure_obsdproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="obsprocedure_obsdproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observingprocedure"/></property></jp:condition></jp:join-parameter></complexParameter>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000031-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000032-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000033-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="ObservingProcedures" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000034-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000035-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="if"/></property></target>
+    <parameter value="not ${guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000036-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="name"/></property></source><target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000037-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="definition"/></property></source><target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="definition"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000038-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="description"/></property></source><target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="description"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000039-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="guid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000040-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_format"/></property></target><parameter value="GeoPackage" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000041-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_media_type"/></property></target><parameter value="application/geopackage+sqlite3" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000042-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_table"/></property></target><parameter value="observingprocedure" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000902-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="obsprocedure_obsdproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observedproperty"/></property></source><target><property><type name="ObservingProcedureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="ObservedProperties"/><child name="@id"/></property></target>
+    <parameter value="${guid_observedproperty}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000043-4000-8000-000000000000" priority="normal">
+    <source><class><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000044-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target>
+    <parameter value="thing-{guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000045-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000046-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="Things" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000047-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000048-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="if"/></property></target>
+    <parameter value="not $thing-{guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000049-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target>
+    <parameter value="thing:{guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000050-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="description"/></property></target><parameter value="Soil site as observed Thing (synthesized)." name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000051-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="guid"/></property></target>
+    <parameter value="thing-{guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000052-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_format"/></property></target><parameter value="GeoPackage" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000053-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_media_type"/></property></target><parameter value="application/geopackage+sqlite3" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000054-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_table"/></property></target><parameter value="soilsite" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000055-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ThingRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_soilsite_guid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000056-4000-8000-000000000000" priority="normal">
+    <source><class><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="FtSoilsiteRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000057-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilsiteRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target><parameter value="ft-soilsite" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000058-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilsiteRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000059-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilsiteRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="FeatureTypes" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000060-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilsiteRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000061-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilsiteRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="if"/></property></target><parameter value="not $ft-soilsite" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000062-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilsiteRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target><parameter value="Soil Site" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000063-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilsiteRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="definition"/></property></target><parameter value="https://inspire.ec.europa.eu/featureconcept/SoilSite" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000064-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilsiteRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="description"/></property></target><parameter value="INSPIRE Soil Site feature concept." name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000065-4000-8000-000000000000" priority="normal">
+    <source><class><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000066-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000067-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000068-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="Features" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000069-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000070-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target>
+    <parameter value="soilsite:{guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000071-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="encodingType"/></property></target><parameter value="application/geo+json" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000072-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="FeatureTypes"/><child name="@id"/></property></target><parameter value="$ft-soilsite" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000073-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="geometry"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="feature"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cgv-000000000074-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="geometry"/></property></source><target name="result"><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="geometry_3035"/></property></target>
+    <parameter value="false" name="variablesAsInstances"/>
+    <parameter value="_target = geometry?.geometry?.toText()" name="script"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000075-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="guid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000076-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_format"/></property></target><parameter value="GeoPackage" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000077-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_media_type"/></property></target><parameter value="application/geopackage+sqlite3" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000078-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_table"/></property></target><parameter value="soilsite" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000079-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="srs"/></property></target><parameter value="EPSG:3035" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000080-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="inspireid_localid"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="inspireid_localid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000081-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="inspireid_namespace"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="inspireid_namespace"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000082-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="inspireid_versionid"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="inspireid_versionid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000083-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="soilinvestigationpurpose"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="soilinvestigationpurpose"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000084-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="validfrom"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="validfrom"/></property></target>
+    <parameter value="{validfrom}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000085-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="validto"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="validto"/></property></target>
+    <parameter value="{validto}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000086-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="beginlifespanversion"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="beginlifespanversion"/></property></target>
+    <parameter value="{beginlifespanversion}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000087-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="endlifespanversion"/></property></source><target><property><type name="SoilsiteFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="endlifespanversion"/></property></target>
+    <parameter value="{endlifespanversion}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000088-4000-8000-000000000000" priority="normal">
+    <source><class><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="FtSoilderivedobjectRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000089-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilderivedobjectRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target><parameter value="ft-soilderivedobject" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000090-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilderivedobjectRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000091-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilderivedobjectRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="FeatureTypes" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000092-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilderivedobjectRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000093-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilderivedobjectRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="if"/></property></target><parameter value="not $ft-soilderivedobject" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000094-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilderivedobjectRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target><parameter value="Soil Derived Object" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000095-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilderivedobjectRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="definition"/></property></target><parameter value="https://inspire.ec.europa.eu/featureconcept/SoilDerivedObject" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000096-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilderivedobjectRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="description"/></property></target><parameter value="INSPIRE Soil Derived Object feature concept." name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000097-4000-8000-000000000000" priority="normal">
+    <source><class><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000098-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000099-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000100-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="Features" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000101-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000102-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target>
+    <parameter value="soilderivedobject:{guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000103-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="encodingType"/></property></target><parameter value="application/geo+json" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000104-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="FeatureTypes"/><child name="@id"/></property></target><parameter value="$ft-soilderivedobject" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000105-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="geometry"/></property></source><target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="feature"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cgv-000000000106-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="geometry"/></property></source><target name="result"><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="geometry_3035"/></property></target>
+    <parameter value="false" name="variablesAsInstances"/>
+    <parameter value="_target = geometry?.geometry?.toText()" name="script"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000107-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="guid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000108-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_format"/></property></target><parameter value="GeoPackage" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000109-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_media_type"/></property></target><parameter value="application/geopackage+sqlite3" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000110-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_table"/></property></target><parameter value="soilderivedobject" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000111-4000-8000-000000000000" priority="normal">
+    <target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="srs"/></property></target><parameter value="EPSG:3035" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000112-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="inspireid_localid"/></property></source><target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="inspireid_localid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000113-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="inspireid_namespace"/></property></source><target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="inspireid_namespace"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000114-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="inspireid_versionid"/></property></source><target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="inspireid_versionid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000115-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="accessuri"/></property></source><target><property><type name="SoilderivedobjectFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="accessuri"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000116-4000-8000-000000000000" priority="normal">
+    <source><class><type name="soilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="FtSoilbodyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000117-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilbodyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target><parameter value="ft-soilbody" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000118-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilbodyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000119-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilbodyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="FeatureTypes" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000120-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilbodyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000121-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilbodyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="if"/></property></target><parameter value="not $ft-soilbody" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000122-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilbodyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target><parameter value="Soil Body" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000123-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilbodyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="definition"/></property></target><parameter value="https://inspire.ec.europa.eu/featureconcept/SoilBody" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000124-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilbodyRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="description"/></property></target><parameter value="INSPIRE Soil Body feature concept." name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy.join" id="Cgj-000000000980-4000-8000-000000000000" priority="normal">
+    <source name="types"><class><type name="soilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="soilbody_geom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="SoilbodyFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="innerJoin"/>
+    <complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="soilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="soilbody_geom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="soilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="soilbody_geom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilbody"/></property></jp:condition></jp:join-parameter></complexParameter>
+    <complexParameter name="script"><core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def bodyId = _source.p.guid.value()&#13;
+&#13;
+def polys = []&#13;
+_source.links.soilbody_geom.each { part -&gt;&#13;
+  def g = part.p.geom.value()&#13;
+  def geometry = g?.geometry&#13;
+  if (geometry != null) {&#13;
+    for (int i = 0; i &lt; geometry.numGeometries; i++) {&#13;
+      polys &lt;&lt; geometry.getGeometryN(i)&#13;
+    }&#13;
+  }&#13;
+}&#13;
+def geomWkt = null&#13;
+if (!polys.isEmpty()) {&#13;
+  def gf = polys[0].factory&#13;
+  geomWkt = gf.createMultiPolygon(polys as org.locationtech.jts.geom.Polygon[]).toText()&#13;
+}&#13;
+&#13;
+def label = _source.p.soilbodylabel.value()&#13;
+def locid = _source.p.inspireid_localid.value()&#13;
+def ns = _source.p.inspireid_namespace.value()&#13;
+def verid = _source.p.inspireid_versionid.value()&#13;
+def beg = _source.p.beginlifespanversion.value()&#13;
+def end = _source.p.endlifespanversion.value()&#13;
+&#13;
+_target {&#13;
+  id(bodyId)&#13;
+  method('post')&#13;
+  url('Features')&#13;
+  atomicityGroup('g1')&#13;
+  body {&#13;
+    name('soilbody:' + bodyId)&#13;
+    encodingType('application/geo+json')&#13;
+    FeatureTypes {&#13;
+      '@id'('$ft-soilbody')&#13;
+    }&#13;
+    properties {&#13;
+      guid(bodyId)&#13;
+      source_format('GeoPackage')&#13;
+      source_media_type('application/geopackage+sqlite3')&#13;
+      source_table('soilbody')&#13;
+      srs('EPSG:3035')&#13;
+      if (geomWkt) { geometry_3035(geomWkt) }&#13;
+      if (label) { soilbodylabel(label) }&#13;
+      if (locid) { inspireid_localid(locid) }&#13;
+      if (ns) { inspireid_namespace(ns) }&#13;
+      if (verid) { inspireid_versionid(verid) }&#13;
+      if (beg) { beginlifespanversion(beg.toString()) }&#13;
+      if (end) { endlifespanversion(end.toString()) }&#13;
+    }&#13;
+  }&#13;
+}
+</core:text></complexParameter>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000146-4000-8000-000000000000" priority="normal">
+    <source><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="FtSoilprofileRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000147-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilprofileRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target><parameter value="ft-soilprofile" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000148-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilprofileRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000149-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilprofileRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="FeatureTypes" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000150-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilprofileRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000151-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilprofileRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="if"/></property></target><parameter value="not $ft-soilprofile" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000152-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilprofileRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target><parameter value="Soil Profile" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000153-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilprofileRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="definition"/></property></target><parameter value="https://inspire.ec.europa.eu/featureconcept/SoilProfile" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000154-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtSoilprofileRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="description"/></property></target><parameter value="INSPIRE Soil Profile feature concept." name="value"/>
+</cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.join" id="Cgj-000000000990-4000-8000-000000000000" priority="normal">
+        <source name="types"><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+        <source name="types"><class><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+        <source name="types"><class><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+        <source name="types"><class><type name="wrbqualifiergrouptype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+        <source name="types"><class><type name="isderivedfrom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+        <target><class><type name="SoilprofileFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+        <parameter value="false" name="innerJoin"/>
+        <complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="wrbqualifiergrouptype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="isderivedfrom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilprofile"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="location"/></property><property><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_wrbqualifiergrouptype"/></property><property><type name="wrbqualifiergrouptype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="isderivedfrom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_base"/></property></jp:condition></jp:join-parameter></complexParameter>
+        <complexParameter name="script"><core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def profileId = _source.p.guid.value()&#13;
+&#13;
+def plot = _source.links.soilplot.first()&#13;
+def plotLoc = plot?.p?.soilplotlocation?.value()&#13;
+def geometry = plotLoc?.geometry&#13;
+def geomWkt = geometry?.toText()&#13;
+&#13;
+def wrbRecords = []&#13;
+_source.links.wrbqualifiergroup_profile.each { wg -&gt;&#13;
+  def wgtGuid = wg.p.guid_wrbqualifiergrouptype.value()&#13;
+  def wgt = wg.links.wrbqualifiergrouptype.first()&#13;
+  wrbRecords &lt;&lt; [&#13;
+    qualifiergrouptype_guid: wgtGuid,&#13;
+    qualifierposition: wg.p.qualifierposition.value(),&#13;
+    wrbversion: wgt?.p?.wrbversion?.value(),&#13;
+    qualifierplace: wgt?.p?.qualifierplace?.value(),&#13;
+    wrbqualifier: wgt?.p?.wrbqualifier?.value(),&#13;
+    wrbspecifier_1: wgt?.p?.wrbspecifier_1?.value(),&#13;
+    wrbspecifier_2: wgt?.p?.wrbspecifier_2?.value()&#13;
+  ]&#13;
+}&#13;
+&#13;
+def derivedRecords = []&#13;
+_source.links.isderivedfrom.each { d -&gt;&#13;
+  derivedRecords &lt;&lt; [ source_guid: d.p.guid_related.value() ]&#13;
+}&#13;
+&#13;
+def locid = _source.p.inspireid_localid.value()&#13;
+def ns = _source.p.inspireid_namespace.value()&#13;
+def verid = _source.p.inspireid_versionid.value()&#13;
+def beg = _source.p.beginlifespanversion.value()&#13;
+def end = _source.p.endlifespanversion.value()&#13;
+def vf = _source.p.validfrom.value()&#13;
+def vt = _source.p.validto.value()&#13;
+def isder = _source.p.isderived.value()&#13;
+def isorig = _source.p.isoriginalclassification.value()&#13;
+def locident = _source.p.localidentifier.value()&#13;
+def wrbver = _source.p.wrbversion.value()&#13;
+def wrbrsg = _source.p.wrbreferencesoilgroup.value()&#13;
+&#13;
+_target {&#13;
+  id(profileId)&#13;
+  method('post')&#13;
+  url('Features')&#13;
+  atomicityGroup('g1')&#13;
+  body {&#13;
+    name('soilprofile:' + profileId)&#13;
+    encodingType('application/geo+json')&#13;
+    FeatureTypes {&#13;
+      '@id'('$ft-soilprofile')&#13;
+    }&#13;
+    properties {&#13;
+      guid(profileId)&#13;
+      source_format('GeoPackage')&#13;
+      source_media_type('application/geopackage+sqlite3')&#13;
+      source_table('soilprofile')&#13;
+      srs('EPSG:3035')&#13;
+      if (geomWkt) { geometry_3035(geomWkt) }&#13;
+      if (locid) { inspireid_localid(locid) }&#13;
+      if (ns) { inspireid_namespace(ns) }&#13;
+      if (verid) { inspireid_versionid(verid) }&#13;
+      if (beg != null) { beginlifespanversion(beg.toString()) }&#13;
+      if (end != null) { endlifespanversion(end.toString()) }&#13;
+      if (vf != null) { validfrom(vf.toString()) }&#13;
+      if (vt != null) { validto(vt.toString()) }&#13;
+      if (isder != null) { isderived(isder) }&#13;
+      if (isorig != null) { isoriginalclassification(isorig) }&#13;
+      if (locident) { localidentifier(locident) }&#13;
+      if (wrbver) { wrbversion(wrbver) }&#13;
+      if (wrbrsg) { wrbreferencesoilgroup(wrbrsg) }&#13;
+&#13;
+      if (!wrbRecords.isEmpty()) {&#13;
+        wrb_qualifiers {&#13;
+          source_table('wrbqualifiergroup_profile')&#13;
+          related_source_table('wrbqualifiergrouptype')&#13;
+          wrbRecords.each { rec -&gt;&#13;
+            records {&#13;
+              if (rec.qualifiergrouptype_guid) { qualifiergrouptype_guid(rec.qualifiergrouptype_guid) }&#13;
+              if (rec.qualifierposition != null) { qualifierposition(rec.qualifierposition) }&#13;
+              if (rec.wrbversion) { wrbversion(rec.wrbversion) }&#13;
+              if (rec.qualifierplace) { qualifierplace(rec.qualifierplace) }&#13;
+              if (rec.wrbqualifier) { wrbqualifier(rec.wrbqualifier) }&#13;
+              if (rec.wrbspecifier_1) { wrbspecifier_1(rec.wrbspecifier_1) }&#13;
+              if (rec.wrbspecifier_2) { wrbspecifier_2(rec.wrbspecifier_2) }&#13;
+            }&#13;
+          }&#13;
+        }&#13;
+      }&#13;
+&#13;
+      if (!derivedRecords.isEmpty()) {&#13;
+        isderivedfrom {&#13;
+          source_table('isderivedfrom')&#13;
+          related_source_table('soilprofile')&#13;
+          derivedRecords.each { rec -&gt;&#13;
+            records {&#13;
+              if (rec.source_guid) { source_guid(rec.source_guid) }&#13;
+              isderived(true)&#13;
+            }&#13;
+          }&#13;
+        }&#13;
+      }&#13;
+    }&#13;
+  }&#13;
+}
+</core:text></complexParameter>
+    </cell>
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000182-4000-8000-000000000000" priority="normal">
+    <source><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="FtProfileelementRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000183-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtProfileelementRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target><parameter value="ft-profileelement" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000184-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtProfileelementRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000185-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtProfileelementRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="FeatureTypes" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000186-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtProfileelementRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000187-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtProfileelementRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="if"/></property></target><parameter value="not $ft-profileelement" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000188-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtProfileelementRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target><parameter value="Profile Element" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000189-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtProfileelementRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="definition"/></property></target><parameter value="https://inspire.ec.europa.eu/featureconcept/ProfileElement" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000190-4000-8000-000000000000" priority="normal">
+    <target><property><type name="FtProfileelementRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="description"/></property></target><parameter value="INSPIRE Profile Element feature concept." name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.join" id="Cjn-000000000191-4000-8000-000000000000" priority="normal">
+    <source name="types"><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="innerJoin"/>
+    <complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_profileelement"/></property></jp:condition><jp:condition><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="ispartof"/></property><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="location"/></property><property><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition></jp:join-parameter></complexParameter>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000192-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000193-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000194-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="Features" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000195-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000196-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target>
+    <parameter value="profileelement:{guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000197-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="encodingType"/></property></target><parameter value="application/geo+json" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000198-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="FeatureTypes"/><child name="@id"/></property></target><parameter value="$ft-profileelement" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000199-4000-8000-000000000000" priority="normal">
+    <source><property><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="soilplotlocation"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="feature"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cgv-000000000200-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="soilplotlocation"/></property></source><target name="result"><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="geometry_3035"/></property></target>
+    <parameter value="false" name="variablesAsInstances"/>
+    <parameter value="_target = soilplotlocation?.geometry?.toText()" name="script"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000201-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="guid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000202-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_format"/></property></target><parameter value="GeoPackage" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000203-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_media_type"/></property></target><parameter value="application/geopackage+sqlite3" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000204-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_table"/></property></target><parameter value="profileelement" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000205-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="srs"/></property></target><parameter value="EPSG:3035" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000206-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="inspireid_localid"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="inspireid_localid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000207-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="inspireid_namespace"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="inspireid_namespace"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000208-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="inspireid_versionid"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="inspireid_versionid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000209-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="profileelementdepthrange_uppervalue"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="profileelementdepthrange_uppervalue"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000210-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="profileelementdepthrange_lowervalue"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="profileelementdepthrange_lowervalue"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000211-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="beginlifespanversion"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="beginlifespanversion"/></property></target>
+    <parameter value="{beginlifespanversion}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000212-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="endlifespanversion"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="endlifespanversion"/></property></target>
+    <parameter value="{endlifespanversion}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000213-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="layertype"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="layertype"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000214-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="layerrocktype"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="layerrocktype"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000215-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="layergenesisprocess"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="layergenesisprocess"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000216-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="layergenesisenviroment"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="layergenesisenviroment"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000217-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="layergenesisprocessstate"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="layergenesisprocessstate"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000218-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="profileelementtype"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="profileelementtype"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000219-4000-8000-000000000000" priority="normal">
+    <source><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="ispartof"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="ispartof"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000970-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="fao_horizon"/><child name="source_table"/></property></target><parameter value="faohorizonnotationtype" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000971-4000-8000-000000000000" priority="normal">
+    <source><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="faohorizondiscontinuity"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="fao_horizon"/><child name="faohorizondiscontinuity"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000972-4000-8000-000000000000" priority="normal">
+    <source><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="faohorizonmaster_1"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="fao_horizon"/><child name="faohorizonmaster_1"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000973-4000-8000-000000000000" priority="normal">
+    <source><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="faohorizonmaster_2"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="fao_horizon"/><child name="faohorizonmaster_2"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000974-4000-8000-000000000000" priority="normal">
+    <source><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="faohorizonsubordinate_1"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="fao_horizon"/><child name="faohorizonsubordinate_1"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000975-4000-8000-000000000000" priority="normal">
+    <source><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="faohorizonsubordinate_2"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="fao_horizon"/><child name="faohorizonsubordinate_2"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000976-4000-8000-000000000000" priority="normal">
+    <source><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="faohorizonsubordinate_3"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="fao_horizon"/><child name="faohorizonsubordinate_3"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000977-4000-8000-000000000000" priority="normal">
+    <source><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="faohorizonvertical"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="fao_horizon"/><child name="faohorizonvertical"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000978-4000-8000-000000000000" priority="normal">
+    <source><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="faoprime"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="fao_horizon"/><child name="faoprime"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000979-4000-8000-000000000000" priority="normal">
+    <source><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="isoriginalclassification"/></property></source><target><property><type name="ProfileelementFeatureRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="fao_horizon"/><child name="isoriginalclassification"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.join" id="Cjn-000000000220-4000-8000-000000000000" priority="normal">
+    <source name="types"><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="innerJoin"/>
+    <complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_profileelement"/></property><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="ispartof"/></property><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="location"/></property><property><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="locatedon"/></property><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="code_unitofmeasure"/></property><property><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="code"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observedproperty"/></property><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition></jp:join-parameter></complexParameter>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000221-4000-8000-000000000000" priority="normal">
+    <source><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000222-4000-8000-000000000000" priority="normal">
+    <target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000223-4000-8000-000000000000" priority="normal">
+    <target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="Datastreams" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000224-4000-8000-000000000000" priority="normal">
+    <target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000225-4000-8000-000000000000" priority="normal">
+    <source><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="name"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="name"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000226-4000-8000-000000000000" priority="normal">
+    <target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="type"/></property></target><parameter value="Quantity" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000227-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observedproperty"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="definition"/></property></target>
+    <parameter value="${guid_observedproperty}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000228-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="name"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="label"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000229-4000-8000-000000000000" priority="normal">
+    <source><property><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="code"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="uom"/><child name="code"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000230-4000-8000-000000000000" priority="normal">
+    <source><property><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="label"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="uom"/><child name="label"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000231-4000-8000-000000000000" priority="normal">
+    <source><property><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="symbol"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="uom"/><child name="symbol"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000232-4000-8000-000000000000" priority="normal">
+    <source><property><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="qudt_unit"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="uom"/><child name="qudt_unit"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000233-4000-8000-000000000000" priority="normal">
+    <source><property><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="base_qudt_unit"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="uom"/><child name="base_qudt_unit"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000234-4000-8000-000000000000" priority="normal">
+    <source><property><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="base_qudt_label"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="uom"/><child name="base_qudt_label"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000235-4000-8000-000000000000" priority="normal">
+    <source><property><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="conversionoffset"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="uom"/><child name="conversionoffset"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000236-4000-8000-000000000000" priority="normal">
+    <source><property><type name="unitofmeasure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="conversionmultiplier"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultType"/><child name="uom"/><child name="conversionmultiplier"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000237-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="phenomenontime_start"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="phenomenonTime"/><child name="start"/></property></target>
+    <parameter value="{phenomenontime_start}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000238-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="phenomenontime_end"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="phenomenonTime"/><child name="end"/></property></target>
+    <parameter value="{phenomenontime_end}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000239-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="resulttime_start"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultTime"/><child name="start"/></property></target>
+    <parameter value="{resulttime_start}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000240-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="resulttime_end"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultTime"/><child name="end"/></property></target>
+    <parameter value="{resulttime_end}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000241-4000-8000-000000000000" priority="normal">
+    <source><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="guid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000242-4000-8000-000000000000" priority="normal">
+    <target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_format"/></property></target><parameter value="GeoPackage" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000243-4000-8000-000000000000" priority="normal">
+    <target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_media_type"/></property></target><parameter value="application/geopackage+sqlite3" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000244-4000-8000-000000000000" priority="normal">
+    <target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_table"/></property></target><parameter value="datastream" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000245-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="Thing"/><child name="@id"/></property></target>
+    <parameter value="$thing-{guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000246-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_sensor"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="Sensor"/><child name="@id"/></property></target>
+    <parameter value="${guid_sensor}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000247-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observedproperty"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="ObservedProperties"/><child name="@id"/></property></target>
+    <parameter value="${guid_observedproperty}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000248-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observingprocedure"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="ObservingProcedure"/><child name="@id"/></property></target>
+    <parameter value="${guid_observingprocedure}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000249-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_profileelement"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="ProximateFeatureOfInterest"/><child name="@id"/></property></target>
+    <parameter value="${guid_profileelement}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000250-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="DatastreamRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="UltimateFeaturesOfInterest"/><child name="@id"/></property></target>
+    <parameter value="${guid}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.retype" id="Crt-000000000251-4000-8000-000000000000" priority="normal">
+    <source><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source>
+    <target><class><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/></class></target>
+    <parameter value="false" name="ignoreNamespaces"/><parameter value="false" name="structuralRename"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000252-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="id"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000253-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="method"/></property></target><parameter value="post" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000254-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="url"/></property></target><parameter value="Observations" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000255-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="atomicityGroup"/></property></target><parameter value="g1" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000256-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="result_real"/></property></source><target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="result"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000257-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="phenomenontime_start"/></property></source><target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="phenomenonTime"/></property></target>
+    <parameter value="{phenomenontime_start}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000258-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="resulttime"/></property></source><target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="resultTime"/></property></target>
+    <parameter value="{resulttime}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cfs-000000000259-4000-8000-000000000000" priority="normal">
+    <source name="var"><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_datastream"/></property></source><target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="Datastream"/><child name="@id"/></property></target>
+    <parameter value="${guid_datastream}" name="pattern"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000260-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></source><target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="guid"/></property></target>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000261-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_format"/></property></target><parameter value="GeoPackage" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000262-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_media_type"/></property></target><parameter value="application/geopackage+sqlite3" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.assign" id="Cas-000000000263-4000-8000-000000000000" priority="normal">
+    <target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_table"/></property></target><parameter value="observation" name="value"/>
+</cell>
+<cell relation="eu.esdihumboldt.hale.align.rename" id="Crn-000000000264-4000-8000-000000000000" priority="normal">
+    <source><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="properties"/></property></source><target><property><type name="ObservationRequest" ns="http://www.esdi-humboldt.eu/hale/json"/><child name="body"/><child name="properties"/><child name="source_properties"/></property></target>
+</cell>
+
+</alignment>

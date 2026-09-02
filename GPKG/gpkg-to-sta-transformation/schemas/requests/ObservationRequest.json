@@ -1,0 +1,23 @@
+[
+  {
+    "id": "obs-sample",
+    "method": "post",
+    "url": "Observations",
+    "atomicityGroup": "g1",
+    "body": {
+      "result": 0.0,
+      "phenomenonTime": "2020-01-01T00:00:00Z",
+      "resultTime": "2020-01-01T00:00:00Z",
+      "properties": {
+        "guid": "obs-sample",
+        "source_format": "GeoPackage",
+        "source_media_type": "application/geopackage+sqlite3",
+        "source_table": "observation",
+        "source_properties": "{}"
+      },
+      "Datastream": {
+        "@id": "$ds-sample"
+      }
+    }
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ft-soilsite",
+    "method": "post",
+    "url": "FeatureTypes",
+    "atomicityGroup": "g1",
+    "if": "not $ft-soilsite",
+    "body": {
+      "name": "Soil Site",
+      "definition": "https://inspire.ec.europa.eu/featureconcept/SoilSite",
+      "description": "INSPIRE Soil Site feature concept."
+    }
+  }
+]

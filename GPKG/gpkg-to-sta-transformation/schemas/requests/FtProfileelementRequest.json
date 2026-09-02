@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ft-profileelement",
+    "method": "post",
+    "url": "FeatureTypes",
+    "atomicityGroup": "g1",
+    "if": "not $ft-profileelement",
+    "body": {
+      "name": "Profile Element",
+      "definition": "https://inspire.ec.europa.eu/featureconcept/ProfileElement",
+      "description": "INSPIRE Profile Element feature concept."
+    }
+  }
+]
