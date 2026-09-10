@@ -1,4 +1,4 @@
-name,resulttype,resultformat,concept,element,element uri,unit_symbol,unit_uri,quantity kind_uri,method,description,primary key
+name,resulttype,resultformat,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
 Probenahme_Boden_ID,integer,,sosa:FeatureOfInterest,,,,,,,"A unique identifier for each soil sampling event, linking the observations to specific samples collected in the field.",True
 Versuchsjahr,integer,,sosa:phenomenonTime,,,,,,,The year in which the soil samples were collected during the long-term field experiment.,False
 Termin,date,%Y-%m-%dT%H:%M:%S,sosa:phenomenonTime,,,,,,,The specific date or time period when the soil sampling took place.,False

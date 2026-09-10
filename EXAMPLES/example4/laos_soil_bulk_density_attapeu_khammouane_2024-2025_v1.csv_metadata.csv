@@ -1,4 +1,4 @@
-name,resulttype,resultformat,concept,element,element uri,unit_symbol,unit_uri,quantity kind_uri,method,description,primary key
+name,resulttype,resultformat,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
 sample_ID,string,,sosa:FeatureOfInterest,,,,,,,"A unique identifier assigned to each soil sample, constructed to ensure traceability.",True
 sample_name,string,,sosa:FeatureOfInterest,,,,,,,"A unique identifier for each soil sample, combining field number, replicate number, depth interval, and location.",False
 ID_field,string,,ssn:Property,,,,,,,Identifier representing the specific field from which the soil sample was collected.,False

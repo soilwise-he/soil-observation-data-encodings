@@ -1,4 +1,4 @@
-name,datatype,dateTime format,element,concept,unit_symbol,unit_uri,method,description,concept_uri,quantity kind_uri,primary key
+name,datatype,dateTime format,element,concept,unit_symbol,unit_uri,method,description,concept_uri,quantity_kind_uri,primary_key
 sample_ID,string,,sosa:FeatureOfInterest,,,,,"Unique identifier assigned to each soil sample, constructed from various elements to ensure traceability.",,,True
 sample_name,string,,,field sample,,,null,"Unique identifier assigned to each soil sample, combining field number, replicate number, depth interval, and location.",https://data.geoscience.earth/ncl/ISO11074v2025/3.167,,False
 ID_field,string,,sosa:FeatureOfInterest,identifier,,,null,Identifier representing the specific field from which the soil sample was collected.,schema:identifier,,False
