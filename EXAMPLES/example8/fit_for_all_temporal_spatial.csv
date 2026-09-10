@@ -1,0 +1,2 @@
+table,table_key,filename,kind,value,type,precision
+ASAJA_Case_Study_Olive_Integrated_Production_fixed6.csv,ASAJA_Case_Study_Olive_Integrated_Production_fixed6.csv,https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example8/ASAJA_Case_Study_Olive_Integrated_Production_fixed6.csv,spatial,"{""XY reference system"": 4326}",,

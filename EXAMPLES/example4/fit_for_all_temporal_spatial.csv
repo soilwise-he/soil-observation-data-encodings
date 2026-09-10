@@ -1,0 +1,2 @@
+table,table_key,filename,kind,value,type,precision
+laos_soil_bulk_density_attapeu_khammouane_2024-2025_v1.csv,laos_soil_bulk_density_attapeu_khammouane_2024-2025_v1.csv,https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example4/laos_soil_bulk_density_attapeu_khammouane_2024-2025_v1.csv,spatial,"{""XY reference system"": 4326, ""Z reference system"": 9389}",,

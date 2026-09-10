@@ -1,0 +1,2 @@
+left_table,right_table,relation,left_id,right_id
+CIV_Cacao_feuilles%20Nguessan.xlsx | Feuil1,CIV_Cacao_sols%20Nguessan.xlsx | Feuil1,one-to-one,ID,ID

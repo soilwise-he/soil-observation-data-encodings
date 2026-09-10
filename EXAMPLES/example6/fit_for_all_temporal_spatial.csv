@@ -1,0 +1,3 @@
+table,table_key,filename,kind,value,type,precision
+CIV_Cacao_feuilles%20Nguessan.xlsx | Feuil1,CIV_Cacao_feuilles%20Nguessan.xlsx | Feuil1,https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example6/CIV_Cacao_feuilles%20Nguessan.xlsx,spatial,"{""XY reference system"": 4326}",,
+CIV_Cacao_sols%20Nguessan.xlsx | Feuil1,CIV_Cacao_sols%20Nguessan.xlsx | Feuil1,https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example6/CIV_Cacao_sols%20Nguessan.xlsx,spatial,"{""XY reference system"": 4326}",,

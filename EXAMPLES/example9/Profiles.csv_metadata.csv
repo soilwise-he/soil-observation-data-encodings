@@ -1,0 +1,6 @@
+name,resulttype,resultformat,concept,element,element uri,unit_symbol,unit_uri,quantity kind_uri,method,description,primary key
+pid,string,,sosa:FeatureOfInterest,,,,,,,A unique identifier for each data entry or sample in the dataset.,True
+cc,string,,ssn:Property,,,,,,,A variable representing the land cover or land use classification associated with the data point.,False
+lon,decimal,,geo:Feature,,,,,,,"The geographic longitude of the data point, expressed in decimal degrees.",False
+lat,decimal,,geo:Feature,,,,,,,"The geographic latitude of the data point, expressed in decimal degrees.",False
+year,gYear,,sosa:phenomenonTime,,,,,,,The year in which the data was collected or recorded.,False

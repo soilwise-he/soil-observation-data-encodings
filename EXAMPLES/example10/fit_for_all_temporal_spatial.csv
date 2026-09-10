@@ -1,0 +1,2 @@
+table,table_key,filename,kind,value,type,precision
+v140_mun.V2_0_2012_PARZELLE_V140.csv,v140_mun.V2_0_2012_PARZELLE_V140.csv,https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/v140_mun.V2_0_2012_PARZELLE_V140.csv,spatial,"{""XY reference system"": 4326}",,

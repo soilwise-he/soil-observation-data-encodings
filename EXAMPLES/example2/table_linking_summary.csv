@@ -1,0 +1,2 @@
+left_table,right_table,relation,left_id,right_id
+leaves.csv,trees.csv,one-to-one,TREEID,TREEID

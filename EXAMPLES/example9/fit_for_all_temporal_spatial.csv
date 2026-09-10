@@ -1,0 +1,2 @@
+table,table_key,filename,kind,value,type,precision
+Profiles.csv,Profiles.csv,https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example9/Profiles.csv,spatial,"{""XY reference system"": 4326}",,
