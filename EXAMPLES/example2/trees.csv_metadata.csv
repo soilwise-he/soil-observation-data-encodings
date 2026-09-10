@@ -1,4 +1,4 @@
-name,resulttype,resultformat,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
+name,column_type,column_format,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
 TREEID,integer,,sosa:FeatureOfInterest,,,,,,,"A unique identifier assigned to each tree in the dataset, used to distinguish between different specimens.",True
 LAT,integer,,geo:Feature,,,,,,,"The latitude coordinate representing the north-south position of a tree's location on the Earth's surface, measured in degrees.",False
 LONG,integer,,geo:Feature,,,,,,,"The longitude coordinate representing the east-west position of a tree's location on the Earth's surface, measured in degrees.",False

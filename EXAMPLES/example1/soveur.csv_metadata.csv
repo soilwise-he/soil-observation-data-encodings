@@ -1,4 +1,4 @@
-name,resulttype,resultformat,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
+name,column_type,column_format,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
 PRID,string,,sosa:FeatureOfInterest,,,,,,,A unique identifier for each soil profile or sample in the dataset.,False
 HONU,integer,,ssn:Property,,,,,,,"A variable representing the horizon number within a soil profile, indicating the sequence of soil layers.",False
 HBUP,integer,,ssn:Property,,,,,,,"The upper boundary depth of a specific soil horizon, measured in centimeters from the soil surface.",False

@@ -1,4 +1,4 @@
-name,resulttype,resultformat,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
+name,column_type,column_format,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
 LEAFID,integer,,sosa:FeatureOfInterest,,,,,,,"A unique identifier assigned to each leaf, used to distinguish individual leaves in the dataset.",True
 TREEID,integer,,,tree,http://opendata.inrae.fr/thesaurusINRAE/c_6499,,,,,"A unique identifier assigned to each tree, used to distinguish individual trees in the dataset.",False
 SIZE,integer,,sosa:observedProperty,leaf length,http://opendata.inrae.fr/thesaurusINRAE/c_15919,cm,http://qudt.org/vocab/unit/CentiM,http://qudt.org/vocab/quantitykind/Length,ISO 12194:1995,"A measurement representing the dimensions of a leaf, which may include metrics such as length and width.",False

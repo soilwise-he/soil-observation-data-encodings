@@ -1,4 +1,4 @@
-name,resulttype,resultformat,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
+name,column_type,column_format,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
 pid,string,,sosa:FeatureOfInterest,,,,,,,A unique identifier for each soil sample or observation in the dataset.,False
 top,integer,,ssn:Property,,,,,,,"The depth of the top boundary of the soil sample, typically measured in centimeters from the soil surface.",False
 bot,integer,,ssn:Property,,,,,,,"The depth of the bottom boundary of the soil sample, typically measured in centimeters from the soil surface.",False

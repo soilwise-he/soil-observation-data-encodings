@@ -1,4 +1,4 @@
-name,resulttype,resultformat,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
+name,column_type,column_format,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
 OBJECTID,integer,,sosa:FeatureOfInterest,,,,,,,"A unique identifier for each record in the dataset, typically used for referencing and indexing purposes.",True
 Parzelle,integer,,,parcels,http://aims.fao.org/aos/agrovoc/c_fdfbb37f,,,,,A variable representing the parcel number or identifier associated with the soil observation site.,False
 Sw_X_Etrs89,decimal,,ssn:Property,,,,,,,The east coordinate (X) in the ETRS89 coordinate reference system for the southwest corner of the parcel.,False
