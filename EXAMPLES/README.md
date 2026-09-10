@@ -58,7 +58,18 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 - quantity_kind_uri: Link to QUDT Quantity Kind
 - method: methodology used to determine the concept for the case that the concept_type is a sosa:Property. Method becomes sosa:ObservingProcedure
 - description: description of the column
-- primary_key: not clear
+- primary_key: ??? not clear
 
 ### Notes
 Concept: in order to differentiate between simple attributes (provided without context) and sosa properties (provided with observational metainformation), we use schema:Property for simple attributes, sosa:Property for properties provided by sosa:Observation.
+
+## Base table fit_for_all_temporal_spatial.csv
+Information that pertains to all columns, e.g. CRS
+
+- table_key: Unique table name (CSV filename, Excel filename|Tab)
+- file_uri: URI to locate the file containing the table
+- kind: spatial|temporal
+- key: Explanation of what the value represents, e.g. "XY reference system", "sosa:PhenomenonTime"
+- value: the value to the key above, e.g. 4326, "2024-05"
+- format: Internal formatting of the value
+
