@@ -46,4 +46,17 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 | GeoTIFF | 1 |  | 1 | X | X |  |  | 
 | CIS | 1 |  | 1 | 1 | 1 |  |  | 
 
-
+## Analysis Table
+- name	
+- resulttype	
+- resultformat	
+- concept	
+- element	
+- element uri	
+- unit_symbol	
+- unit_uri	
+- quantity 
+- kind_uri	
+- method	
+- description	
+- primary key
