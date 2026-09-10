@@ -1,18 +1,8 @@
 # Soil observation encodings
 
-Observation data on soil samples is typically captured accoring to Observations, Measurements and Samples (OMS) principles. Various encoding conventions exist to store or exchange such observation data. In this repository we explore a number of these conventions. Including sample code, data and tools.
+Authors: Kathi Schleidt, Max Vercruyssen, Paul van Genuchten
 
-Soil data models such as [ISO28258:2013](https://www.iso.org/standard/44595.html), [FAO-GLOSIS](https://github.com/FAO-SID/SIS-dev/blob/main/sis-database/Entity_Relationship_Diagram.png) and [INSPIRE Soil](https://github.com/INSPIRE-MIF/technical-guidelines/tree/main/data/so) are based on the OMS datamodel. General aspects of OMS are covered in a [dedicated common topic](https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/COMMON).
-
-The encodings explored are: 
-
-- [Simple CSV](#simple-csv)
-- [Annotated tabular data (CSVW)](#annotated-tabular-data)
-- [RO-Crate](#ro-crate---isa-profile)
-- [OMS as GML](#oms-as-gml)
-- [SensorThings API](#sensor-things-api-sta)
-- [Relational databases](#relational-databases)
-- [Semantic web](#semantic-web)
+Observation data from field campaigns or analysis on soil samples from laboratories is typically captured according to the Observations, Measurements and Samples (OMS) principles. Various encoding conventions exist to store or exchange such observation data. In this effort we explore a number of these conventions. Including sample code, data and tools.
 
 ## Background
 
@@ -26,9 +16,32 @@ Adopting one of the models for your (research) data has three benefits.
 
 [Read more about OMS principles](./COMMON)
 
-## Which data models
 
-In the SoilWise project we're exploring the following data encodings to capture soil observation data.
+### Differences between INSPIRE Soil, ISO 28258 and GloSIS data models
+
+The INSPIRE Soil, ISO 28258 and GloSIS data models are each based on the OMS core datamodel, and thus largely interoperable. But there are also notable differences between the models.
+
+The main difference between the INSPIRE and ISO 28258 models pertains to the spatial features defined to represent aspects of soil investigations. While there is clear consensus on the core FeatureTypes required, specifically Site, Plot, Profile and ProfileElements (Layers and Horizons), the 2 models then diverge on various aspects:
+- Specimen: only provided under ISO 28258
+- Derived Types: DerivedSoilProfile, SoilDerivedObject, SoilBody only available under INSPIRE
+- Soil Mapping: SoilMap with the associated classes SoilMappingUnitCategory, SoilTypologicalUnit and SoilMappingUnit are only provided under ISO 28258
+- Projects and related Analysis Requests are only provided under ISO 28258
+
+[Read more about the differences in common encodings](./COMMON/SoilDataModels.md)
+
+## Soil observation data encodings
+
+We explore some of the commonly used encodings and how to traverse between them.
+The encodings explored are: 
+
+- [Simple CSV](#simple-csv)
+- [Annotated tabular data (CSVW)](#annotated-tabular-data)
+- [RO-Crate](#ro-crate---isa-profile)
+- [OMS as GML](#oms-as-gml)
+- [SensorThings API](#sensor-things-api-sta)
+- [Relational databases](#relational-databases)
+- [Semantic web](#semantic-web)
+
 
 ### Simple CSV
 
@@ -45,8 +58,8 @@ on a soil profile or measurement on a prepared soil sample.
 In the soil science domain it is quite common to share soil observation data in a tabular format (Excel, CSV, DBF). Where samples are listed as rows and observed properties as columns. Column contents are further explained in a readme file or report. Various initiatives exist to standardise the syntax of these readme documents, so also machines can parse this information. We are aware of the following initiatives:
 
 - [CSV-W](./CSVW/) a json-ld alike initiative to annotate CSV files (as rdf)
-- [TableSchema](./CSVW/README.md#okfn-datapackage) of the DataPackage inititative (OKFN Frictionless data).
-- [ISO19110:2016](./CSVW/README.md#iso19110--iso19115) which can be embedded in a ISO19115 document
+- [TableSchema](./CSVW#okfn-datapackage) of the DataPackage inititative (OKFN Frictionless data).
+- [ISO19110:2016](./CSVW#iso19110--iso19115) which can be embedded in a ISO19115 document
 
 In [CSVW](./CSVW/) we're exploring a [CSV-W approach](https://csvw.org/) to annotate tabular data, to make it  interoperable. The above Simple CSV approach internally uses this technology.
 
@@ -75,15 +88,15 @@ This makes it a promising approach for describing, exchanging, and reusing soil 
 
 ### OMS as GML
 
-Traditionally data following the UML based models are exchanged via a GML/XML encoding. The OGC [Web Feature Service (WFS)](https://www.ogc.org/standards/wfs) protocol is typically used to exchange such GML documents. Because the Soil data model builds on OMS, also the Senser Observation Service (SOS) protocol can be used to exchange soil observation data.
+Traditionally data following the UML based models are exchanged via a GML/XML encoding. The OGC [Web Feature Service (WFS)](https://www.ogc.org/standards/wfs) protocol is typically used to exchange such GML documents. 
 
-On the web various datasets are available in this encoding. For example via the [INSPIRE Geoportal](https://inspire-geoportal.ec.europa.eu/).
+On the web various datasets are available in this encoding. For example via the [EU data portal](https://data.europa.eu/).
 
 The [Hale Desktop](https://github.com/halestudio/hale) software is an interesting utility to create or consume these GML documents.
 
-The CSVW approach mentioned above, is able to serialize a dataset in this INSPIRE GML format.
-
 Over the years challenges have been identified with this encoding, such as complexity of the GML syntax, large file sizes, limited support in common software tools. Newer encodings are explored below to address these challenges.
+
+[Read more about the GML encoding]()
 
 
 ### Sensor Things API (STA)
@@ -116,5 +129,11 @@ Other relevant ontologies in this domain are [iMash](https://archive.researchdat
 
 [Read more](./RDF/)
 
+## Alternative models not (yet) explored in this effort
 
+Some alternative/complemetary models used to describe observation data in our domains, but not further explored here, are:
+- The [ISA (Investigation, Study, Assay)](https://isa-tools.org) framework is a platform designed for managing experimental metadata in life sciences, environmental, and biomedical research.
+- The Observation class in [schema.org](https://schema.org/Observation) aims to capture observation data, including unit and measurement method
+- [GBIF/EML](https://doi.org/10.35035/doc-ynvs-eh84) aims to collect information about biological organisms observed in a specific area at a given time
+- [MIAPPE (Minimum Information About Plant Phenotyping Experiments)](https://www.miappe.org/) is a data standard designed to harmonize data from plant phenotyping experiments
 

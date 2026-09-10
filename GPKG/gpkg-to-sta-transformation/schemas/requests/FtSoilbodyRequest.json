@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ft-soilbody",
+    "method": "post",
+    "url": "FeatureTypes",
+    "atomicityGroup": "g1",
+    "if": "not $ft-soilbody",
+    "body": {
+      "name": "Soil Body",
+      "definition": "https://inspire.ec.europa.eu/featureconcept/SoilBody",
+      "description": "INSPIRE Soil Body feature concept."
+    }
+  }
+]

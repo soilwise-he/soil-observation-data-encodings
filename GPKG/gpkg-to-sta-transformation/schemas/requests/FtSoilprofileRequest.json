@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ft-soilprofile",
+    "method": "post",
+    "url": "FeatureTypes",
+    "atomicityGroup": "g1",
+    "if": "not $ft-soilprofile",
+    "body": {
+      "name": "Soil Profile",
+      "definition": "https://inspire.ec.europa.eu/featureconcept/SoilProfile",
+      "description": "INSPIRE Soil Profile feature concept."
+    }
+  }
+]

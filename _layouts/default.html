@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+
+{% seo %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    
+    <header>
+    <div class="page-header" style="padding:10px;text-align:left">
+        <div style="float:right">
+           <b>Soil Observation Data Encodings</b>
+          </div>
+          <a title="Logo Home" href="/soil-observation-data-encodings">
+          <img class="header-img" 
+            src="https://soilwise-he.github.io/SoilWise-documentation/_assets/images/SoilWise_logo.png" 
+            alt="soilwise" title="soilwise" height="63"></a><br/>
+    </div>
+    
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+    </main>
+    <footer class="site-footer page-header">
+        SoilWise HE, 2026<br/><br/>
+        <small>
+        The <a href="https://soilwise-he.eu" style="color:white">SoilWise HE project</a> receives funding from the European Union’s HORIZON Innovation Actions 2022 under grant agreement No. 101112838.
+        Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or Research Executive Agency. 
+        Neither the European Union nor the granting authority can be held responsible for them.</small>
+    </footer>
+   
+  </body>
+</html>

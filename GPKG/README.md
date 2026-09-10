@@ -1,5 +1,7 @@
 # GeoPackage
 
+This work is being done under the [GeoPackage Repo of SoilWise](https://github.com/soilwise-he/Geopackage-so)
+
 This work builds on the work of EJP Soil project, which crafted a [geopackage for soil data based on the INSPIRE model](https://github.com/ejpsoil/inspire_soil_gpkg_template).
 
 While testing the geopackage in real world scenario's, some observations were made
@@ -8,6 +10,14 @@ While testing the geopackage in real world scenario's, some observations were ma
 
 Any INSPIRE GeoPackage is combined with a Hale Studio transformation project to transform the data to the INSPIRe Soil GML model. How is this transformation project stored along side the geopackage?
 
+
+## Convert geopackage to SensorThings API using Hale Studio
+
+A companion Hale Studio transformation converts the GeoPackage into a
+[SensorThings API](https://www.ogc.org/standards/sensorthings/) 2.0 batch request, ready
+to upload to a [FROST server](https://github.com/FraunhoferIOSB/FROST-Server). See
+[`gpkg-to-sta-transformation/`](gpkg-to-sta-transformation/) for the transformation
+project, scripts, and usage instructions.
 
 ## Visualize STA in QGIS
 

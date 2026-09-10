@@ -1,21 +1,30 @@
 # RO-Crate - ISA/ARC profile
 
-ndfiplant endorses a [ro-crate profile adopting aspects of the ISA/ARC community](https://github.com/nfdi4plants/arc-ro-crate-profile). 
-In discussion with the LTE community, this profile was suggested as relevant, also to the soil domain.
-This repository contains some ongoing examples to study different ro-crate implementations, their validation and transformation.
+[RO-Crate](https://www.researchobject.org/ro-crate/specification/1.1/) is an approach 
+to package a data file with complete metadata about the context in which the file is 
+procuded. It links the data file to its project, experiment setup and processing workflows.
 
-[Ro-crate](https://www.researchobject.org/ro-crate/specification/1.1/) is an approach to package a data file with complete metadata on the context in which the file is procuded. It links the data file to its project, 
-experiment setup and processing workflows.
+A RO-Crate can be deposited in academic repositories, such as Zenodo, Dataverse, Yoda, DSpace.
 
-The ro-crate can be deposited in Zenodo or in dedicated ro-crate hubs, like [fairdomhub](https://fairdomhub.org/). Datasets published via fairdomhub are ingested by OpenAire.
+RO-Crate endorses academic repositories to adopt a [signposting](https://signposting.org) approach in which the dataset landing page [guides users directly to the RO-Crate](https://www.researchobject.org/ro-crate/specification/1.2/data-entities#retrieving-an-ro-crate) which further describes the resource. This is a webby approach for [FAIR Digital Objects](https://fairdigitalobjectframework.org/). At the moment, Zenodo and Dataverse do not support the signposting approach yet. But there are various samples of datasets with RO-Crate metadata, such as:
 
-The ISA/ARC profile adds labprocesses from the life sciences, using bioschemas.org. Basic principles such as data-referencing are explained in [this webpage](https://arc-rdm.org/details/documentation-principle/)
+- https://doi.org/10.4121/21304308.v1
+- https://doi.org/10.5281/zenodo.5753092
 
-A nice visualisation of labprocess is available at <https://bioschemas.org/useCases/LabProcess>
+
+## ISA+ARC RO-Crate profile
+
+The `Investigation, Study, Assay` (ISA) framework helps to provide rich description of experimental metadata (i.e. sample characteristics, technology and measurement types, sample-to-data relationships) so that the resulting data and discoveries are reproducible and reusable.
+
+The [ISA profile for RO-Crate](https://github.com/nfdi4plants/arc-to-rocrate/blob/main/profiles/investigation.md) extends RO-Crate with experimental processes from the life sciences, based on [bioschemas.org](https://bioschemas.org). ISA builds [Annotated Research Context](https://arc-rdm.org/details/documentation-principle/) (ARC). A nice visualisation of labprocess is available at <https://bioschemas.org/useCases/LabProcess>
+
+The German initiative [ndfiplant](https://www.nfdi4plants.org/) endorses an [RA-Crate profile adopting aspects of the ISA/ARC community](https://github.com/nfdi4plants/arc-ro-crate-profile). 
+In discussion with the LTE community, this profile was suggested as relevant to the soil domain.
+
 
 ## RO-crate editor
 
-For basic ro-crate creation, use the LDACA [crate-o editor](https://language-research-technology.github.io/crate-o/#/), which allows to select a local folder and start annotating the files present
+For basic RO-Crate creation, use for example the LDACA [crate-o editor](https://language-research-technology.github.io/crate-o), which allows to select a local folder and start annotating the files present
 
 ## FAIR data station
 
@@ -30,11 +39,11 @@ FAIR datastation uses common [vocabularies from the ENA](https://www.ebi.ac.uk/e
 
 At the moment discussion is taking place on a new ISA/ARC version of the profile. The FAIR data station experiences will certainly be integrated in the new profile.
 
-## validator
+## Validator
 
-ro-crates can be validated using [roc-validator](https://pypi.org/project/roc-validator/)
+RO-Crates can be validated using [roc-validator](https://pypi.org/project/roc-validator/)
 
-## diagrams
+## Diagrams
 
 Structure of ro-crate ARC profile
 
@@ -109,3 +118,8 @@ graph TD
 
     LP1 --> RAW["Assay datasets"]
 ```
+
+## RO-Crate + CSVW
+
+In theory a combination of RO-Crate and CSVW provides enough information to parse any tabular dataset.
+However no single tooling seems to exist to parse an RO-Crate including embedded csvw, however it can likely be managed in a 2 step process. Practical examples of this include: Language Data Commons of Australia (LDaCA): They use RO-Crates to make massive linguistic datasets accessible. In their Jupyter Notebook analysis environments, a script first scans the RO-Crate and then automatically extracts the correct [columns](https://www.ldaca.edu.au/resources/user-guides/crate-o/convert-spreadsheet/#columns) and data types via the CSVW standard to feed text analytics workflows. The Helmholtz Metadata Collaboration (HMC): In their Zeitgeist project (within the energy research domain), the backend supplies data as an RO-Crate, where the internal time series and measured values ​​are semantically described and loaded specifically via the CSVW standard.

@@ -1,0 +1,4 @@
+# Source GeoPackage(s) are not committed here; they live in soilwise-he/Geopackage-so,
+# the single source of truth. See ../README.md for where to get one and how to point
+# hale at it. This ignore rule stops one from being accidentally re-added.
+*.gpkg
