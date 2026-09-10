@@ -47,16 +47,18 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 | CIS | 1 |  | 1 | 1 | 1 |  |  | 
 
 ## Analysis Table
-- name	
-- resulttype	
-- resultformat	
-- concept	
-- element	
-- element uri	
-- unit_symbol	
-- unit_uri	
-- quantity 
-- kind_uri	
-- method	
-- description	
-- primary key
+- name: Column Header from original CSV
+- column_type: Datatype of the column content
+- column_format: Internal formatting of the column content
+- concept: semantic concept this column represents, e.g. sosa:FeatureOfInterest, sosa:Property, schema:Property
+- element:
+- element_uri:
+- unit_symbol: Unit of Measurement symbol
+- unit_uri: Link to QUDT Unit of Measurement
+- quantity_kind_uri: Link to QUDT Quantity Kind
+- method:
+- description:
+- primary_key:
+
+### Notes
+Concept: in order to differentiate between simple attributes (provided without context) and sosa properties (provided with observational metainformation), we use schema:Property for simple attributes, sosa:Property for properties provided by sosa:Observation.
