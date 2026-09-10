@@ -1,4 +1,4 @@
 left_table,right_table,relation,left_id,right_id
-v140_mun.V2_0_2012_BODENLABORWERTE.csv,v140_mun.V2_0_2012_PARZELLE_V140.csv,not linked,,
+v140_mun.V2_0_2012_BODENLABORWERTE.csv,v140_mun.V2_0_2012_PARZELLE_V140.csv,not-linked,,
 v140_mun.V2_0_2012_BODENLABORWERTE.csv,v140_mun.V2_0_2012_PROBENAHME_BODEN.csv,one-to-one,Probenahme_Boden_ID,Probenahme_Boden_ID
 v140_mun.V2_0_2012_PARZELLE_V140.csv,v140_mun.V2_0_2012_PROBENAHME_BODEN.csv,one-to-one,Parzelle,Parzelle_ID

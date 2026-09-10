@@ -1,44 +1,44 @@
 name,column_type,column_format,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
 Bodenlaborwerte_ID,integer,,sosa:FeatureOfInterest,,,,,,,A unique identifier for soil laboratory values recorded in the dataset.,False
 Probenahme_Boden_ID,integer,,,,,,,,,A unique identifier for soil sampling events linked to specific soil observations.,False
-Ph_Wert,decimal,,sosa:observedProperty,pH-value,http://www.eionet.europa.eu/gemet/concept/14636,,,,,"The pH value of the soil, indicating its acidity or alkalinity, measured in a laboratory setting.",False
-Ct,integer,,sosa:observedProperty,soil carbon density,http://w3id.org/glosis/model/siteplot/soilCarbonDensityProperty,,,,,"The total carbon content in the soil, typically expressed as a percentage of the soil mass.",False
-C_hwl,decimal,,sosa:observedProperty,,,,,,,The carbon content in the soil measured using the hot water leaching method.,False
-Nt,decimal,,sosa:observedProperty,total nitrogen,http://aims.fao.org/aos/agrovoc/c_bdc779f4,,,,,"The total nitrogen content in the soil, usually expressed as a percentage of the soil mass.",False
-NO3_N,decimal,,sosa:observedProperty,nitrate,http://www.eionet.europa.eu/gemet/concept/5593,,,,,"The concentration of nitrate nitrogen in the soil, typically measured in milligrams per kilogram.",False
-NH4_N,decimal,,sosa:observedProperty,ammonium,http://www.eionet.europa.eu/gemet/concept/379,,,,,"The concentration of ammonium nitrogen in the soil, usually expressed in milligrams per kilogram.",False
-CaCO3_C,decimal,,sosa:observedProperty,carbonates content,http://w3id.org/glosis/model/layerhorizon/carbonatesContentProperty,,,,,"The carbon content derived from calcium carbonate in the soil, expressed as a percentage.",False
-P,decimal,,sosa:observedProperty,total phosphorus,http://aims.fao.org/aos/agrovoc/c_ac4b3c22,,,,,"The concentration of phosphorus in the soil, typically measured in milligrams per kilogram.",False
-K,string,,sosa:observedProperty,potassium,http://opendata.inrae.fr/thesaurusINRAE/c_15734,,,,,"The concentration of potassium in the soil, usually expressed in milligrams per kilogram.",False
-Mg,string,,sosa:observedProperty,magnesium,http://aims.fao.org/aos/agrovoc/c_4517,,,,,"The concentration of magnesium in the soil, typically measured in milligrams per kilogram.",False
-Ca,integer,,sosa:observedProperty,calcium content,http://www.eionet.europa.eu/gemet/concept/1112,,,,,"The concentration of calcium in the soil, usually expressed in milligrams per kilogram.",False
-B,decimal,,sosa:observedProperty,boron,http://www.eionet.europa.eu/gemet/concept/965,,,,,"The concentration of boron in the soil, typically measured in milligrams per kilogram.",False
-Cu,decimal,,sosa:observedProperty,copper,http://www.eionet.europa.eu/gemet/concept/1792,,,,,"The concentration of copper in the soil, usually expressed in milligrams per kilogram.",False
-Mn,integer,,sosa:observedProperty,manganese,http://w3id.org/glosis/model/layerhorizon/manganeseProperty,,,,,"The concentration of manganese in the soil, typically measured in milligrams per kilogram.",False
-Mo,decimal,,sosa:observedProperty,molybdenum,http://w3id.org/glosis/model/layerhorizon/molybdenumProperty,,,,,"The concentration of molybdenum in the soil, usually expressed in milligrams per kilogram.",False
-Zn,decimal,,sosa:observedProperty,zinc content,http://opendata.inrae.fr/thesaurusINRAE/c_16440,,,,,"The concentration of zinc in the soil, typically measured in milligrams per kilogram.",False
-F,decimal,,sosa:observedProperty,fluorine,http://aims.fao.org/aos/agrovoc/c_2996,,,,,"The concentration of fluorine in the soil, usually expressed in milligrams per kilogram.",False
-Grobsand,decimal,,sosa:observedProperty,coarse sand,http://aims.fao.org/aos/agrovoc/c_c03927e1,,,,,"The percentage of coarse sand particles in the soil, typically measured by particle size analysis.",False
-Mittelsand,decimal,,sosa:observedProperty,,,,,,,"The percentage of medium sand particles in the soil, usually determined through particle size analysis.",False
-Feinsand,decimal,,sosa:observedProperty,fine sand,http://aims.fao.org/aos/agrovoc/c_a91f25d6,,,,,"The percentage of fine sand particles in the soil, typically measured by particle size analysis.",False
-Grobschluff,decimal,,sosa:observedProperty,,,,,,,"The percentage of coarse silt particles in the soil, usually determined through particle size analysis.",False
-Mittelschluff,decimal,,sosa:observedProperty,,,,,,,"The percentage of medium silt particles in the soil, typically measured by particle size analysis.",False
-Feinschluff,decimal,,sosa:observedProperty,,,,,,,"The percentage of fine silt particles in the soil, usually determined through particle size analysis.",False
-Ton,decimal,,sosa:observedProperty,clay content,https://data.geoscience.earth/ncl/ISO11074v2025/3.74,,,,,"The percentage of clay particles in the soil, typically measured by particle size analysis.",False
-P_Koenigswasser,integer,,sosa:observedProperty,phosphorus,http://www.eionet.europa.eu/gemet/concept/6196,,,,,"The concentration of phosphorus in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
-Mg_Koenigswasser,integer,,sosa:observedProperty,magnesium,http://aims.fao.org/aos/agrovoc/c_4517,,,,,"The concentration of magnesium in the soil extracted with König water, typically measured in milligrams per kilogram.",False
-Ca_Koenigswasser,integer,,sosa:observedProperty,calcium content,http://www.eionet.europa.eu/gemet/concept/1112,,,,,"The concentration of calcium in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
-B_Koenigswasser,decimal,,sosa:observedProperty,boron,http://www.eionet.europa.eu/gemet/concept/965,,,,,"The concentration of boron in the soil extracted with König water, typically measured in milligrams per kilogram.",False
-Cu_Koenigswasser,decimal,,sosa:observedProperty,copper,http://www.eionet.europa.eu/gemet/concept/1792,,,,,"The concentration of copper in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
-Mn_Koenigswasser,integer,,sosa:observedProperty,manganese,http://w3id.org/glosis/model/layerhorizon/manganeseProperty,,,,,"The concentration of manganese in the soil extracted with König water, typically measured in milligrams per kilogram.",False
-Mo_Koenigswasser,decimal,,sosa:observedProperty,molybdenum,http://w3id.org/glosis/model/layerhorizon/molybdenumProperty,,,,,"The concentration of molybdenum in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
-Zn_Koenigswasser,decimal,,sosa:observedProperty,zinc content,http://opendata.inrae.fr/thesaurusINRAE/c_16440,,,,,"The concentration of zinc in the soil extracted with König water, typically measured in milligrams per kilogram.",False
-Al_Koenigswasser,integer,,sosa:observedProperty,aluminium content,http://www.eionet.europa.eu/gemet/concept/355,,,,,"The concentration of aluminum in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
-Fe_Koenigswasser,integer,,sosa:observedProperty,iron,http://www.eionet.europa.eu/gemet/concept/4498,,,,,"The concentration of iron in the soil extracted with König water, typically measured in milligrams per kilogram.",False
-S_Koenigswasser,decimal,,sosa:observedProperty,sulphur concentration,http://www.eionet.europa.eu/gemet/concept/8200,,,,,"The concentration of sulfur in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
-Sr_Koenigswasser,decimal,,sosa:observedProperty,strontium,http://www.eionet.europa.eu/gemet/concept/8144,,,,,"The concentration of strontium in the soil extracted with König water, typically measured in milligrams per kilogram.",False
-Ti_Koenigswasser,integer,,sosa:observedProperty,titanium,http://www.eionet.europa.eu/gemet/concept/8495,,,,,"The concentration of titanium in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
-Cd_Koenigswasser,decimal,,sosa:observedProperty,cadmium contamination,http://www.eionet.europa.eu/gemet/concept/1101,,,,,"The concentration of cadmium in the soil extracted with König water, typically measured in milligrams per kilogram.",False
-Ni_Koenigswasser,decimal,,sosa:observedProperty,nickel,http://www.eionet.europa.eu/gemet/concept/5589,,,,,"The concentration of nickel in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
-Pb_Koenigswasser,decimal,,sosa:observedProperty,lead contamination,http://www.eionet.europa.eu/gemet/concept/4725,,,,,"The concentration of lead in the soil extracted with König water, typically measured in milligrams per kilogram.",False
-Bemerkungen_ID,string,,ssn:Property,,,,,,,A unique identifier for remarks or notes associated with specific soil observations.,False
+Ph_Wert,decimal,,sosa:Property,pH-value,http://www.eionet.europa.eu/gemet/concept/14636,,,,,"The pH value of the soil, indicating its acidity or alkalinity, measured in a laboratory setting.",False
+Ct,integer,,sosa:Property,soil carbon density,http://w3id.org/glosis/model/siteplot/soilCarbonDensityProperty,,,,,"The total carbon content in the soil, typically expressed as a percentage of the soil mass.",False
+C_hwl,decimal,,sosa:Property,,,,,,,The carbon content in the soil measured using the hot water leaching method.,False
+Nt,decimal,,sosa:Property,total nitrogen,http://aims.fao.org/aos/agrovoc/c_bdc779f4,,,,,"The total nitrogen content in the soil, usually expressed as a percentage of the soil mass.",False
+NO3_N,decimal,,sosa:Property,nitrate,http://www.eionet.europa.eu/gemet/concept/5593,,,,,"The concentration of nitrate nitrogen in the soil, typically measured in milligrams per kilogram.",False
+NH4_N,decimal,,sosa:Property,ammonium,http://www.eionet.europa.eu/gemet/concept/379,,,,,"The concentration of ammonium nitrogen in the soil, usually expressed in milligrams per kilogram.",False
+CaCO3_C,decimal,,sosa:Property,carbonates content,http://w3id.org/glosis/model/layerhorizon/carbonatesContentProperty,,,,,"The carbon content derived from calcium carbonate in the soil, expressed as a percentage.",False
+P,decimal,,sosa:Property,total phosphorus,http://aims.fao.org/aos/agrovoc/c_ac4b3c22,,,,,"The concentration of phosphorus in the soil, typically measured in milligrams per kilogram.",False
+K,string,,sosa:Property,potassium,http://opendata.inrae.fr/thesaurusINRAE/c_15734,,,,,"The concentration of potassium in the soil, usually expressed in milligrams per kilogram.",False
+Mg,string,,sosa:Property,magnesium,http://aims.fao.org/aos/agrovoc/c_4517,,,,,"The concentration of magnesium in the soil, typically measured in milligrams per kilogram.",False
+Ca,integer,,sosa:Property,calcium content,http://www.eionet.europa.eu/gemet/concept/1112,,,,,"The concentration of calcium in the soil, usually expressed in milligrams per kilogram.",False
+B,decimal,,sosa:Property,boron,http://www.eionet.europa.eu/gemet/concept/965,,,,,"The concentration of boron in the soil, typically measured in milligrams per kilogram.",False
+Cu,decimal,,sosa:Property,copper,http://www.eionet.europa.eu/gemet/concept/1792,,,,,"The concentration of copper in the soil, usually expressed in milligrams per kilogram.",False
+Mn,integer,,sosa:Property,manganese,http://w3id.org/glosis/model/layerhorizon/manganeseProperty,,,,,"The concentration of manganese in the soil, typically measured in milligrams per kilogram.",False
+Mo,decimal,,sosa:Property,molybdenum,http://w3id.org/glosis/model/layerhorizon/molybdenumProperty,,,,,"The concentration of molybdenum in the soil, usually expressed in milligrams per kilogram.",False
+Zn,decimal,,sosa:Property,zinc content,http://opendata.inrae.fr/thesaurusINRAE/c_16440,,,,,"The concentration of zinc in the soil, typically measured in milligrams per kilogram.",False
+F,decimal,,sosa:Property,fluorine,http://aims.fao.org/aos/agrovoc/c_2996,,,,,"The concentration of fluorine in the soil, usually expressed in milligrams per kilogram.",False
+Grobsand,decimal,,sosa:Property,coarse sand,http://aims.fao.org/aos/agrovoc/c_c03927e1,,,,,"The percentage of coarse sand particles in the soil, typically measured by particle size analysis.",False
+Mittelsand,decimal,,sosa:Property,,,,,,,"The percentage of medium sand particles in the soil, usually determined through particle size analysis.",False
+Feinsand,decimal,,sosa:Property,fine sand,http://aims.fao.org/aos/agrovoc/c_a91f25d6,,,,,"The percentage of fine sand particles in the soil, typically measured by particle size analysis.",False
+Grobschluff,decimal,,sosa:Property,,,,,,,"The percentage of coarse silt particles in the soil, usually determined through particle size analysis.",False
+Mittelschluff,decimal,,sosa:Property,,,,,,,"The percentage of medium silt particles in the soil, typically measured by particle size analysis.",False
+Feinschluff,decimal,,sosa:Property,,,,,,,"The percentage of fine silt particles in the soil, usually determined through particle size analysis.",False
+Ton,decimal,,sosa:Property,clay content,https://data.geoscience.earth/ncl/ISO11074v2025/3.74,,,,,"The percentage of clay particles in the soil, typically measured by particle size analysis.",False
+P_Koenigswasser,integer,,sosa:Property,phosphorus,http://www.eionet.europa.eu/gemet/concept/6196,,,,,"The concentration of phosphorus in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
+Mg_Koenigswasser,integer,,sosa:Property,magnesium,http://aims.fao.org/aos/agrovoc/c_4517,,,,,"The concentration of magnesium in the soil extracted with König water, typically measured in milligrams per kilogram.",False
+Ca_Koenigswasser,integer,,sosa:Property,calcium content,http://www.eionet.europa.eu/gemet/concept/1112,,,,,"The concentration of calcium in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
+B_Koenigswasser,decimal,,sosa:Property,boron,http://www.eionet.europa.eu/gemet/concept/965,,,,,"The concentration of boron in the soil extracted with König water, typically measured in milligrams per kilogram.",False
+Cu_Koenigswasser,decimal,,sosa:Property,copper,http://www.eionet.europa.eu/gemet/concept/1792,,,,,"The concentration of copper in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
+Mn_Koenigswasser,integer,,sosa:Property,manganese,http://w3id.org/glosis/model/layerhorizon/manganeseProperty,,,,,"The concentration of manganese in the soil extracted with König water, typically measured in milligrams per kilogram.",False
+Mo_Koenigswasser,decimal,,sosa:Property,molybdenum,http://w3id.org/glosis/model/layerhorizon/molybdenumProperty,,,,,"The concentration of molybdenum in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
+Zn_Koenigswasser,decimal,,sosa:Property,zinc content,http://opendata.inrae.fr/thesaurusINRAE/c_16440,,,,,"The concentration of zinc in the soil extracted with König water, typically measured in milligrams per kilogram.",False
+Al_Koenigswasser,integer,,sosa:Property,aluminium content,http://www.eionet.europa.eu/gemet/concept/355,,,,,"The concentration of aluminum in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
+Fe_Koenigswasser,integer,,sosa:Property,iron,http://www.eionet.europa.eu/gemet/concept/4498,,,,,"The concentration of iron in the soil extracted with König water, typically measured in milligrams per kilogram.",False
+S_Koenigswasser,decimal,,sosa:Property,sulphur concentration,http://www.eionet.europa.eu/gemet/concept/8200,,,,,"The concentration of sulfur in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
+Sr_Koenigswasser,decimal,,sosa:Property,strontium,http://www.eionet.europa.eu/gemet/concept/8144,,,,,"The concentration of strontium in the soil extracted with König water, typically measured in milligrams per kilogram.",False
+Ti_Koenigswasser,integer,,sosa:Property,titanium,http://www.eionet.europa.eu/gemet/concept/8495,,,,,"The concentration of titanium in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
+Cd_Koenigswasser,decimal,,sosa:Property,cadmium contamination,http://www.eionet.europa.eu/gemet/concept/1101,,,,,"The concentration of cadmium in the soil extracted with König water, typically measured in milligrams per kilogram.",False
+Ni_Koenigswasser,decimal,,sosa:Property,nickel,http://www.eionet.europa.eu/gemet/concept/5589,,,,,"The concentration of nickel in the soil extracted with König water, usually expressed in milligrams per kilogram.",False
+Pb_Koenigswasser,decimal,,sosa:Property,lead contamination,http://www.eionet.europa.eu/gemet/concept/4725,,,,,"The concentration of lead in the soil extracted with König water, typically measured in milligrams per kilogram.",False
+Bemerkungen_ID,string,,schema:Property,,,,,,,A unique identifier for remarks or notes associated with specific soil observations.,False

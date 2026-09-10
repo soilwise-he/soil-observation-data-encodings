@@ -87,7 +87,7 @@ content_info:
     type: string
     url: schema:identifier
   - name: depth
-    informationRole: sosa:observedProperty
+    informationRole: sosa:Property
     title:
       en: soil depth
     abstract:
@@ -98,7 +98,7 @@ content_info:
     units: http://qudt.org/vocab/unit/CentiM
     url: http://w3id.org/glosis/model/common/soilDepthProperty
   - name: landuse
-    informationRole: ssn:Property
+    informationRole: schema:Property
     title:
       en: landuse
     abstract:
@@ -106,7 +106,7 @@ content_info:
         was collected.
     type: string
   - name: volum_cylinder_cm3
-    informationRole: sosa:observedProperty
+    informationRole: sosa:Property
     title:
       en: sample volume
     abstract:
@@ -117,7 +117,7 @@ content_info:
     units: http://qudt.org/vocab/unit/CentiM3
     url: https://data.geoscience.earth/ncl/ISO11074v2025/3.409
   - name: wet_mass_soil_g
-    informationRole: sosa:observedProperty
+    informationRole: sosa:Property
     title:
       en: soil water content
     abstract:
@@ -128,7 +128,7 @@ content_info:
     units: http://qudt.org/vocab/unit/GM
     url: http://aims.fao.org/aos/agrovoc/c_7208
   - name: dry_mass_soil_g
-    informationRole: sosa:observedProperty
+    informationRole: sosa:Property
     title:
       en: soil sample
     abstract:
@@ -139,7 +139,7 @@ content_info:
     units: http://qudt.org/vocab/unit/GM
     url: http://opendata.inrae.fr/thesaurusINRAE/c_17874
   - name: bulk_density
-    informationRole: sosa:observedProperty
+    informationRole: sosa:Property
     title:
       en: bulk density
     abstract:
@@ -150,7 +150,7 @@ content_info:
     units: http://qudt.org/vocab/unit/GM-PER-CentiM3
     url: https://data.geoscience.earth/ncl/ISO11074v2025/3.62
   - name: water_content
-    informationRole: sosa:observedProperty
+    informationRole: sosa:Property
     title:
       en: soil water content
     abstract:
@@ -201,14 +201,14 @@ content_info:
     units: http://qudt.org/vocab/unit/M
     url: schema:elevation
   - name: location
-    informationRole: ssn:Property
+    informationRole: schema:Property
     title:
       en: location
     abstract:
       en: Administrative province where the soil sample was collected.
     type: string
   - name: country
-    informationRole: ssn:Property
+    informationRole: schema:Property
     title:
       en: Country
     abstract:

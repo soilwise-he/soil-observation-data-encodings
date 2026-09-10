@@ -1,14 +1,14 @@
 name,column_type,column_format,concept,element,element_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
 OBJECTID,integer,,sosa:FeatureOfInterest,,,,,,,"A unique identifier for each record in the dataset, typically used for referencing and indexing purposes.",True
 Parzelle,integer,,,parcels,http://aims.fao.org/aos/agrovoc/c_fdfbb37f,,,,,A variable representing the parcel number or identifier associated with the soil observation site.,False
-Sw_X_Etrs89,decimal,,ssn:Property,,,,,,,The east coordinate (X) in the ETRS89 coordinate reference system for the southwest corner of the parcel.,False
-Sw_Y_Etrs89,decimal,,ssn:Property,,,,,,,The north coordinate (Y) in the ETRS89 coordinate reference system for the southwest corner of the parcel.,False
-Soe_X_Etrs89,decimal,,ssn:Property,,,,,,,The east coordinate (X) in the ETRS89 coordinate reference system for the southeast corner of the parcel.,False
-Soe_Y_Etrs89,decimal,,ssn:Property,,,,,,,The north coordinate (Y) in the ETRS89 coordinate reference system for the southeast corner of the parcel.,False
-Nw_X_Etrs89,decimal,,ssn:Property,,,,,,,The east coordinate (X) in the ETRS89 coordinate reference system for the northwest corner of the parcel.,False
-Nw_Y_Etrs89,decimal,,ssn:Property,,,,,,,The north coordinate (Y) in the ETRS89 coordinate reference system for the northwest corner of the parcel.,False
-Noe_X_Etrs89,decimal,,ssn:Property,,,,,,,The east coordinate (X) in the ETRS89 coordinate reference system for the northeast corner of the parcel.,False
-Noe_Y_Etrs89,decimal,,ssn:Property,,,,,,,The north coordinate (Y) in the ETRS89 coordinate reference system for the northeast corner of the parcel.,False
+Sw_X_Etrs89,decimal,,schema:Property,,,,,,,The east coordinate (X) in the ETRS89 coordinate reference system for the southwest corner of the parcel.,False
+Sw_Y_Etrs89,decimal,,schema:Property,,,,,,,The north coordinate (Y) in the ETRS89 coordinate reference system for the southwest corner of the parcel.,False
+Soe_X_Etrs89,decimal,,schema:Property,,,,,,,The east coordinate (X) in the ETRS89 coordinate reference system for the southeast corner of the parcel.,False
+Soe_Y_Etrs89,decimal,,schema:Property,,,,,,,The north coordinate (Y) in the ETRS89 coordinate reference system for the southeast corner of the parcel.,False
+Nw_X_Etrs89,decimal,,schema:Property,,,,,,,The east coordinate (X) in the ETRS89 coordinate reference system for the northwest corner of the parcel.,False
+Nw_Y_Etrs89,decimal,,schema:Property,,,,,,,The north coordinate (Y) in the ETRS89 coordinate reference system for the northwest corner of the parcel.,False
+Noe_X_Etrs89,decimal,,schema:Property,,,,,,,The east coordinate (X) in the ETRS89 coordinate reference system for the northeast corner of the parcel.,False
+Noe_Y_Etrs89,decimal,,schema:Property,,,,,,,The north coordinate (Y) in the ETRS89 coordinate reference system for the northeast corner of the parcel.,False
 Sw_Lat_Wgs84,decimal,,geo:Feature,,,,,,,The latitude in the WGS84 coordinate reference system for the southwest corner of the parcel.,False
 Sw_Lon_Wgs84,decimal,,geo:Feature,,,,,,,The longitude in the WGS84 coordinate reference system for the southwest corner of the parcel.,False
 Soe_Lat_Wgs84,decimal,,geo:Feature,,,,,,,The latitude in the WGS84 coordinate reference system for the southeast corner of the parcel.,False
@@ -17,19 +17,19 @@ Nw_Lat_Wgs84,decimal,,geo:Feature,,,,,,,The latitude in the WGS84 coordinate ref
 Nw_Lon_Wgs84,decimal,,geo:Feature,,,,,,,The longitude in the WGS84 coordinate reference system for the northwest corner of the parcel.,False
 Noe_Lat_Wgs84,decimal,,geo:Feature,,,,,,,The latitude in the WGS84 coordinate reference system for the northeast corner of the parcel.,False
 Noe_Lon_Wgs84,decimal,,geo:Feature,,,,,,,The longitude in the WGS84 coordinate reference system for the northeast corner of the parcel.,False
-Grobsand__0_bis_25__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of coarse sand particles (0 to 25 mm) in the soil sample collected in 1980.,False
-Grobsand__25_bis_50__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of coarse sand particles (25 to 50 mm) in the soil sample collected in 1980.,False
-Mittelsand__0_bis_25__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of medium sand particles (0 to 25 mm) in the soil sample collected in 1980.,False
-Mittelsand__25_bis_50__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of medium sand particles (25 to 50 mm) in the soil sample collected in 1980.,False
-Feinsand__0_bis_25__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of fine sand particles (0 to 25 mm) in the soil sample collected in 1980.,False
-Feinsand__25_bis_50__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of fine sand particles (25 to 50 mm) in the soil sample collected in 1980.,False
-Grobschluff__0_bis_25__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of coarse silt particles (0 to 25 mm) in the soil sample collected in 1980.,False
-Grobschluff__25_bis_50__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of coarse silt particles (25 to 50 mm) in the soil sample collected in 1980.,False
-Mittelschluff__0_bis_25__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of medium silt particles (0 to 25 mm) in the soil sample collected in 1980.,False
-Mittelschluff__25_bis_50_1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of medium silt particles (25 to 50 mm) in the soil sample collected in 1980.,False
-Feinschluff__0_bis_25__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of fine silt particles (0 to 25 mm) in the soil sample collected in 1980.,False
-Feinschluff__25_bis_50__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of fine silt particles (25 to 50 mm) in the soil sample collected in 1980.,False
-Ton__0_bis_25__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of clay particles (0 to 25 mm) in the soil sample collected in 1980.,False
-Ton__25_bis_50__1980,decimal,,sosa:observedProperty,,,,,,,The percentage or mass of clay particles (25 to 50 mm) in the soil sample collected in 1980.,False
-SHAPE.STArea(),string,,ssn:Property,,,,,,,"The computed area of the parcel geometry, typically expressed in square meters.",False
-SHAPE.STLength(),decimal,,ssn:Property,,,,,,,"The computed length of the parcel geometry boundary, typically expressed in meters.",False
+Grobsand__0_bis_25__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of coarse sand particles (0 to 25 mm) in the soil sample collected in 1980.,False
+Grobsand__25_bis_50__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of coarse sand particles (25 to 50 mm) in the soil sample collected in 1980.,False
+Mittelsand__0_bis_25__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of medium sand particles (0 to 25 mm) in the soil sample collected in 1980.,False
+Mittelsand__25_bis_50__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of medium sand particles (25 to 50 mm) in the soil sample collected in 1980.,False
+Feinsand__0_bis_25__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of fine sand particles (0 to 25 mm) in the soil sample collected in 1980.,False
+Feinsand__25_bis_50__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of fine sand particles (25 to 50 mm) in the soil sample collected in 1980.,False
+Grobschluff__0_bis_25__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of coarse silt particles (0 to 25 mm) in the soil sample collected in 1980.,False
+Grobschluff__25_bis_50__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of coarse silt particles (25 to 50 mm) in the soil sample collected in 1980.,False
+Mittelschluff__0_bis_25__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of medium silt particles (0 to 25 mm) in the soil sample collected in 1980.,False
+Mittelschluff__25_bis_50_1980,decimal,,sosa:Property,,,,,,,The percentage or mass of medium silt particles (25 to 50 mm) in the soil sample collected in 1980.,False
+Feinschluff__0_bis_25__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of fine silt particles (0 to 25 mm) in the soil sample collected in 1980.,False
+Feinschluff__25_bis_50__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of fine silt particles (25 to 50 mm) in the soil sample collected in 1980.,False
+Ton__0_bis_25__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of clay particles (0 to 25 mm) in the soil sample collected in 1980.,False
+Ton__25_bis_50__1980,decimal,,sosa:Property,,,,,,,The percentage or mass of clay particles (25 to 50 mm) in the soil sample collected in 1980.,False
+SHAPE.STArea(),string,,schema:Property,,,,,,,"The computed area of the parcel geometry, typically expressed in square meters.",False
+SHAPE.STLength(),decimal,,schema:Property,,,,,,,"The computed length of the parcel geometry boundary, typically expressed in meters.",False
