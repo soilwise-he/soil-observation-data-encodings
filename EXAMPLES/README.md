@@ -73,3 +73,10 @@ Information that pertains to all columns, e.g. CRS
 - value: the value to the key above, e.g. 4326, "2024-05"
 - format: Internal formatting of the value
 
+## table_linking_summary.csv
+
+- left_table_key: name of table in left position
+- right_table_key: name of table in left position
+- relation: type of relation between the tables: not-linked, one-to-one, one-to-many, many-to-many, many-to-one
+- left_id: ID of the left table
+- right_id: ID of the right table
