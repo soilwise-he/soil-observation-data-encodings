@@ -78,6 +78,15 @@ Additional value: 'codelist'
 
 Inspired by the CSVW documentation that pointed to https://www.w3.org/TR/tabular-data-primer/?ref=stevenfirth.com#datatypes
 
+**concept_type**
+- sosa:FeatureOfInterest: (FoI) spatial object the data is on
+  - sosa:Sample? : do we need to add this? If so, this becomes the proximateFoI, while the FoI above becomes the ultimateFoI
+- schema:Property: a simple attribute of the FoI, no Observation required
+- sosa:Property: a property of the FoI to be determined by an Observation
+- geo:Feature: still need to decide how to differentiate lat, long, elevation (also deal with x,y)
+- sosa:phenomenonTime: time Observations pertain to
+  - sosa:resultTime? : if we have a separate sampling time, that should go into phenomenonTime, while the 2nd time (probably) goes here
+
 
 ## Base table fit_for_all_temporal_spatial.csv
 Information that pertains to all columns, e.g. CRS
