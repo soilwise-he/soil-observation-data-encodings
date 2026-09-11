@@ -61,9 +61,9 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 - primary_key: ??? not clear
 
 ### Notes
-Concept: in order to differentiate between simple attributes (provided without context) and sosa properties (provided with observational metainformation), we use schema:Property for simple attributes, sosa:Property for properties provided by sosa:Observation.
+**Concept**: in order to differentiate between simple attributes (provided without context) and sosa properties (provided with observational metainformation), we use schema:Property for simple attributes, sosa:Property for properties provided by sosa:Observation.
 
-column_type:  DATA_TYPE_OPTIONS = ['anyURI', 'base64Binary', 'boolean', 'date',
+**column_type**:  DATA_TYPE_OPTIONS = ['anyURI', 'base64Binary', 'boolean', 'date',
                      'dateTime', 'dateTimeStamp', 'decimal',
                      'integer', 'long', 'int', 'short', 'byte',
                      'nonNegativeInteger', 'positiveInteger', 'unsignedLong',
@@ -73,6 +73,8 @@ column_type:  DATA_TYPE_OPTIONS = ['anyURI', 'base64Binary', 'boolean', 'date',
                      'float', 'gDay', 'gMonth', 'gMonthDay', 'gYear', 'gYearMonth',
                      'hexBinary', 'QName', 'string', 'normalizedString', 'token',
                      'language', 'Name', 'NMTOKEN', 'time', 'xml', 'html', 'json']
+
+Additional value: 'codelist'
 
 Inspired by the CSVW documentation that pointed to https://www.w3.org/TR/tabular-data-primer/?ref=stevenfirth.com#datatypes
 
