@@ -46,7 +46,7 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 | GeoTIFF | 1 |  | 1 | X | X |  |  | 
 | CIS | 1 |  | 1 | 1 | 1 |  |  | 
 
-## Analysis Table
+## Analysis Table (csv_metadata between filename and .csv suffix)
 - name: Column Header from original CSV
 - column_type: Datatype of the column content
 - column_format: Internal formatting of the column content
