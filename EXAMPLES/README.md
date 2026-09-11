@@ -57,6 +57,7 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 - unit_uri: Link (URI) to QUDT Unit of Measurement
 - quantity_kind_uri: Link to QUDT Quantity Kind
 - method: methodology used to determine the concept for the case that the concept_type is a sosa:Property. Method becomes sosa:ObservingProcedure
+- MISSING! method_uri: Link (URI) providing more information on the method
 - description: description of the column
 - primary_key: ??? not clear
 
