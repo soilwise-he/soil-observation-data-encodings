@@ -25,7 +25,7 @@ In the table below, one can see these individual permutations for the various co
 
 | # | Spatial | Sample | Observations | ObsProp | Time | Sampling Time | Example # |
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 1 | 1 | | 1 | X | X	|  |  | 
+| 1 | 1 | | 1 | X | X	|  | 1 | 
 | 2 | X |  | 1 | X | X |  |  | 
 | 3 |1 |  | 2 | X | X |  |  | 
 | 4 |1 | 2 | 3 | X | X | X |  | 
