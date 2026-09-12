@@ -28,7 +28,7 @@ In the table below, one can see these individual permutations for the various co
 | 1 | 1 | | 1 | X | X |  | [1](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example1/README.md), [6](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example6/README.md), [8](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example8/README.md) | 
 | 2 | X |  | 1 | X | X |  |  | 
 | 3 |1 |  | 2 | X | X |  | [2](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example2/README.md) | 
-| 4 |1 | 2 | 2 | X | 1 | X | [9](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example9/README.md) | 
+| 4 |1 | 2 | 2 | X | 1 |  | [9](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example9/README.md) | 
 | 5 |1 |  | 1 | X | 1 |  | [3](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example3/README.md), [4](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example4/README.md) | 
 | 6 |X |  | 1 | X | 1 |  |  | 
 | 7 |1 |  | 2 | X | 1 |  |  | 
