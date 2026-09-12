@@ -25,14 +25,14 @@ In the table below, one can see these individual permutations for the various co
 
 | # | Spatial | Sample | Observations | ObsProp | Time | Sampling Time | Example # |
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 1 | 1 | | 1 | X | X	|  | 1 | 
+| 1 | 1 | | 1 | X | X	|  | 1, 6, 8 | 
 | 2 | X |  | 1 | X | X |  |  | 
-| 3 |1 |  | 2 | X | X |  |  | 
-| 4 |1 | 2 | 3 | X | X | X |  | 
-| 5 |1 |  | 1 | X | 1 |  |  | 
+| 3 |1 |  | 2 | X | X |  | 2 | 
+| 4 |1 | 2 | 2 | X | 1 | X | 9 | 
+| 5 |1 |  | 1 | X | 1 |  | 3, 4 | 
 | 6 |X |  | 1 | X | 1 |  |  | 
 | 7 |1 |  | 2 | X | 1 |  |  | 
-| 8 |1 | 2 | 3 | X | 2 | 2 |  | 
+| 8 |1 | 2 | 3 | X | 2 | 2 | 10 | 
 | 9 |1 |  | 2 | X | 2 |  |  | 
 | 10 |1 | 2 | 3 | X | 3 |  |  | 
 | 11 |1 | 2 | 3 | X | 3 | 2 |  | 
