@@ -91,7 +91,6 @@ Inspired by the CSVW documentation that pointed to https://www.w3.org/TR/tabular
 **concept_type V2**
 Extension of concept_type, but more human friendly
 
-- concept_type: concept_type_URI
 - Feature of Interest: sosa:FeatureOfInterest
 - Attribute: schema:Property
 - Observed Property: sosa:Property
