@@ -25,7 +25,7 @@ In the table below, one can see these individual permutations for the various co
 
 | # | Spatial | Sample | Observations | ObsProp | Time | Sampling Time | Example # |
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 1 | 1 | | 1 | X | X	|  | [1](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example1/README.md), [6](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example6/README.md), [8](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example8/README.md) | 
+| 1 | 1 | | 1 | X | X |  | [1](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example1/README.md), [6](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example6/README.md), [8](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example8/README.md) | 
 | 2 | X |  | 1 | X | X |  |  | 
 | 3 |1 |  | 2 | X | X |  | [2](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example2/README.md) | 
 | 4 |1 | 2 | 2 | X | 1 | X | [9](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example9/README.md) | 
@@ -87,6 +87,24 @@ Inspired by the CSVW documentation that pointed to https://www.w3.org/TR/tabular
 - geo:Feature: still need to decide how to differentiate lat, long, elevation (also deal with x,y)
 - sosa:phenomenonTime: time Observations pertain to
   - sosa:resultTime? : if we have a separate sampling time, that should go into phenomenonTime, while the 2nd time (probably) goes here
+
+**concept_type V2**
+Extension of concept_type, but more human friendly
+
+- concept_type: concept_type_URI
+- Feature of Interest: sosa:FeatureOfInterest
+- Attribute: schema:Property
+- Observed Property: sosa:Property
+- Latitude (Y): geo:Feature:Lat
+- Longitude (X): geo:Feature:Long
+- Depth Upper: https://glosis-ld.github.io/glosis/iso28258/index-en.html#/ProfileElement.upperDepth
+- Depth Lower: https://glosis-ld.github.io/glosis/iso28258/index-en.html#/ProfileElement.lowerDepth
+- Phenomenon Time: sosa:phenomenonTime
+- Foreign Key: Foreign Key
+- ID: ID
+- Object Type: geo:Feature
+
+
 
 
 ## Base table fit_for_all_temporal_spatial.csv
