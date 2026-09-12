@@ -96,6 +96,7 @@ Extension of concept_type, but more human friendly
 - Observed Property: sosa:Property
 - Latitude (Y): geo:Feature:Lat
 - Longitude (X): geo:Feature:Long
+- Elevation (Z): 
 - Depth Upper: https://glosis-ld.github.io/glosis/iso28258/index-en.html#/ProfileElement.upperDepth
 - Depth Lower: https://glosis-ld.github.io/glosis/iso28258/index-en.html#/ProfileElement.lowerDepth
 - Phenomenon Time: sosa:phenomenonTime
