@@ -17,7 +17,9 @@ General information about the dataset
 | CRS | EPSG:4326 |
 
 ## Properties
-Description of all properties of the data csv
+Description of all properties of the data csv.
+
+The values for the column column_type and concept_type are from the[ csv_metadata analysis table conventions](https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/EXAMPLES#analysis-table-csv_metadata-between-filename-and-csv-suffix).
 
 |name|column_type|column_format|concept|element|element_uri|unit_symbol|unit_uri|quantity_kind_uri|method|description___________________________________________|
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -55,3 +57,14 @@ The original CSV data (first 9 rows)
  | s007 | F2-P1-A-ATP | F2 | P1 | A | ATP | 0-5 | non_cultivated | 100 | 166 |  | 1.64 | 0 | 2024-01 | 14.730497 | 106.63576 | 93 | Attapeu | LA| 
  | s008 | F6-P1-B-ATP | F6 | P1 | B | ATP | 15-20 | non_cultivated | 100 | 156 |  | 1.28 | 12 | 2024-01 | 14.71234 | 106.63576 | 93 | Attapeu | LA| 
  | s009 | F6-P2-A-ATP | F6 | P2 | A | ATP | 0-5 | non_cultivated | 100 | 156 |  | 1.45 | 8 | 2024-01 | 14.71234 | 106.63576 | 93 | Attapeu | LA| 
+
+## Codelist LandUse
+A codelist is provided with the possible values for the landuse property
+
+|Name|Definition|Description|
+|---|---|---|
+|paddy_rice|http://purl.obolibrary.org/obo/ENVO_00000296|Paddy rice fields cultivated in lowland plains and flooded by rainfall during the rainy season. This represents the traditional lowland rice cultivation system in Lao PDR.|
+|cassava|http://aims.fao.org/aos/agrovoc/c_9649|Cassava fields managed under conventional agricultural practices commonly used in Lao PDR.|
+|gardens|http://purl.obolibrary.org/obo/ENVO_00002263|Household vegetable gardens located around houses. Soil samples were collected under various vegetable crops within each garden. Crop types were not systematically recorded.|
+|non_cultivated||Areas adjacent to agricultural fields with no active cultivation, used as reference or control sites.|
+
