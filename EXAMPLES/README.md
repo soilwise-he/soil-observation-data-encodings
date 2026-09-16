@@ -117,10 +117,19 @@ Information that pertains to all columns, e.g. CRS
 - value: the value to the key above, e.g. 4326, "2024-05"
 - format: Internal formatting of the value
 
-## table_linking_summary.csv
 
-- left_table_key: name of table in left position
-- right_table_key: name of table in left position
-- relation: type of relation between the tables: not-linked, one-to-one, one-to-many, many-to-many, many-to-one
-- left_id: ID of the left table
-- right_id: ID of the right table
+## Context for all URIs
+
+Namespace |	URI
+--- | ---
+GloSIS-com|http://w3id.org/glosis/model/common/soilDepthProperty
+sosa|http://www.w3.org/ns/sosa/
+qudt|http://qudt.org/1.1/schema/qudt#
+dcterms|http://purl.org/dc/terms/
+geo|http://www.w3.org/2003/01/geo/wgs84_pos#
+rdf|http://www.w3.org/1999/02/22-rdf-syntax-ns#
+iso11074-2025|https://data.geoscience.earth/ncl/ISO11074v2025/
+agrovoc|http://aims.fao.org/aos/agrovoc/
+inrae|http://opendata.inrae.fr/thesaurusINRAE/
+eusoilvoc|https://w3id.org/eusoilvoc/
+
