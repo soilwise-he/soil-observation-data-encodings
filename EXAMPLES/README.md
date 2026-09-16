@@ -51,6 +51,7 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 - column_type: Datatype of the column content
 - column_format: Internal formatting of the column content
 - concept_type: abstract semantic concept this column represents, e.g. sosa:FeatureOfInterest, sosa:Property, schema:Property
+- fk_target: Added, if concept_type is foreignKey, the fk columns. If concept type has a value from a result codelist, this codeist
 - concept: concept this column represents, e.g. tree, leaf length, soil plot, bulk density
 - concept_uri: Link (URI) to a semantic representation of the concept this column represents
 - unit_symbol: Unit of Measurement symbol (qudt:symbol)
