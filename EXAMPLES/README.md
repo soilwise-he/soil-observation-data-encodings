@@ -132,4 +132,6 @@ iso11074-2025|https://data.geoscience.earth/ncl/ISO11074v2025/
 agrovoc|http://aims.fao.org/aos/agrovoc/
 inrae|http://opendata.inrae.fr/thesaurusINRAE/
 eusoilvoc|https://w3id.org/eusoilvoc/
+gemet|http://www.eionet.europa.eu/gemet/concept/
+ansis|http://anzsoil.org/def/au/scm
 
