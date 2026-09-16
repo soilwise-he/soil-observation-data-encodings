@@ -122,7 +122,7 @@ Information that pertains to all columns, e.g. CRS
 
 Namespace |	URI
 --- | ---
-GloSIS-com|http://w3id.org/glosis/model/common/soilDepthProperty
+GloSIS-com|http://w3id.org/glosis/model/common/
 sosa|http://www.w3.org/ns/sosa/
 qudt|http://qudt.org/1.1/schema/qudt#
 dcterms|http://purl.org/dc/terms/
