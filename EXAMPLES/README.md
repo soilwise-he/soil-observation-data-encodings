@@ -23,19 +23,19 @@ Based on the files above, we analysed the different permutations of files with w
 
 In the table below, one can see these individual permutations for the various constellations of CSV files. In order to indicate which CSV file provides which concepts, the number of the CSV file is provided in the table. When the required information is provided by a semi-structured readme, an X is provided in the table.
 
-| # | Spatial | Sample | Observations | ObsProp | Time | Sampling Time | Example # |
-| --- | --- | --- | --- | --- | --- | --- | --- | 
-| 1 | 1 | | 1 | X | X	|  |  | 
-| 2 | X |  | 1 | X | X |  |  | 
-| 3 |1 |  | 2 | X | X |  |  | 
-| 4 |1 | 2 | 3 | X | X | X |  | 
-| 5 |1 |  | 1 | X | 1 |  |  | 
-| 6 |X |  | 1 | X | 1 |  |  | 
-| 7 |1 |  | 2 | X | 1 |  |  | 
-| 8 |1 | 2 | 3 | X | 2 | 2 |  | 
-| 9 |1 |  | 2 | X | 2 |  |  | 
-| 10 |1 | 2 | 3 | X | 3 |  |  | 
-| 11 |1 | 2 | 3 | X | 3 | 2 |  | 
+| # | Spatial | Sample | Observations | ObsProp | Time | Sampling Time | Example # | Simple CSV Template |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | 
+| 1 | 1 | | 1 | X | X |  | [1](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example1/README.md), [6](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example6/README.md), [8](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example8/README.md) | |
+| 2 | X |  | 1 | X | X |  |  | |
+| 3 |1 |  | 2 | X | X |  | [2](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example2/README.md) | |
+| 4 |1 | 2 | 2 | X | 1 |  | [9](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example9/README.md) | |
+| 5 |1 |  | 1 | X | 1 |  | [3](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example3/README.md), [4](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example4/README.md) | [4](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/SimpleCSV/Example%204/readme.md) |
+| 6 |X |  | 1 | X | 1 |  |  | |
+| 7 |1 |  | 2 | X | 1 |  |  | |
+| 8 |1 | 2 | 3 | X | 2 | 2 | [10](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/EXAMPLES/example10/README.md) | |
+| 9 |1 |  | 2 | X | 2 |  |  | |
+| 10 |1 | 2 | 3 | X | 3 |  |  || 
+| 11 |1 | 2 | 3 | X | 3 | 2 |  || 
 
 ### Grids
 In the table below, we perform the same analysis for grid files, focusing on well known formats.
@@ -46,7 +46,7 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 | GeoTIFF | 1 |  | 1 | X | X |  |  | 
 | CIS | 1 |  | 1 | 1 | 1 |  |  | 
 
-## Analysis Table
+## Analysis Table (csv_metadata between filename and .csv suffix)
 - name: Column Header from original CSV
 - column_type: Datatype of the column content
 - column_format: Internal formatting of the column content
@@ -57,6 +57,7 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 - unit_uri: Link (URI) to QUDT Unit of Measurement
 - quantity_kind_uri: Link to QUDT Quantity Kind
 - method: methodology used to determine the concept for the case that the concept_type is a sosa:Property. Method becomes sosa:ObservingProcedure
+- MISSING! method_uri: Link (URI) providing more information on the method
 - description: description of the column
 - primary_key: ??? not clear
 
@@ -77,6 +78,33 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 Additional value: 'codelist'
 
 Inspired by the CSVW documentation that pointed to https://www.w3.org/TR/tabular-data-primer/?ref=stevenfirth.com#datatypes
+
+**concept_type**
+- sosa:FeatureOfInterest: (FoI) spatial object the data is on
+  - sosa:Sample? : do we need to add this? If so, this becomes the proximateFoI, while the FoI above becomes the ultimateFoI
+- schema:Property: a simple attribute of the FoI, no Observation required
+- sosa:Property: a property of the FoI to be determined by an Observation
+- geo:Feature: still need to decide how to differentiate lat, long, elevation (also deal with x,y)
+- sosa:phenomenonTime: time Observations pertain to
+  - sosa:resultTime? : if we have a separate sampling time, that should go into phenomenonTime, while the 2nd time (probably) goes here
+
+**concept_type V2**
+Extension of concept_type, but more human friendly
+
+- Feature of Interest: sosa:FeatureOfInterest
+- Attribute: schema:Property
+- Observed Property: sosa:Property
+- Latitude (Y): geo:Feature:Lat
+- Longitude (X): geo:Feature:Long
+- Elevation (Z): 
+- Depth Upper: https://glosis-ld.github.io/glosis/iso28258/index-en.html#/ProfileElement.upperDepth
+- Depth Lower: https://glosis-ld.github.io/glosis/iso28258/index-en.html#/ProfileElement.lowerDepth
+- Phenomenon Time: sosa:phenomenonTime
+- Foreign Key: Foreign Key
+- ID: ID
+- Object Type: geo:Feature
+
+
 
 
 ## Base table fit_for_all_temporal_spatial.csv
