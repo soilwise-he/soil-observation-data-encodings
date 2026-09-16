@@ -60,7 +60,6 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 - method: methodology used to determine the concept for the case that the concept_type is a sosa:Property. Method becomes sosa:ObservingProcedure
 - MISSING! method_uri: Link (URI) providing more information on the method
 - description: description of the column
-- primary_key: ??? not clear
 
 ### Notes
 **Concept**: in order to differentiate between simple attributes (provided without context) and sosa properties (provided with observational metainformation), we use schema:Property for simple attributes, sosa:Property for properties provided by sosa:Observation.
