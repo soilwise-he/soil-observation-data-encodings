@@ -1,0 +1,97 @@
+Dataset
+ ├── @context
+ ├── Tables
+    --------------- # block for each table
+      ├── URL
+      ├── aboutUrl
+      ├── tableSchema
+      |     │
+            └── Columns
+                --------------- # block for FOI
+                ├── titles: "FOI"
+                ├── name:
+                ├── datatype:
+                └── propertyURL: "sosa:FeatureOfInterest"
+
+                --------------- # block for observations/attributes
+                ├── virtual: true
+                ├── aboutURL: {aboutUrl}/{name_Obs}
+                ├── valueURL: "sosa:Observation"
+                └── propertyURL: "rdf:type"
+
+                ├── virtual: true
+                ├── aboutURL: {aboutUrl}/{name_Obs}
+                ├── valueURL: {aboutUrl}
+                └── propertyURL: "sosa:hasFeatureOfInterest"
+                
+                ├── name: 
+                ├── aboutURL: {aboutUrl}/{name_Obs}
+                ├── datatype: 
+                └── propertyURL: "qudt:value"
+
+                --------------- # additional for columns containing **concept**
+                ├── virtual: true
+                ├── aboutURL: 
+                ├── valueURL:
+                └── propertyURL: ["sosa:Property", "schema:Property"]
+
+                --------------- # additional for columns containing **method(_uri)**
+                ├── virtual: true
+                ├── aboutURL:
+                ├── valueURL:
+                └── propertyURL: "sosa:usedProcedure"
+
+                --------------- # additional for tables containing temporal information
+                ├── virtual: true
+                ├── aboutURL:
+                ├── valueURL/default: ##(???) To be discussed? 
+                └── propertyURL: ["sosa:resultTime","sosa:PhenomeneTime"]
+
+                --------------- # additional general block for tables containing geo information
+                ├── virtual: true
+                ├── aboutURL: "{aboutUrl}"
+                ├── valueURL: "{aboutUrl}/geo"
+                └── propertyURL: "schema:geo"
+
+                ├── virtual: true
+                ├── aboutURL: "{aboutUrl}/geo"
+                ├── valueURL: "geo:Point"
+                └── propertyURL: "rdf:type"
+
+                ============== # additional for columns containing quantitive values
+                ├── virtual: true
+                ├── aboutURL: "{aboutUrl}/{name_Obs}"
+                ├── valueURL: "{aboutUrl}/{name_Obs}/QV"
+                └── propertyURL: "sosa:hasResult"
+
+                ├── virtual: true
+                ├── aboutURL: "{aboutUrl}/{name_Obs}/QV"
+                ├── valueURL: "qudt:QuantityValue"
+                └── propertyURL: "rdf:type"
+
+                --------------- # additional for columns containing **unit_uri**
+                ├── virtual: true
+                ├── aboutURL: "{aboutUrl}/{name_Obs}/QV"
+                ├── valueURL:
+                └── propertyURL: "qudt:unit"
+                --------------- # additional for columns containing **quantity_kind_uri**
+                ├── virtual: true
+                ├── aboutURL: "{aboutUrl}/{name_Obs}/QV"
+                ├── valueURL:
+                └── propertyURL: "qudt:QuantityKind"
+
+                ============== # additional for columns containing geo values
+                ├── titles: ["lat","latitude,"LAT","Y","lon","longitude","LON","X","elevation", "height", "Z", "WKT",...]
+                ├── aboutURL: "{aboutUrl}/geo"
+                ├── datatype:
+                └── propertyURL ["geo:lat","geo:long","geo:alt","geo:asWKT"]
+
+            
+            
+            └── foreignKeys
+                --------------- # foreignKey block
+                ├── columnReference
+                └── reference
+                    ├── resource
+                    └── columnReference
+
