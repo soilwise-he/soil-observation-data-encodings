@@ -1,3 +1,7 @@
+#TODO: How to deal with CRS? Are we going to ignore this or hard force EPSG:4326
+#TODO: What with tables with multiple FOI columns
+
+
 Dataset
  ├── @context
  ├── Tables
@@ -62,7 +66,7 @@ Dataset
 
                 ├── virtual: true
                 ├── aboutURL: "{aboutUrl}/geo"
-                ├── valueURL: "geo:Point"
+                ├── valueURL: "geo:Point" #TODO: make this more flexible -> depending on type geo / if WKT string /  
                 └── propertyURL: "rdf:type"
 
                 ============== # additional for columns containing quantitive values
