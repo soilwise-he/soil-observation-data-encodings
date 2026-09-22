@@ -1,0 +1,14 @@
+<nav class="site-nav" aria-label="Main navigation" role="navigation">
+  <ul role="list">
+    {% for item in site.data.navigation.main %}
+      <li>
+        <a href="{{ item.url | relative_url }}"
+           {% if page.url == item.url %}
+             class="active" aria-current="page"
+           {% endif %}>
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

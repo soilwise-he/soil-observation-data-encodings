@@ -1,7 +1,8 @@
 {
   "@context": [
     "http://www.w3.org/ns/csvw",
-    {"sosa": "http://www.w3.org/ns/sosa/", 
+    {"@base": "http://ohlala.org",
+     "sosa": "http://www.w3.org/ns/sosa/", 
      "qudt": "http://qudt.org/1.1/schema/qudt#",
      "schema": "https://schema.org/",
      "dcterms": "http://purl.org/dc/terms/"}
