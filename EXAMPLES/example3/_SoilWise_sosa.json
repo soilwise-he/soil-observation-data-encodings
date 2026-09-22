@@ -1,0 +1,255 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/csvw",
+    {
+      "sosa": "http://www.w3.org/ns/sosa/",
+      "qudt": "http://qudt.org/1.1/schema/qudt#",
+      "dcterms": "http://purl.org/dc/terms/",
+      "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "schema": "https://schema.org/",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    }
+  ],
+  "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/obs.csv",
+  "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}",
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "SAMPLE",
+        "propertyUrl": "dcterms:identifier",
+        "datatype": "string",
+        "titles": "sample",
+        "dc:description": "A unique identifier or label for a specific sample being observed or analyzed."
+      },
+      {
+        "name": "LAT",
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/geo",
+        "propertyUrl": "geo:location",
+        "datatype": "decimal",
+        "titles": "Y",
+        "dc:description": "The latitude coordinate of the sample location, typically expressed in degrees."
+      },
+      {
+        "name": "LON",
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/geo",
+        "propertyUrl": "geo:location",
+        "datatype": "decimal",
+        "titles": "X",
+        "dc:description": "The longitude coordinate of the sample location, typically expressed in degrees."
+      },
+      {
+        "name": "TOP",
+        "datatype": "integer",
+        "propertyUrl": "https://data.geoscience.earth/ncl/ISO11074v2025/3.120",
+        "titles": "depth related sample",
+        "dc:description": "The depth or elevation of the uppermost boundary of the sample, measured from a reference point."
+      },
+      {
+        "name": "BOTTOM",
+        "datatype": "integer",
+        "propertyUrl": "https://data.geoscience.earth/ncl/ISO11074v2025/3.120",
+        "titles": "depth related sample",
+        "dc:description": "The depth or elevation of the lowermost boundary of the sample, measured from a reference point."
+      },
+      {
+        "name": "N",
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/N/QV",
+        "propertyUrl": "qudt:value",
+        "datatype": "decimal",
+        "titles": "total nitrogen",
+        "dc:description": "The concentration of nitrogen present in the sample, usually expressed in a specific unit such as mg/kg or %."
+      },
+      {
+        "name": "P",
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/P/QV",
+        "propertyUrl": "qudt:value",
+        "datatype": "decimal",
+        "titles": "total phosphorus",
+        "dc:description": "The concentration of phosphorus present in the sample, usually expressed in a specific unit such as mg/kg or %."
+      },
+      {
+        "name": "K",
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/K/QV",
+        "propertyUrl": "qudt:value",
+        "datatype": "decimal",
+        "titles": "potassium content",
+        "dc:description": "The concentration of potassium present in the sample, usually expressed in a specific unit such as mg/kg or %."
+      },
+      {
+        "name": "TIME",
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/N",
+        "propertyUrl": "sosa:phenomenonTime",
+        "datatype": {
+          "base": "dateTime",
+          "format": "%Y-%m-%dT%H:%M:%S"
+        },
+        "dc:description": "The time at which the sample was collected"
+      },
+      {
+        "name": "TIME",
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/P",
+        "propertyUrl": "sosa:phenomenonTime",
+        "datatype": {
+          "base": "dateTime",
+          "format": "%Y-%m-%dT%H:%M:%S"
+        },
+        "dc:description": "The time at which the sample was collected"
+      },
+      {
+        "name": "TIME",
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/K",
+        "propertyUrl": "sosa:phenomenonTime",
+        "datatype": {
+          "base": "dateTime",
+          "format": "%Y-%m-%dT%H:%M:%S"
+        },
+        "dc:description": "The time at which the sample was collected"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}",
+        "valueUrl": "https://data.geoscience.earth/ncl/ISO11074v2025/3.398",
+        "propertyUrl": "rdf:type"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}",
+        "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/geo",
+        "propertyUrl": "schema:geo"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/geo",
+        "valueUrl": "geo:Point",
+        "propertyUrl": "rdf:type"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/N",
+        "valueUrl": "sosa:Observation",
+        "propertyUrl": "rdf:type"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/N",
+        "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}",
+        "propertyUrl": "sosa:hasFeatureOfInterest"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/N",
+        "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/N/QV",
+        "propertyUrl": "sosa:hasResult"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/N/QV",
+        "valueUrl": "qudt:QuantityValue",
+        "propertyUrl": "rdf:type"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/N",
+        "valueUrl": "http://aims.fao.org/aos/agrovoc/c_bdc779f4",
+        "propertyUrl": "sosa:observedProperty"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/N/QV",
+        "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+        "propertyUrl": "qudt:hasUnit"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/N/QV",
+        "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+        "propertyUrl": "qudt:hasQuantityKind"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/P",
+        "valueUrl": "sosa:Observation",
+        "propertyUrl": "rdf:type"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/P",
+        "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}",
+        "propertyUrl": "sosa:hasFeatureOfInterest"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/P",
+        "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/P/QV",
+        "propertyUrl": "sosa:hasResult"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/P/QV",
+        "valueUrl": "qudt:QuantityValue",
+        "propertyUrl": "rdf:type"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/P",
+        "valueUrl": "http://aims.fao.org/aos/agrovoc/c_ac4b3c22",
+        "propertyUrl": "sosa:observedProperty"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/P/QV",
+        "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+        "propertyUrl": "qudt:hasUnit"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/P/QV",
+        "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+        "propertyUrl": "qudt:hasQuantityKind"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/K",
+        "valueUrl": "sosa:Observation",
+        "propertyUrl": "rdf:type"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/K",
+        "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}",
+        "propertyUrl": "sosa:hasFeatureOfInterest"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/K",
+        "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/K/QV",
+        "propertyUrl": "sosa:hasResult"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/K/QV",
+        "valueUrl": "qudt:QuantityValue",
+        "propertyUrl": "rdf:type"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/K",
+        "valueUrl": "http://opendata.inrae.fr/thesaurusINRAE/c_17871",
+        "propertyUrl": "sosa:observedProperty"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/K/QV",
+        "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+        "propertyUrl": "qudt:hasUnit"
+      },
+      {
+        "virtual": true,
+        "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example3/{SAMPLE}/K/QV",
+        "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+        "propertyUrl": "qudt:hasQuantityKind"
+      }
+    ],
+    "primaryKey": "SAMPLE"
+  }
+}
