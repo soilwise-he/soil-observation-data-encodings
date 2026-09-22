@@ -21,15 +21,19 @@
           </div>
           <a title="Logo Home" href="/soil-observation-data-encodings">
           <img class="header-img" 
-            src="https://soilwise-he.github.io/SoilWise-documentation/_assets/images/SoilWise_logo.png" 
+            src="https://avatars.githubusercontent.com/u/144736920?s=200&v=4" 
             alt="soilwise" title="soilwise" height="63"></a><br/>
     </div>
     
     </header>
-
-    <main id="content" class="main-content" role="main">
-      {{ content }}
-    </main>
+      <div style="float:left">
+        {% include nav.html %} 
+      </div>
+      <div>
+        <main id="content" class="main-content" role="main">
+        {{ content }}
+        </main>
+      </div>
     <footer class="site-footer page-header">
         SoilWise HE, 2026<br/><br/>
         <small>
@@ -38,5 +42,18 @@
         Neither the European Union nor the granting authority can be held responsible for them.</small>
     </footer>
    
+    <style>
+      .site-nav li {
+      border-top: 1px solid #eeeeee;
+      background-color: #f8f8f8;
+      list-style: none;
+      position: relative;
+      display: block;
+      padding: 10px 20px;
+      }
+      .site-nav li:hover {
+        background-color: white;
+      }
+    </style>
   </body>
 </html>

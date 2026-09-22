@@ -1,8 +1,19 @@
 main:
   - title: "Home"
-    url: ./README.md
+    url: ./
   - title: "Common" 
-    url: ./COMMON/Readme.md
+    url: ./COMMON//
+  - title: "SimpleCSV" 
+    url: ./SimpleCSV/
   - title: "CSVW" 
-    url: ./CSVW/Readme.md
-  - 
+    url: ./CSVW/
+  - title: "GPKG" 
+    url: ./GPKG/
+  - title: "GML" 
+    url: ./GML/
+  - title: "RDF" 
+    url: ./RDF/
+  - title: "STA" 
+    url: ./STA/
+  - title: "RO-Crate" 
+    url: ./RO-CRATE/
