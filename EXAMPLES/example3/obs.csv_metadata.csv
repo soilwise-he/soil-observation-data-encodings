@@ -1,10 +1,10 @@
-name,column_type,column_format,concept_type,concept,concept_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
-SAMPLE,string,,sosa:FeatureOfInterest,,,,,,,A unique identifier or label for a specific sample being observed or analyzed.,True
-LAT,decimal,,geo:Feature,,,,,,,"The latitude coordinate of the sample location, typically expressed in degrees.",False
-LON,decimal,,geo:Feature,,,,,,,"The longitude coordinate of the sample location, typically expressed in degrees.",False
-TOP,integer,,geo:Feature,,,,,,,"The depth or elevation of the uppermost boundary of the sample, measured from a reference point.",False
-BOTTOM,integer,,geo:Feature,,,,,,,"The depth or elevation of the lowermost boundary of the sample, measured from a reference point.",False
-N,decimal,,sosa:Property,total nitrogen,http://aims.fao.org/aos/agrovoc/c_bdc779f4,mg/kg,http://qudt.org/vocab/unit/MilliGM-PER-KiloGM,http://qudt.org/vocab/quantitykind/MassRatio,ISO 11261:1995,"The concentration of nitrogen present in the sample, usually expressed in a specific unit such as mg/kg or %.",False
-P,decimal,,sosa:Property,total phosphorus,http://aims.fao.org/aos/agrovoc/c_ac4b3c22,mg/kg,http://qudt.org/vocab/unit/MilliGM-PER-KiloGM,http://qudt.org/vocab/quantitykind/MassRatio,ISO 10693:1995,"The concentration of phosphorus present in the sample, usually expressed in a specific unit such as mg/kg or %.",False
-K,decimal,,sosa:Property,potassium content,http://opendata.inrae.fr/thesaurusINRAE/c_17871,mg/kg,http://qudt.org/vocab/unit/MilliGM-PER-KiloGM,http://qudt.org/vocab/quantitykind/MassRatio,ISO 11260:1999,"The concentration of potassium present in the sample, usually expressed in a specific unit such as mg/kg or %.",False
-TIME,dateTime,%Y-%m-%dT%H:%M:%S,sosa:phenomenonTime,,,,,,,The time at which the sample was collected,False
+name,column_type,column_format,fk_target,concept_type,concept,concept_uri,unit_symbol,unit_uri,quantity_kind_uri,method,method_uri,description
+SAMPLE,string,,,sosa:FeatureOfInterest,sample,https://data.geoscience.earth/ncl/ISO11074v2025/3.398,,,,,,A unique identifier or label for a specific sample being observed or analyzed.
+LAT,decimal,,,geo:Feature,Y,geo:lat,,,,,,"The latitude coordinate of the sample location, typically expressed in degrees."
+LON,decimal,,,geo:Feature,X,geo:long,,,,,,"The longitude coordinate of the sample location, typically expressed in degrees."
+TOP,integer,,,schema:Property,depth related sample,https://data.geoscience.earth/ncl/ISO11074v2025/3.120,,,,,,"The depth or elevation of the uppermost boundary of the sample, measured from a reference point."
+BOTTOM,integer,,,schema:Property,depth related sample,https://data.geoscience.earth/ncl/ISO11074v2025/3.120,,,,,,"The depth or elevation of the lowermost boundary of the sample, measured from a reference point."
+N,decimal,,,sosa:Property,total nitrogen,http://aims.fao.org/aos/agrovoc/c_bdc779f4,mg/kg,http://qudt.org/vocab/unit/MilliGM-PER-KiloGM,http://qudt.org/vocab/quantitykind/MassRatio,ISO 11261:1995,,"The concentration of nitrogen present in the sample, usually expressed in a specific unit such as mg/kg or %."
+P,decimal,,,sosa:Property,total phosphorus,http://aims.fao.org/aos/agrovoc/c_ac4b3c22,mg/kg,http://qudt.org/vocab/unit/MilliGM-PER-KiloGM,http://qudt.org/vocab/quantitykind/MassRatio,ISO 10693:1995,,"The concentration of phosphorus present in the sample, usually expressed in a specific unit such as mg/kg or %."
+K,decimal,,,sosa:Property,potassium content,http://opendata.inrae.fr/thesaurusINRAE/c_17871,mg/kg,http://qudt.org/vocab/unit/MilliGM-PER-KiloGM,http://qudt.org/vocab/quantitykind/MassRatio,ISO 11260:1999,,"The concentration of potassium present in the sample, usually expressed in a specific unit such as mg/kg or %."
+TIME,dateTime,%Y-%m-%dT%H:%M:%S,,sosa:phenomenonTime,,,,,,,,The time at which the sample was collected

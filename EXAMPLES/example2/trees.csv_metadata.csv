@@ -1,4 +1,4 @@
-name,column_type,column_format,concept_type,concept,concept_uri,unit_symbol,unit_uri,quantity_kind_uri,method,description,primary_key
-TREEID,integer,,sosa:FeatureOfInterest,,,,,,,"A unique identifier assigned to each tree in the dataset, used to distinguish between different specimens.",True
-LAT,integer,,geo:Feature,,,,,,,"The latitude coordinate representing the north-south position of a tree's location on the Earth's surface, measured in degrees.",False
-LONG,integer,,geo:Feature,,,,,,,"The longitude coordinate representing the east-west position of a tree's location on the Earth's surface, measured in degrees.",False
+name,column_type,column_format,fk_target,concept_type,concept,concept_uri,unit_symbol,unit_uri,quantity_kind_uri,method,method_uri,description
+TREEID,integer,,,sosa:FeatureOfInterest,tree,http://www.eionet.europa.eu/gemet/concept/8664,,,,,,"A unique identifier assigned to each tree in the dataset, used to distinguish between different specimens."
+LAT,integer,,,geo:Feature,Y,geo:lat,,,,,,"The latitude coordinate representing the north-south position of a tree's location on the Earth's surface, measured in degrees."
+LONG,integer,,,geo:Feature,X,geo:long,,,,,,"The longitude coordinate representing the east-west position of a tree's location on the Earth's surface, measured in degrees."
