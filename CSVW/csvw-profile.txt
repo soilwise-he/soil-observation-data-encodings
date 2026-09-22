@@ -41,11 +41,18 @@ Dataset
                 ├── valueURL:
                 └── propertyURL: "sosa:usedProcedure"
 
-                --------------- # additional for tables containing temporal information
+                --------------- # additional for tables containing temporal information. Loop for each {name_Obs}
                 ├── virtual: true
-                ├── aboutURL:
-                ├── valueURL/default: ##(???) To be discussed? 
+                ├── aboutURL: {aboutUrl}/{name_Obs}
+                ├── default: 
                 └── propertyURL: ["sosa:resultTime","sosa:PhenomeneTime"]
+                OR
+
+                ├── titles: 
+                ├── aboutURL: {aboutUrl}/{name_Obs}
+                ├── datatype:
+                └── propertyURL: ["sosa:resultTime","sosa:PhenomeneTime"]
+
 
                 --------------- # additional general block for tables containing geo information
                 ├── virtual: true
