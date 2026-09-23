@@ -1,0 +1,154 @@
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://qudt.org/1.1/schema/qudt#> .
+@prefix ns2: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix ns3: <http://www.eionet.europa.eu/gemet/concept/> .
+@prefix schema: <https://schema.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/1/SIZE> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/1> ;
+    sosa:hasResult <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/1/SIZE/QV> ;
+    sosa:observedProperty <http://opendata.inrae.fr/thesaurusINRAE/c_15919> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/2/SIZE> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/2> ;
+    sosa:hasResult <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/2/SIZE/QV> ;
+    sosa:observedProperty <http://opendata.inrae.fr/thesaurusINRAE/c_15919> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/3/SIZE> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/3> ;
+    sosa:hasResult <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/3/SIZE/QV> ;
+    sosa:observedProperty <http://opendata.inrae.fr/thesaurusINRAE/c_15919> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/4/SIZE> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/4> ;
+    sosa:hasResult <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/4/SIZE/QV> ;
+    sosa:observedProperty <http://opendata.inrae.fr/thesaurusINRAE/c_15919> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/5/SIZE> a sosa:Observation ;
+    sosa:hasFeatureOfInterest <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/5> ;
+    sosa:hasResult <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/5/SIZE/QV> ;
+    sosa:observedProperty <http://opendata.inrae.fr/thesaurusINRAE/c_15919> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/1/SIZE/QV> a ns1:QuantityValue ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Length> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/CentiM> ;
+    ns1:value 23 .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/1/geo> a ns2:Point .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/2/SIZE/QV> a ns1:QuantityValue ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Length> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/CentiM> ;
+    ns1:value 32 .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/2/geo> a ns2:Point .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/3/SIZE/QV> a ns1:QuantityValue ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Length> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/CentiM> ;
+    ns1:value 22 .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/3/geo> a ns2:Point .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/4/SIZE/QV> a ns1:QuantityValue ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Length> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/CentiM> ;
+    ns1:value 43 .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/4/geo> a ns2:Point .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/5/SIZE/QV> a ns1:QuantityValue ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Length> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/CentiM> ;
+    ns1:value 31 .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/5/geo> a ns2:Point .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1/geo> a ns2:Point ;
+    dcterms:conformsTo <http://www.opengis.net/def/crs/EPSG/0/4326> ;
+    ns2:lat 20 ;
+    ns2:long 10 .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/2/geo> a ns2:Point ;
+    dcterms:conformsTo <http://www.opengis.net/def/crs/EPSG/0/4326> ;
+    ns2:lat 40 ;
+    ns2:long 20 .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/5> a ns3:8664 ;
+    dcterms:identifier 5 ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/5/geo> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/5/geo> a ns2:Point ;
+    dcterms:conformsTo <http://www.opengis.net/def/crs/EPSG/0/4326> ;
+    ns2:lat 10 ;
+    ns2:long 12 .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/1> a ns3:4730 ;
+    dcterms:identifier 1 ;
+    dcterms:relation <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1> ;
+    ns3:1571 "GREEN" ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/1/geo> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/2> a ns3:4730 ;
+    dcterms:identifier 2 ;
+    dcterms:relation <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1> ;
+    ns3:1571 "YELLOW" ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/2/geo> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/3> a ns3:4730 ;
+    dcterms:identifier 3 ;
+    dcterms:relation <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/2> ;
+    ns3:1571 "BROWN" ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/3/geo> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/4> a ns3:4730 ;
+    dcterms:identifier 4 ;
+    dcterms:relation <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1> ;
+    ns3:1571 "ORANGE" ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/4/geo> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/5> a ns3:4730 ;
+    dcterms:identifier 5 ;
+    dcterms:relation <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/2> ;
+    ns3:1571 "GREEN" ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/5/geo> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/2> a ns3:8664 ;
+    dcterms:identifier 2 ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/2/geo> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1> a ns3:8664 ;
+    dcterms:identifier 1 ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1/geo> .
+
+[] csvw:table [ csvw:row [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1> ;
+                    csvw:rownum 1 ;
+                    csvw:url <http://127.0.0.1:64665/trees.csv.csv#row=2> ],
+                [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/2> ;
+                    csvw:rownum 2 ;
+                    csvw:url <http://127.0.0.1:64665/trees.csv.csv#row=3> ],
+                [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/5> ;
+                    csvw:rownum 3 ;
+                    csvw:url <http://127.0.0.1:64665/trees.csv.csv#row=4> ] ;
+            csvw:url <http://127.0.0.1:64665/trees.csv.csv> ] .
+
+[] csvw:table [ csvw:row [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/5> ;
+                    csvw:rownum 5 ;
+                    csvw:url <http://127.0.0.1:56189/leaves.csv.csv#row=6> ],
+                [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/1> ;
+                    csvw:rownum 1 ;
+                    csvw:url <http://127.0.0.1:56189/leaves.csv.csv#row=2> ],
+                [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/4> ;
+                    csvw:rownum 4 ;
+                    csvw:url <http://127.0.0.1:56189/leaves.csv.csv#row=5> ],
+                [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/3> ;
+                    csvw:rownum 3 ;
+                    csvw:url <http://127.0.0.1:56189/leaves.csv.csv#row=4> ],
+                [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/2> ;
+                    csvw:rownum 2 ;
+                    csvw:url <http://127.0.0.1:56189/leaves.csv.csv#row=3> ] ;
+            csvw:url <http://127.0.0.1:56189/leaves.csv.csv> ] .
+

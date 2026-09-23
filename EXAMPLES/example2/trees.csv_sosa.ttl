@@ -1,0 +1,44 @@
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1> a <http://www.eionet.europa.eu/gemet/concept/8664> ;
+    dcterms:identifier 1 ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1/geo> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1/geo> a geo1:Point ;
+    dcterms:conformsTo <http://www.opengis.net/def/crs/EPSG/0/4326> ;
+    geo1:lat 20 ;
+    geo1:long 10 .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/2> a <http://www.eionet.europa.eu/gemet/concept/8664> ;
+    dcterms:identifier 2 ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/2/geo> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/2/geo> a geo1:Point ;
+    dcterms:conformsTo <http://www.opengis.net/def/crs/EPSG/0/4326> ;
+    geo1:lat 40 ;
+    geo1:long 20 .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/5> a <http://www.eionet.europa.eu/gemet/concept/8664> ;
+    dcterms:identifier 5 ;
+    schema:geo <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/5/geo> .
+
+<https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/5/geo> a geo1:Point ;
+    dcterms:conformsTo <http://www.opengis.net/def/crs/EPSG/0/4326> ;
+    geo1:lat 10 ;
+    geo1:long 12 .
+
+[] csvw:table [ csvw:row [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/1> ;
+                    csvw:rownum 1 ;
+                    csvw:url <http://127.0.0.1:59197/trees.csv.csv#row=2> ],
+                [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/5> ;
+                    csvw:rownum 3 ;
+                    csvw:url <http://127.0.0.1:59197/trees.csv.csv#row=4> ],
+                [ csvw:describes <https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/2> ;
+                    csvw:rownum 2 ;
+                    csvw:url <http://127.0.0.1:59197/trees.csv.csv#row=3> ] ;
+            csvw:url <http://127.0.0.1:59197/trees.csv.csv> ] .
+
