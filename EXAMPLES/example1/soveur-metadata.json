@@ -7,7 +7,7 @@
   "dc:identifier": "https://data.isric.org/geonetwork/srv/metadata/b1fa4988-b511-48e3-9548-3c48f0a908fa",
   "dc:language": "",
   "dc:type": "Dataset",
-  "url": "mydata.csv",
+  "url": "soveur.csv",
   "tableSchema": {
     "columns": [
       {"titles": "PRID", "datatype": "string"},
@@ -48,7 +48,7 @@
       {"titles": "LATI", "datatype": "float"},
       {"titles": "LNGI", "datatype": "float"},
       {"titles": "LABO", "datatype": "string"},
-      {"titles": "ELEV", "datatype": "ineger"}
+      {"titles": "ELEV", "datatype": "integer"}
     ]
   }
 }

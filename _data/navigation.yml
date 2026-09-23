@@ -1,0 +1,19 @@
+main:
+  - title: "Home"
+    url: ./
+  - title: "Common" 
+    url: ./COMMON//
+  - title: "SimpleCSV" 
+    url: ./SimpleCSV/
+  - title: "CSVW" 
+    url: ./CSVW/
+  - title: "GPKG" 
+    url: ./GPKG/
+  - title: "GML" 
+    url: ./GML/
+  - title: "RDF" 
+    url: ./RDF/
+  - title: "STA" 
+    url: ./STA/
+  - title: "RO-Crate" 
+    url: ./RO-CRATE/
