@@ -12,24 +12,24 @@ Dataset
       |     │
             └── Columns
                 --------------- # block for FOI
-                ├── titles: "FOI"
-                ├── name:
+                ├── name: "FOI"
+                ├── titles:
                 ├── datatype:
                 └── propertyURL: "sosa:FeatureOfInterest"
 
                 --------------- # block for observations/attributes
                 ├── virtual: true
-                ├── aboutURL: {aboutUrl}/{name_Obs}
+                ├── aboutURL: {aboutUrl}/{titles_Obs}
                 ├── valueURL: "sosa:Observation"
                 └── propertyURL: "rdf:type"
 
                 ├── virtual: true
-                ├── aboutURL: {aboutUrl}/{name_Obs}
+                ├── aboutURL: {aboutUrl}/{titles_Obs}
                 ├── valueURL: {aboutUrl}
                 └── propertyURL: "sosa:hasFeatureOfInterest"
                 
-                ├── name: 
-                ├── aboutURL: {aboutUrl}/{name_Obs}
+                ├── titles: 
+                ├── aboutURL: {aboutUrl}/{titles_Obs}
                 ├── datatype: 
                 └── propertyURL: "qudt:value"
 
@@ -45,15 +45,15 @@ Dataset
                 ├── valueURL:
                 └── propertyURL: "sosa:usedProcedure"
 
-                --------------- # additional for tables containing temporal information. Loop for each {name_Obs}
+                --------------- # additional for tables containing temporal information. Loop for each {titles_Obs}
                 ├── virtual: true
-                ├── aboutURL: {aboutUrl}/{name_Obs}
+                ├── aboutURL: {aboutUrl}/{titles_Obs}
                 ├── default: 
                 └── propertyURL: ["sosa:resultTime","sosa:PhenomeneTime"]
                 OR
 
                 ├── titles: 
-                ├── aboutURL: {aboutUrl}/{name_Obs}
+                ├── aboutURL: {aboutUrl}/{titles_Obs}
                 ├── datatype:
                 └── propertyURL: ["sosa:resultTime","sosa:PhenomeneTime"]
 
@@ -71,23 +71,24 @@ Dataset
 
                 ============== # additional for columns containing quantitive values
                 ├── virtual: true
-                ├── aboutURL: "{aboutUrl}/{name_Obs}"
-                ├── valueURL: "{aboutUrl}/{name_Obs}/QV"
+                ├── aboutURL: "{aboutUrl}/{titles_Obs}"
+                ├── valueURL: "{aboutUrl}/{titles_Obs}/QV"
                 └── propertyURL: "sosa:hasResult"
 
                 ├── virtual: true
-                ├── aboutURL: "{aboutUrl}/{name_Obs}/QV"
+                ├── aboutURL: "{aboutUrl}/{titles_Obs}/QV"
                 ├── valueURL: "qudt:QuantityValue"
                 └── propertyURL: "rdf:type"
 
                 --------------- # additional for columns containing **unit_uri**
                 ├── virtual: true
-                ├── aboutURL: "{aboutUrl}/{name_Obs}/QV"
+                ├── aboutURL: "{aboutUrl}/{titles_Obs}/QV"
                 ├── valueURL:
                 └── propertyURL: "qudt:unit"
+
                 --------------- # additional for columns containing **quantity_kind_uri**
                 ├── virtual: true
-                ├── aboutURL: "{aboutUrl}/{name_Obs}/QV"
+                ├── aboutURL: "{aboutUrl}/{titles_Obs}/QV"
                 ├── valueURL:
                 └── propertyURL: "qudt:QuantityKind"
 
