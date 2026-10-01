@@ -1,8 +1,8 @@
-# RML with Morph_kgc
+# R2RML with Morph_kgc
 
-RML is yet another approach to convert CSV into triples
+[R2RML](https://www.w3.org/TR/r2rml/) is yet another standardised approach to convert RDB (like postgres, CSV) into triples
 
-Morph-kgc is a rml tool from the python ecosystem
+[Morph-kgc](https://morph-kgc.readthedocs.io/) is a rml tool from the python ecosystem
 
 morph-kgc requires a .ini file with basic parameters and a .ttl mapping file
 
