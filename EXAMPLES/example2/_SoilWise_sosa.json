@@ -13,96 +13,106 @@
   "tables": [
     {
       "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv",
-      "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}",
+      "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}",
       "tableSchema": {
         "columns": [
           {
-            "name": "LEAFID",
+            "titles": "LEAFID",
             "propertyUrl": "dcterms:identifier",
             "datatype": "integer",
-            "titles": "leaf",
-            "dc:description": "A unique identifier assigned to each leaf, used to distinguish individual leaves in the dataset."
+            "dc:description": "A unique identifier assigned to each leaf, used to distinguish individual leaves in the dataset.",
+            "name": "LEAFID"
           },
           {
-            "name": "COLOR",
+            "titles": "COLOR",
             "datatype": "string",
             "propertyUrl": "http://www.eionet.europa.eu/gemet/concept/1571",
-            "titles": "colour",
-            "dc:description": "A descriptor of the visual appearance of a leaf, typically represented in terms of color categories or values."
+            "dc:description": "A descriptor of the visual appearance of a leaf, typically represented in terms of color categories or values.",
+            "name": "COLOR"
           },
           {
-            "name": "SIZE",
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/SIZE/QV",
+            "titles": "SIZE",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/SIZE/QV",
             "propertyUrl": "qudt:value",
             "datatype": "integer",
-            "titles": "leaf length",
-            "dc:description": "A measurement representing the dimensions of a leaf, which may include metrics such as length and width."
+            "dc:description": "A measurement representing the dimensions of a leaf, which may include metrics such as length and width.",
+            "name": "SIZE"
           },
           {
-            "name": "TREEID",
+            "titles": "TREEID",
             "datatype": "integer",
-            "titles": "tree",
-            "dc:description": "A unique identifier assigned to each tree in the dataset, used to distinguish between different specimens."
+            "dc:description": "A unique identifier assigned to each tree in the dataset, used to distinguish between different specimens.",
+            "name": "TREEID"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}",
             "valueUrl": "http://www.eionet.europa.eu/gemet/concept/4730",
-            "propertyUrl": "rdf:type"
+            "propertyUrl": "rdf:type",
+            "name": "virtual5"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}",
-            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/geo",
-            "propertyUrl": "schema:geo"
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/geo",
+            "propertyUrl": "schema:geo",
+            "name": "virtual6"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/geo",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/geo",
             "valueUrl": "geo:Point",
-            "propertyUrl": "rdf:type"
+            "propertyUrl": "rdf:type",
+            "name": "virtual7"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/SIZE",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/SIZE",
             "valueUrl": "sosa:Observation",
-            "propertyUrl": "rdf:type"
+            "propertyUrl": "rdf:type",
+            "name": "virtual8"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/SIZE",
-            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}",
-            "propertyUrl": "sosa:hasFeatureOfInterest"
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/SIZE",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest",
+            "name": "virtual9"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/SIZE",
-            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/SIZE/QV",
-            "propertyUrl": "sosa:hasResult"
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/SIZE",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/SIZE/QV",
+            "propertyUrl": "sosa:hasResult",
+            "name": "virtual10"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/SIZE/QV",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/SIZE/QV",
             "valueUrl": "qudt:QuantityValue",
-            "propertyUrl": "rdf:type"
+            "propertyUrl": "rdf:type",
+            "name": "virtual11"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/SIZE",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/SIZE",
             "valueUrl": "http://opendata.inrae.fr/thesaurusINRAE/c_15919",
-            "propertyUrl": "sosa:observedProperty"
+            "propertyUrl": "sosa:observedProperty",
+            "name": "virtual12"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/SIZE/QV",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/SIZE/QV",
             "valueUrl": "http://qudt.org/vocab/unit/CentiM",
-            "propertyUrl": "qudt:hasUnit"
+            "propertyUrl": "qudt:hasUnit",
+            "name": "virtual13"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{LEAFID}/SIZE/QV",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/leaves.csv/{LEAFID}/SIZE/QV",
             "valueUrl": "http://qudt.org/vocab/quantitykind/Length",
-            "propertyUrl": "qudt:hasQuantityKind"
+            "propertyUrl": "qudt:hasQuantityKind",
+            "name": "virtual14"
           }
         ],
         "primaryKey": "LEAFID",
@@ -126,55 +136,59 @@
     },
     {
       "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv",
-      "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{TREEID}",
+      "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/{TREEID}",
       "tableSchema": {
         "columns": [
           {
-            "name": "TREEID",
+            "titles": "TREEID",
             "propertyUrl": "dcterms:identifier",
             "datatype": "integer",
-            "titles": "tree",
-            "dc:description": "A unique identifier assigned to each tree in the dataset, used to distinguish between different specimens."
+            "dc:description": "A unique identifier assigned to each tree in the dataset, used to distinguish between different specimens.",
+            "name": "TREEID"
           },
           {
-            "name": "LAT",
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{TREEID}/geo",
+            "titles": "LAT",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/{TREEID}/geo",
             "propertyUrl": "geo:lat",
             "datatype": "integer",
-            "titles": "Y",
-            "dc:description": "The latitude coordinate representing the north-south position of a tree's location on the Earth's surface, measured in degrees."
+            "dc:description": "The latitude coordinate representing the north-south position of a tree's location on the Earth's surface, measured in degrees.",
+            "name": "LAT"
           },
           {
-            "name": "LONG",
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{TREEID}/geo",
+            "titles": "LONG",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/{TREEID}/geo",
             "propertyUrl": "geo:long",
             "datatype": "integer",
-            "titles": "X",
-            "dc:description": "The longitude coordinate representing the east-west position of a tree's location on the Earth's surface, measured in degrees."
+            "dc:description": "The longitude coordinate representing the east-west position of a tree's location on the Earth's surface, measured in degrees.",
+            "name": "LONG"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{TREEID}",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/{TREEID}",
             "valueUrl": "http://www.eionet.europa.eu/gemet/concept/8664",
-            "propertyUrl": "rdf:type"
+            "propertyUrl": "rdf:type",
+            "name": "virtual4"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{TREEID}",
-            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{TREEID}/geo",
-            "propertyUrl": "schema:geo"
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/{TREEID}",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/{TREEID}/geo",
+            "propertyUrl": "schema:geo",
+            "name": "virtual5"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{TREEID}/geo",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/{TREEID}/geo",
             "valueUrl": "geo:Point",
-            "propertyUrl": "rdf:type"
+            "propertyUrl": "rdf:type",
+            "name": "virtual6"
           },
           {
             "virtual": true,
-            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/{TREEID}/geo",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example2/trees.csv/{TREEID}/geo",
             "valueUrl": "http://www.opengis.net/def/crs/EPSG/0/4326",
-            "propertyUrl": "dcterms:conformsTo"
+            "propertyUrl": "dcterms:conformsTo",
+            "name": "virtual7"
           }
         ],
         "primaryKey": "TREEID"

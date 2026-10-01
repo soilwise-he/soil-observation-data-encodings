@@ -1,0 +1,2763 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/csvw",
+    {
+      "sosa": "http://www.w3.org/ns/sosa/",
+      "qudt": "http://qudt.org/1.1/schema/qudt#",
+      "dcterms": "http://purl.org/dc/terms/",
+      "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "schema": "https://schema.org/",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    }
+  ],
+  "tables": [
+    {
+      "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/v140_mun.V2_0_2012_BODENLABORWERTE.csv",
+      "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "Bodenlaborwerte_ID",
+            "propertyUrl": "dcterms:identifier",
+            "datatype": "integer",
+            "dc:description": "A unique identifier for soil laboratory values recorded in the dataset."
+          },
+          {
+            "name": "Ph_Wert",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ph_Wert/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "pH-value",
+            "dc:description": "The pH value of the soil, indicating its acidity or alkalinity, measured in a laboratory setting."
+          },
+          {
+            "name": "Ct",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ct/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "soil carbon density",
+            "dc:description": "The total carbon content in the soil, typically expressed as a percentage of the soil mass."
+          },
+          {
+            "name": "C_hwl",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/C_hwl/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The carbon content in the soil measured using the hot water leaching method."
+          },
+          {
+            "name": "Nt",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Nt/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "total nitrogen",
+            "dc:description": "The total nitrogen content in the soil, usually expressed as a percentage of the soil mass."
+          },
+          {
+            "name": "NO3_N",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NO3_N/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "nitrate",
+            "dc:description": "The concentration of nitrate nitrogen in the soil, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "NH4_N",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NH4_N/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "ammonium",
+            "dc:description": "The concentration of ammonium nitrogen in the soil, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "CaCO3_C",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/CaCO3_C/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "carbonates content",
+            "dc:description": "The carbon content derived from calcium carbonate in the soil, expressed as a percentage."
+          },
+          {
+            "name": "P",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "total phosphorus",
+            "dc:description": "The concentration of phosphorus in the soil, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "K",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/K/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "string",
+            "titles": "potassium",
+            "dc:description": "The concentration of potassium in the soil, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Mg",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "string",
+            "titles": "magnesium",
+            "dc:description": "The concentration of magnesium in the soil, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "Ca",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "calcium content",
+            "dc:description": "The concentration of calcium in the soil, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "B",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "boron",
+            "dc:description": "The concentration of boron in the soil, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "Cu",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "copper",
+            "dc:description": "The concentration of copper in the soil, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Mn",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "manganese",
+            "dc:description": "The concentration of manganese in the soil, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "Mo",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "molybdenum",
+            "dc:description": "The concentration of molybdenum in the soil, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Zn",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "zinc content",
+            "dc:description": "The concentration of zinc in the soil, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "F",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/F/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "fluorine",
+            "dc:description": "The concentration of fluorine in the soil, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Grobsand",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobsand/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "coarse sand",
+            "dc:description": "The percentage of coarse sand particles in the soil, typically measured by particle size analysis."
+          },
+          {
+            "name": "Mittelsand",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelsand/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage of medium sand particles in the soil, usually determined through particle size analysis."
+          },
+          {
+            "name": "Feinsand",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinsand/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "fine sand",
+            "dc:description": "The percentage of fine sand particles in the soil, typically measured by particle size analysis."
+          },
+          {
+            "name": "Grobschluff",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobschluff/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage of coarse silt particles in the soil, usually determined through particle size analysis."
+          },
+          {
+            "name": "Mittelschluff",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelschluff/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage of medium silt particles in the soil, typically measured by particle size analysis."
+          },
+          {
+            "name": "Feinschluff",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinschluff/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage of fine silt particles in the soil, usually determined through particle size analysis."
+          },
+          {
+            "name": "Ton",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ton/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "clay content",
+            "dc:description": "The percentage of clay particles in the soil, typically measured by particle size analysis."
+          },
+          {
+            "name": "P_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "phosphorus",
+            "dc:description": "The concentration of phosphorus in the soil extracted with K\u00f6nig water, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Mg_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "magnesium",
+            "dc:description": "The concentration of magnesium in the soil extracted with K\u00f6nig water, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "Ca_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "calcium content",
+            "dc:description": "The concentration of calcium in the soil extracted with K\u00f6nig water, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "B_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "boron",
+            "dc:description": "The concentration of boron in the soil extracted with K\u00f6nig water, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "Cu_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "copper",
+            "dc:description": "The concentration of copper in the soil extracted with K\u00f6nig water, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Mn_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "manganese",
+            "dc:description": "The concentration of manganese in the soil extracted with K\u00f6nig water, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "Mo_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "molybdenum",
+            "dc:description": "The concentration of molybdenum in the soil extracted with K\u00f6nig water, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Zn_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "zinc content",
+            "dc:description": "The concentration of zinc in the soil extracted with K\u00f6nig water, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "Al_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Al_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "aluminium content",
+            "dc:description": "The concentration of aluminum in the soil extracted with K\u00f6nig water, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Fe_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Fe_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "iron",
+            "dc:description": "The concentration of iron in the soil extracted with K\u00f6nig water, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "S_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/S_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "sulphur concentration",
+            "dc:description": "The concentration of sulfur in the soil extracted with K\u00f6nig water, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Sr_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Sr_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "strontium",
+            "dc:description": "The concentration of strontium in the soil extracted with K\u00f6nig water, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "Ti_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ti_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "titanium",
+            "dc:description": "The concentration of titanium in the soil extracted with K\u00f6nig water, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Cd_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cd_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "cadmium contamination",
+            "dc:description": "The concentration of cadmium in the soil extracted with K\u00f6nig water, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "Ni_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ni_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "nickel",
+            "dc:description": "The concentration of nickel in the soil extracted with K\u00f6nig water, usually expressed in milligrams per kilogram."
+          },
+          {
+            "name": "Pb_Koenigswasser",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Pb_Koenigswasser/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "titles": "lead contamination",
+            "dc:description": "The concentration of lead in the soil extracted with K\u00f6nig water, typically measured in milligrams per kilogram."
+          },
+          {
+            "name": "Probenahme_Boden_ID",
+            "datatype": "integer",
+            "dc:description": "A unique identifier for each soil sampling event, linking the observations to specific samples collected in the field."
+          },
+          {
+            "name": "Bemerkungen_ID",
+            "datatype": "string",
+            "dc:description": "A unique identifier for any additional remarks or notes associated with the soil sampling event."
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/geo",
+            "propertyUrl": "schema:geo"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/geo",
+            "valueUrl": "geo:Point",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ph_Wert",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ph_Wert",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ph_Wert",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ph_Wert/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ph_Wert/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ph_Wert",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/14636",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ph_Wert/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/PH",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ph_Wert/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/Acidity",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ct",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ct",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ct",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ct/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ct/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ct",
+            "valueUrl": "http://w3id.org/glosis/model/siteplot/soilCarbonDensityProperty",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ct/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-HectoGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ct/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/C_hwl",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/C_hwl",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/C_hwl",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/C_hwl/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/C_hwl/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/C_hwl/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-HectoGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/C_hwl/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Nt",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Nt",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Nt",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Nt/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Nt/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Nt",
+            "valueUrl": "http://aims.fao.org/aos/agrovoc/c_bdc779f4",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Nt/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-HectoGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Nt/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NO3_N",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NO3_N",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NO3_N",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NO3_N/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NO3_N/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NO3_N",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/5593",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NO3_N/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NO3_N/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NH4_N",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NH4_N",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NH4_N",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NH4_N/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NH4_N/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NH4_N",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/379",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NH4_N/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/NH4_N/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/CaCO3_C",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/CaCO3_C",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/CaCO3_C",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/CaCO3_C/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/CaCO3_C/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/CaCO3_C",
+            "valueUrl": "http://w3id.org/glosis/model/layerhorizon/carbonatesContentProperty",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/CaCO3_C/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/CaCO3_C/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P",
+            "valueUrl": "http://aims.fao.org/aos/agrovoc/c_ac4b3c22",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/K",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/K",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/K",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/K/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/K/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/K",
+            "valueUrl": "http://opendata.inrae.fr/thesaurusINRAE/c_15734",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/K/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/K/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg",
+            "valueUrl": "http://aims.fao.org/aos/agrovoc/c_4517",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/1112",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/965",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/PPM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/AmountOfSubstanceFraction",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/1792",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/PPM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/AmountOfSubstanceFraction",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn",
+            "valueUrl": "http://w3id.org/glosis/model/layerhorizon/manganeseProperty",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/PPM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/AmountOfSubstanceFraction",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo",
+            "valueUrl": "http://w3id.org/glosis/model/layerhorizon/molybdenumProperty",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/PPM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/AmountOfSubstanceFraction",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn",
+            "valueUrl": "http://opendata.inrae.fr/thesaurusINRAE/c_16440",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/PPM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/AmountOfSubstanceFraction",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/F",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/F",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/F",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/F/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/F/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/F",
+            "valueUrl": "http://aims.fao.org/aos/agrovoc/c_2996",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/F/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/F/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobsand",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobsand",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobsand",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobsand/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobsand/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobsand",
+            "valueUrl": "http://aims.fao.org/aos/agrovoc/c_c03927e1",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobsand/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-HectoGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobsand/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelsand",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelsand",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelsand",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelsand/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelsand/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelsand/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-HectoGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelsand/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinsand",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinsand",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinsand",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinsand/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinsand/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinsand",
+            "valueUrl": "http://aims.fao.org/aos/agrovoc/c_a91f25d6",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinsand/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-HectoGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinsand/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobschluff",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobschluff",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobschluff",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobschluff/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobschluff/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobschluff/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-HectoGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Grobschluff/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelschluff",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelschluff",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelschluff",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelschluff/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelschluff/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelschluff/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-HectoGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mittelschluff/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinschluff",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinschluff",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinschluff",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinschluff/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinschluff/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinschluff/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-HectoGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Feinschluff/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ton",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ton",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ton",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ton/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ton/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ton",
+            "valueUrl": "https://data.geoscience.earth/ncl/ISO11074v2025/3.74",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ton/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/GM-PER-HectoGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ton/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/6196",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/P_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg_Koenigswasser",
+            "valueUrl": "http://aims.fao.org/aos/agrovoc/c_4517",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mg_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/1112",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ca_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/965",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/B_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/1792",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cu_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn_Koenigswasser",
+            "valueUrl": "http://w3id.org/glosis/model/layerhorizon/manganeseProperty",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mn_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo_Koenigswasser",
+            "valueUrl": "http://w3id.org/glosis/model/layerhorizon/molybdenumProperty",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Mo_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn_Koenigswasser",
+            "valueUrl": "http://opendata.inrae.fr/thesaurusINRAE/c_16440",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Zn_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Al_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Al_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Al_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Al_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Al_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Al_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/355",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Al_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Al_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Fe_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Fe_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Fe_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Fe_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Fe_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Fe_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/4498",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Fe_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Fe_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/S_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/S_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/S_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/S_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/S_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/S_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/8200",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/S_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/S_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Sr_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Sr_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Sr_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Sr_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Sr_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Sr_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/8144",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Sr_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Sr_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ti_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ti_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ti_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ti_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ti_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ti_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/8495",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ti_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ti_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cd_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cd_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cd_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cd_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cd_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cd_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/1101",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cd_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Cd_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ni_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ni_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ni_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ni_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ni_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ni_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/5589",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ni_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Ni_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Pb_Koenigswasser",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Pb_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Pb_Koenigswasser",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Pb_Koenigswasser/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Pb_Koenigswasser/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Pb_Koenigswasser",
+            "valueUrl": "http://www.eionet.europa.eu/gemet/concept/4725",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Pb_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/MilliGM-PER-KiloGM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Bodenlaborwerte_ID}/Pb_Koenigswasser/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/MassRatio",
+            "propertyUrl": "qudt:hasQuantityKind"
+          }
+        ],
+        "primaryKey": "Bodenlaborwerte_ID"
+      }
+    },
+    {
+      "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/v140_mun.V2_0_2012_PARZELLE_V140.csv",
+      "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "OBJECTID",
+            "propertyUrl": "dcterms:identifier",
+            "datatype": "integer",
+            "dc:description": "A unique identifier for each record in the dataset, typically used for referencing and indexing purposes."
+          },
+          {
+            "name": "Sw_Lat_Wgs84",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/geo",
+            "propertyUrl": "geo:location",
+            "datatype": "decimal",
+            "dc:description": "The latitude in the WGS84 coordinate reference system for the southwest corner of the parcel."
+          },
+          {
+            "name": "Sw_Lon_Wgs84",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/geo",
+            "propertyUrl": "geo:location",
+            "datatype": "decimal",
+            "dc:description": "The longitude in the WGS84 coordinate reference system for the southwest corner of the parcel."
+          },
+          {
+            "name": "Soe_Lat_Wgs84",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/geo",
+            "propertyUrl": "geo:location",
+            "datatype": "decimal",
+            "dc:description": "The latitude in the WGS84 coordinate reference system for the southeast corner of the parcel."
+          },
+          {
+            "name": "Soe_Lon_Wgs84",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/geo",
+            "propertyUrl": "geo:location",
+            "datatype": "decimal",
+            "dc:description": "The longitude in the WGS84 coordinate reference system for the southeast corner of the parcel."
+          },
+          {
+            "name": "Nw_Lat_Wgs84",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/geo",
+            "propertyUrl": "geo:location",
+            "datatype": "decimal",
+            "dc:description": "The latitude in the WGS84 coordinate reference system for the northwest corner of the parcel."
+          },
+          {
+            "name": "Nw_Lon_Wgs84",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/geo",
+            "propertyUrl": "geo:location",
+            "datatype": "decimal",
+            "dc:description": "The longitude in the WGS84 coordinate reference system for the northwest corner of the parcel."
+          },
+          {
+            "name": "Noe_Lat_Wgs84",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/geo",
+            "propertyUrl": "geo:location",
+            "datatype": "decimal",
+            "dc:description": "The latitude in the WGS84 coordinate reference system for the northeast corner of the parcel."
+          },
+          {
+            "name": "Noe_Lon_Wgs84",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/geo",
+            "propertyUrl": "geo:location",
+            "datatype": "decimal",
+            "dc:description": "The longitude in the WGS84 coordinate reference system for the northeast corner of the parcel."
+          },
+          {
+            "name": "Sw_X_Etrs89",
+            "datatype": "decimal",
+            "dc:description": "The east coordinate (X) in the ETRS89 coordinate reference system for the southwest corner of the parcel."
+          },
+          {
+            "name": "Sw_Y_Etrs89",
+            "datatype": "decimal",
+            "dc:description": "The north coordinate (Y) in the ETRS89 coordinate reference system for the southwest corner of the parcel."
+          },
+          {
+            "name": "Soe_X_Etrs89",
+            "datatype": "decimal",
+            "dc:description": "The east coordinate (X) in the ETRS89 coordinate reference system for the southeast corner of the parcel."
+          },
+          {
+            "name": "Soe_Y_Etrs89",
+            "datatype": "decimal",
+            "dc:description": "The north coordinate (Y) in the ETRS89 coordinate reference system for the southeast corner of the parcel."
+          },
+          {
+            "name": "Nw_X_Etrs89",
+            "datatype": "decimal",
+            "dc:description": "The east coordinate (X) in the ETRS89 coordinate reference system for the northwest corner of the parcel."
+          },
+          {
+            "name": "Nw_Y_Etrs89",
+            "datatype": "decimal",
+            "dc:description": "The north coordinate (Y) in the ETRS89 coordinate reference system for the northwest corner of the parcel."
+          },
+          {
+            "name": "Noe_X_Etrs89",
+            "datatype": "decimal",
+            "dc:description": "The east coordinate (X) in the ETRS89 coordinate reference system for the northeast corner of the parcel."
+          },
+          {
+            "name": "Noe_Y_Etrs89",
+            "datatype": "decimal",
+            "dc:description": "The north coordinate (Y) in the ETRS89 coordinate reference system for the northeast corner of the parcel."
+          },
+          {
+            "name": "SHAPE.STArea()",
+            "datatype": "string",
+            "dc:description": "The computed area of the parcel geometry, typically expressed in square meters."
+          },
+          {
+            "name": "SHAPE.STLength()",
+            "datatype": "decimal",
+            "dc:description": "The computed length of the parcel geometry boundary, typically expressed in meters."
+          },
+          {
+            "name": "Grobsand__0_bis_25__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__0_bis_25__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of coarse sand particles (0 to 25 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Grobsand__25_bis_50__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__25_bis_50__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of coarse sand particles (25 to 50 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Mittelsand__0_bis_25__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__0_bis_25__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of medium sand particles (0 to 25 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Mittelsand__25_bis_50__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__25_bis_50__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of medium sand particles (25 to 50 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Feinsand__0_bis_25__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__0_bis_25__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of fine sand particles (0 to 25 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Feinsand__25_bis_50__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__25_bis_50__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of fine sand particles (25 to 50 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Grobschluff__0_bis_25__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__0_bis_25__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of coarse silt particles (0 to 25 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Grobschluff__25_bis_50__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__25_bis_50__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of coarse silt particles (25 to 50 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Mittelschluff__0_bis_25__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__0_bis_25__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of medium silt particles (0 to 25 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Mittelschluff__25_bis_50_1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__25_bis_50_1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of medium silt particles (25 to 50 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Feinschluff__0_bis_25__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__0_bis_25__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of fine silt particles (0 to 25 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Feinschluff__25_bis_50__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__25_bis_50__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of fine silt particles (25 to 50 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Ton__0_bis_25__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__0_bis_25__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of clay particles (0 to 25 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Ton__25_bis_50__1980",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__25_bis_50__1980/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "decimal",
+            "dc:description": "The percentage or mass of clay particles (25 to 50 mm) in the soil sample collected in 1980."
+          },
+          {
+            "name": "Parzelle",
+            "datatype": "integer",
+            "titles": "parcels",
+            "dc:description": "A variable representing the parcel number or identifier associated with the soil observation site."
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/geo",
+            "propertyUrl": "schema:geo"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/geo",
+            "valueUrl": "geo:Point",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__0_bis_25__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__0_bis_25__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__0_bis_25__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__25_bis_50__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__25_bis_50__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobsand__25_bis_50__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__0_bis_25__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__0_bis_25__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__0_bis_25__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__25_bis_50__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__25_bis_50__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelsand__25_bis_50__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__0_bis_25__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__0_bis_25__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__0_bis_25__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__25_bis_50__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__25_bis_50__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinsand__25_bis_50__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__0_bis_25__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__0_bis_25__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__0_bis_25__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__25_bis_50__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__25_bis_50__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Grobschluff__25_bis_50__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__0_bis_25__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__0_bis_25__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__0_bis_25__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__25_bis_50_1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__25_bis_50_1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__25_bis_50_1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__25_bis_50_1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Mittelschluff__25_bis_50_1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__0_bis_25__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__0_bis_25__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__0_bis_25__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__25_bis_50__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__25_bis_50__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Feinschluff__25_bis_50__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__0_bis_25__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__0_bis_25__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__0_bis_25__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__0_bis_25__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__25_bis_50__1980",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__25_bis_50__1980",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__25_bis_50__1980/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{OBJECTID}/Ton__25_bis_50__1980/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          }
+        ],
+        "primaryKey": "OBJECTID",
+        "foreignKeys": [
+          {
+            "columnReference": "OBJECTID",
+            "reference": {
+              "resource": "v140_mun.csv",
+              "columnReference": "V2_0_2012_PROBENAHME_BODEN.csv.Probenahme_Boden_ID"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/v140_mun.V2_0_2012_PROBENAHME_BODEN.csv",
+      "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "Probenahme_Boden_ID",
+            "propertyUrl": "dcterms:identifier",
+            "datatype": "integer",
+            "dc:description": "A unique identifier for each soil sampling event, linking the observations to specific samples collected in the field."
+          },
+          {
+            "name": "Tiefe_Oben",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Oben/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "dc:description": "The depth of the upper boundary of the soil sample, measured from the soil surface."
+          },
+          {
+            "name": "Tiefe_Unten",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten/QV",
+            "propertyUrl": "qudt:value",
+            "datatype": "integer",
+            "titles": "depth related sample",
+            "dc:description": "The depth of the lower boundary of the soil sample, indicating how deep the sample extends into the soil profile."
+          },
+          {
+            "name": "Versuchsjahr",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Oben",
+            "propertyUrl": "sosa:phenomenonTime",
+            "datatype": "integer",
+            "dc:description": "The year in which the soil samples were collected during the long-term field experiment."
+          },
+          {
+            "name": "Versuchsjahr",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten",
+            "propertyUrl": "sosa:phenomenonTime",
+            "datatype": "integer",
+            "dc:description": "The year in which the soil samples were collected during the long-term field experiment."
+          },
+          {
+            "name": "Termin",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Oben",
+            "propertyUrl": "sosa:phenomenonTime",
+            "datatype": {
+              "base": "dateTime",
+              "format": "%Y-%m-%dT%H:%M:%S"
+            },
+            "dc:description": "The specific date or time period when the soil sampling took place."
+          },
+          {
+            "name": "Termin",
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten",
+            "propertyUrl": "sosa:phenomenonTime",
+            "datatype": {
+              "base": "dateTime",
+              "format": "%Y-%m-%dT%H:%M:%S"
+            },
+            "dc:description": "The specific date or time period when the soil sampling took place."
+          },
+          {
+            "name": "Parzelle_ID",
+            "datatype": "integer",
+            "dc:description": "A unique identifier for the specific plot or parcel of land from which the soil samples were taken."
+          },
+          {
+            "name": "Bemerkungen_ID",
+            "datatype": "string",
+            "dc:description": "A unique identifier for any additional remarks or notes associated with the soil sampling event."
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/geo",
+            "propertyUrl": "schema:geo"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/geo",
+            "valueUrl": "geo:Point",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Oben",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Oben",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Oben",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Oben/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Oben/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Oben/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/CentiM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Oben/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/Length",
+            "propertyUrl": "qudt:hasQuantityKind"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten",
+            "valueUrl": "sosa:Observation",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}",
+            "propertyUrl": "sosa:hasFeatureOfInterest"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten",
+            "valueUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten/QV",
+            "propertyUrl": "sosa:hasResult"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten/QV",
+            "valueUrl": "qudt:QuantityValue",
+            "propertyUrl": "rdf:type"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten",
+            "valueUrl": "https://data.geoscience.earth/ncl/ISO11074v2025/3.120",
+            "propertyUrl": "sosa:observedProperty"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten/QV",
+            "valueUrl": "http://qudt.org/vocab/unit/CentiM",
+            "propertyUrl": "qudt:hasUnit"
+          },
+          {
+            "virtual": true,
+            "aboutUrl": "https://raw.githubusercontent.com/soilwise-he/soil-observation-data-encodings/main/EXAMPLES/example10/{Probenahme_Boden_ID}/Tiefe_Unten/QV",
+            "valueUrl": "http://qudt.org/vocab/quantitykind/Length",
+            "propertyUrl": "qudt:hasQuantityKind"
+          }
+        ],
+        "primaryKey": "Probenahme_Boden_ID"
+      }
+    }
+  ]
+}
