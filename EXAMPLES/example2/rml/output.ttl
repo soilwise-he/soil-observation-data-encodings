@@ -1,0 +1,95 @@
+@prefix ns1: <http://example.com/> .
+@prefix ns2: <http://qudt.org/schema/qudt/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/observation/1/color> a sosa:Observation ;
+    ns1:method ns1:RGB ;
+    sosa:hasFeatureOfInterest <http://example.com/leaf/1> ;
+    sosa:hasSimpleResult "GREEN" ;
+    sosa:observedProperty ns1:leafColor .
+
+<http://example.com/observation/1/size> a sosa:Observation ;
+    ns2:unit <http://qudt.org/vocab/unit/CentiM> ;
+    sosa:hasFeatureOfInterest <http://example.com/leaf/1> ;
+    sosa:hasSimpleResult 23.0 ;
+    sosa:observedProperty ns1:leafSize .
+
+<http://example.com/observation/2/color> a sosa:Observation ;
+    ns1:method ns1:RGB ;
+    sosa:hasFeatureOfInterest <http://example.com/leaf/2> ;
+    sosa:hasSimpleResult "YELLOW" ;
+    sosa:observedProperty ns1:leafColor .
+
+<http://example.com/observation/2/size> a sosa:Observation ;
+    ns2:unit <http://qudt.org/vocab/unit/CentiM> ;
+    sosa:hasFeatureOfInterest <http://example.com/leaf/2> ;
+    sosa:hasSimpleResult 32.0 ;
+    sosa:observedProperty ns1:leafSize .
+
+<http://example.com/observation/3/color> a sosa:Observation ;
+    ns1:method ns1:RGB ;
+    sosa:hasFeatureOfInterest <http://example.com/leaf/3> ;
+    sosa:hasSimpleResult "BROWN" ;
+    sosa:observedProperty ns1:leafColor .
+
+<http://example.com/observation/3/size> a sosa:Observation ;
+    ns2:unit <http://qudt.org/vocab/unit/CentiM> ;
+    sosa:hasFeatureOfInterest <http://example.com/leaf/3> ;
+    sosa:hasSimpleResult 22.0 ;
+    sosa:observedProperty ns1:leafSize .
+
+<http://example.com/observation/4/color> a sosa:Observation ;
+    ns1:method ns1:RGB ;
+    sosa:hasFeatureOfInterest <http://example.com/leaf/4> ;
+    sosa:hasSimpleResult "ORANGE" ;
+    sosa:observedProperty ns1:leafColor .
+
+<http://example.com/observation/4/size> a sosa:Observation ;
+    ns2:unit <http://qudt.org/vocab/unit/CentiM> ;
+    sosa:hasFeatureOfInterest <http://example.com/leaf/4> ;
+    sosa:hasSimpleResult 43.0 ;
+    sosa:observedProperty ns1:leafSize .
+
+<http://example.com/observation/5/color> a sosa:Observation ;
+    ns1:method ns1:RGB ;
+    sosa:hasFeatureOfInterest <http://example.com/leaf/5> ;
+    sosa:hasSimpleResult "GREEN" ;
+    sosa:observedProperty ns1:leafColor .
+
+<http://example.com/observation/5/size> a sosa:Observation ;
+    ns2:unit <http://qudt.org/vocab/unit/CentiM> ;
+    sosa:hasFeatureOfInterest <http://example.com/leaf/5> ;
+    sosa:hasSimpleResult 31.0 ;
+    sosa:observedProperty ns1:leafSize .
+
+<http://example.com/tree/5> a ns1:Tree ;
+    ns1:latitude 10.0 ;
+    ns1:longitude 12.0 ;
+    ns1:type "maple" .
+
+<http://example.com/leaf/1> a ns1:Leaf ;
+    ns1:belongsToTree <http://example.com/tree/1> .
+
+<http://example.com/leaf/2> a ns1:Leaf ;
+    ns1:belongsToTree <http://example.com/tree/1> .
+
+<http://example.com/leaf/3> a ns1:Leaf ;
+    ns1:belongsToTree <http://example.com/tree/2> .
+
+<http://example.com/leaf/4> a ns1:Leaf ;
+    ns1:belongsToTree <http://example.com/tree/1> .
+
+<http://example.com/leaf/5> a ns1:Leaf ;
+    ns1:belongsToTree <http://example.com/tree/2> .
+
+<http://example.com/tree/2> a ns1:Tree ;
+    ns1:latitude 40.0 ;
+    ns1:longitude 20.0 ;
+    ns1:type "oak" .
+
+<http://example.com/tree/1> a ns1:Tree ;
+    ns1:latitude 20.0 ;
+    ns1:longitude 10.0 ;
+    ns1:type "birch" .
+

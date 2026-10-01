@@ -1,0 +1,153 @@
+@prefix rml:  <http://w3id.org/rml/> .
+@prefix ex:   <http://example.com/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+
+<#TreeMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../trees.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template "http://example.com/tree/{TREEID}" ;
+        rml:class ex:Tree
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate ex:latitude ;
+        rml:objectMap [
+            rml:reference "LAT" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate ex:longitude ;
+        rml:objectMap [
+            rml:reference "LONG" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate ex:type ;
+        rml:objectMap [
+            rml:reference "TYPE"
+        ]
+    ] .
+
+
+<#LeafMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../leaves.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template "http://example.com/leaf/{LEAFID}" ;
+        rml:class ex:Leaf
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate ex:belongsToTree ;
+        rml:objectMap [
+            rml:parentTriplesMap <#TreeMapping> ;
+            rml:joinCondition [
+                rml:child "TREEID" ;
+                rml:parent "TREEID"
+            ]
+        ]
+    ] .
+
+
+<#LeafSizeObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../leaves.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template "http://example.com/observation/{LEAFID}/size" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template "http://example.com/leaf/{LEAFID}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:leafSize
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "SIZE" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:CentiM
+        ]
+    ] .
+
+
+<#LeafColorObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../leaves.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template "http://example.com/observation/{LEAFID}/color" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template "http://example.com/leaf/{LEAFID}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:leafColor
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "COLOR"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate ex:method ;
+        rml:objectMap [
+            rml:constant ex:RGB
+        ]
+    ] .
