@@ -1,0 +1,822 @@
+@prefix rml:  <http://w3id.org/rml/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:   <http://example.com/soil/> .
+
+
+############################################################
+# SOIL HORIZON / SAMPLE
+############################################################
+
+<#SampleMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template "http://example.com/soil/sample/{PRID}/{HONU}" ;
+        rml:class ex:SoilHorizon
+    ] .
+
+
+############################################################
+# PROFILE / LOCATION
+############################################################
+
+<#LatitudeObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/LATI" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:latitude
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "LATI" ;
+            rml:datatype xsd:decimal
+        ]
+    ] .
+
+
+<#LongitudeObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/LNGI" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:longitude
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "LNGI" ;
+            rml:datatype xsd:decimal
+        ]
+    ] .
+
+
+<#ElevationObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/ELEV" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:elevation
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "ELEV" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:M
+        ]
+    ] .
+
+
+############################################################
+# HORIZON DESCRIPTIVE OBSERVATIONS
+############################################################
+
+<#HorizonObservationMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/HODE" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:horizonDesignation
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "HODE"
+        ]
+    ] .
+
+
+############################################################
+# SIZE / TEXTURE / PHYSICAL PROPERTIES
+############################################################
+
+<#PhysicalObservationMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/SDTO" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:totalSand
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "SDTO" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:PERCENT
+        ]
+    ] .
+
+
+<#SiltObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/STPC" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:siltContent
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "STPC" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:PERCENT
+        ]
+    ] .
+
+
+<#ClayObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/CLPC" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:clayContent
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "CLPC" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:PERCENT
+        ]
+    ] .
+
+
+<#BulkDensityObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/BULK" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:bulkDensity
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "BULK" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:KiloGM-PER-DeciM3
+        ]
+    ] .
+
+
+############################################################
+# CHEMICAL PROPERTIES
+############################################################
+
+<#ChemicalObservationMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/PHAQ" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:pHAQ
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "PHAQ" ;
+            rml:datatype xsd:decimal
+        ]
+    ] .
+
+
+<#PHKCObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/PHKC" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:pHKCl
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "PHKC" ;
+            rml:datatype xsd:decimal
+        ]
+    ] .
+
+
+<#ElectricalConductivityObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/ELCO" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:electricalConductivity
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "ELCO" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:DeciS-PER-M
+        ]
+    ] .
+
+
+############################################################
+# EXCHANGEABLE CATIONS
+############################################################
+
+<#ExchangeableCationsMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/EXCA" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:exchangeableCalcium
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "EXCA" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:MilliMol-PER-KiloGM
+        ]
+    ] .
+
+
+<#ExchangeableMagnesiumMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/EXMG" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:exchangeableMagnesium
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "EXMG" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:MilliMol-PER-KiloGM
+        ]
+    ] .
+
+
+<#ExchangeableSodiumMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/EXNA" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:exchangeableSodium
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "EXNA" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:MilliMol-PER-KiloGM
+        ]
+    ] .
+
+
+<#ExchangeablePotassiumMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/EXCK" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:exchangeablePotassium
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "EXCK" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:MilliMol-PER-KiloGM
+        ]
+    ] .
+
+
+<#ExchangeableAluminiumMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/EXAL" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:exchangeableAluminium
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "EXAL" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:MilliMol-PER-KiloGM
+        ]
+    ] .
+
+
+############################################################
+# CARBON / NITROGEN / CARBONATES / GYPSUM
+############################################################
+
+<#CarbonNitrogenObservationMapping>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/TOTC" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:totalCarbon
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "TOTC" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:MilliGM-PER-GM
+        ]
+    ] .
+
+
+<#TotalNitrogenObservation>
+    a rml:TriplesMap ;
+
+    rml:logicalSource [
+        rml:source "../soveur.csv" ;
+        rml:referenceFormulation rml:CSV
+    ] ;
+
+    rml:subjectMap [
+        rml:template
+            "http://example.com/soil/observation/{PRID}/{HONU}/TOTN" ;
+        rml:class sosa:Observation
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:objectMap [
+            rml:template
+                "http://example.com/soil/sample/{PRID}/{HONU}"
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:observedProperty ;
+        rml:objectMap [
+            rml:constant ex:totalNitrogen
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate sosa:hasSimpleResult ;
+        rml:objectMap [
+            rml:reference "TOTN" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate qudt:unit ;
+        rml:objectMap [
+            rml:constant unit:MilliGM-PER-GM
+        ]
+    ] .
