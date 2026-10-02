@@ -90,48 +90,6 @@
         ]
     ] .
 
-
-############################################################
-# HORIZON DESCRIPTIVE OBSERVATIONS
-############################################################
-
-<#HorizonObservationMapping>
-    a rml:TriplesMap ;
-
-    rml:logicalSource [
-        rml:source "../soveur.csv" ;
-        rml:referenceFormulation rml:CSV
-    ] ;
-
-    rml:subjectMap [
-        rml:template
-            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/HODE" ;
-        rml:class sosa:Observation
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:hasFeatureOfInterest ;
-        rml:objectMap [
-            rml:template
-                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
-        ]
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:observedProperty ;
-        rml:objectMap [
-            rml:constant props:horizonDesignation
-        ]
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:hasSimpleResult ;
-        rml:objectMap [
-            rml:reference "HODE"
-        ]
-    ] .
-
-
 ############################################################
 # SIZE / TEXTURE / PHYSICAL PROPERTIES
 ############################################################
