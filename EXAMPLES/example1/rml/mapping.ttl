@@ -3,148 +3,90 @@
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix ex:   <http://example.com/soil/> .
-
+@prefix ex:   <http://data.soilwise-he.eu/soveur/> .
+@prefix ql:  <http://semweb.mmlab.be/ns/ql#> .
+@prefix schema:  <http://schema.org/> .
+@prefix iso28258:  <http://w3id.org/glosis/model/iso28258/2013/> .
+@prefix props: <http://w3id.org/glosis/model/codelists/properties/> .
 
 ############################################################
-# SOIL HORIZON / SAMPLE
+# SOIL PROFILE
 ############################################################
 
-<#SampleMapping>
+<#ProfileMapping>
     a rml:TriplesMap ;
-
+    
     rml:logicalSource [
         rml:source "../soveur.csv" ;
-        rml:referenceFormulation rml:CSV
+        rml:referenceFormulation ql:CSV
     ] ;
 
     rml:subjectMap [
-        rml:template "http://example.com/soil/sample/{PRID}/{HONU}" ;
-        rml:class ex:SoilHorizon
-    ] .
+        rml:template "http://data.soilwise-he.eu/soveur/{PRID}" ;
+        rml:class iso28258:profile
+    ] ;
 
+    rml:predicateObjectMap [
+        rml:predicate schema:latitude ;
+        rml:objectMap [
+            rml:reference "LATI" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate schema:longitude ;
+        rml:objectMap [
+            rml:reference "LNGI" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+    
+    rml:predicateObjectMap [
+        rml:predicate schema:elevation ;
+        rml:objectMap [
+            rml:reference "ELEV" ;
+            rml:datatype xsd:decimal
+        ]
+    ] .
 
 ############################################################
 # PROFILE / LOCATION
 ############################################################
 
-<#LatitudeObservation>
+<#HorizonMapping>
     a rml:TriplesMap ;
-
+    
     rml:logicalSource [
         rml:source "../soveur.csv" ;
-        rml:referenceFormulation rml:CSV
+        rml:referenceFormulation ql:CSV
     ] ;
 
     rml:subjectMap [
-        rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/LATI" ;
-        rml:class sosa:Observation
+        rml:template "http://data.soilwise-he.eu/soveur/soveur/horizon/{PRID}/{HONU}" ;
+        rml:class iso28258:Horizon
     ] ;
 
     rml:predicateObjectMap [
-        rml:predicate sosa:hasFeatureOfInterest ;
+        rml:predicate iso28258:upperDepth ;
         rml:objectMap [
-            rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
-        ]
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:observedProperty ;
-        rml:objectMap [
-            rml:constant ex:latitude
-        ]
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:hasSimpleResult ;
-        rml:objectMap [
-            rml:reference "LATI" ;
-            rml:datatype xsd:decimal
-        ]
-    ] .
-
-
-<#LongitudeObservation>
-    a rml:TriplesMap ;
-
-    rml:logicalSource [
-        rml:source "../soveur.csv" ;
-        rml:referenceFormulation rml:CSV
-    ] ;
-
-    rml:subjectMap [
-        rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/LNGI" ;
-        rml:class sosa:Observation
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:hasFeatureOfInterest ;
-        rml:objectMap [
-            rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
-        ]
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:observedProperty ;
-        rml:objectMap [
-            rml:constant ex:longitude
-        ]
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:hasSimpleResult ;
-        rml:objectMap [
-            rml:reference "LNGI" ;
-            rml:datatype xsd:decimal
-        ]
-    ] .
-
-
-<#ElevationObservation>
-    a rml:TriplesMap ;
-
-    rml:logicalSource [
-        rml:source "../soveur.csv" ;
-        rml:referenceFormulation rml:CSV
-    ] ;
-
-    rml:subjectMap [
-        rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/ELEV" ;
-        rml:class sosa:Observation
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:hasFeatureOfInterest ;
-        rml:objectMap [
-            rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
-        ]
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:observedProperty ;
-        rml:objectMap [
-            rml:constant ex:elevation
-        ]
-    ] ;
-
-    rml:predicateObjectMap [
-        rml:predicate sosa:hasSimpleResult ;
-        rml:objectMap [
-            rml:reference "ELEV" ;
+            rml:reference "HBUP" ;
             rml:datatype xsd:decimal
         ]
     ] ;
 
     rml:predicateObjectMap [
-        rml:predicate qudt:unit ;
+        rml:predicate iso28258:lowerDepth ;
         rml:objectMap [
-            rml:constant unit:M
+            rml:reference "HBDE" ;
+            rml:datatype xsd:decimal
+        ]
+    ] ;
+
+    rml:predicateObjectMap [
+        rml:predicate iso28258:horizonDesignation ;
+        rml:objectMap [
+            rml:reference "HODE"
         ]
     ] .
 
@@ -163,7 +105,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/HODE" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/HODE" ;
         rml:class sosa:Observation
     ] ;
 
@@ -171,14 +113,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:horizonDesignation
+            rml:constant props:horizonDesignation
         ]
     ] ;
 
@@ -204,7 +146,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/SDTO" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/SDTO" ;
         rml:class sosa:Observation
     ] ;
 
@@ -212,14 +154,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:totalSand
+            rml:constant props:totalSand
         ]
     ] ;
 
@@ -249,7 +191,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/STPC" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/STPC" ;
         rml:class sosa:Observation
     ] ;
 
@@ -257,14 +199,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:siltContent
+            rml:constant props:siltContent
         ]
     ] ;
 
@@ -294,7 +236,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/CLPC" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/CLPC" ;
         rml:class sosa:Observation
     ] ;
 
@@ -302,14 +244,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:clayContent
+            rml:constant props:clayContent
         ]
     ] ;
 
@@ -339,7 +281,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/BULK" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/BULK" ;
         rml:class sosa:Observation
     ] ;
 
@@ -347,14 +289,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:bulkDensity
+            rml:constant props:bulkDensity
         ]
     ] ;
 
@@ -388,7 +330,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/PHAQ" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/PHAQ" ;
         rml:class sosa:Observation
     ] ;
 
@@ -396,14 +338,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:pHAQ
+            rml:constant props:pHAQ
         ]
     ] ;
 
@@ -426,7 +368,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/PHKC" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/PHKC" ;
         rml:class sosa:Observation
     ] ;
 
@@ -434,14 +376,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:pHKCl
+            rml:constant props:pHKCl
         ]
     ] ;
 
@@ -464,7 +406,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/ELCO" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/ELCO" ;
         rml:class sosa:Observation
     ] ;
 
@@ -472,14 +414,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:electricalConductivity
+            rml:constant props:electricalConductivity
         ]
     ] ;
 
@@ -513,7 +455,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/EXCA" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/EXCA" ;
         rml:class sosa:Observation
     ] ;
 
@@ -521,14 +463,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:exchangeableCalcium
+            rml:constant props:exchangeableCalcium
         ]
     ] ;
 
@@ -558,7 +500,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/EXMG" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/EXMG" ;
         rml:class sosa:Observation
     ] ;
 
@@ -566,14 +508,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:exchangeableMagnesium
+            rml:constant props:exchangeableMagnesium
         ]
     ] ;
 
@@ -603,7 +545,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/EXNA" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/EXNA" ;
         rml:class sosa:Observation
     ] ;
 
@@ -611,14 +553,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:exchangeableSodium
+            rml:constant props:exchangeableSodium
         ]
     ] ;
 
@@ -648,7 +590,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/EXCK" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/EXCK" ;
         rml:class sosa:Observation
     ] ;
 
@@ -656,14 +598,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:exchangeablePotassium
+            rml:constant props:exchangeablePotassium
         ]
     ] ;
 
@@ -693,7 +635,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/EXAL" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/EXAL" ;
         rml:class sosa:Observation
     ] ;
 
@@ -701,14 +643,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:exchangeableAluminium
+            rml:constant props:exchangeableAluminium
         ]
     ] ;
 
@@ -742,7 +684,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/TOTC" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/TOTC" ;
         rml:class sosa:Observation
     ] ;
 
@@ -750,14 +692,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:totalCarbon
+            rml:constant props:totalCarbon
         ]
     ] ;
 
@@ -787,7 +729,7 @@
 
     rml:subjectMap [
         rml:template
-            "http://example.com/soil/observation/{PRID}/{HONU}/TOTN" ;
+            "http://data.soilwise-he.eu/soveur/observation/{PRID}/{HONU}/TOTN" ;
         rml:class sosa:Observation
     ] ;
 
@@ -795,14 +737,14 @@
         rml:predicate sosa:hasFeatureOfInterest ;
         rml:objectMap [
             rml:template
-                "http://example.com/soil/sample/{PRID}/{HONU}"
+                "http://data.soilwise-he.eu/soveur/horizon/{PRID}/{HONU}"
         ]
     ] ;
 
     rml:predicateObjectMap [
         rml:predicate sosa:observedProperty ;
         rml:objectMap [
-            rml:constant ex:totalNitrogen
+            rml:constant props:totalNitrogen
         ]
     ] ;
 
