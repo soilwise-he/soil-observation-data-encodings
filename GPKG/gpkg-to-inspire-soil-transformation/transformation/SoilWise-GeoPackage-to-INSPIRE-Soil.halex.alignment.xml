@@ -1,0 +1,1968 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+<cell relation="eu.esdihumboldt.cst.functions.groovy.join" id="Cgj-000000000001-4000-8000-000000000000" priority="normal"><source name="types"><class><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><target><class><type name="SoilPlotType" ns="http://inspire.ec.europa.eu/schemas/so/4.0"/></class></target><parameter value="false" name="innerJoin"/><complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="location"/></property></jp:condition></jp:join-parameter></complexParameter><complexParameter name="script"><core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// --- helpers -------------------------------------------------------------
+// SANDBOX-SAFE ONLY: hale studio runs Groovy sandboxed unless the project is
+// trusted. The sandbox rejects `instanceof`, `=~` and `in`, and forbids calling
+// `equals` on some hale classes (so never `== null` against a CRS object). Do
+// not reintroduce them - the failure takes down the whole type cell (9.10).
+def val = { p -&gt; try { p?.value() } catch (e) { null } }
+def str = { p -&gt; def x = val(p); (x == null || x.toString().isEmpty()) ? null : x.toString() }
+// GeoPackage DATETIME binds to java.time.Instant, whose toString() is already
+// ISO-8601 UTC - exactly what xs:dateTime wants. Pass the raw value through and
+// let hale convert it, the same way the native Rename cells do.
+def num = { p -&gt; val(p) }
+// GeoPackage DATETIME columns usually bind to java.time.Instant, whose
+// toString() is already ISO-8601 UTC. But the column is TEXT under the hood and
+// a GeoPackage may hold e.g. "2018-01-02 00:00:00" (space, no zone), which is
+// NOT a valid xs:dateTime and would be written through verbatim. Normalise.
+// Sandbox-safe: no instanceof, no regex, no `in`.
+def dt = { p -&gt;
+  def x = val(p)
+  if (x == null) return null
+  def t = x.toString().trim()
+  if (t.isEmpty()) return null
+  t = t.replace(' ', 'T')
+  if (!t.contains('T')) t = t + 'T00:00:00'
+  def tail = t.length() &gt; 11 ? t.substring(11) : ''
+  if (!t.endsWith('Z') &amp;&amp; !tail.contains('+') &amp;&amp; !tail.contains('-')) t = t + 'Z'
+  return t
+}
+def bool = { p -&gt; def x = val(p); x == null ? null : ['1', 'true', 'TRUE'].contains(x.toString()) }
+def gid = { pre, g -&gt; pre + '_' + g }
+def ref = { pre, g -&gt; '#' + pre + '_' + g }
+def SO_NS = 'http://inspire.ec.europa.eu/schemas/so/4.0'
+// AXIS ORDER. EPSG:3035 declares northing first, a GeoPackage stores easting
+// first, and hale's GML writer emits JTS (x, y) verbatim without consulting the
+// CRS (docs/hale-axis-order.md). Until hale honours axis order natively, the
+// swap is done here so the pipeline stays hale-only: reflecting about y=x
+// exchanges the ordinates. NOTE this puts transposed geometry into hale's
+// instance model - the GUI preview will show it mirrored, and the writer must
+// therefore run with -Sgeometry.unifyWindingOrder clockwise, because reflecting
+// reverses ring orientation. Remove all of this once hale can do it.
+def swapGeom = { gp -&gt;
+  if (gp == null) return null
+  def g = gp.geometry
+  if (g == null) return null
+  // copy() so the source instance is never mutated; the filter then exchanges
+  // x and y on every coordinate of every geometry type (Point, Polygon,
+  // MultiPolygon, ...), and geometryChanged() drops the cached envelope.
+  def out = g.copy()
+  out.apply({ c -&gt; def t = c.x; c.x = c.y; c.y = t } as org.locationtech.jts.geom.CoordinateFilter)
+  out.geometryChanged()
+  new eu.esdihumboldt.hale.common.instance.geometry.DefaultGeometryProperty(
+      gp.getCRSDefinition(), out)
+}
+
+// --- texture -&gt; so:particleSizeFraction ------------------------------------
+// Texture observations (sand / silt / clay) have no INSPIRE parameter-name value;
+// INSPIRE models them as particleSizeFraction, not as observations.
+def GLOSIS_NS = 'http://w3id.org/glosis/model/codelists/'
+def TEXTURE = [
+  'textClayPropertyCode-Cl': [0, 2],
+  'textSandPropertyCode-Sa_ISO': [63, 2000],
+  'textSandPropertyCode-Sa_ISSS': [20, 2000],
+  'textSandPropertyCode-Sa_USDA': [50, 2000],
+  'textSandPropertyCode-cSa_ISO': [630, 2000],
+  'textSandPropertyCode-cSa_ISSS': [200, 2000],
+  'textSandPropertyCode-cSa_USDA': [500, 1000],
+  'textSandPropertyCode-fSa_ISO': [63, 200],
+  'textSandPropertyCode-fSa_ISSS': [20, 200],
+  'textSandPropertyCode-fSa_USDA': [100, 250],
+  'textSandPropertyCode-mSa_ISO': [200, 630],
+  'textSandPropertyCode-mSa_ISSS': [200, 630],
+  'textSandPropertyCode-mSa_USDA': [250, 500],
+  'textSandPropertyCode-vcSa_ISSS': [1250, 2000],
+  'textSandPropertyCode-vcSa_USDA': [1000, 2000],
+  'textSandPropertyCode-vfSa_ISSS': [63, 125],
+  'textSandPropertyCode-vfSa_USDA': [50, 100],
+  'textSiltPropertyCode-Si_ISO': [2, 63],
+  'textSiltPropertyCode-Si_ISSS': [2, 20],
+  'textSiltPropertyCode-Si_USDA': [2, 50],
+  'textSiltPropertyCode-cSi_ISO': [20, 63],
+  'textSiltPropertyCode-cSi_USDA': [20, 50],
+  'textSiltPropertyCode-fSi_ISO': [2, 6.3],
+  'textSiltPropertyCode-fSi_USDA': [2, 20],
+  'textSiltPropertyCode-mSi_ISO': [6.3, 20]
+]
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+def PARAM_MAP = [
+  'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
+  'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
+  'physioChemicalPropertyCode-pH': 'pHValue'
+]
+// UCUM unit code -&gt; factor to percent (w/w); 1 dag/kg == 1 % by mass. A unit not
+// listed here gives null, and the observation then stays an ordinary observation.
+def PCT = ['dag/kg': 1.0, '%': 1.0, 'g/100g': 1.0, 'cg/g': 1.0, 'g/kg': 0.1,
+           'mg/g': 0.1, 'kg/kg': 100.0, 'g/g': 100.0]
+// The unit is the UCUM CODE, i.e. datastream.code_unitofmeasure (the FK into
+// unitofmeasure.code) - not unitofmeasure.symbol, which is display text: 'pH'
+// instead of '[pH]', and symbols such as 'Bq ' (trailing space) or 'dm²/m²' are
+// not valid gml:UomIdentifier values.
+//
+// The datastream CHECK requires a unit for 'Quantity' and forbids one for
+// 'Count', so a count is dimensionless: UCUM '1'. Any other type without a unit
+// cannot pass the CHECK; uomOf gives null and the row is reported, not mapped.
+def uomOf = { ds -&gt;
+  def u = str(ds.p.code_unitofmeasure)
+  u != null ? u : (str(ds.p.type) == 'Count' ? '1' : null)
+}
+// Observed-property URI of an observation (its datastream's), or null.
+def opOf = { e -&gt;
+  def op = e.ds.links.observedproperty.first()
+  op == null ? null : str(op.p.definition)
+}
+// [percent, lowerUm, upperUm] for a texture observation, else null.
+def texFraction = { e -&gt;
+  def d = opOf(e)
+  if (d == null || !d.startsWith(GLOSIS_NS)) return null
+  def r = TEXTURE[d.substring(GLOSIS_NS.length())]
+  if (r == null) return null
+  def f = PCT[uomOf(e.ds)]
+  def v = num(e.o.p.result_real)
+  if (f == null || v == null) return null
+  [v * f, r[0], r[1]]
+}
+
+def guid = str(_source.p.guid)
+// soilprofile.location is UNIQUE, so a plot has at most one observed profile.
+def _prof = []
+_source.links.soilprofile.each { p -&gt; def g = str(p.p.guid); if (g) _prof &lt;&lt; g }
+_target {
+  id(gid('SoilPlot', guid))
+
+  inspireId {
+    Identifier {
+      localId(str(_source.p.inspireid_localid) ?: guid)
+      // Source value first; the INSPIRE_NAMESPACE project variable (declared in the
+      // .halex) only supplies a value when the source row has none.
+      namespace(str(_source.p.inspireid_namespace) ?: (_project.vars.INSPIRE_NAMESPACE ?: 'https://soilwise-he.eu/'))
+      def _vid = str(_source.p.inspireid_versionid); if (_vid) versionId(_vid)
+    }
+  }
+
+  def gm = swapGeom(val(_source.p.soilplotlocation))
+  if (gm) soilPlotLocation { Point(gm) }
+  else _log.error('SoilPlot ' + guid + ': no location - mandatory and not voidable')
+  soilPlotType { href(str(_source.p.soilplottype)) }
+
+  beginLifespanVersion(dt(_source.p.beginlifespanversion))
+  def _els = dt(_source.p.endlifespanversion); if (_els) endLifespanVersion(_els)
+
+  // [1..1], nillable
+  if (_prof.isEmpty()) observedProfile { nilReason('unknown') }
+  else observedProfile { href(ref('SoilProfile', _prof[0])) }
+  // [0..1]: omitted, not voided, when the plot is on no site
+  def _site = str(_source.p.locatedon)
+  if (_site) locatedOn { href(ref('SoilSite', _site)) }
+}
+</core:text></complexParameter></cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy.join" id="Cgj-000000000002-4000-8000-000000000000" priority="normal"><source name="types"><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">profileelementtype = 0 OR profileelementtype = false</condition></type></class></source><source name="types"><class><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="otherhorizon_profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="otherhorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><target><class><type name="SoilHorizonType" ns="http://inspire.ec.europa.eu/schemas/so/4.0"/></class></target><parameter value="false" name="innerJoin"/><complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">profileelementtype = 0 OR profileelementtype = false</condition></type></class><class><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="otherhorizon_profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="otherhorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">profileelementtype = 0 OR profileelementtype = false</condition></type><child name="guid"/></property><property><type name="faohorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_profileelement"/></property></jp:condition><jp:condition><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">profileelementtype = 0 OR profileelementtype = false</condition></type><child name="guid"/></property><property><type name="otherhorizon_profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_profileelement"/></property></jp:condition><jp:condition><property><type name="otherhorizon_profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_otherhorizonnotationtype"/></property><property><type name="otherhorizonnotationtype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">profileelementtype = 0 OR profileelementtype = false</condition></type><child name="guid"/></property><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_profileelement"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_datastream"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observedproperty"/></property><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observingprocedure"/></property><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition></jp:join-parameter></complexParameter><complexParameter name="script"><core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// --- helpers -------------------------------------------------------------
+// SANDBOX-SAFE ONLY: hale studio runs Groovy sandboxed unless the project is
+// trusted. The sandbox rejects `instanceof`, `=~` and `in`, and forbids calling
+// `equals` on some hale classes (so never `== null` against a CRS object). Do
+// not reintroduce them - the failure takes down the whole type cell (9.10).
+def val = { p -&gt; try { p?.value() } catch (e) { null } }
+def str = { p -&gt; def x = val(p); (x == null || x.toString().isEmpty()) ? null : x.toString() }
+// GeoPackage DATETIME binds to java.time.Instant, whose toString() is already
+// ISO-8601 UTC - exactly what xs:dateTime wants. Pass the raw value through and
+// let hale convert it, the same way the native Rename cells do.
+def num = { p -&gt; val(p) }
+// GeoPackage DATETIME columns usually bind to java.time.Instant, whose
+// toString() is already ISO-8601 UTC. But the column is TEXT under the hood and
+// a GeoPackage may hold e.g. "2018-01-02 00:00:00" (space, no zone), which is
+// NOT a valid xs:dateTime and would be written through verbatim. Normalise.
+// Sandbox-safe: no instanceof, no regex, no `in`.
+def dt = { p -&gt;
+  def x = val(p)
+  if (x == null) return null
+  def t = x.toString().trim()
+  if (t.isEmpty()) return null
+  t = t.replace(' ', 'T')
+  if (!t.contains('T')) t = t + 'T00:00:00'
+  def tail = t.length() &gt; 11 ? t.substring(11) : ''
+  if (!t.endsWith('Z') &amp;&amp; !tail.contains('+') &amp;&amp; !tail.contains('-')) t = t + 'Z'
+  return t
+}
+def bool = { p -&gt; def x = val(p); x == null ? null : ['1', 'true', 'TRUE'].contains(x.toString()) }
+def gid = { pre, g -&gt; pre + '_' + g }
+def ref = { pre, g -&gt; '#' + pre + '_' + g }
+def SO_NS = 'http://inspire.ec.europa.eu/schemas/so/4.0'
+// AXIS ORDER. EPSG:3035 declares northing first, a GeoPackage stores easting
+// first, and hale's GML writer emits JTS (x, y) verbatim without consulting the
+// CRS (docs/hale-axis-order.md). Until hale honours axis order natively, the
+// swap is done here so the pipeline stays hale-only: reflecting about y=x
+// exchanges the ordinates. NOTE this puts transposed geometry into hale's
+// instance model - the GUI preview will show it mirrored, and the writer must
+// therefore run with -Sgeometry.unifyWindingOrder clockwise, because reflecting
+// reverses ring orientation. Remove all of this once hale can do it.
+def swapGeom = { gp -&gt;
+  if (gp == null) return null
+  def g = gp.geometry
+  if (g == null) return null
+  // copy() so the source instance is never mutated; the filter then exchanges
+  // x and y on every coordinate of every geometry type (Point, Polygon,
+  // MultiPolygon, ...), and geometryChanged() drops the cached envelope.
+  def out = g.copy()
+  out.apply({ c -&gt; def t = c.x; c.x = c.y; c.y = t } as org.locationtech.jts.geom.CoordinateFilter)
+  out.geometryChanged()
+  new eu.esdihumboldt.hale.common.instance.geometry.DefaultGeometryProperty(
+      gp.getCRSDefinition(), out)
+}
+
+// --- texture -&gt; so:particleSizeFraction ------------------------------------
+// Texture observations (sand / silt / clay) have no INSPIRE parameter-name value;
+// INSPIRE models them as particleSizeFraction, not as observations.
+def GLOSIS_NS = 'http://w3id.org/glosis/model/codelists/'
+def TEXTURE = [
+  'textClayPropertyCode-Cl': [0, 2],
+  'textSandPropertyCode-Sa_ISO': [63, 2000],
+  'textSandPropertyCode-Sa_ISSS': [20, 2000],
+  'textSandPropertyCode-Sa_USDA': [50, 2000],
+  'textSandPropertyCode-cSa_ISO': [630, 2000],
+  'textSandPropertyCode-cSa_ISSS': [200, 2000],
+  'textSandPropertyCode-cSa_USDA': [500, 1000],
+  'textSandPropertyCode-fSa_ISO': [63, 200],
+  'textSandPropertyCode-fSa_ISSS': [20, 200],
+  'textSandPropertyCode-fSa_USDA': [100, 250],
+  'textSandPropertyCode-mSa_ISO': [200, 630],
+  'textSandPropertyCode-mSa_ISSS': [200, 630],
+  'textSandPropertyCode-mSa_USDA': [250, 500],
+  'textSandPropertyCode-vcSa_ISSS': [1250, 2000],
+  'textSandPropertyCode-vcSa_USDA': [1000, 2000],
+  'textSandPropertyCode-vfSa_ISSS': [63, 125],
+  'textSandPropertyCode-vfSa_USDA': [50, 100],
+  'textSiltPropertyCode-Si_ISO': [2, 63],
+  'textSiltPropertyCode-Si_ISSS': [2, 20],
+  'textSiltPropertyCode-Si_USDA': [2, 50],
+  'textSiltPropertyCode-cSi_ISO': [20, 63],
+  'textSiltPropertyCode-cSi_USDA': [20, 50],
+  'textSiltPropertyCode-fSi_ISO': [2, 6.3],
+  'textSiltPropertyCode-fSi_USDA': [2, 20],
+  'textSiltPropertyCode-mSi_ISO': [6.3, 20]
+]
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+def PARAM_MAP = [
+  'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
+  'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
+  'physioChemicalPropertyCode-pH': 'pHValue'
+]
+// UCUM unit code -&gt; factor to percent (w/w); 1 dag/kg == 1 % by mass. A unit not
+// listed here gives null, and the observation then stays an ordinary observation.
+def PCT = ['dag/kg': 1.0, '%': 1.0, 'g/100g': 1.0, 'cg/g': 1.0, 'g/kg': 0.1,
+           'mg/g': 0.1, 'kg/kg': 100.0, 'g/g': 100.0]
+// The unit is the UCUM CODE, i.e. datastream.code_unitofmeasure (the FK into
+// unitofmeasure.code) - not unitofmeasure.symbol, which is display text: 'pH'
+// instead of '[pH]', and symbols such as 'Bq ' (trailing space) or 'dm²/m²' are
+// not valid gml:UomIdentifier values.
+//
+// The datastream CHECK requires a unit for 'Quantity' and forbids one for
+// 'Count', so a count is dimensionless: UCUM '1'. Any other type without a unit
+// cannot pass the CHECK; uomOf gives null and the row is reported, not mapped.
+def uomOf = { ds -&gt;
+  def u = str(ds.p.code_unitofmeasure)
+  u != null ? u : (str(ds.p.type) == 'Count' ? '1' : null)
+}
+// Observed-property URI of an observation (its datastream's), or null.
+def opOf = { e -&gt;
+  def op = e.ds.links.observedproperty.first()
+  op == null ? null : str(op.p.definition)
+}
+// [percent, lowerUm, upperUm] for a texture observation, else null.
+def texFraction = { e -&gt;
+  def d = opOf(e)
+  if (d == null || !d.startsWith(GLOSIS_NS)) return null
+  def r = TEXTURE[d.substring(GLOSIS_NS.length())]
+  if (r == null) return null
+  def f = PCT[uomOf(e.ds)]
+  def v = num(e.o.p.result_real)
+  if (f == null || v == null) return null
+  [v * f, r[0], r[1]]
+}
+
+def guid = str(_source.p.guid)
+def fao = _source.links.faohorizonnotationtype.first()
+def _m = fao == null ? null : str(fao.p.faohorizonmaster_1)
+def _fp = fao == null ? null : str(fao.p.faoprime)
+
+def _obs = []
+def _nonNumeric = 0
+_source.links.datastream.each { ds -&gt;
+  ds.links.observation.each { o -&gt;
+    if (val(o.p.result_real) == null) { _nonNumeric++; return }
+    if (uomOf(ds) == null) {
+      _log.warn('Observation ' + str(o.p.guid) + ': datastream ' + str(ds.p.guid)
+          + ' has no unit of measure - not mapped (gml:measure requires a uom)')
+      return
+    }
+    _obs &lt;&lt; [ds: ds, o: o]
+  }
+}
+if (_nonNumeric &gt; 0)
+  _log.warn(guid + ': ' + _nonNumeric + ' non-numeric observation(s) not mapped'
+      + ' (Category/Text/Boolean results have no encoding in this alignment)')
+def _texCount = [:]
+_obs.each { e -&gt; if (texFraction(e) != null) { def k = opOf(e); _texCount[k] = (_texCount[k] ?: 0) + 1 } }
+_texCount.each { k, n -&gt;
+  if (n &gt; 1) _log.warn(guid + ': ' + n + ' observations of ' + k
+      + ' - kept as observations, not collapsed into particleSizeFraction')
+}
+def _asFraction = { e -&gt; texFraction(e) != null &amp;&amp; _texCount[opOf(e)] == 1 }
+
+_target {
+
+  id(gid('ProfileElement', guid))
+
+  inspireId {
+    Identifier {
+      localId(str(_source.p.inspireid_localid) ?: guid)
+      // Source value first; the INSPIRE_NAMESPACE project variable (declared in the
+      // .halex) only supplies a value when the source row has none.
+      namespace(str(_source.p.inspireid_namespace) ?: (_project.vars.INSPIRE_NAMESPACE ?: 'https://soilwise-he.eu/'))
+      def _vid = str(_source.p.inspireid_versionid); if (_vid) versionId(_vid)
+    }
+  }
+
+  // particleSizeFraction is mandatory [1..*] and voidable. The GeoPackage holds
+  // texture as observations (sand / silt / clay, ...); those become fractions
+  // here and are left out of the observations. No texture -&gt; void.
+  def _psf = []
+  _obs.each { e -&gt; if (_asFraction(e)) _psf &lt;&lt; texFraction(e) }
+  if (_psf.isEmpty()) particleSizeFraction { nilReason('other:unpopulated') }
+  else _psf.each { f -&gt;
+    particleSizeFraction {
+      ParticleSizeFractionType {
+        fractionContent(f[0] as Double)
+        fractionParticleSizeRange {
+          RangeType {
+            upperValue(f[2] as Double)
+            lowerValue(f[1] as Double)
+            uom { uom('um') }
+          }
+        }
+      }
+    }
+  }
+  profileElementDepthRange {
+    RangeType {
+      def _u = num(_source.p.profileelementdepthrange_uppervalue)
+      def _l = num(_source.p.profileelementdepthrange_lowervalue)
+      if (_u != null) upperValue(_u as Double)
+      if (_l != null) lowerValue(_l as Double)
+      uom { uom('cm') }
+    }
+  }
+
+  beginLifespanVersion(dt(_source.p.beginlifespanversion))
+  def _els = dt(_source.p.endlifespanversion); if (_els) endLifespanVersion(_els)
+
+  _obs.each { e -&gt;
+    def ds = e.ds
+    def obs = e.o
+    def _op = ds.links.observedproperty.first()
+    def _pr = ds.links.observingprocedure.first()
+
+    // Texture is emitted as so:particleSizeFraction on the profile element, not here.
+    if (_asFraction(e)) return
+    
+    def _uom = uomOf(ds)
+    def og = str(obs.p.guid)
+    profileElementObservation {
+      OM_Observation {
+        id('OBS_' + og)
+        // A phenomenon time with an end is a period, not an instant. The
+        // GeoPackage CHECK pairs phenomenontime_start/end, so both or neither.
+        def _ps = dt(obs.p.phenomenontime_start)
+        def _pe = dt(obs.p.phenomenontime_end)
+        phenomenonTime {
+          if (_pe) {
+            TimePeriod { id('PT_' + og); beginPosition(_ps); endPosition(_pe) }
+          } else {
+            TimeInstant { id('PT_' + og); timePosition(_ps) }
+          }
+        }
+        // om:resultTime is [1..1] and NOT nillable, so an unknown result time is
+        // gml:timePosition/@indeterminatePosition, never an empty element or a
+        // bare nilReason (concept 9.17).
+        def _rt = dt(obs.p.resulttime)
+        if (_rt) resultTime { TimeInstant { id('RT_' + og); timePosition(_rt) } }
+        else resultTime { TimeInstant { id('RT_' + og)
+          timePosition { indeterminatePosition('unknown') } } }
+        def _p = _pr == null ? null : str(_pr.p.definition)
+        if (_p) procedure { href(_p) } else procedure { nilReason('unknown') }
+        def _o = _op == null ? null : str(_op.p.definition)
+
+        // GLOSIS -&gt; INSPIRE parameter-name value where an equivalent exists.
+        if (_o != null &amp;&amp; _o.startsWith(GLOSIS_NS)) {
+          def _im = PARAM_MAP[_o.substring(GLOSIS_NS.length())]
+          if (_im) _o = 'http://inspire.ec.europa.eu/codelist/ProfileElementParameterNameValue/' + _im
+        }
+        
+        if (_o) observedProperty { href(_o) }
+        else observedProperty { nilReason('unknown') }
+        featureOfInterest { href(ref('ProfileElement', guid)) }
+        def _v = num(obs.p.result_real)
+        result { measure(_v as Double) { uom(_uom) } }
+      }
+    }
+  }
+
+  isPartOf { href(ref('SoilProfile', str(_source.p.ispartof))) }
+  // FAOHorizonMaster and FAOPrime are [1..1] and NOT voidable, so a notation
+  // missing either is voided at the voidable PARENT (xsi:nil, as WRBSoilName is)
+  // instead of a nilReason on the child, as v1 did.
+  if (fao == null) {
+    FAOHorizonNotation { nilReason('unknown') }
+  } else if (!_m || !_fp) {
+    FAOHorizonNotation { nilReason('unknown') }
+    _log.warn('Horizon ' + guid + ': FAO notation without master or prime symbol - voided')
+  } else {
+    FAOHorizonNotation {
+      FAOHorizonNotationType {
+        def _d = num(fao.p.faohorizondiscontinuity)
+        if (_d != null) FAOHorizonDiscontinuity(_d as Integer)
+        FAOHorizonMaster { href(_m) }
+        FAOPrime { href(_fp) }
+        ['faohorizonsubordinate_1', 'faohorizonsubordinate_2', 'faohorizonsubordinate_3'].each { c -&gt;
+          def _s = str(fao.p."$c"); if (_s) FAOHorizonSubordinate { href(_s) }
+        }
+        def _v = num(fao.p.faohorizonvertical)
+        if (_v != null) FAOHorizonVertical(_v as Integer)
+        isOriginalClassification(bool(fao.p.isoriginalclassification) ?: false)
+      }
+    }
+    // faohorizonmaster_2 (546 rows, 6.8% of horizons): confirmed intentional by
+    // CREA (WRB Section 10.3, p. 229, Transitional Layers), but their own
+    // reference INSPIRE-validated HALE project (ejpsoil/inspire_soil_gpkg_
+    // template, Version1.1-RC/halestudio/GPKG-to-GML.halez) maps ONLY
+    // faohorizonmaster_1 - the same 6.8% incidence is present in their source
+    // GPKG (552/8,143) and is dropped there too, with no compensating
+    // encoding anywhere in their alignment. Matching that here: no target for
+    // the second symbol. See concept 8 for the (rejected) alternative of
+    // carrying it in gml:description.
+  }
+  // so:otherHorizonNotation [0..*] via the otherhorizon_profileelement junction
+  _source.links.otherhorizon_profileelement.each { oh -&gt;
+    def n = oh.links.otherhorizonnotationtype.first()
+    if (n == null) return
+    def _hn = str(n.p.horizonnotation)
+    if (_hn) otherHorizonNotation {
+      OtherHorizonNotationType {
+        horizonNotation { href(_hn) }
+        isOriginalClassification(bool(n.p.isoriginalclassification) ?: false)
+      }
+    }
+  }
+}
+</core:text></complexParameter></cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy.join" id="Cgj-000000000003-4000-8000-000000000000" priority="normal"><source name="types"><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">NOT (profileelementtype = 0 OR profileelementtype = false) OR profileelementtype IS NULL</condition></type></class></source><source name="types"><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><target><class><type name="SoilLayerType" ns="http://inspire.ec.europa.eu/schemas/so/4.0"/></class></target><parameter value="false" name="innerJoin"/><complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">NOT (profileelementtype = 0 OR profileelementtype = false) OR profileelementtype IS NULL</condition></type></class><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">NOT (profileelementtype = 0 OR profileelementtype = false) OR profileelementtype IS NULL</condition></type><child name="guid"/></property><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_profileelement"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_datastream"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observedproperty"/></property><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observingprocedure"/></property><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition></jp:join-parameter></complexParameter><complexParameter name="script"><core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// --- helpers -------------------------------------------------------------
+// SANDBOX-SAFE ONLY: hale studio runs Groovy sandboxed unless the project is
+// trusted. The sandbox rejects `instanceof`, `=~` and `in`, and forbids calling
+// `equals` on some hale classes (so never `== null` against a CRS object). Do
+// not reintroduce them - the failure takes down the whole type cell (9.10).
+def val = { p -&gt; try { p?.value() } catch (e) { null } }
+def str = { p -&gt; def x = val(p); (x == null || x.toString().isEmpty()) ? null : x.toString() }
+// GeoPackage DATETIME binds to java.time.Instant, whose toString() is already
+// ISO-8601 UTC - exactly what xs:dateTime wants. Pass the raw value through and
+// let hale convert it, the same way the native Rename cells do.
+def num = { p -&gt; val(p) }
+// GeoPackage DATETIME columns usually bind to java.time.Instant, whose
+// toString() is already ISO-8601 UTC. But the column is TEXT under the hood and
+// a GeoPackage may hold e.g. "2018-01-02 00:00:00" (space, no zone), which is
+// NOT a valid xs:dateTime and would be written through verbatim. Normalise.
+// Sandbox-safe: no instanceof, no regex, no `in`.
+def dt = { p -&gt;
+  def x = val(p)
+  if (x == null) return null
+  def t = x.toString().trim()
+  if (t.isEmpty()) return null
+  t = t.replace(' ', 'T')
+  if (!t.contains('T')) t = t + 'T00:00:00'
+  def tail = t.length() &gt; 11 ? t.substring(11) : ''
+  if (!t.endsWith('Z') &amp;&amp; !tail.contains('+') &amp;&amp; !tail.contains('-')) t = t + 'Z'
+  return t
+}
+def bool = { p -&gt; def x = val(p); x == null ? null : ['1', 'true', 'TRUE'].contains(x.toString()) }
+def gid = { pre, g -&gt; pre + '_' + g }
+def ref = { pre, g -&gt; '#' + pre + '_' + g }
+def SO_NS = 'http://inspire.ec.europa.eu/schemas/so/4.0'
+// AXIS ORDER. EPSG:3035 declares northing first, a GeoPackage stores easting
+// first, and hale's GML writer emits JTS (x, y) verbatim without consulting the
+// CRS (docs/hale-axis-order.md). Until hale honours axis order natively, the
+// swap is done here so the pipeline stays hale-only: reflecting about y=x
+// exchanges the ordinates. NOTE this puts transposed geometry into hale's
+// instance model - the GUI preview will show it mirrored, and the writer must
+// therefore run with -Sgeometry.unifyWindingOrder clockwise, because reflecting
+// reverses ring orientation. Remove all of this once hale can do it.
+def swapGeom = { gp -&gt;
+  if (gp == null) return null
+  def g = gp.geometry
+  if (g == null) return null
+  // copy() so the source instance is never mutated; the filter then exchanges
+  // x and y on every coordinate of every geometry type (Point, Polygon,
+  // MultiPolygon, ...), and geometryChanged() drops the cached envelope.
+  def out = g.copy()
+  out.apply({ c -&gt; def t = c.x; c.x = c.y; c.y = t } as org.locationtech.jts.geom.CoordinateFilter)
+  out.geometryChanged()
+  new eu.esdihumboldt.hale.common.instance.geometry.DefaultGeometryProperty(
+      gp.getCRSDefinition(), out)
+}
+
+// --- texture -&gt; so:particleSizeFraction ------------------------------------
+// Texture observations (sand / silt / clay) have no INSPIRE parameter-name value;
+// INSPIRE models them as particleSizeFraction, not as observations.
+def GLOSIS_NS = 'http://w3id.org/glosis/model/codelists/'
+def TEXTURE = [
+  'textClayPropertyCode-Cl': [0, 2],
+  'textSandPropertyCode-Sa_ISO': [63, 2000],
+  'textSandPropertyCode-Sa_ISSS': [20, 2000],
+  'textSandPropertyCode-Sa_USDA': [50, 2000],
+  'textSandPropertyCode-cSa_ISO': [630, 2000],
+  'textSandPropertyCode-cSa_ISSS': [200, 2000],
+  'textSandPropertyCode-cSa_USDA': [500, 1000],
+  'textSandPropertyCode-fSa_ISO': [63, 200],
+  'textSandPropertyCode-fSa_ISSS': [20, 200],
+  'textSandPropertyCode-fSa_USDA': [100, 250],
+  'textSandPropertyCode-mSa_ISO': [200, 630],
+  'textSandPropertyCode-mSa_ISSS': [200, 630],
+  'textSandPropertyCode-mSa_USDA': [250, 500],
+  'textSandPropertyCode-vcSa_ISSS': [1250, 2000],
+  'textSandPropertyCode-vcSa_USDA': [1000, 2000],
+  'textSandPropertyCode-vfSa_ISSS': [63, 125],
+  'textSandPropertyCode-vfSa_USDA': [50, 100],
+  'textSiltPropertyCode-Si_ISO': [2, 63],
+  'textSiltPropertyCode-Si_ISSS': [2, 20],
+  'textSiltPropertyCode-Si_USDA': [2, 50],
+  'textSiltPropertyCode-cSi_ISO': [20, 63],
+  'textSiltPropertyCode-cSi_USDA': [20, 50],
+  'textSiltPropertyCode-fSi_ISO': [2, 6.3],
+  'textSiltPropertyCode-fSi_USDA': [2, 20],
+  'textSiltPropertyCode-mSi_ISO': [6.3, 20]
+]
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+def PARAM_MAP = [
+  'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
+  'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
+  'physioChemicalPropertyCode-pH': 'pHValue'
+]
+// UCUM unit code -&gt; factor to percent (w/w); 1 dag/kg == 1 % by mass. A unit not
+// listed here gives null, and the observation then stays an ordinary observation.
+def PCT = ['dag/kg': 1.0, '%': 1.0, 'g/100g': 1.0, 'cg/g': 1.0, 'g/kg': 0.1,
+           'mg/g': 0.1, 'kg/kg': 100.0, 'g/g': 100.0]
+// The unit is the UCUM CODE, i.e. datastream.code_unitofmeasure (the FK into
+// unitofmeasure.code) - not unitofmeasure.symbol, which is display text: 'pH'
+// instead of '[pH]', and symbols such as 'Bq ' (trailing space) or 'dm²/m²' are
+// not valid gml:UomIdentifier values.
+//
+// The datastream CHECK requires a unit for 'Quantity' and forbids one for
+// 'Count', so a count is dimensionless: UCUM '1'. Any other type without a unit
+// cannot pass the CHECK; uomOf gives null and the row is reported, not mapped.
+def uomOf = { ds -&gt;
+  def u = str(ds.p.code_unitofmeasure)
+  u != null ? u : (str(ds.p.type) == 'Count' ? '1' : null)
+}
+// Observed-property URI of an observation (its datastream's), or null.
+def opOf = { e -&gt;
+  def op = e.ds.links.observedproperty.first()
+  op == null ? null : str(op.p.definition)
+}
+// [percent, lowerUm, upperUm] for a texture observation, else null.
+def texFraction = { e -&gt;
+  def d = opOf(e)
+  if (d == null || !d.startsWith(GLOSIS_NS)) return null
+  def r = TEXTURE[d.substring(GLOSIS_NS.length())]
+  if (r == null) return null
+  def f = PCT[uomOf(e.ds)]
+  def v = num(e.o.p.result_real)
+  if (f == null || v == null) return null
+  [v * f, r[0], r[1]]
+}
+
+def guid = str(_source.p.guid)
+
+def _flag = val(_source.p.profileelementtype)
+def _fs = _flag == null ? null : _flag.toString()
+if (!['1', 'true', 'TRUE'].contains(_fs))
+  _log.error(guid + ': unexpected profileelementtype value [' + _fs + '] - mapped as SoilLayer')
+
+def _obs = []
+def _nonNumeric = 0
+_source.links.datastream.each { ds -&gt;
+  ds.links.observation.each { o -&gt;
+    if (val(o.p.result_real) == null) { _nonNumeric++; return }
+    if (uomOf(ds) == null) {
+      _log.warn('Observation ' + str(o.p.guid) + ': datastream ' + str(ds.p.guid)
+          + ' has no unit of measure - not mapped (gml:measure requires a uom)')
+      return
+    }
+    _obs &lt;&lt; [ds: ds, o: o]
+  }
+}
+if (_nonNumeric &gt; 0)
+  _log.warn(guid + ': ' + _nonNumeric + ' non-numeric observation(s) not mapped'
+      + ' (Category/Text/Boolean results have no encoding in this alignment)')
+def _texCount = [:]
+_obs.each { e -&gt; if (texFraction(e) != null) { def k = opOf(e); _texCount[k] = (_texCount[k] ?: 0) + 1 } }
+_texCount.each { k, n -&gt;
+  if (n &gt; 1) _log.warn(guid + ': ' + n + ' observations of ' + k
+      + ' - kept as observations, not collapsed into particleSizeFraction')
+}
+def _asFraction = { e -&gt; texFraction(e) != null &amp;&amp; _texCount[opOf(e)] == 1 }
+
+_target {
+
+  id(gid('ProfileElement', guid))
+
+  inspireId {
+    Identifier {
+      localId(str(_source.p.inspireid_localid) ?: guid)
+      // Source value first; the INSPIRE_NAMESPACE project variable (declared in the
+      // .halex) only supplies a value when the source row has none.
+      namespace(str(_source.p.inspireid_namespace) ?: (_project.vars.INSPIRE_NAMESPACE ?: 'https://soilwise-he.eu/'))
+      def _vid = str(_source.p.inspireid_versionid); if (_vid) versionId(_vid)
+    }
+  }
+
+  // particleSizeFraction is mandatory [1..*] and voidable. The GeoPackage holds
+  // texture as observations (sand / silt / clay, ...); those become fractions
+  // here and are left out of the observations. No texture -&gt; void.
+  def _psf = []
+  _obs.each { e -&gt; if (_asFraction(e)) _psf &lt;&lt; texFraction(e) }
+  if (_psf.isEmpty()) particleSizeFraction { nilReason('other:unpopulated') }
+  else _psf.each { f -&gt;
+    particleSizeFraction {
+      ParticleSizeFractionType {
+        fractionContent(f[0] as Double)
+        fractionParticleSizeRange {
+          RangeType {
+            upperValue(f[2] as Double)
+            lowerValue(f[1] as Double)
+            uom { uom('um') }
+          }
+        }
+      }
+    }
+  }
+  profileElementDepthRange {
+    RangeType {
+      def _u = num(_source.p.profileelementdepthrange_uppervalue)
+      def _l = num(_source.p.profileelementdepthrange_lowervalue)
+      if (_u != null) upperValue(_u as Double)
+      if (_l != null) lowerValue(_l as Double)
+      uom { uom('cm') }
+    }
+  }
+
+  beginLifespanVersion(dt(_source.p.beginlifespanversion))
+  def _els = dt(_source.p.endlifespanversion); if (_els) endLifespanVersion(_els)
+
+  _obs.each { e -&gt;
+    def ds = e.ds
+    def obs = e.o
+    def _op = ds.links.observedproperty.first()
+    def _pr = ds.links.observingprocedure.first()
+
+    // Texture is emitted as so:particleSizeFraction on the profile element, not here.
+    if (_asFraction(e)) return
+    
+    def _uom = uomOf(ds)
+    def og = str(obs.p.guid)
+    profileElementObservation {
+      OM_Observation {
+        id('OBS_' + og)
+        // A phenomenon time with an end is a period, not an instant. The
+        // GeoPackage CHECK pairs phenomenontime_start/end, so both or neither.
+        def _ps = dt(obs.p.phenomenontime_start)
+        def _pe = dt(obs.p.phenomenontime_end)
+        phenomenonTime {
+          if (_pe) {
+            TimePeriod { id('PT_' + og); beginPosition(_ps); endPosition(_pe) }
+          } else {
+            TimeInstant { id('PT_' + og); timePosition(_ps) }
+          }
+        }
+        // om:resultTime is [1..1] and NOT nillable, so an unknown result time is
+        // gml:timePosition/@indeterminatePosition, never an empty element or a
+        // bare nilReason (concept 9.17).
+        def _rt = dt(obs.p.resulttime)
+        if (_rt) resultTime { TimeInstant { id('RT_' + og); timePosition(_rt) } }
+        else resultTime { TimeInstant { id('RT_' + og)
+          timePosition { indeterminatePosition('unknown') } } }
+        def _p = _pr == null ? null : str(_pr.p.definition)
+        if (_p) procedure { href(_p) } else procedure { nilReason('unknown') }
+        def _o = _op == null ? null : str(_op.p.definition)
+
+        // GLOSIS -&gt; INSPIRE parameter-name value where an equivalent exists.
+        if (_o != null &amp;&amp; _o.startsWith(GLOSIS_NS)) {
+          def _im = PARAM_MAP[_o.substring(GLOSIS_NS.length())]
+          if (_im) _o = 'http://inspire.ec.europa.eu/codelist/ProfileElementParameterNameValue/' + _im
+        }
+        
+        if (_o) observedProperty { href(_o) }
+        else observedProperty { nilReason('unknown') }
+        featureOfInterest { href(ref('ProfileElement', guid)) }
+        def _v = num(obs.p.result_real)
+        result { measure(_v as Double) { uom(_uom) } }
+      }
+    }
+  }
+
+  isPartOf { href(ref('SoilProfile', str(_source.p.ispartof))) }
+  // [1..1] and NOT voidable, but the source column is nullable: nilReason
+  // (XSD-valid) plus an error, as for ObservedSoilProfile/location.
+  def _lt = str(_source.p.layertype)
+  if (_lt) layerType { href(_lt) }
+  else { layerType { nilReason('missing') }; _log.error('SoilLayer ' + guid
+      + ': no layerType - mandatory and not voidable, the feature is not'
+      + ' INSPIRE-conformant') }
+  def _rt2 = str(_source.p.layerrocktype); if (_rt2) layerRockType { href(_rt2) }
+  def _gp = str(_source.p.layergenesisprocess); if (_gp) layerGenesisProcess { href(_gp) }
+  // NOTE the source column spells this 'enviroment'; the INSPIRE element does not.
+  def _ge = str(_source.p.layergenesisenviroment); if (_ge) layerGenesisEnvironment { href(_ge) }
+  def _gs = str(_source.p.layergenesisprocessstate); if (_gs) layerGenesisProcessState { href(_gs) }
+}
+</core:text></complexParameter></cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy.join" id="Cgj-000000000004-4000-8000-000000000000" priority="normal"><source name="types"><class><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><target><class><type name="SoilSiteType" ns="http://inspire.ec.europa.eu/schemas/so/4.0"/></class></target><parameter value="false" name="innerJoin"/><complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="soilplot" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="locatedon"/></property></jp:condition><jp:condition><property><type name="soilsite" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilsite"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_datastream"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observedproperty"/></property><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observingprocedure"/></property><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition></jp:join-parameter></complexParameter><complexParameter name="script"><core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// --- helpers -------------------------------------------------------------
+// SANDBOX-SAFE ONLY: hale studio runs Groovy sandboxed unless the project is
+// trusted. The sandbox rejects `instanceof`, `=~` and `in`, and forbids calling
+// `equals` on some hale classes (so never `== null` against a CRS object). Do
+// not reintroduce them - the failure takes down the whole type cell (9.10).
+def val = { p -&gt; try { p?.value() } catch (e) { null } }
+def str = { p -&gt; def x = val(p); (x == null || x.toString().isEmpty()) ? null : x.toString() }
+// GeoPackage DATETIME binds to java.time.Instant, whose toString() is already
+// ISO-8601 UTC - exactly what xs:dateTime wants. Pass the raw value through and
+// let hale convert it, the same way the native Rename cells do.
+def num = { p -&gt; val(p) }
+// GeoPackage DATETIME columns usually bind to java.time.Instant, whose
+// toString() is already ISO-8601 UTC. But the column is TEXT under the hood and
+// a GeoPackage may hold e.g. "2018-01-02 00:00:00" (space, no zone), which is
+// NOT a valid xs:dateTime and would be written through verbatim. Normalise.
+// Sandbox-safe: no instanceof, no regex, no `in`.
+def dt = { p -&gt;
+  def x = val(p)
+  if (x == null) return null
+  def t = x.toString().trim()
+  if (t.isEmpty()) return null
+  t = t.replace(' ', 'T')
+  if (!t.contains('T')) t = t + 'T00:00:00'
+  def tail = t.length() &gt; 11 ? t.substring(11) : ''
+  if (!t.endsWith('Z') &amp;&amp; !tail.contains('+') &amp;&amp; !tail.contains('-')) t = t + 'Z'
+  return t
+}
+def bool = { p -&gt; def x = val(p); x == null ? null : ['1', 'true', 'TRUE'].contains(x.toString()) }
+def gid = { pre, g -&gt; pre + '_' + g }
+def ref = { pre, g -&gt; '#' + pre + '_' + g }
+def SO_NS = 'http://inspire.ec.europa.eu/schemas/so/4.0'
+// AXIS ORDER. EPSG:3035 declares northing first, a GeoPackage stores easting
+// first, and hale's GML writer emits JTS (x, y) verbatim without consulting the
+// CRS (docs/hale-axis-order.md). Until hale honours axis order natively, the
+// swap is done here so the pipeline stays hale-only: reflecting about y=x
+// exchanges the ordinates. NOTE this puts transposed geometry into hale's
+// instance model - the GUI preview will show it mirrored, and the writer must
+// therefore run with -Sgeometry.unifyWindingOrder clockwise, because reflecting
+// reverses ring orientation. Remove all of this once hale can do it.
+def swapGeom = { gp -&gt;
+  if (gp == null) return null
+  def g = gp.geometry
+  if (g == null) return null
+  // copy() so the source instance is never mutated; the filter then exchanges
+  // x and y on every coordinate of every geometry type (Point, Polygon,
+  // MultiPolygon, ...), and geometryChanged() drops the cached envelope.
+  def out = g.copy()
+  out.apply({ c -&gt; def t = c.x; c.x = c.y; c.y = t } as org.locationtech.jts.geom.CoordinateFilter)
+  out.geometryChanged()
+  new eu.esdihumboldt.hale.common.instance.geometry.DefaultGeometryProperty(
+      gp.getCRSDefinition(), out)
+}
+
+// --- texture -&gt; so:particleSizeFraction ------------------------------------
+// Texture observations (sand / silt / clay) have no INSPIRE parameter-name value;
+// INSPIRE models them as particleSizeFraction, not as observations.
+def GLOSIS_NS = 'http://w3id.org/glosis/model/codelists/'
+def TEXTURE = [
+  'textClayPropertyCode-Cl': [0, 2],
+  'textSandPropertyCode-Sa_ISO': [63, 2000],
+  'textSandPropertyCode-Sa_ISSS': [20, 2000],
+  'textSandPropertyCode-Sa_USDA': [50, 2000],
+  'textSandPropertyCode-cSa_ISO': [630, 2000],
+  'textSandPropertyCode-cSa_ISSS': [200, 2000],
+  'textSandPropertyCode-cSa_USDA': [500, 1000],
+  'textSandPropertyCode-fSa_ISO': [63, 200],
+  'textSandPropertyCode-fSa_ISSS': [20, 200],
+  'textSandPropertyCode-fSa_USDA': [100, 250],
+  'textSandPropertyCode-mSa_ISO': [200, 630],
+  'textSandPropertyCode-mSa_ISSS': [200, 630],
+  'textSandPropertyCode-mSa_USDA': [250, 500],
+  'textSandPropertyCode-vcSa_ISSS': [1250, 2000],
+  'textSandPropertyCode-vcSa_USDA': [1000, 2000],
+  'textSandPropertyCode-vfSa_ISSS': [63, 125],
+  'textSandPropertyCode-vfSa_USDA': [50, 100],
+  'textSiltPropertyCode-Si_ISO': [2, 63],
+  'textSiltPropertyCode-Si_ISSS': [2, 20],
+  'textSiltPropertyCode-Si_USDA': [2, 50],
+  'textSiltPropertyCode-cSi_ISO': [20, 63],
+  'textSiltPropertyCode-cSi_USDA': [20, 50],
+  'textSiltPropertyCode-fSi_ISO': [2, 6.3],
+  'textSiltPropertyCode-fSi_USDA': [2, 20],
+  'textSiltPropertyCode-mSi_ISO': [6.3, 20]
+]
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+def PARAM_MAP = [
+  'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
+  'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
+  'physioChemicalPropertyCode-pH': 'pHValue'
+]
+// UCUM unit code -&gt; factor to percent (w/w); 1 dag/kg == 1 % by mass. A unit not
+// listed here gives null, and the observation then stays an ordinary observation.
+def PCT = ['dag/kg': 1.0, '%': 1.0, 'g/100g': 1.0, 'cg/g': 1.0, 'g/kg': 0.1,
+           'mg/g': 0.1, 'kg/kg': 100.0, 'g/g': 100.0]
+// The unit is the UCUM CODE, i.e. datastream.code_unitofmeasure (the FK into
+// unitofmeasure.code) - not unitofmeasure.symbol, which is display text: 'pH'
+// instead of '[pH]', and symbols such as 'Bq ' (trailing space) or 'dm²/m²' are
+// not valid gml:UomIdentifier values.
+//
+// The datastream CHECK requires a unit for 'Quantity' and forbids one for
+// 'Count', so a count is dimensionless: UCUM '1'. Any other type without a unit
+// cannot pass the CHECK; uomOf gives null and the row is reported, not mapped.
+def uomOf = { ds -&gt;
+  def u = str(ds.p.code_unitofmeasure)
+  u != null ? u : (str(ds.p.type) == 'Count' ? '1' : null)
+}
+// Observed-property URI of an observation (its datastream's), or null.
+def opOf = { e -&gt;
+  def op = e.ds.links.observedproperty.first()
+  op == null ? null : str(op.p.definition)
+}
+// [percent, lowerUm, upperUm] for a texture observation, else null.
+def texFraction = { e -&gt;
+  def d = opOf(e)
+  if (d == null || !d.startsWith(GLOSIS_NS)) return null
+  def r = TEXTURE[d.substring(GLOSIS_NS.length())]
+  if (r == null) return null
+  def f = PCT[uomOf(e.ds)]
+  def v = num(e.o.p.result_real)
+  if (f == null || v == null) return null
+  [v * f, r[0], r[1]]
+}
+
+def guid = str(_source.p.guid)
+def plots = []
+_source.links.soilplot.each { pl -&gt; def g = str(pl.p.guid); if (g) plots &lt;&lt; g }
+
+def _obs = []
+def _nonNumeric = 0
+_source.links.datastream.each { ds -&gt;
+  ds.links.observation.each { o -&gt;
+    if (val(o.p.result_real) == null) { _nonNumeric++; return }
+    if (uomOf(ds) == null) {
+      _log.warn('Observation ' + str(o.p.guid) + ': datastream ' + str(ds.p.guid)
+          + ' has no unit of measure - not mapped (gml:measure requires a uom)')
+      return
+    }
+    _obs &lt;&lt; [ds: ds, o: o]
+  }
+}
+if (_nonNumeric &gt; 0)
+  _log.warn(guid + ': ' + _nonNumeric + ' non-numeric observation(s) not mapped'
+      + ' (Category/Text/Boolean results have no encoding in this alignment)')
+def _texCount = [:]
+_obs.each { e -&gt; if (texFraction(e) != null) { def k = opOf(e); _texCount[k] = (_texCount[k] ?: 0) + 1 } }
+_texCount.each { k, n -&gt;
+  if (n &gt; 1) _log.warn(guid + ': ' + n + ' observations of ' + k
+      + ' - kept as observations, not collapsed into particleSizeFraction')
+}
+def _asFraction = { e -&gt; texFraction(e) != null &amp;&amp; _texCount[opOf(e)] == 1 }
+
+_target {
+  id(gid('SoilSite', guid))
+
+  inspireId {
+    Identifier {
+      localId(str(_source.p.inspireid_localid) ?: guid)
+      // Source value first; the INSPIRE_NAMESPACE project variable (declared in the
+      // .halex) only supplies a value when the source row has none.
+      namespace(str(_source.p.inspireid_namespace) ?: (_project.vars.INSPIRE_NAMESPACE ?: 'https://soilwise-he.eu/'))
+      def _vid = str(_source.p.inspireid_versionid); if (_vid) versionId(_vid)
+    }
+  }
+
+  def gm = swapGeom(val(_source.p.geometry))
+  if (gm) geometry { Polygon(gm) }
+  soilInvestigationPurpose { href(str(_source.p.soilinvestigationpurpose)) }
+  validFrom(dt(_source.p.validfrom))
+  def _vt = dt(_source.p.validto); if (_vt) validTo(_vt)
+
+  beginLifespanVersion(dt(_source.p.beginlifespanversion))
+  def _els = dt(_source.p.endlifespanversion); if (_els) endLifespanVersion(_els)
+
+  if (plots.isEmpty()) isObservedOnLocation { nilReason('unknown') }
+  else plots.unique().each { p -&gt; isObservedOnLocation { href(ref('SoilPlot', p)) } }
+
+  _obs.each { e -&gt;
+    def ds = e.ds
+    def obs = e.o
+    def _op = ds.links.observedproperty.first()
+    def _pr = ds.links.observingprocedure.first()
+
+    def _uom = uomOf(ds)
+    def og = str(obs.p.guid)
+    soilSiteObservation {
+      OM_Observation {
+        id('OBS_' + og)
+        // A phenomenon time with an end is a period, not an instant. The
+        // GeoPackage CHECK pairs phenomenontime_start/end, so both or neither.
+        def _ps = dt(obs.p.phenomenontime_start)
+        def _pe = dt(obs.p.phenomenontime_end)
+        phenomenonTime {
+          if (_pe) {
+            TimePeriod { id('PT_' + og); beginPosition(_ps); endPosition(_pe) }
+          } else {
+            TimeInstant { id('PT_' + og); timePosition(_ps) }
+          }
+        }
+        // om:resultTime is [1..1] and NOT nillable, so an unknown result time is
+        // gml:timePosition/@indeterminatePosition, never an empty element or a
+        // bare nilReason (concept 9.17).
+        def _rt = dt(obs.p.resulttime)
+        if (_rt) resultTime { TimeInstant { id('RT_' + og); timePosition(_rt) } }
+        else resultTime { TimeInstant { id('RT_' + og)
+          timePosition { indeterminatePosition('unknown') } } }
+        def _p = _pr == null ? null : str(_pr.p.definition)
+        if (_p) procedure { href(_p) } else procedure { nilReason('unknown') }
+        def _o = _op == null ? null : str(_op.p.definition)
+
+        if (_o) observedProperty { href(_o) }
+        else observedProperty { nilReason('unknown') }
+        featureOfInterest { href(ref('SoilSite', guid)) }
+        def _v = num(obs.p.result_real)
+        result { measure(_v as Double) { uom(_uom) } }
+      }
+    }
+  }
+
+}
+</core:text></complexParameter></cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy.join" id="Cgj-000000000005-4000-8000-000000000000" priority="normal"><source name="types"><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">isderived = 0 OR isderived = false</condition></type></class></source><source name="types"><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="wrbqualifiergrouptype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="othersoilnametype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><target><class><type name="ObservedSoilProfileType" ns="http://inspire.ec.europa.eu/schemas/so/4.0"/></class></target><parameter value="false" name="innerJoin"/><complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">isderived = 0 OR isderived = false</condition></type></class><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="wrbqualifiergrouptype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="othersoilnametype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">isderived = 0 OR isderived = false</condition></type><child name="guid"/></property><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="ispartof"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">isderived = 0 OR isderived = false</condition></type><child name="guid"/></property><property><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilprofile"/></property></jp:condition><jp:condition><property><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_wrbqualifiergrouptype"/></property><property><type name="wrbqualifiergrouptype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">isderived = 0 OR isderived = false</condition></type><child name="guid"/></property><property><type name="othersoilnametype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="othersoilname"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">isderived = 0 OR isderived = false</condition></type><child name="guid"/></property><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilprofile"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_datastream"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observedproperty"/></property><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observingprocedure"/></property><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition></jp:join-parameter></complexParameter><complexParameter name="script"><core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// --- helpers -------------------------------------------------------------
+// SANDBOX-SAFE ONLY: hale studio runs Groovy sandboxed unless the project is
+// trusted. The sandbox rejects `instanceof`, `=~` and `in`, and forbids calling
+// `equals` on some hale classes (so never `== null` against a CRS object). Do
+// not reintroduce them - the failure takes down the whole type cell (9.10).
+def val = { p -&gt; try { p?.value() } catch (e) { null } }
+def str = { p -&gt; def x = val(p); (x == null || x.toString().isEmpty()) ? null : x.toString() }
+// GeoPackage DATETIME binds to java.time.Instant, whose toString() is already
+// ISO-8601 UTC - exactly what xs:dateTime wants. Pass the raw value through and
+// let hale convert it, the same way the native Rename cells do.
+def num = { p -&gt; val(p) }
+// GeoPackage DATETIME columns usually bind to java.time.Instant, whose
+// toString() is already ISO-8601 UTC. But the column is TEXT under the hood and
+// a GeoPackage may hold e.g. "2018-01-02 00:00:00" (space, no zone), which is
+// NOT a valid xs:dateTime and would be written through verbatim. Normalise.
+// Sandbox-safe: no instanceof, no regex, no `in`.
+def dt = { p -&gt;
+  def x = val(p)
+  if (x == null) return null
+  def t = x.toString().trim()
+  if (t.isEmpty()) return null
+  t = t.replace(' ', 'T')
+  if (!t.contains('T')) t = t + 'T00:00:00'
+  def tail = t.length() &gt; 11 ? t.substring(11) : ''
+  if (!t.endsWith('Z') &amp;&amp; !tail.contains('+') &amp;&amp; !tail.contains('-')) t = t + 'Z'
+  return t
+}
+def bool = { p -&gt; def x = val(p); x == null ? null : ['1', 'true', 'TRUE'].contains(x.toString()) }
+def gid = { pre, g -&gt; pre + '_' + g }
+def ref = { pre, g -&gt; '#' + pre + '_' + g }
+def SO_NS = 'http://inspire.ec.europa.eu/schemas/so/4.0'
+// AXIS ORDER. EPSG:3035 declares northing first, a GeoPackage stores easting
+// first, and hale's GML writer emits JTS (x, y) verbatim without consulting the
+// CRS (docs/hale-axis-order.md). Until hale honours axis order natively, the
+// swap is done here so the pipeline stays hale-only: reflecting about y=x
+// exchanges the ordinates. NOTE this puts transposed geometry into hale's
+// instance model - the GUI preview will show it mirrored, and the writer must
+// therefore run with -Sgeometry.unifyWindingOrder clockwise, because reflecting
+// reverses ring orientation. Remove all of this once hale can do it.
+def swapGeom = { gp -&gt;
+  if (gp == null) return null
+  def g = gp.geometry
+  if (g == null) return null
+  // copy() so the source instance is never mutated; the filter then exchanges
+  // x and y on every coordinate of every geometry type (Point, Polygon,
+  // MultiPolygon, ...), and geometryChanged() drops the cached envelope.
+  def out = g.copy()
+  out.apply({ c -&gt; def t = c.x; c.x = c.y; c.y = t } as org.locationtech.jts.geom.CoordinateFilter)
+  out.geometryChanged()
+  new eu.esdihumboldt.hale.common.instance.geometry.DefaultGeometryProperty(
+      gp.getCRSDefinition(), out)
+}
+
+// --- texture -&gt; so:particleSizeFraction ------------------------------------
+// Texture observations (sand / silt / clay) have no INSPIRE parameter-name value;
+// INSPIRE models them as particleSizeFraction, not as observations.
+def GLOSIS_NS = 'http://w3id.org/glosis/model/codelists/'
+def TEXTURE = [
+  'textClayPropertyCode-Cl': [0, 2],
+  'textSandPropertyCode-Sa_ISO': [63, 2000],
+  'textSandPropertyCode-Sa_ISSS': [20, 2000],
+  'textSandPropertyCode-Sa_USDA': [50, 2000],
+  'textSandPropertyCode-cSa_ISO': [630, 2000],
+  'textSandPropertyCode-cSa_ISSS': [200, 2000],
+  'textSandPropertyCode-cSa_USDA': [500, 1000],
+  'textSandPropertyCode-fSa_ISO': [63, 200],
+  'textSandPropertyCode-fSa_ISSS': [20, 200],
+  'textSandPropertyCode-fSa_USDA': [100, 250],
+  'textSandPropertyCode-mSa_ISO': [200, 630],
+  'textSandPropertyCode-mSa_ISSS': [200, 630],
+  'textSandPropertyCode-mSa_USDA': [250, 500],
+  'textSandPropertyCode-vcSa_ISSS': [1250, 2000],
+  'textSandPropertyCode-vcSa_USDA': [1000, 2000],
+  'textSandPropertyCode-vfSa_ISSS': [63, 125],
+  'textSandPropertyCode-vfSa_USDA': [50, 100],
+  'textSiltPropertyCode-Si_ISO': [2, 63],
+  'textSiltPropertyCode-Si_ISSS': [2, 20],
+  'textSiltPropertyCode-Si_USDA': [2, 50],
+  'textSiltPropertyCode-cSi_ISO': [20, 63],
+  'textSiltPropertyCode-cSi_USDA': [20, 50],
+  'textSiltPropertyCode-fSi_ISO': [2, 6.3],
+  'textSiltPropertyCode-fSi_USDA': [2, 20],
+  'textSiltPropertyCode-mSi_ISO': [6.3, 20]
+]
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+def PARAM_MAP = [
+  'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
+  'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
+  'physioChemicalPropertyCode-pH': 'pHValue'
+]
+// UCUM unit code -&gt; factor to percent (w/w); 1 dag/kg == 1 % by mass. A unit not
+// listed here gives null, and the observation then stays an ordinary observation.
+def PCT = ['dag/kg': 1.0, '%': 1.0, 'g/100g': 1.0, 'cg/g': 1.0, 'g/kg': 0.1,
+           'mg/g': 0.1, 'kg/kg': 100.0, 'g/g': 100.0]
+// The unit is the UCUM CODE, i.e. datastream.code_unitofmeasure (the FK into
+// unitofmeasure.code) - not unitofmeasure.symbol, which is display text: 'pH'
+// instead of '[pH]', and symbols such as 'Bq ' (trailing space) or 'dm²/m²' are
+// not valid gml:UomIdentifier values.
+//
+// The datastream CHECK requires a unit for 'Quantity' and forbids one for
+// 'Count', so a count is dimensionless: UCUM '1'. Any other type without a unit
+// cannot pass the CHECK; uomOf gives null and the row is reported, not mapped.
+def uomOf = { ds -&gt;
+  def u = str(ds.p.code_unitofmeasure)
+  u != null ? u : (str(ds.p.type) == 'Count' ? '1' : null)
+}
+// Observed-property URI of an observation (its datastream's), or null.
+def opOf = { e -&gt;
+  def op = e.ds.links.observedproperty.first()
+  op == null ? null : str(op.p.definition)
+}
+// [percent, lowerUm, upperUm] for a texture observation, else null.
+def texFraction = { e -&gt;
+  def d = opOf(e)
+  if (d == null || !d.startsWith(GLOSIS_NS)) return null
+  def r = TEXTURE[d.substring(GLOSIS_NS.length())]
+  if (r == null) return null
+  def f = PCT[uomOf(e.ds)]
+  def v = num(e.o.p.result_real)
+  if (f == null || v == null) return null
+  [v * f, r[0], r[1]]
+}
+
+def guid = str(_source.p.guid)
+// Qualifiers without a reference soil group are lost with the voided WRBSoilName.
+if (!str(_source.p.wrbreferencesoilgroup)) {
+  def _nq = 0
+  _source.links.wrbqualifiergroup_profile.each { _nq++ }
+  if (_nq &gt; 0) _log.warn('Profile ' + guid + ': ' + _nq + ' WRB qualifier group(s) without'
+      + ' a reference soil group - WRBSoilName is voided and they are not mapped')
+}
+
+def _obs = []
+def _nonNumeric = 0
+_source.links.datastream.each { ds -&gt;
+  ds.links.observation.each { o -&gt;
+    if (val(o.p.result_real) == null) { _nonNumeric++; return }
+    if (uomOf(ds) == null) {
+      _log.warn('Observation ' + str(o.p.guid) + ': datastream ' + str(ds.p.guid)
+          + ' has no unit of measure - not mapped (gml:measure requires a uom)')
+      return
+    }
+    _obs &lt;&lt; [ds: ds, o: o]
+  }
+}
+if (_nonNumeric &gt; 0)
+  _log.warn(guid + ': ' + _nonNumeric + ' non-numeric observation(s) not mapped'
+      + ' (Category/Text/Boolean results have no encoding in this alignment)')
+def _texCount = [:]
+_obs.each { e -&gt; if (texFraction(e) != null) { def k = opOf(e); _texCount[k] = (_texCount[k] ?: 0) + 1 } }
+_texCount.each { k, n -&gt;
+  if (n &gt; 1) _log.warn(guid + ': ' + n + ' observations of ' + k
+      + ' - kept as observations, not collapsed into particleSizeFraction')
+}
+def _asFraction = { e -&gt; texFraction(e) != null &amp;&amp; _texCount[opOf(e)] == 1 }
+
+_target {
+  id(gid('SoilProfile', guid))
+
+  inspireId {
+    Identifier {
+      localId(str(_source.p.inspireid_localid) ?: guid)
+      // Source value first; the INSPIRE_NAMESPACE project variable (declared in the
+      // .halex) only supplies a value when the source row has none.
+      namespace(str(_source.p.inspireid_namespace) ?: (_project.vars.INSPIRE_NAMESPACE ?: 'https://soilwise-he.eu/'))
+      def _vid = str(_source.p.inspireid_versionid); if (_vid) versionId(_vid)
+    }
+  }
+
+  def _lid = str(_source.p.localidentifier); if (_lid) localIdentifier(_lid)
+
+  // WRBReferenceSoilGroup is [1..1], NOT nillable, and so-as.a.10 requires an
+  // xlink:href on it - so a profile with no WRB classification must be voided at
+  // the nillable PARENT (WRBSoilName), never by emitting an empty child
+  // (concept 9.19). The one affected profile has no qualifiers either.
+  if (!str(_source.p.wrbreferencesoilgroup)) {
+    WRBSoilName { nilReason('unknown') }
+  } else {
+  WRBSoilName {
+    WRBSoilNameType {
+      _source.links.wrbqualifiergroup_profile.each { wg -&gt;
+        def gt = wg.links.wrbqualifiergrouptype.first()
+        if (gt == null) return
+        WRBQualifierGroup {
+          WRBQualifierGroupType {
+            def qp = str(gt.p.qualifierplace); if (qp) qualifierPlace { href(qp) }
+            // NOT NULL in the source; `?:` would also have turned a 0 into 1.
+            def _qp = num(wg.p.qualifierposition)
+            qualifierPosition(_qp != null ? _qp : 1)
+            def q = str(gt.p.wrbqualifier); if (q) WRBqualifier { href(q) }
+            def s1 = str(gt.p.wrbspecifier_1); if (s1) WRBspecifier { href(s1) }
+            def s2 = str(gt.p.wrbspecifier_2); if (s2) WRBspecifier { href(s2) }
+          }
+        }
+      }
+      WRBReferenceSoilGroup { href(str(_source.p.wrbreferencesoilgroup)) }
+      isOriginalClassification(bool(_source.p.isoriginalclassification) ?: false)
+    }
+  }
+  }
+
+  _source.links.othersoilnametype.each { osn -&gt;
+    def _t = str(osn.p.othersoilname_type)
+    def _c = str(osn.p.othersoilname_class)
+    if (_t) otherSoilName {
+      OtherSoilNameType {
+        soilName { href(_t); if (_c) title(_c) }
+        isOriginalClassification(bool(osn.p.isoriginalclassification) ?: false)
+      }
+    }
+  }
+
+  validFrom(dt(_source.p.validfrom))
+  def _vt = dt(_source.p.validto); if (_vt) validTo(_vt)
+
+  beginLifespanVersion(dt(_source.p.beginlifespanversion))
+  def _els = dt(_source.p.endlifespanversion); if (_els) endLifespanVersion(_els)
+
+  def _pes = []
+  _source.links.profileelement.each { pe -&gt; def g = str(pe.p.guid); if (g) _pes &lt;&lt; g }
+  if (_pes.isEmpty()) isDescribedBy { nilReason('unknown') }
+  else _pes.unique().each { g -&gt; isDescribedBy { href(ref('ProfileElement', g)) } }
+
+  _obs.each { e -&gt;
+    def ds = e.ds
+    def obs = e.o
+    def _op = ds.links.observedproperty.first()
+    def _pr = ds.links.observingprocedure.first()
+
+    def _uom = uomOf(ds)
+    def og = str(obs.p.guid)
+    soilProfileObservation {
+      OM_Observation {
+        id('OBS_' + og)
+        // A phenomenon time with an end is a period, not an instant. The
+        // GeoPackage CHECK pairs phenomenontime_start/end, so both or neither.
+        def _ps = dt(obs.p.phenomenontime_start)
+        def _pe = dt(obs.p.phenomenontime_end)
+        phenomenonTime {
+          if (_pe) {
+            TimePeriod { id('PT_' + og); beginPosition(_ps); endPosition(_pe) }
+          } else {
+            TimeInstant { id('PT_' + og); timePosition(_ps) }
+          }
+        }
+        // om:resultTime is [1..1] and NOT nillable, so an unknown result time is
+        // gml:timePosition/@indeterminatePosition, never an empty element or a
+        // bare nilReason (concept 9.17).
+        def _rt = dt(obs.p.resulttime)
+        if (_rt) resultTime { TimeInstant { id('RT_' + og); timePosition(_rt) } }
+        else resultTime { TimeInstant { id('RT_' + og)
+          timePosition { indeterminatePosition('unknown') } } }
+        def _p = _pr == null ? null : str(_pr.p.definition)
+        if (_p) procedure { href(_p) } else procedure { nilReason('unknown') }
+        def _o = _op == null ? null : str(_op.p.definition)
+
+        if (_o) observedProperty { href(_o) }
+        else observedProperty { nilReason('unknown') }
+        featureOfInterest { href(ref('SoilProfile', guid)) }
+        def _v = num(obs.p.result_real)
+        result { measure(_v as Double) { uom(_uom) } }
+      }
+    }
+  }
+
+  // 'location' must be namespace-qualified: gml:AbstractFeatureType carries a
+  // deprecated gml:location, so the bare name is ambiguous and the builder
+  // fails with "Multiple possible child paths found".
+  // [1..1] and NOT voidable (no xsi:nil). The insert trigger requires it, but an
+  // UPDATE can still null it. GML's own nilReason attribute (without xsi:nil) is
+  // XSD-valid and says why the value is missing, but the feature still breaks
+  // INSPIRE conformance - so it is reported as an error (v1: silently).
+  def loc = str(_source.p.location)
+  if (loc) location(namespace: SO_NS) { href(ref('SoilPlot', loc)) }
+  else { location(namespace: SO_NS) { nilReason('missing') }; _log.error('ObservedSoilProfile ' + guid + ': no location (soil plot); '
+      + 'so:location is mandatory and not voidable - the feature is not INSPIRE-conformant') }
+}
+</core:text></complexParameter></cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy.join" id="Cgj-000000000006-4000-8000-000000000000" priority="normal"><source name="types"><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">NOT (isderived = 0 OR isderived = false) OR isderived IS NULL</condition></type></class></source><source name="types"><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="wrbqualifiergrouptype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="isderivedfrom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="othersoilnametype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><target><class><type name="DerivedSoilProfileType" ns="http://inspire.ec.europa.eu/schemas/so/4.0"/></class></target><parameter value="false" name="innerJoin"/><complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">NOT (isderived = 0 OR isderived = false) OR isderived IS NULL</condition></type></class><class><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="wrbqualifiergrouptype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="isderivedfrom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="othersoilnametype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">NOT (isderived = 0 OR isderived = false) OR isderived IS NULL</condition></type><child name="guid"/></property><property><type name="profileelement" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="ispartof"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">NOT (isderived = 0 OR isderived = false) OR isderived IS NULL</condition></type><child name="guid"/></property><property><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilprofile"/></property></jp:condition><jp:condition><property><type name="wrbqualifiergroup_profile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_wrbqualifiergrouptype"/></property><property><type name="wrbqualifiergrouptype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">NOT (isderived = 0 OR isderived = false) OR isderived IS NULL</condition></type><child name="guid"/></property><property><type name="isderivedfrom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_base"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">NOT (isderived = 0 OR isderived = false) OR isderived IS NULL</condition></type><child name="guid"/></property><property><type name="othersoilnametype" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="othersoilname"/></property></jp:condition><jp:condition><property><type name="soilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"><condition lang="CQL">NOT (isderived = 0 OR isderived = false) OR isderived IS NULL</condition></type><child name="guid"/></property><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilprofile"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_datastream"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observedproperty"/></property><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observingprocedure"/></property><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition></jp:join-parameter></complexParameter><complexParameter name="script"><core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// --- helpers -------------------------------------------------------------
+// SANDBOX-SAFE ONLY: hale studio runs Groovy sandboxed unless the project is
+// trusted. The sandbox rejects `instanceof`, `=~` and `in`, and forbids calling
+// `equals` on some hale classes (so never `== null` against a CRS object). Do
+// not reintroduce them - the failure takes down the whole type cell (9.10).
+def val = { p -&gt; try { p?.value() } catch (e) { null } }
+def str = { p -&gt; def x = val(p); (x == null || x.toString().isEmpty()) ? null : x.toString() }
+// GeoPackage DATETIME binds to java.time.Instant, whose toString() is already
+// ISO-8601 UTC - exactly what xs:dateTime wants. Pass the raw value through and
+// let hale convert it, the same way the native Rename cells do.
+def num = { p -&gt; val(p) }
+// GeoPackage DATETIME columns usually bind to java.time.Instant, whose
+// toString() is already ISO-8601 UTC. But the column is TEXT under the hood and
+// a GeoPackage may hold e.g. "2018-01-02 00:00:00" (space, no zone), which is
+// NOT a valid xs:dateTime and would be written through verbatim. Normalise.
+// Sandbox-safe: no instanceof, no regex, no `in`.
+def dt = { p -&gt;
+  def x = val(p)
+  if (x == null) return null
+  def t = x.toString().trim()
+  if (t.isEmpty()) return null
+  t = t.replace(' ', 'T')
+  if (!t.contains('T')) t = t + 'T00:00:00'
+  def tail = t.length() &gt; 11 ? t.substring(11) : ''
+  if (!t.endsWith('Z') &amp;&amp; !tail.contains('+') &amp;&amp; !tail.contains('-')) t = t + 'Z'
+  return t
+}
+def bool = { p -&gt; def x = val(p); x == null ? null : ['1', 'true', 'TRUE'].contains(x.toString()) }
+def gid = { pre, g -&gt; pre + '_' + g }
+def ref = { pre, g -&gt; '#' + pre + '_' + g }
+def SO_NS = 'http://inspire.ec.europa.eu/schemas/so/4.0'
+// AXIS ORDER. EPSG:3035 declares northing first, a GeoPackage stores easting
+// first, and hale's GML writer emits JTS (x, y) verbatim without consulting the
+// CRS (docs/hale-axis-order.md). Until hale honours axis order natively, the
+// swap is done here so the pipeline stays hale-only: reflecting about y=x
+// exchanges the ordinates. NOTE this puts transposed geometry into hale's
+// instance model - the GUI preview will show it mirrored, and the writer must
+// therefore run with -Sgeometry.unifyWindingOrder clockwise, because reflecting
+// reverses ring orientation. Remove all of this once hale can do it.
+def swapGeom = { gp -&gt;
+  if (gp == null) return null
+  def g = gp.geometry
+  if (g == null) return null
+  // copy() so the source instance is never mutated; the filter then exchanges
+  // x and y on every coordinate of every geometry type (Point, Polygon,
+  // MultiPolygon, ...), and geometryChanged() drops the cached envelope.
+  def out = g.copy()
+  out.apply({ c -&gt; def t = c.x; c.x = c.y; c.y = t } as org.locationtech.jts.geom.CoordinateFilter)
+  out.geometryChanged()
+  new eu.esdihumboldt.hale.common.instance.geometry.DefaultGeometryProperty(
+      gp.getCRSDefinition(), out)
+}
+
+// --- texture -&gt; so:particleSizeFraction ------------------------------------
+// Texture observations (sand / silt / clay) have no INSPIRE parameter-name value;
+// INSPIRE models them as particleSizeFraction, not as observations.
+def GLOSIS_NS = 'http://w3id.org/glosis/model/codelists/'
+def TEXTURE = [
+  'textClayPropertyCode-Cl': [0, 2],
+  'textSandPropertyCode-Sa_ISO': [63, 2000],
+  'textSandPropertyCode-Sa_ISSS': [20, 2000],
+  'textSandPropertyCode-Sa_USDA': [50, 2000],
+  'textSandPropertyCode-cSa_ISO': [630, 2000],
+  'textSandPropertyCode-cSa_ISSS': [200, 2000],
+  'textSandPropertyCode-cSa_USDA': [500, 1000],
+  'textSandPropertyCode-fSa_ISO': [63, 200],
+  'textSandPropertyCode-fSa_ISSS': [20, 200],
+  'textSandPropertyCode-fSa_USDA': [100, 250],
+  'textSandPropertyCode-mSa_ISO': [200, 630],
+  'textSandPropertyCode-mSa_ISSS': [200, 630],
+  'textSandPropertyCode-mSa_USDA': [250, 500],
+  'textSandPropertyCode-vcSa_ISSS': [1250, 2000],
+  'textSandPropertyCode-vcSa_USDA': [1000, 2000],
+  'textSandPropertyCode-vfSa_ISSS': [63, 125],
+  'textSandPropertyCode-vfSa_USDA': [50, 100],
+  'textSiltPropertyCode-Si_ISO': [2, 63],
+  'textSiltPropertyCode-Si_ISSS': [2, 20],
+  'textSiltPropertyCode-Si_USDA': [2, 50],
+  'textSiltPropertyCode-cSi_ISO': [20, 63],
+  'textSiltPropertyCode-cSi_USDA': [20, 50],
+  'textSiltPropertyCode-fSi_ISO': [2, 6.3],
+  'textSiltPropertyCode-fSi_USDA': [2, 20],
+  'textSiltPropertyCode-mSi_ISO': [6.3, 20]
+]
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+def PARAM_MAP = [
+  'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
+  'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
+  'physioChemicalPropertyCode-pH': 'pHValue'
+]
+// UCUM unit code -&gt; factor to percent (w/w); 1 dag/kg == 1 % by mass. A unit not
+// listed here gives null, and the observation then stays an ordinary observation.
+def PCT = ['dag/kg': 1.0, '%': 1.0, 'g/100g': 1.0, 'cg/g': 1.0, 'g/kg': 0.1,
+           'mg/g': 0.1, 'kg/kg': 100.0, 'g/g': 100.0]
+// The unit is the UCUM CODE, i.e. datastream.code_unitofmeasure (the FK into
+// unitofmeasure.code) - not unitofmeasure.symbol, which is display text: 'pH'
+// instead of '[pH]', and symbols such as 'Bq ' (trailing space) or 'dm²/m²' are
+// not valid gml:UomIdentifier values.
+//
+// The datastream CHECK requires a unit for 'Quantity' and forbids one for
+// 'Count', so a count is dimensionless: UCUM '1'. Any other type without a unit
+// cannot pass the CHECK; uomOf gives null and the row is reported, not mapped.
+def uomOf = { ds -&gt;
+  def u = str(ds.p.code_unitofmeasure)
+  u != null ? u : (str(ds.p.type) == 'Count' ? '1' : null)
+}
+// Observed-property URI of an observation (its datastream's), or null.
+def opOf = { e -&gt;
+  def op = e.ds.links.observedproperty.first()
+  op == null ? null : str(op.p.definition)
+}
+// [percent, lowerUm, upperUm] for a texture observation, else null.
+def texFraction = { e -&gt;
+  def d = opOf(e)
+  if (d == null || !d.startsWith(GLOSIS_NS)) return null
+  def r = TEXTURE[d.substring(GLOSIS_NS.length())]
+  if (r == null) return null
+  def f = PCT[uomOf(e.ds)]
+  def v = num(e.o.p.result_real)
+  if (f == null || v == null) return null
+  [v * f, r[0], r[1]]
+}
+
+def guid = str(_source.p.guid)
+// Qualifiers without a reference soil group are lost with the voided WRBSoilName.
+if (!str(_source.p.wrbreferencesoilgroup)) {
+  def _nq = 0
+  _source.links.wrbqualifiergroup_profile.each { _nq++ }
+  if (_nq &gt; 0) _log.warn('Profile ' + guid + ': ' + _nq + ' WRB qualifier group(s) without'
+      + ' a reference soil group - WRBSoilName is voided and they are not mapped')
+}
+
+def _obs = []
+def _nonNumeric = 0
+_source.links.datastream.each { ds -&gt;
+  ds.links.observation.each { o -&gt;
+    if (val(o.p.result_real) == null) { _nonNumeric++; return }
+    if (uomOf(ds) == null) {
+      _log.warn('Observation ' + str(o.p.guid) + ': datastream ' + str(ds.p.guid)
+          + ' has no unit of measure - not mapped (gml:measure requires a uom)')
+      return
+    }
+    _obs &lt;&lt; [ds: ds, o: o]
+  }
+}
+if (_nonNumeric &gt; 0)
+  _log.warn(guid + ': ' + _nonNumeric + ' non-numeric observation(s) not mapped'
+      + ' (Category/Text/Boolean results have no encoding in this alignment)')
+def _texCount = [:]
+_obs.each { e -&gt; if (texFraction(e) != null) { def k = opOf(e); _texCount[k] = (_texCount[k] ?: 0) + 1 } }
+_texCount.each { k, n -&gt;
+  if (n &gt; 1) _log.warn(guid + ': ' + n + ' observations of ' + k
+      + ' - kept as observations, not collapsed into particleSizeFraction')
+}
+def _asFraction = { e -&gt; texFraction(e) != null &amp;&amp; _texCount[opOf(e)] == 1 }
+
+def _flag = val(_source.p.isderived)
+def _fs = _flag == null ? null : _flag.toString()
+if (!['1', 'true', 'TRUE'].contains(_fs))
+  _log.error(guid + ': unexpected isderived value [' + _fs + '] - mapped as DerivedSoilProfile')
+_target {
+  id(gid('SoilProfile', guid))
+
+  inspireId {
+    Identifier {
+      localId(str(_source.p.inspireid_localid) ?: guid)
+      // Source value first; the INSPIRE_NAMESPACE project variable (declared in the
+      // .halex) only supplies a value when the source row has none.
+      namespace(str(_source.p.inspireid_namespace) ?: (_project.vars.INSPIRE_NAMESPACE ?: 'https://soilwise-he.eu/'))
+      def _vid = str(_source.p.inspireid_versionid); if (_vid) versionId(_vid)
+    }
+  }
+
+  def _lid = str(_source.p.localidentifier); if (_lid) localIdentifier(_lid)
+
+  // WRBReferenceSoilGroup is [1..1], NOT nillable, and so-as.a.10 requires an
+  // xlink:href on it - so a profile with no WRB classification must be voided at
+  // the nillable PARENT (WRBSoilName), never by emitting an empty child
+  // (concept 9.19). The one affected profile has no qualifiers either.
+  if (!str(_source.p.wrbreferencesoilgroup)) {
+    WRBSoilName { nilReason('unknown') }
+  } else {
+  WRBSoilName {
+    WRBSoilNameType {
+      _source.links.wrbqualifiergroup_profile.each { wg -&gt;
+        def gt = wg.links.wrbqualifiergrouptype.first()
+        if (gt == null) return
+        WRBQualifierGroup {
+          WRBQualifierGroupType {
+            def qp = str(gt.p.qualifierplace); if (qp) qualifierPlace { href(qp) }
+            // NOT NULL in the source; `?:` would also have turned a 0 into 1.
+            def _qp = num(wg.p.qualifierposition)
+            qualifierPosition(_qp != null ? _qp : 1)
+            def q = str(gt.p.wrbqualifier); if (q) WRBqualifier { href(q) }
+            def s1 = str(gt.p.wrbspecifier_1); if (s1) WRBspecifier { href(s1) }
+            def s2 = str(gt.p.wrbspecifier_2); if (s2) WRBspecifier { href(s2) }
+          }
+        }
+      }
+      WRBReferenceSoilGroup { href(str(_source.p.wrbreferencesoilgroup)) }
+      isOriginalClassification(bool(_source.p.isoriginalclassification) ?: false)
+    }
+  }
+  }
+
+  _source.links.othersoilnametype.each { osn -&gt;
+    def _t = str(osn.p.othersoilname_type)
+    def _c = str(osn.p.othersoilname_class)
+    if (_t) otherSoilName {
+      OtherSoilNameType {
+        soilName { href(_t); if (_c) title(_c) }
+        isOriginalClassification(bool(osn.p.isoriginalclassification) ?: false)
+      }
+    }
+  }
+
+  validFrom(dt(_source.p.validfrom))
+  def _vt = dt(_source.p.validto); if (_vt) validTo(_vt)
+
+  beginLifespanVersion(dt(_source.p.beginlifespanversion))
+  def _els = dt(_source.p.endlifespanversion); if (_els) endLifespanVersion(_els)
+
+  def _pes = []
+  _source.links.profileelement.each { pe -&gt; def g = str(pe.p.guid); if (g) _pes &lt;&lt; g }
+  if (_pes.isEmpty()) isDescribedBy { nilReason('unknown') }
+  else _pes.unique().each { g -&gt; isDescribedBy { href(ref('ProfileElement', g)) } }
+
+  _obs.each { e -&gt;
+    def ds = e.ds
+    def obs = e.o
+    def _op = ds.links.observedproperty.first()
+    def _pr = ds.links.observingprocedure.first()
+
+    def _uom = uomOf(ds)
+    def og = str(obs.p.guid)
+    soilProfileObservation {
+      OM_Observation {
+        id('OBS_' + og)
+        // A phenomenon time with an end is a period, not an instant. The
+        // GeoPackage CHECK pairs phenomenontime_start/end, so both or neither.
+        def _ps = dt(obs.p.phenomenontime_start)
+        def _pe = dt(obs.p.phenomenontime_end)
+        phenomenonTime {
+          if (_pe) {
+            TimePeriod { id('PT_' + og); beginPosition(_ps); endPosition(_pe) }
+          } else {
+            TimeInstant { id('PT_' + og); timePosition(_ps) }
+          }
+        }
+        // om:resultTime is [1..1] and NOT nillable, so an unknown result time is
+        // gml:timePosition/@indeterminatePosition, never an empty element or a
+        // bare nilReason (concept 9.17).
+        def _rt = dt(obs.p.resulttime)
+        if (_rt) resultTime { TimeInstant { id('RT_' + og); timePosition(_rt) } }
+        else resultTime { TimeInstant { id('RT_' + og)
+          timePosition { indeterminatePosition('unknown') } } }
+        def _p = _pr == null ? null : str(_pr.p.definition)
+        if (_p) procedure { href(_p) } else procedure { nilReason('unknown') }
+        def _o = _op == null ? null : str(_op.p.definition)
+
+        if (_o) observedProperty { href(_o) }
+        else observedProperty { nilReason('unknown') }
+        featureOfInterest { href(ref('SoilProfile', guid)) }
+        def _v = num(obs.p.result_real)
+        result { measure(_v as Double) { uom(_uom) } }
+      }
+    }
+  }
+
+  def _src = []
+  _source.links.isderivedfrom.each { r -&gt; def g = str(r.p.guid_related); if (g) _src &lt;&lt; g }
+  _src.unique().each { g -&gt; isDerivedFrom { href(ref('SoilProfile', g)) } }
+}
+</core:text></complexParameter></cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy.join" id="Cgj-000000000007-4000-8000-000000000000" priority="normal"><source name="types"><class><type name="soilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="soilbody_geom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="derivedprofilepresenceinsoilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><target><class><type name="SoilBodyType" ns="http://inspire.ec.europa.eu/schemas/so/4.0"/></class></target><parameter value="false" name="innerJoin"/><complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="soilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="soilbody_geom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="derivedprofilepresenceinsoilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="soilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="soilbody_geom" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilbody"/></property></jp:condition><jp:condition><property><type name="soilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="derivedprofilepresenceinsoilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilbody"/></property></jp:condition></jp:join-parameter></complexParameter><complexParameter name="script"><core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// --- helpers -------------------------------------------------------------
+// SANDBOX-SAFE ONLY: hale studio runs Groovy sandboxed unless the project is
+// trusted. The sandbox rejects `instanceof`, `=~` and `in`, and forbids calling
+// `equals` on some hale classes (so never `== null` against a CRS object). Do
+// not reintroduce them - the failure takes down the whole type cell (9.10).
+def val = { p -&gt; try { p?.value() } catch (e) { null } }
+def str = { p -&gt; def x = val(p); (x == null || x.toString().isEmpty()) ? null : x.toString() }
+// GeoPackage DATETIME binds to java.time.Instant, whose toString() is already
+// ISO-8601 UTC - exactly what xs:dateTime wants. Pass the raw value through and
+// let hale convert it, the same way the native Rename cells do.
+def num = { p -&gt; val(p) }
+// GeoPackage DATETIME columns usually bind to java.time.Instant, whose
+// toString() is already ISO-8601 UTC. But the column is TEXT under the hood and
+// a GeoPackage may hold e.g. "2018-01-02 00:00:00" (space, no zone), which is
+// NOT a valid xs:dateTime and would be written through verbatim. Normalise.
+// Sandbox-safe: no instanceof, no regex, no `in`.
+def dt = { p -&gt;
+  def x = val(p)
+  if (x == null) return null
+  def t = x.toString().trim()
+  if (t.isEmpty()) return null
+  t = t.replace(' ', 'T')
+  if (!t.contains('T')) t = t + 'T00:00:00'
+  def tail = t.length() &gt; 11 ? t.substring(11) : ''
+  if (!t.endsWith('Z') &amp;&amp; !tail.contains('+') &amp;&amp; !tail.contains('-')) t = t + 'Z'
+  return t
+}
+def bool = { p -&gt; def x = val(p); x == null ? null : ['1', 'true', 'TRUE'].contains(x.toString()) }
+def gid = { pre, g -&gt; pre + '_' + g }
+def ref = { pre, g -&gt; '#' + pre + '_' + g }
+def SO_NS = 'http://inspire.ec.europa.eu/schemas/so/4.0'
+// AXIS ORDER. EPSG:3035 declares northing first, a GeoPackage stores easting
+// first, and hale's GML writer emits JTS (x, y) verbatim without consulting the
+// CRS (docs/hale-axis-order.md). Until hale honours axis order natively, the
+// swap is done here so the pipeline stays hale-only: reflecting about y=x
+// exchanges the ordinates. NOTE this puts transposed geometry into hale's
+// instance model - the GUI preview will show it mirrored, and the writer must
+// therefore run with -Sgeometry.unifyWindingOrder clockwise, because reflecting
+// reverses ring orientation. Remove all of this once hale can do it.
+def swapGeom = { gp -&gt;
+  if (gp == null) return null
+  def g = gp.geometry
+  if (g == null) return null
+  // copy() so the source instance is never mutated; the filter then exchanges
+  // x and y on every coordinate of every geometry type (Point, Polygon,
+  // MultiPolygon, ...), and geometryChanged() drops the cached envelope.
+  def out = g.copy()
+  out.apply({ c -&gt; def t = c.x; c.x = c.y; c.y = t } as org.locationtech.jts.geom.CoordinateFilter)
+  out.geometryChanged()
+  new eu.esdihumboldt.hale.common.instance.geometry.DefaultGeometryProperty(
+      gp.getCRSDefinition(), out)
+}
+
+// --- texture -&gt; so:particleSizeFraction ------------------------------------
+// Texture observations (sand / silt / clay) have no INSPIRE parameter-name value;
+// INSPIRE models them as particleSizeFraction, not as observations.
+def GLOSIS_NS = 'http://w3id.org/glosis/model/codelists/'
+def TEXTURE = [
+  'textClayPropertyCode-Cl': [0, 2],
+  'textSandPropertyCode-Sa_ISO': [63, 2000],
+  'textSandPropertyCode-Sa_ISSS': [20, 2000],
+  'textSandPropertyCode-Sa_USDA': [50, 2000],
+  'textSandPropertyCode-cSa_ISO': [630, 2000],
+  'textSandPropertyCode-cSa_ISSS': [200, 2000],
+  'textSandPropertyCode-cSa_USDA': [500, 1000],
+  'textSandPropertyCode-fSa_ISO': [63, 200],
+  'textSandPropertyCode-fSa_ISSS': [20, 200],
+  'textSandPropertyCode-fSa_USDA': [100, 250],
+  'textSandPropertyCode-mSa_ISO': [200, 630],
+  'textSandPropertyCode-mSa_ISSS': [200, 630],
+  'textSandPropertyCode-mSa_USDA': [250, 500],
+  'textSandPropertyCode-vcSa_ISSS': [1250, 2000],
+  'textSandPropertyCode-vcSa_USDA': [1000, 2000],
+  'textSandPropertyCode-vfSa_ISSS': [63, 125],
+  'textSandPropertyCode-vfSa_USDA': [50, 100],
+  'textSiltPropertyCode-Si_ISO': [2, 63],
+  'textSiltPropertyCode-Si_ISSS': [2, 20],
+  'textSiltPropertyCode-Si_USDA': [2, 50],
+  'textSiltPropertyCode-cSi_ISO': [20, 63],
+  'textSiltPropertyCode-cSi_USDA': [20, 50],
+  'textSiltPropertyCode-fSi_ISO': [2, 6.3],
+  'textSiltPropertyCode-fSi_USDA': [2, 20],
+  'textSiltPropertyCode-mSi_ISO': [6.3, 20]
+]
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+def PARAM_MAP = [
+  'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
+  'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
+  'physioChemicalPropertyCode-pH': 'pHValue'
+]
+// UCUM unit code -&gt; factor to percent (w/w); 1 dag/kg == 1 % by mass. A unit not
+// listed here gives null, and the observation then stays an ordinary observation.
+def PCT = ['dag/kg': 1.0, '%': 1.0, 'g/100g': 1.0, 'cg/g': 1.0, 'g/kg': 0.1,
+           'mg/g': 0.1, 'kg/kg': 100.0, 'g/g': 100.0]
+// The unit is the UCUM CODE, i.e. datastream.code_unitofmeasure (the FK into
+// unitofmeasure.code) - not unitofmeasure.symbol, which is display text: 'pH'
+// instead of '[pH]', and symbols such as 'Bq ' (trailing space) or 'dm²/m²' are
+// not valid gml:UomIdentifier values.
+//
+// The datastream CHECK requires a unit for 'Quantity' and forbids one for
+// 'Count', so a count is dimensionless: UCUM '1'. Any other type without a unit
+// cannot pass the CHECK; uomOf gives null and the row is reported, not mapped.
+def uomOf = { ds -&gt;
+  def u = str(ds.p.code_unitofmeasure)
+  u != null ? u : (str(ds.p.type) == 'Count' ? '1' : null)
+}
+// Observed-property URI of an observation (its datastream's), or null.
+def opOf = { e -&gt;
+  def op = e.ds.links.observedproperty.first()
+  op == null ? null : str(op.p.definition)
+}
+// [percent, lowerUm, upperUm] for a texture observation, else null.
+def texFraction = { e -&gt;
+  def d = opOf(e)
+  if (d == null || !d.startsWith(GLOSIS_NS)) return null
+  def r = TEXTURE[d.substring(GLOSIS_NS.length())]
+  if (r == null) return null
+  def f = PCT[uomOf(e.ds)]
+  def v = num(e.o.p.result_real)
+  if (f == null || v == null) return null
+  [v * f, r[0], r[1]]
+}
+
+import org.locationtech.jts.geom.Polygon
+import eu.esdihumboldt.hale.common.instance.geometry.DefaultGeometryProperty
+
+def guid = str(_source.p.guid)
+
+// Multi-part geometry: collect every part, flattening already-multi members.
+def polys = []
+def crs = null
+_source.links.soilbody_geom.each { part -&gt;
+  def gp = val(part.p.geom)
+  if (gp == null) return
+  crs = gp.getCRSDefinition()
+  def g = gp.geometry
+  if (g == null) return
+  for (int i = 0; i &lt; g.numGeometries; i++) polys &lt;&lt; g.getGeometryN(i)
+}
+def multi = null
+if (!polys.isEmpty()) {
+  def gf = polys[0].factory
+  def mp = gf.createMultiPolygon(polys as Polygon[])
+  // OGC Simple Features allows the members of a MultiPolygon to touch only at a
+  // finite number of points. 17 soil bodies are stored as ADJACENT, undissolved
+  // parts that share whole boundary edges, which makes the MultiSurface invalid
+  // (INSPIRE gmlas.d.10). Dissolving only those is area-preserving - the parts
+  // do not overlap, so no area is gained or lost - and it merges 20 members in
+  // total (4,808 -&gt; 4,788). Valid bodies are left untouched (concept 9.19).
+  if (!mp.isValid()) {
+    // v2: a body that is invalid for another reason (e.g. a self-intersecting
+    // ring) can make union() throw; keep the stored parts and report it.
+    try {
+      def u = mp.union()
+      def merged = []
+      for (int i = 0; i &lt; u.numGeometries; i++) merged &lt;&lt; u.getGeometryN(i)
+      mp = gf.createMultiPolygon(merged as Polygon[])
+    } catch (e) {
+      _log.error('SoilBody ' + guid + ': invalid geometry that could not be dissolved ('
+          + e.message + ') - written as stored')
+    }
+  }
+  multi = swapGeom(new DefaultGeometryProperty(crs, mp))
+}
+
+_target {
+  id(gid('SoilBody', guid))
+
+  inspireId {
+    Identifier {
+      localId(str(_source.p.inspireid_localid) ?: guid)
+      // Source value first; the INSPIRE_NAMESPACE project variable (declared in the
+      // .halex) only supplies a value when the source row has none.
+      namespace(str(_source.p.inspireid_namespace) ?: (_project.vars.INSPIRE_NAMESPACE ?: 'https://soilwise-he.eu/'))
+      def _vid = str(_source.p.inspireid_versionid); if (_vid) versionId(_vid)
+    }
+  }
+
+  // [1..1] and NOT voidable: nilReason (XSD-valid) plus an error, as for location.
+  if (multi) geometry { MultiSurface(multi) }
+  else { geometry { nilReason('missing') }; _log.error('SoilBody ' + guid + ': no geometry (soilbody_geom) - so:geometry is'
+      + ' mandatory and not voidable, the feature is not INSPIRE-conformant') }
+  def _lab = str(_source.p.soilbodylabel)
+  if (_lab) soilBodyLabel(_lab) else soilBodyLabel { nilReason('unknown') }
+
+  beginLifespanVersion(dt(_source.p.beginlifespanversion))
+  def _els = dt(_source.p.endlifespanversion); if (_els) endLifespanVersion(_els)
+
+  def _pres = []
+  _source.links.derivedprofilepresenceinsoilbody.each { d -&gt; _pres &lt;&lt; d }
+  if (_pres.isEmpty()) {
+    isDescribedBy { nilReason('unknown') }
+  } else {
+    _pres.each { d -&gt;
+      isDescribedBy {
+        DerivedProfilePresenceInSoilBody {
+          // Derived from the two source GUIDs, never from iteration order: this
+          // gml:id has to be stable across regenerations of the GeoPackage
+          // (INSPIRE dc.a.2, identifier persistency). The pair is unique across
+          // all 22,323 rows - verified - and the junction table has no GUID of
+          // its own, only a positional integer PK.
+          id('DPP_' + guid + '_' + str(d.p.guid_soilprofile))
+          derivedProfilePercentageRange {
+            RangeType {
+              def _u = num(d.p.uppervalue); if (_u != null) upperValue(_u as Double)
+              def _l = num(d.p.lowervalue); if (_l != null) lowerValue(_l as Double)
+              uom { uom('%') }
+              // Passed through unchanged, but a percentage outside 0..100 is reported.
+              [_u, _l].each { v -&gt; if (v != null &amp;&amp; (v &lt; 0 || v &gt; 100))
+                _log.warn('SoilBody ' + guid + ' / profile ' + str(d.p.guid_soilprofile)
+                    + ': derivedProfilePercentageRange value ' + v + ' outside 0..100') }
+            }
+          }
+          def _sp = str(d.p.guid_soilprofile)
+          if (_sp) isDescribedBy { href(ref('SoilProfile', _sp)) }
+          else isDescribedBy { nilReason('unknown') }
+        }
+      }
+    }
+  }
+}
+</core:text></complexParameter></cell>
+<cell relation="eu.esdihumboldt.cst.functions.groovy.join" id="Cgj-000000000008-4000-8000-000000000000" priority="normal"><source name="types"><class><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="isbasedonobservedsoilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="isbasedonsoilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="isbasedonsoilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><source name="types"><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class></source><target><class><type name="SoilDerivedObjectType" ns="http://inspire.ec.europa.eu/schemas/so/4.0"/></class></target><parameter value="false" name="innerJoin"/><complexParameter name="join"><jp:join-parameter xmlns:jp="http://www.esdi-humboldt.eu/hale/join"><class><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="isbasedonobservedsoilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="isbasedonsoilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="isbasedonsoilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><class><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/></class><jp:condition><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="isbasedonobservedsoilprofile" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilderivedobject"/></property></jp:condition><jp:condition><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="isbasedonsoilbody" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilderivedobject"/></property></jp:condition><jp:condition><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="isbasedonsoilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_base"/></property></jp:condition><jp:condition><property><type name="soilderivedobject" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_soilderivedobject"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property><property><type name="observation" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_datastream"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observedproperty"/></property><property><type name="observedproperty" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition><jp:condition><property><type name="datastream" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid_observingprocedure"/></property><property><type name="observingprocedure" ns="http://www.esdi-humboldt.eu/hale/gpkg"/><child name="guid"/></property></jp:condition></jp:join-parameter></complexParameter><complexParameter name="script"><core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// --- helpers -------------------------------------------------------------
+// SANDBOX-SAFE ONLY: hale studio runs Groovy sandboxed unless the project is
+// trusted. The sandbox rejects `instanceof`, `=~` and `in`, and forbids calling
+// `equals` on some hale classes (so never `== null` against a CRS object). Do
+// not reintroduce them - the failure takes down the whole type cell (9.10).
+def val = { p -&gt; try { p?.value() } catch (e) { null } }
+def str = { p -&gt; def x = val(p); (x == null || x.toString().isEmpty()) ? null : x.toString() }
+// GeoPackage DATETIME binds to java.time.Instant, whose toString() is already
+// ISO-8601 UTC - exactly what xs:dateTime wants. Pass the raw value through and
+// let hale convert it, the same way the native Rename cells do.
+def num = { p -&gt; val(p) }
+// GeoPackage DATETIME columns usually bind to java.time.Instant, whose
+// toString() is already ISO-8601 UTC. But the column is TEXT under the hood and
+// a GeoPackage may hold e.g. "2018-01-02 00:00:00" (space, no zone), which is
+// NOT a valid xs:dateTime and would be written through verbatim. Normalise.
+// Sandbox-safe: no instanceof, no regex, no `in`.
+def dt = { p -&gt;
+  def x = val(p)
+  if (x == null) return null
+  def t = x.toString().trim()
+  if (t.isEmpty()) return null
+  t = t.replace(' ', 'T')
+  if (!t.contains('T')) t = t + 'T00:00:00'
+  def tail = t.length() &gt; 11 ? t.substring(11) : ''
+  if (!t.endsWith('Z') &amp;&amp; !tail.contains('+') &amp;&amp; !tail.contains('-')) t = t + 'Z'
+  return t
+}
+def bool = { p -&gt; def x = val(p); x == null ? null : ['1', 'true', 'TRUE'].contains(x.toString()) }
+def gid = { pre, g -&gt; pre + '_' + g }
+def ref = { pre, g -&gt; '#' + pre + '_' + g }
+def SO_NS = 'http://inspire.ec.europa.eu/schemas/so/4.0'
+// AXIS ORDER. EPSG:3035 declares northing first, a GeoPackage stores easting
+// first, and hale's GML writer emits JTS (x, y) verbatim without consulting the
+// CRS (docs/hale-axis-order.md). Until hale honours axis order natively, the
+// swap is done here so the pipeline stays hale-only: reflecting about y=x
+// exchanges the ordinates. NOTE this puts transposed geometry into hale's
+// instance model - the GUI preview will show it mirrored, and the writer must
+// therefore run with -Sgeometry.unifyWindingOrder clockwise, because reflecting
+// reverses ring orientation. Remove all of this once hale can do it.
+def swapGeom = { gp -&gt;
+  if (gp == null) return null
+  def g = gp.geometry
+  if (g == null) return null
+  // copy() so the source instance is never mutated; the filter then exchanges
+  // x and y on every coordinate of every geometry type (Point, Polygon,
+  // MultiPolygon, ...), and geometryChanged() drops the cached envelope.
+  def out = g.copy()
+  out.apply({ c -&gt; def t = c.x; c.x = c.y; c.y = t } as org.locationtech.jts.geom.CoordinateFilter)
+  out.geometryChanged()
+  new eu.esdihumboldt.hale.common.instance.geometry.DefaultGeometryProperty(
+      gp.getCRSDefinition(), out)
+}
+
+// --- texture -&gt; so:particleSizeFraction ------------------------------------
+// Texture observations (sand / silt / clay) have no INSPIRE parameter-name value;
+// INSPIRE models them as particleSizeFraction, not as observations.
+def GLOSIS_NS = 'http://w3id.org/glosis/model/codelists/'
+def TEXTURE = [
+  'textClayPropertyCode-Cl': [0, 2],
+  'textSandPropertyCode-Sa_ISO': [63, 2000],
+  'textSandPropertyCode-Sa_ISSS': [20, 2000],
+  'textSandPropertyCode-Sa_USDA': [50, 2000],
+  'textSandPropertyCode-cSa_ISO': [630, 2000],
+  'textSandPropertyCode-cSa_ISSS': [200, 2000],
+  'textSandPropertyCode-cSa_USDA': [500, 1000],
+  'textSandPropertyCode-fSa_ISO': [63, 200],
+  'textSandPropertyCode-fSa_ISSS': [20, 200],
+  'textSandPropertyCode-fSa_USDA': [100, 250],
+  'textSandPropertyCode-mSa_ISO': [200, 630],
+  'textSandPropertyCode-mSa_ISSS': [200, 630],
+  'textSandPropertyCode-mSa_USDA': [250, 500],
+  'textSandPropertyCode-vcSa_ISSS': [1250, 2000],
+  'textSandPropertyCode-vcSa_USDA': [1000, 2000],
+  'textSandPropertyCode-vfSa_ISSS': [63, 125],
+  'textSandPropertyCode-vfSa_USDA': [50, 100],
+  'textSiltPropertyCode-Si_ISO': [2, 63],
+  'textSiltPropertyCode-Si_ISSS': [2, 20],
+  'textSiltPropertyCode-Si_USDA': [2, 50],
+  'textSiltPropertyCode-cSi_ISO': [20, 63],
+  'textSiltPropertyCode-cSi_USDA': [20, 50],
+  'textSiltPropertyCode-fSi_ISO': [2, 6.3],
+  'textSiltPropertyCode-fSi_USDA': [2, 20],
+  'textSiltPropertyCode-mSi_ISO': [6.3, 20]
+]
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+def PARAM_MAP = [
+  'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
+  'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
+  'physioChemicalPropertyCode-pH': 'pHValue'
+]
+// UCUM unit code -&gt; factor to percent (w/w); 1 dag/kg == 1 % by mass. A unit not
+// listed here gives null, and the observation then stays an ordinary observation.
+def PCT = ['dag/kg': 1.0, '%': 1.0, 'g/100g': 1.0, 'cg/g': 1.0, 'g/kg': 0.1,
+           'mg/g': 0.1, 'kg/kg': 100.0, 'g/g': 100.0]
+// The unit is the UCUM CODE, i.e. datastream.code_unitofmeasure (the FK into
+// unitofmeasure.code) - not unitofmeasure.symbol, which is display text: 'pH'
+// instead of '[pH]', and symbols such as 'Bq ' (trailing space) or 'dm²/m²' are
+// not valid gml:UomIdentifier values.
+//
+// The datastream CHECK requires a unit for 'Quantity' and forbids one for
+// 'Count', so a count is dimensionless: UCUM '1'. Any other type without a unit
+// cannot pass the CHECK; uomOf gives null and the row is reported, not mapped.
+def uomOf = { ds -&gt;
+  def u = str(ds.p.code_unitofmeasure)
+  u != null ? u : (str(ds.p.type) == 'Count' ? '1' : null)
+}
+// Observed-property URI of an observation (its datastream's), or null.
+def opOf = { e -&gt;
+  def op = e.ds.links.observedproperty.first()
+  op == null ? null : str(op.p.definition)
+}
+// [percent, lowerUm, upperUm] for a texture observation, else null.
+def texFraction = { e -&gt;
+  def d = opOf(e)
+  if (d == null || !d.startsWith(GLOSIS_NS)) return null
+  def r = TEXTURE[d.substring(GLOSIS_NS.length())]
+  if (r == null) return null
+  def f = PCT[uomOf(e.ds)]
+  def v = num(e.o.p.result_real)
+  if (f == null || v == null) return null
+  [v * f, r[0], r[1]]
+}
+
+def guid = str(_source.p.guid)
+
+def _obs = []
+def _nonNumeric = 0
+_source.links.datastream.each { ds -&gt;
+  ds.links.observation.each { o -&gt;
+    if (val(o.p.result_real) == null) { _nonNumeric++; return }
+    if (uomOf(ds) == null) {
+      _log.warn('Observation ' + str(o.p.guid) + ': datastream ' + str(ds.p.guid)
+          + ' has no unit of measure - not mapped (gml:measure requires a uom)')
+      return
+    }
+    _obs &lt;&lt; [ds: ds, o: o]
+  }
+}
+if (_nonNumeric &gt; 0)
+  _log.warn(guid + ': ' + _nonNumeric + ' non-numeric observation(s) not mapped'
+      + ' (Category/Text/Boolean results have no encoding in this alignment)')
+def _texCount = [:]
+_obs.each { e -&gt; if (texFraction(e) != null) { def k = opOf(e); _texCount[k] = (_texCount[k] ?: 0) + 1 } }
+_texCount.each { k, n -&gt;
+  if (n &gt; 1) _log.warn(guid + ': ' + n + ' observations of ' + k
+      + ' - kept as observations, not collapsed into particleSizeFraction')
+}
+def _asFraction = { e -&gt; texFraction(e) != null &amp;&amp; _texCount[opOf(e)] == 1 }
+
+_target {
+  id(gid('SoilDerivedObject', guid))
+
+  inspireId {
+    Identifier {
+      localId(str(_source.p.inspireid_localid) ?: guid)
+      // Source value first; the INSPIRE_NAMESPACE project variable (declared in the
+      // .halex) only supplies a value when the source row has none.
+      namespace(str(_source.p.inspireid_namespace) ?: (_project.vars.INSPIRE_NAMESPACE ?: 'https://soilwise-he.eu/'))
+      def _vid = str(_source.p.inspireid_versionid); if (_vid) versionId(_vid)
+    }
+  }
+
+  def gm = swapGeom(val(_source.p.geometry))
+  // [1..1] and NOT voidable, but the source column is nullable: nilReason
+  // (XSD-valid) plus an error, as for ObservedSoilProfile/location.
+  if (gm) geometry { Polygon(gm) }
+  else { geometry { nilReason('missing') }; _log.error('SoilDerivedObject ' + guid
+      + ': no geometry - so:geometry is mandatory and not voidable, the feature is'
+      + ' not INSPIRE-conformant') }
+  // XSD sequence order: isBasedOnSoilDerivedObject, isBasedOnObservedSoilProfile,
+  // isBasedOnSoilBody - emit in that order.
+  def _sdo = []
+  _source.links.isbasedonsoilderivedobject.each { r -&gt;
+    def g = str(r.p.guid_related); if (g) _sdo &lt;&lt; g
+  }
+  _sdo.unique().each { g -&gt; isBasedOnSoilDerivedObject { href(ref('SoilDerivedObject', g)) } }
+  def _based = []
+  _source.links.isbasedonobservedsoilprofile.each { r -&gt;
+    def g = str(r.p.guid_soilprofile); if (g) _based &lt;&lt; g
+  }
+  _based.unique().each { g -&gt; isBasedOnObservedSoilProfile { href(ref('SoilProfile', g)) } }
+  def _bodies = []
+  _source.links.isbasedonsoilbody.each { r -&gt;
+    def g = str(r.p.guid_soilbody); if (g) _bodies &lt;&lt; g
+  }
+  _bodies.unique().each { g -&gt; isBasedOnSoilBody { href(ref('SoilBody', g)) } }
+
+  _obs.each { e -&gt;
+    def ds = e.ds
+    def obs = e.o
+    def _op = ds.links.observedproperty.first()
+    def _pr = ds.links.observingprocedure.first()
+
+    def _uom = uomOf(ds)
+    def og = str(obs.p.guid)
+    soilDerivedObjectObservation {
+      OM_Observation {
+        id('OBS_' + og)
+        // A phenomenon time with an end is a period, not an instant. The
+        // GeoPackage CHECK pairs phenomenontime_start/end, so both or neither.
+        def _ps = dt(obs.p.phenomenontime_start)
+        def _pe = dt(obs.p.phenomenontime_end)
+        phenomenonTime {
+          if (_pe) {
+            TimePeriod { id('PT_' + og); beginPosition(_ps); endPosition(_pe) }
+          } else {
+            TimeInstant { id('PT_' + og); timePosition(_ps) }
+          }
+        }
+        // om:resultTime is [1..1] and NOT nillable, so an unknown result time is
+        // gml:timePosition/@indeterminatePosition, never an empty element or a
+        // bare nilReason (concept 9.17).
+        def _rt = dt(obs.p.resulttime)
+        if (_rt) resultTime { TimeInstant { id('RT_' + og); timePosition(_rt) } }
+        else resultTime { TimeInstant { id('RT_' + og)
+          timePosition { indeterminatePosition('unknown') } } }
+        def _p = _pr == null ? null : str(_pr.p.definition)
+        if (_p) procedure { href(_p) } else procedure { nilReason('unknown') }
+        def _o = _op == null ? null : str(_op.p.definition)
+
+        // GLOSIS -&gt; INSPIRE parameter-name value where an equivalent exists.
+        if (_o != null &amp;&amp; _o.startsWith(GLOSIS_NS)) {
+          def _im = PARAM_MAP[_o.substring(GLOSIS_NS.length())]
+          if (_im) _o = 'http://inspire.ec.europa.eu/codelist/SoilDerivedObjectParameterNameValue/' + _im
+        }
+        
+        if (_o) observedProperty { href(_o) }
+        else observedProperty { nilReason('unknown') }
+        featureOfInterest { href(ref('SoilDerivedObject', guid)) }
+        def _v = num(obs.p.result_real)
+        result { measure(_v as Double) { uom(_uom) } }
+      }
+    }
+  }
+
+  // [1..*] and mandatory: only void it when there is genuinely nothing. If the
+  // source HAS observations that could not be encoded (non-numeric), the honest
+  // reason is 'unknown', not "the dataset does not populate this".
+  if (_obs.isEmpty())
+    soilDerivedObjectObservation { nilReason(_nonNumeric &gt; 0 ? 'unknown' : 'other:unpopulated') }
+}
+</core:text></complexParameter></cell>
+</alignment>

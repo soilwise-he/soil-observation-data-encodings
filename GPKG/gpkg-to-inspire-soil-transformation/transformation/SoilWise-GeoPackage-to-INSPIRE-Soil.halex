@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<hale-project version="5.5.0.release">
+    <name>SoilWise-GeoPackage-to-INSPIRE-Soil</name>
+    <author>RonaldKilian</author>
+    <created>2026-09-03T15:46:13.470+02:00</created>
+    <modified>2026-09-03T15:49:10.398+02:00</modified>
+    <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
+        <setting name="charset">UTF-8</setting>
+        <setting name="projectFiles.separate">false</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
+        <setting name="target">SoilWise-GeoPackage-to-INSPIRE-Soil.halex</setting>
+    </save-config>
+    <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.common.schema.persist.hsd.json.read">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">b1041c29-3a25-4579-9ba2-c3f89de3bce1</setting>
+        <setting name="source">../schemas/source-schema.hsd.json</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.common.schema.hsd.json</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="onlyElementsMappable">true</setting>
+        <setting name="resourceId">5c55f4a1-ac3b-4af0-a8a8-feb0cfe2c343</setting>
+        <setting name="source">https://inspire.ec.europa.eu/schemas/so/4.0/Soil.xsd</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
+        <complex-setting name="customTypeContent"><xsd:typeContentConfig xmlns:xsd="http://www.esdi-humboldt.eu/hale/io/xsd">
+   <core:list xmlns:core="http://www.esdi-humboldt.eu/hale/core">
+      <core:entry>
+         <xsd:association>
+            <xsd:property>
+               <core:list>
+                  <core:entry>
+                     <core:name namespace="http://www.opengis.net/om/2.0">OM_ObservationType</core:name>
+                  </core:entry>
+                  <core:entry>
+                     <core:name namespace="http://www.opengis.net/om/2.0">result</core:name>
+                  </core:entry>
+               </core:list>
+            </xsd:property>
+            <xsd:config>
+               <xsd:typeContent mode="elements">
+                  <xsd:elements>
+                     <core:list>
+                        <core:entry>
+                           <core:name namespace="http://www.opengis.net/gml/3.2">measure</core:name>
+                        </core:entry>
+                     </core:list>
+                  </xsd:elements>
+               </xsd:typeContent>
+            </xsd:config>
+         </xsd:association>
+      </core:entry>
+   </core:list>
+</xsd:typeContentConfig></complex-setting>
+    </resource>
+    <export-config name="INSPIRE-Soil-GML">
+        <configuration action-id="eu.esdihumboldt.hale.io.instance.write.transformed" provider-id="eu.esdihumboldt.hale.io.gml.writer">
+            <setting name="charset">UTF-8</setting>
+            <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+            <setting name="crs.epsg.prefix">http://www.opengis.net/def/crs/EPSG/0/</setting>
+            <setting name="geometry.unifyWindingOrder">clockwise</setting>
+            <setting name="xml.notNil.omitNilReason">true</setting>
+            <setting name="xml.pretty">true</setting>
+        </configuration>
+    </export-config>
+    <file name="alignment.xml" location="SoilWise-GeoPackage-to-INSPIRE-Soil.halex.alignment.xml"/>
+    <file name="styles.sld" location="SoilWise-GeoPackage-to-INSPIRE-Soil.halex.styles.sld"/>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}DerivedProfilePresenceInSoilBodyType/1">{http://inspire.ec.europa.eu/schemas/so/4.0}isDescribedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}DerivedProfilePresenceInSoilBodyType/2">{http://inspire.ec.europa.eu/schemas/so/4.0}DerivedSoilProfile</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}DerivedProfilePresenceInSoilBodyType/3">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}DerivedProfilePresenceInSoilBodyType/4">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}DerivedProfilePresenceInSoilBodyType/count">4</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}DerivedSoilProfileType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}DerivedSoilProfileType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}DerivedSoilProfileType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}ObservedSoilProfileType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}ObservedSoilProfileType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}ObservedSoilProfileType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}ProfileElementType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}ProfileElementType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}ProfileElementType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilBodyType/1">{http://inspire.ec.europa.eu/schemas/so/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilBodyType/2">{http://www.opengis.net/gml/3.2}MultiSurface</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilBodyType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilDerivedObjectType/1">{http://inspire.ec.europa.eu/schemas/so/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilDerivedObjectType/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilDerivedObjectType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilHorizonType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilHorizonType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilHorizonType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilLayerType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilLayerType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilLayerType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilPlotType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilPlotType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilPlotType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilProfileType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilProfileType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilProfileType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilSiteType/1">{http://inspire.ec.europa.eu/schemas/so/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilSiteType/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilSiteType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilThemeCoverageType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilThemeCoverageType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilThemeCoverageType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilThemeDescriptiveCoverageType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilThemeDescriptiveCoverageType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/so/4.0}SoilThemeDescriptiveCoverageType/count">2</property>
+    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/gpkg}soilbody_geom/1">geom</property>
+    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/gpkg}soilbody_geom/count">1</property>
+    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/gpkg}soilderivedobject/1">geometry</property>
+    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/gpkg}soilderivedobject/count">1</property>
+    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/gpkg}soilplot/1">soilplotlocation</property>
+    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/gpkg}soilplot/count">1</property>
+    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/gpkg}soilsite/1">geometry</property>
+    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/gpkg}soilsite/count">1</property>
+    <complex-property name="variables">
+        <core:properties xmlns:core="http://www.esdi-humboldt.eu/hale/core">
+            <core:property name="INSPIRE_NAMESPACE">
+                <core:value value="https://soilwise-he.eu/"/>
+            </core:property>
+        </core:properties>
+    </complex-property>
+</hale-project>

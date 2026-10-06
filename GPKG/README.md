@@ -8,7 +8,11 @@ While testing the geopackage in real world scenario's, some observations were ma
 
 ## Convert geopackage to GML using Hale Studio
 
-Any INSPIRE GeoPackage is combined with a Hale Studio transformation project to transform the data to the INSPIRe Soil GML model. How is this transformation project stored along side the geopackage?
+A companion Hale Studio transformation converts the GeoPackage into an
+[INSPIRE Soil](https://inspire-mif.github.io/technical-guidelines/data/so/) (`so` 4.0.2) GML
+dataset in a single `hale transform` run, with no post-processing. See
+[`gpkg-to-inspire-soil-transformation/`](gpkg-to-inspire-soil-transformation/) for the
+transformation project, usage instructions, modelling decisions and known limitations.
 
 
 ## Convert geopackage to SensorThings API using Hale Studio
