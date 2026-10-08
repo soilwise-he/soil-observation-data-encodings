@@ -118,6 +118,9 @@
             <core:property name="INSPIRE_NAMESPACE">
                 <core:value value="https://soilwise-he.eu/"/>
             </core:property>
+            <core:property name="INSPIRE_PARAMETER_NAMES">
+                <core:value value="false"/>
+            </core:property>
         </core:properties>
     </complex-property>
 </hale-project>

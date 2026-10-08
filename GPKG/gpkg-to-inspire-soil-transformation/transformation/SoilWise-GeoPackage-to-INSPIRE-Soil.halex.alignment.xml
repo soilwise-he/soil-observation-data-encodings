@@ -85,7 +85,10 @@ def TEXTURE = [
   'textSiltPropertyCode-fSi_USDA': [2, 20],
   'textSiltPropertyCode-mSi_ISO': [6.3, 20]
 ]
-// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the
+// generator), applied only when the project variable INSPIRE_PARAMETER_NAMES is
+// 'true'. Default: the external vocabulary URI is kept as stored.
+def USE_INSPIRE_PARAMS = (_project.vars.INSPIRE_PARAMETER_NAMES ?: 'false').toString() == 'true'
 def PARAM_MAP = [
   'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
   'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
@@ -242,7 +245,10 @@ def TEXTURE = [
   'textSiltPropertyCode-fSi_USDA': [2, 20],
   'textSiltPropertyCode-mSi_ISO': [6.3, 20]
 ]
-// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the
+// generator), applied only when the project variable INSPIRE_PARAMETER_NAMES is
+// 'true'. Default: the external vocabulary URI is kept as stored.
+def USE_INSPIRE_PARAMS = (_project.vars.INSPIRE_PARAMETER_NAMES ?: 'false').toString() == 'true'
 def PARAM_MAP = [
   'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
   'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
@@ -285,6 +291,14 @@ def guid = str(_source.p.guid)
 def fao = _source.links.faohorizonnotationtype.first()
 def _m = fao == null ? null : str(fao.p.faohorizonmaster_1)
 def _fp = fao == null ? null : str(fao.p.faoprime)
+// TRANSITIONAL HORIZONS. CREA stores the second master symbol of a transitional
+// horizon (WRB Section 10.3) in faohorizonmaster_2, but FAOHorizonMaster is [1..1]
+// over single letters. FAOHorizonMaster carries the first symbol, and - as agreed
+// with CREA (2026-10) - the full notation goes into gml:description.
+def _m2 = fao == null ? null : str(fao.p.faohorizonmaster_2)
+def _sym = { u -&gt; u.substring(u.lastIndexOf('/') + 1) }
+def _desc = (_m &amp;&amp; _m2) ? ('Transitional horizon ' + _sym(_m) + _sym(_m2)
+    + ' (FAO master symbols ' + _sym(_m) + ' and ' + _sym(_m2) + ')') : null
 
 def _obs = []
 def _nonNumeric = 0
@@ -313,6 +327,8 @@ def _asFraction = { e -&gt; texFraction(e) != null &amp;&amp; _texCount[opOf(e)]
 _target {
 
   id(gid('ProfileElement', guid))
+  // gml:description comes first in the XSD sequence; only horizons set _desc.
+  if (_desc) description(_desc)
 
   inspireId {
     Identifier {
@@ -393,8 +409,8 @@ _target {
         if (_p) procedure { href(_p) } else procedure { nilReason('unknown') }
         def _o = _op == null ? null : str(_op.p.definition)
 
-        // GLOSIS -&gt; INSPIRE parameter-name value where an equivalent exists.
-        if (_o != null &amp;&amp; _o.startsWith(GLOSIS_NS)) {
+        // GLOSIS -&gt; INSPIRE parameter-name value, only if INSPIRE_PARAMETER_NAMES.
+        if (USE_INSPIRE_PARAMS &amp;&amp; _o != null &amp;&amp; _o.startsWith(GLOSIS_NS)) {
           def _im = PARAM_MAP[_o.substring(GLOSIS_NS.length())]
           if (_im) _o = 'http://inspire.ec.europa.eu/codelist/ProfileElementParameterNameValue/' + _im
         }
@@ -432,15 +448,8 @@ _target {
         isOriginalClassification(bool(fao.p.isoriginalclassification) ?: false)
       }
     }
-    // faohorizonmaster_2 (546 rows, 6.8% of horizons): confirmed intentional by
-    // CREA (WRB Section 10.3, p. 229, Transitional Layers), but their own
-    // reference INSPIRE-validated HALE project (ejpsoil/inspire_soil_gpkg_
-    // template, Version1.1-RC/halestudio/GPKG-to-GML.halez) maps ONLY
-    // faohorizonmaster_1 - the same 6.8% incidence is present in their source
-    // GPKG (552/8,143) and is dropped there too, with no compensating
-    // encoding anywhere in their alignment. Matching that here: no target for
-    // the second symbol. See concept 8 for the (rejected) alternative of
-    // carrying it in gml:description.
+    // faohorizonmaster_2 has no target here; it is carried in gml:description
+    // (_desc, above).
   }
   // so:otherHorizonNotation [0..*] via the otherhorizon_profileelement junction
   _source.links.otherhorizon_profileelement.each { oh -&gt;
@@ -541,7 +550,10 @@ def TEXTURE = [
   'textSiltPropertyCode-fSi_USDA': [2, 20],
   'textSiltPropertyCode-mSi_ISO': [6.3, 20]
 ]
-// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the
+// generator), applied only when the project variable INSPIRE_PARAMETER_NAMES is
+// 'true'. Default: the external vocabulary URI is kept as stored.
+def USE_INSPIRE_PARAMS = (_project.vars.INSPIRE_PARAMETER_NAMES ?: 'false').toString() == 'true'
 def PARAM_MAP = [
   'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
   'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
@@ -581,6 +593,7 @@ def texFraction = { e -&gt;
 }
 
 def guid = str(_source.p.guid)
+def _desc = null
 
 def _flag = val(_source.p.profileelementtype)
 def _fs = _flag == null ? null : _flag.toString()
@@ -614,6 +627,8 @@ def _asFraction = { e -&gt; texFraction(e) != null &amp;&amp; _texCount[opOf(e)]
 _target {
 
   id(gid('ProfileElement', guid))
+  // gml:description comes first in the XSD sequence; only horizons set _desc.
+  if (_desc) description(_desc)
 
   inspireId {
     Identifier {
@@ -694,8 +709,8 @@ _target {
         if (_p) procedure { href(_p) } else procedure { nilReason('unknown') }
         def _o = _op == null ? null : str(_op.p.definition)
 
-        // GLOSIS -&gt; INSPIRE parameter-name value where an equivalent exists.
-        if (_o != null &amp;&amp; _o.startsWith(GLOSIS_NS)) {
+        // GLOSIS -&gt; INSPIRE parameter-name value, only if INSPIRE_PARAMETER_NAMES.
+        if (USE_INSPIRE_PARAMS &amp;&amp; _o != null &amp;&amp; _o.startsWith(GLOSIS_NS)) {
           def _im = PARAM_MAP[_o.substring(GLOSIS_NS.length())]
           if (_im) _o = 'http://inspire.ec.europa.eu/codelist/ProfileElementParameterNameValue/' + _im
         }
@@ -809,7 +824,10 @@ def TEXTURE = [
   'textSiltPropertyCode-fSi_USDA': [2, 20],
   'textSiltPropertyCode-mSi_ISO': [6.3, 20]
 ]
-// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the
+// generator), applied only when the project variable INSPIRE_PARAMETER_NAMES is
+// 'true'. Default: the external vocabulary URI is kept as stored.
+def USE_INSPIRE_PARAMS = (_project.vars.INSPIRE_PARAMETER_NAMES ?: 'false').toString() == 'true'
 def PARAM_MAP = [
   'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
   'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
@@ -1030,7 +1048,10 @@ def TEXTURE = [
   'textSiltPropertyCode-fSi_USDA': [2, 20],
   'textSiltPropertyCode-mSi_ISO': [6.3, 20]
 ]
-// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the
+// generator), applied only when the project variable INSPIRE_PARAMETER_NAMES is
+// 'true'. Default: the external vocabulary URI is kept as stored.
+def USE_INSPIRE_PARAMS = (_project.vars.INSPIRE_PARAMETER_NAMES ?: 'false').toString() == 'true'
 def PARAM_MAP = [
   'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
   'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
@@ -1309,7 +1330,10 @@ def TEXTURE = [
   'textSiltPropertyCode-fSi_USDA': [2, 20],
   'textSiltPropertyCode-mSi_ISO': [6.3, 20]
 ]
-// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the
+// generator), applied only when the project variable INSPIRE_PARAMETER_NAMES is
+// 'true'. Default: the external vocabulary URI is kept as stored.
+def USE_INSPIRE_PARAMS = (_project.vars.INSPIRE_PARAMETER_NAMES ?: 'false').toString() == 'true'
 def PARAM_MAP = [
   'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
   'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
@@ -1584,7 +1608,10 @@ def TEXTURE = [
   'textSiltPropertyCode-fSi_USDA': [2, 20],
   'textSiltPropertyCode-mSi_ISO': [6.3, 20]
 ]
-// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the
+// generator), applied only when the project variable INSPIRE_PARAMETER_NAMES is
+// 'true'. Default: the external vocabulary URI is kept as stored.
+def USE_INSPIRE_PARAMS = (_project.vars.INSPIRE_PARAMETER_NAMES ?: 'false').toString() == 'true'
 def PARAM_MAP = [
   'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
   'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
@@ -1807,7 +1834,10 @@ def TEXTURE = [
   'textSiltPropertyCode-fSi_USDA': [2, 20],
   'textSiltPropertyCode-mSi_ISO': [6.3, 20]
 ]
-// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the generator).
+// GLOSIS observed property -&gt; INSPIRE parameter-name value (PARAM_MAP in the
+// generator), applied only when the project variable INSPIRE_PARAMETER_NAMES is
+// 'true'. Default: the external vocabulary URI is kept as stored.
+def USE_INSPIRE_PARAMS = (_project.vars.INSPIRE_PARAMETER_NAMES ?: 'false').toString() == 'true'
 def PARAM_MAP = [
   'physioChemicalPropertyCode-Carorg': 'organicCarbonContent',
   'physioChemicalPropertyCode-Nittot': 'nitrogenContent',
@@ -1943,8 +1973,8 @@ _target {
         if (_p) procedure { href(_p) } else procedure { nilReason('unknown') }
         def _o = _op == null ? null : str(_op.p.definition)
 
-        // GLOSIS -&gt; INSPIRE parameter-name value where an equivalent exists.
-        if (_o != null &amp;&amp; _o.startsWith(GLOSIS_NS)) {
+        // GLOSIS -&gt; INSPIRE parameter-name value, only if INSPIRE_PARAMETER_NAMES.
+        if (USE_INSPIRE_PARAMS &amp;&amp; _o != null &amp;&amp; _o.startsWith(GLOSIS_NS)) {
           def _im = PARAM_MAP[_o.substring(GLOSIS_NS.length())]
           if (_im) _o = 'http://inspire.ec.europa.eu/codelist/SoilDerivedObjectParameterNameValue/' + _im
         }

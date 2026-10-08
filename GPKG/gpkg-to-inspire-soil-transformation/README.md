@@ -31,11 +31,14 @@ wizard:
 is reported as a *warning*. A mandatory INSPIRE element with no value in the source, or
 an unexpected `isderived` / `profileelementtype` value, is reported as an *error*: the
 feature is still written, but is not INSPIRE-conformant until the source is fixed. For
-the SoilWise test GeoPackage, expect 0 errors and 47 warnings (47
+the SoilWise GeoPackage (`SoilWise_with_data`, 2026-10-07), expect 0 errors and 47 warnings (47
 `derivedProfilePercentageRange` values above 100 %).
 
-The project variable `INSPIRE_NAMESPACE` (default `https://soilwise-he.eu/`) is used only
-for rows without an `inspireid_namespace`.
+Project variables (in the `.halex`, editable in hale Studio):
+
+- `INSPIRE_NAMESPACE` (default `https://soilwise-he.eu/`) is used only for rows without an
+  `inspireid_namespace`.
+- `INSPIRE_PARAMETER_NAMES` (default `false`): see *observed properties* below.
 
 ## What's mapped
 
@@ -54,6 +57,16 @@ for rows without an `inspireid_namespace`.
 - Observations become inline `om:OM_Observation` on the site, profile, profile element or
   derived object they belong to. Units are the UCUM codes from the GeoPackage (e.g.
   `[pH]`); `Count` results get `uom="1"`.
+- **Observed properties** keep the URI of the external vocabulary as stored in the
+  GeoPackage (GLOSIS / SOILVOC), also where an INSPIRE equivalent exists. Total vs.
+  extractable contents are distinguished by the observation's procedure. The INSPIRE
+  Soil model expects values from its own `…ParameterNameValue` code lists (a manual check
+  in the INSPIRE validator); if a reviewer requires them, set `INSPIRE_PARAMETER_NAMES`
+  to `true`, which maps `pH`, `Carorg` and `Nittot` to `pHValue`, `organicCarbonContent`
+  and `nitrogenContent`.
+- **Transitional horizons:** `FAOHorizonMaster` allows one symbol, so it carries
+  `faohorizonmaster_1`; the full notation with both master symbols goes into
+  `gml:description`, e.g. *"Transitional horizon AC (FAO master symbols A and C)"*.
 - **Texture** (sand, silt, clay) becomes `particleSizeFraction`: content in %, size range
   in µm from the GLOSIS code descriptions. A fraction measured more than once on the same
   element stays an observation, as `particleSizeFraction` has no date or method.
