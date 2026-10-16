@@ -49,7 +49,7 @@ In the table below, we perform the same analysis for grid files, focusing on wel
 ## Analysis Table (csv_metadata between filename and .csv suffix)
 - name: Column Header from original CSV
 - column_type: Datatype of the column content
-- column_format: Internal formatting of the column content
+- column_format: Internal formatting of the column content. If the column value is taken from a codelist, the codelist is provided here (either URI or link to CSV representation)
 - concept_type: abstract semantic concept this column represents, e.g. sosa:FeatureOfInterest, sosa:Property, schema:Property
 - fk_target: Added, if concept_type is foreignKey, the fk columns. If concept type has a value from a result codelist, this codeist
 - concept: concept this column represents, e.g. tree, leaf length, soil plot, bulk density

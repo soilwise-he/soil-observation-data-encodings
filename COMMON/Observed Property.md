@@ -1,0 +1,27 @@
+## Observed Property++
+
+### Special Relationship between Observed Property, Observing Procedure and UoM
+
+In previous versions of OMS and SOSA, the only relation between Observed Property, Observing Procedure and UoM was provided through actual Observations utilizing these concepts.
+This deficit was recognized in recent updates of both OMS and SOSA, new properties proposed. This enables direct links between Observed Property, Observing Procedure, and via [QUDT](https://www.qudt.org) we can add information on the [QuantityKind](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html) to determine applicable [UoM](https://qudt.org/schema/qudt/Unit).
+
+_We still need to discuss which exact properties and inverses we use_
+
+<img width="1275" height="519" alt="ObsPropProcModel" src="https://github.com/user-attachments/assets/400b7d8f-d046-4be4-aa89-0e145a0e2b1b" />
+
+### Conversion between UoM
+
+Different organizations traditionally survey data with different units of measurement. A simple example pertains to length, some report this in meters, some in centimeters.
+As lossless conversion between SI units is trivial, there is no reason to mandate the exact UoM to be used, only the category, thus the decision to utilize QUDT QuantityKind. When using  QUDT QuantityKind, one must take care not to select dimensionless, but instead provide the correct fraction or ration type (e.g. [MassRatio](https://qudt.org/vocab/quantitykind/MassRatio) for mg/g or [VolumeFraction](https://qudt.org/vocab/quantitykind/VolumeFraction) for ml/l).
+
+### Common Repo for Observed Property, Observing Procedure and UoM
+
+In order to keep all data encoding models open for the future, they must be very flexible in the use of Observed Property, Observing Procedure and UoM, as these lists will never be finalized, will continue to grow and evolve.
+In online environments, systems can rely on interactive codelists referenced by URIs for these concepts, but with standalone systems (e.g. GPkg for Field Survey), 
+the system must be pre-filled with the relevant concepts, required Observed Property, Observing Procedure and UoM imported to the system before data entry commences.
+
+In order to enable this, we propose the definition of unique IDs (unclear if GUIDs, W3IDs or ...?) for each Observed Property, Observing Procedure and UoM, their maintanance within a central registry or repository.
+Through the unique IDs, partial updates of existing systems with new concepts becomes quite simple.
+
+In addition, as we have links between Observed Property, Observing Procedure and UoM, data entry systems can take this into account. 
+Once a user has selected an Observed Property, the Observing Procedure and UoM options provided are limited to those aligned with the selected Observed Property.
