@@ -1,11 +1,7 @@
 {
   "@context": [
     "http://www.w3.org/ns/csvw",
-    {"@base": "http://ohlala.org",
-     "sosa": "http://www.w3.org/ns/sosa/", 
-     "qudt": "http://qudt.org/1.1/schema/qudt#",
-     "schema": "https://schema.org/",
-     "dcterms": "http://purl.org/dc/terms/"}
+    {"@base": "http://soilwise.example.com/"}
   ],
   "tables": [
     {
@@ -64,18 +60,6 @@
           {
             "titles": "TIME",
             "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/N", 
-            "propertyUrl": "sosa:resultTime",
-            "datatype": "date"
-          },
-          {
-            "titles": "TIME",
-            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/P",
-            "propertyUrl": "sosa:resultTime",
-            "datatype": "date"
-          },
-          {
-            "titles": "TIME",
-            "aboutUrl": "https://soilwise.example.com/example3/{SAMPLE}/K",
             "propertyUrl": "sosa:resultTime",
             "datatype": "date"
           },

@@ -7,7 +7,7 @@
 | license | CC-BY-3.0 |
 
 
-The startingpoint is a dataset [soveur.csv](./soveur.csv), which has been exported from the [SOTER Eastern Europe dataset](). This database is made available by ISRIC - World Soil Information under a CC-BY-3.0 license.
+The startingpoint is a dataset [soveur.csv](./soveur.csv), which has been exported from the [SOTER Eastern Europe dataset](https://data.isric.org/geonetwork/srv/metadata/b1fa4988-b511-48e3-9548-3c48f0a908fa). This database is made available by ISRIC - World Soil Information under a CC-BY-3.0 license.
 
 The Soil and Terrain Database (SOTER) was part of the Soil Degradation and Vulnerability Assessment for Central and Eastern Europe ([SOVEUR project](https://files.isric.org/public/documents/SOVEUR_Proc97.pdf)) and was implemented within the framework of the Food and Agriculture Organization (FAO) of the United Nations and the Netherlands Government Cooperative Programme. [This report](https://files.isric.org/public/documents/isric_report_2013_04.pdf) describes the attributes in a typical SOTER database.
 
