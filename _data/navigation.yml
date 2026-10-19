@@ -2,11 +2,15 @@ main:
   - title: "Home"
     url: ./
   - title: "Common" 
-    url: ./COMMON//
-  - title: "SimpleCSV" 
-    url: ./SimpleCSV/
-  - title: "CSVW" 
+    url: ./COMMON/
+  - title: "OMS-tab" 
+    url: ./OMS-tab/
+  - title: "Excel Templates" 
+    url: ./ExcelTemplates/
+  - title: "CSV-W" 
     url: ./CSVW/
+  - title: "R2RML" 
+    url: ./RML/
   - title: "GPKG" 
     url: ./GPKG/
   - title: "GML" 

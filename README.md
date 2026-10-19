@@ -34,8 +34,7 @@ The main difference between the INSPIRE and ISO 28258 models pertains to the spa
 We explore some of the commonly used encodings and how to traverse between them.
 The encodings explored are: 
 
-- [Simple CSV](#simple-csv)
-- [Annotated tabular data (CSVW)](#annotated-tabular-data)
+- [Annotated tabular data](#annotated-tabular-data)
 - [RO-Crate](#ro-crate---isa-profile)
 - [OMS as GML](#oms-as-gml)
 - [SensorThings API](#sensor-things-api-sta)
@@ -43,29 +42,51 @@ The encodings explored are:
 - [Semantic web](#semantic-web)
 
 
-### Simple CSV
 
-Simple CSV is the most basic approach, where providers are suggested to populate a pre configured Excel template with their data, provide relevant metadata and 
-run the excel sheet through a validation and conversion utility. The results of this effort can be published in any of SOSA RDF, INSPIRE GPKG, INSPIRE GML or SensorThingsAPI. 
-
-The Simple CSV approach is an interesting starting point to understand the OMS conventions. The template illustrates the aspects involved in capturing data about an observation 
-on a soil profile or measurement on a prepared soil sample.
-
-[Read more](./SimpleCSV/)
 
 ### Annotated tabular data
 
-In the soil science domain it is quite common to share soil observation data in a tabular format (Excel, CSV, DBF). Where samples are listed as rows and observed properties as columns. Column contents are further explained in a readme file or report. Various initiatives exist to standardise the syntax of these readme documents, so also machines can parse this information. We are aware of the following initiatives:
+In the soil science domain it is quite common to share soil observation data in a tabular format (Excel, CSV, DBF). Where samples are listed as rows and observed properties as columns. Column contents are further explained in a readme file, data dictionary or report. Various initiatives exist to standardise the syntax of these readme documents, so also machines can parse this information. 
 
-- [CSV-W](./CSVW/) a json-ld alike initiative to annotate CSV files (as rdf)
-- [TableSchema](./CSVW#okfn-datapackage) of the DataPackage inititative (OKFN Frictionless data).
-- [ISO19110:2016](./CSVW#iso19110--iso19115) which can be embedded in a ISO19115 document
+Some existing initiatives for guidance on data dictionaries:
+- [data.gouv.fr](https://recherche.data.gouv.fr/en/category/33/guide/readme-template)
+- [OSF](https://help.osf.io/article/217-how-to-make-a-data-dictionary)
+- [FAIR-squared](https://fair-squared.github.io/fair2-spec/v1.3.0/specification/data-dictionary/#7-csv-excel-core-dictionary-columns)
 
-In [CSVW](./CSVW/) we're exploring a [CSV-W approach](https://csvw.org/) to annotate tabular data, to make it  interoperable. The above Simple CSV approach internally uses this technology.
+We have not identified a single approach which can describe an observation in its full richness, as well as derive this information from a set of csv's in a user friendly way. For that reason we propose a dedicated approach to annotate observation data, using a structured data dictionary.
 
-[Read more](./CSVW/)
+#### OMS-tab
 
-### RO-Crate - ISA profile
+This novel approach has been drafted to capture data model specific metadata on a dataset consisting of one or more csv files containing (soil) observation data. It structures current data dictionary efforts, to make those efforts more reusable.
+
+[Read more about OMS-tab](./OMS-tab/)
+
+
+#### Excel templates
+
+We've used excel templates to design the approach. We've identified typical layouts of observation datasets, and for each of them created an Excel template to identify the relevant metadata elements.
+
+The Simple CSV approach is an interesting starting point to understand the OMS conventions. The template illustrates the aspects involved in capturing data about an observation on a soil profile or measurement on a prepared soil sample.
+
+[Read more about the Excel Templates](./ExcelTemplates/)
+
+#### CSV on the Web
+
+CSV on the Web (CSV-W) used to be a working group at W3C, which has drafted an approach for annotating CSV data on the Web. The initiative provides a valuable framework of documentation and tooling to enrich tabular data on the web.
+
+Our research on CSV-W indicated that it is possible to use the technology to annotate tabular data in such a way, that tooling is able to render rich semantic data from tabular data. The approach is valid for relatively simple data structures such as DCAT records in a catalogue, SKOS concepts in a vocabulary. However observation data is quite complex in nature, and pushes the CSV-W standard to its limits, requiring expert skills for setting up the CSV-W metadata. 
+
+[Read more about our CSV-W explorations](./CSVW/)
+
+#### R2RML
+
+[R2RML](https://www.w3.org/TR/r2rml/) is a W3C standard language designed to map relational database content into RDF (Resource Description Framework) datasets. It allows users to define customized mappings that transform relational data into RDF, enabling integration with the Semantic Web. The mappings are expressed as RDF graphs using Turtle syntax. 
+
+R2RML is powerfull in transforming observation csv data to rdf. However it is not a technology easily adopted by soil scientists. Our idea is to write tooling which is able to transform OMS-tab to RML, and subsequently use RML tooling to transform the csv data to RDF
+
+[Read more about our work on RML](./RML/)
+
+### RO-Crate
 
 RO-Crate (Research Object Crate) is a lightweight, machine-readable packaging standard for research data, metadata, workflows, and related digital objects.
 It builds on web standards such as JSON-LD and schema.org to create FAIR (Findable, Accessible, Interoperable, Reusable) research assets.
@@ -74,17 +95,9 @@ The approach is domain-agnostic and has been adopted across multiple scientific 
 By using linked data principles, RO-Crate enables both human and machine interpretation of research outputs.
 Community-developed profiles extend the core specification for particular research domains and use cases.
 
-The ISA RO-Crate Profile combines RO-Crate with the ISA (Investigation–Study–Assay) metadata framework widely used in life and environmental sciences.
-It provides a structured way to describe research projects, studies, samples, observations, and analytical processes.
-The profile captures experimental design, sampling activities, measured variables, protocols, and data provenance in a standardized format.
-For soil sciences, the ISA profile can represent field campaigns, soil sampling schemes, laboratory analyses, and environmental measurements.
-Individual soil observations can be linked to sampling locations, depths, horizons, dates, instruments, and analytical methods.
-The model supports integration of physical, chemical, biological, and spectroscopic soil measurements within a common metadata framework.
-Relationships between soil samples, derived datasets, workflows, and publications can be explicitly recorded and traced.
-Using the ISA RO-Crate Profile can improve interoperability between soil databases, observatories, and data repositories while supporting FAIR data stewardship.
-This makes it a promising approach for describing, exchanging, and reusing soil observational data across research infrastructures and international soil monitoring initiatives.
+We've explored conventions within the RO-Crate community to enable semantics in data dictionaries. RO-Crate does offer an extra layer of data discovery in the FAIR ecosystem, and can be combined with OMS-tab.
 
-[Read more](./RO-CRATE/)
+[Read more about RO-Crate](./RO-CRATE/)
 
 ### OMS as GML
 
@@ -96,7 +109,7 @@ The [Hale Desktop](https://github.com/halestudio/hale) software is an interestin
 
 Over the years challenges have been identified with this encoding, such as complexity of the GML syntax, large file sizes, limited support in common software tools. Newer encodings are explored below to address these challenges.
 
-[Read more about the GML encoding]()
+[Read more about the GML encoding](./GML/)
 
 
 ### Sensor Things API (STA)
