@@ -15,8 +15,12 @@ https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gp
 
 ### STA -> GPkg
 
+### Excel -> OMS-tab
 
-### CSV -> SOSA-RDF (ttl, rdf-xml, json-ld)
+- api: https://api.soilwise-he.eu/csvw/docs
+- source: https://github.com/soilwise-he/data-download
+
+### OMS-tab -> SOSA-RDF (ttl, rdf-xml, json-ld)
 
 - api: https://api.soilwise-he.eu/csvw/docs
 - source: https://github.com/soilwise-he/data-download
