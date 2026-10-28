@@ -10,7 +10,7 @@ Within SoilWise, we support different formats, as well as conversion tools betwe
 
 
 ### GPkg -> STA
-
+https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gpkg-to-sta-transformation/schemas
 
 ### STA -> GPkg
 
