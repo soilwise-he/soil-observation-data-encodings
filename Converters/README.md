@@ -4,6 +4,7 @@ Within SoilWise, we support different formats, as well as conversion tools betwe
 <img width="1437" height="811" alt="grafik" src="https://github.com/user-attachments/assets/7bdd8890-689a-4cab-a74d-37710e351202" />
 
 ### GPkg -> INSPIRE GML
+https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gpkg-to-inspire-soil-transformation
 
 
 ### INSPIRE GML -> GPkg
