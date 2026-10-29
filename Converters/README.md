@@ -11,7 +11,7 @@ Within SoilWise, we support different formats, as well as conversion tools betwe
 ### INSPIRE GML -> GPkg
 
 
-### STA -> OMT-tab (CSV)
+### STA -> OMS-tab (CSV)
 
 Frost server?
 
