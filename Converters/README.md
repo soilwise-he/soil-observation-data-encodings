@@ -7,18 +7,25 @@ Within SoilWise, we support different formats, as well as conversion tools betwe
 
 <https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gpkg-to-inspire-soil-transformation>
 
+Another implementation is at:
+- api: https://api.soilwise-he.eu/csvw/docs
+- source: https://github.com/soilwise-he/data-download
 
 ### INSPIRE GML -> GPkg
 
+https://github.com/soilwise-he/data-download/issues/19
+
+### GPkg -> STA
+
+https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gpkg-to-sta-transformation/schemas
+
+### STA -> GPkg
+
+Frost server?
 
 ### STA -> OMS-tab (CSV)
 
 Frost server?
-
-### GPkg -> STA
-https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gpkg-to-sta-transformation/schemas
-
-### STA -> GPkg
 
 ### Excel -> OMS-tab
 
@@ -30,12 +37,15 @@ https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gp
 - api: https://api.soilwise-he.eu/csvw/docs
 - source: https://github.com/soilwise-he/data-download
 
+### SOSA-rdf -> OMS-tab
+
+https://github.com/soilwise-he/data-download/issues/15
+
 ### SOSA-RDF -> GPKG
 
 - api: https://api.soilwise-he.eu/csvw/docs
 - source: https://github.com/soilwise-he/data-download
 
-### GPKG -> INSPIRE GML
+### GPKG -> SOSA-rdf
 
-- api: https://api.soilwise-he.eu/csvw/docs
-- source: https://github.com/soilwise-he/data-download
+https://github.com/soilwise-he/data-download/issues/18
