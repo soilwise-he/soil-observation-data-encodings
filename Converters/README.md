@@ -28,6 +28,12 @@ Frost server?
 ### STA -> OMS-Metadata-Table (CSV)
 
 Frost server?
+Need some work as STA Native only supports long format, not wide
+
+### STA -> SOSA RDF ?
+
+### SOSA RDF -> STA ?
+
 
 ### Excel -> OMS-Metadata-Table
 
@@ -36,12 +42,19 @@ Really just storing the OMS-Metadata-Table as a CSV file. May need checks to ass
 - ??? api: https://api.soilwise-he.eu/csvw/docs
 - ??? source: https://github.com/soilwise-he/data-download
 
-### OMS-Metadata-Table -> SOSA-RDF (ttl, rdf-xml, json-ld)
+### OMS-Metadata-Table -> CSVW JSON
+Trivial - store tab as CSV (don't forget to first clean offending symbols, e.g. newlines, quotes, ;)
 
+### OMS-Metadata-Table -> R2RML TTL
+Trivial - store tab as CSV (don't forget to first clean offending symbols, e.g. newlines, quotes, ;)
+
+### CSVW JSON + Data-Table -> SOSA RDF
 - api: https://api.soilwise-he.eu/csvw/docs
 - source: https://github.com/soilwise-he/data-download
 
-### SOSA-rdf -> OMS-Metadata-Table
+### R2RML TTL + Data-Table -> SOSA RDF
+
+### SOSA RDF -> OMS-Metadata-Table
 
 https://github.com/soilwise-he/data-download/issues/15
 
