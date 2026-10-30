@@ -27,17 +27,17 @@ Frost server?
 
 Frost server?
 
-### Excel -> OMS-tab
+### Excel -> OMS-Metadata-Table
 
 - api: https://api.soilwise-he.eu/csvw/docs
 - source: https://github.com/soilwise-he/data-download
 
-### OMS-tab -> SOSA-RDF (ttl, rdf-xml, json-ld)
+### OMS-Metadata-Table -> SOSA-RDF (ttl, rdf-xml, json-ld)
 
 - api: https://api.soilwise-he.eu/csvw/docs
 - source: https://github.com/soilwise-he/data-download
 
-### SOSA-rdf -> OMS-tab
+### SOSA-rdf -> OMS-Metadata-Table
 
 https://github.com/soilwise-he/data-download/issues/15
 
