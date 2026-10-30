@@ -3,6 +3,8 @@
 Within SoilWise, we support different formats, as well as conversion tools between these formats.
 <img width="1437" height="811" alt="grafik" src="https://github.com/user-attachments/assets/7bdd8890-689a-4cab-a74d-37710e351202" />
 
+A [conversion API](https://github.com/soilwise-he/data-download/blob/main/README.md) is provided to transform between these formats.
+
 ### GPkg -> INSPIRE GML
 
 <https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gpkg-to-inspire-soil-transformation>
@@ -23,7 +25,7 @@ https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gp
 
 Frost server?
 
-### STA -> OMS-tab (CSV)
+### STA -> OMS-Metadata-Table (CSV)
 
 Frost server?
 
