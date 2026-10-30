@@ -4,7 +4,7 @@ main:
   - title: "Common" 
     url: ./COMMON/
   - title: Converters
-    url: ./COMMON/
+    url: ./COMMON/Converters/
   - title: "OMS-tab" 
     url: ./OMS-tab/
   - title: "Excel Templates" 
@@ -24,4 +24,4 @@ main:
   - title: "RO-Crate" 
     url: ./RO-CRATE/
   - title: Examples
-    url: ./EXAMPLES
+    url: ./EXAMPLES/

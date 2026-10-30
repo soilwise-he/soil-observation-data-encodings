@@ -56,8 +56,11 @@
       }
     </style>
     <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
         mermaid.initialize({ startOnLoad: true });
+        document.querySelectorAll('pre > code.language-mermaid').forEach((codeBlock) => {
+          codeBlock.parentElement.outerHTML = `<pre class="mermaid">${codeBlock.textContent}</pre>`;
+        });
     </script>
   </body>
 </html>
