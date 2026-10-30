@@ -1,0 +1,1 @@
+#TODO: document based on [OMS-Metadata-Table](https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/EXAMPLES#analysis-table-csv_metadata-between-filename-and-csv-suffix)
