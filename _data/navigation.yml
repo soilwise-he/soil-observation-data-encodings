@@ -3,6 +3,8 @@ main:
     url: ./
   - title: "Common" 
     url: ./COMMON/
+  - title: Converters
+    url: ./COMMON/
   - title: "OMS-tab" 
     url: ./OMS-tab/
   - title: "Excel Templates" 
@@ -21,3 +23,5 @@ main:
     url: ./STA/
   - title: "RO-Crate" 
     url: ./RO-CRATE/
+  - title: Examples
+    url: ./EXAMPLES
