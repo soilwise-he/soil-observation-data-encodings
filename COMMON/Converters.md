@@ -1,7 +1,9 @@
 # Soil Observation data encodings - an overview
 
 ## Intro
-SoilWise provides various formats for soil data encoding. All are based on the same underlying conceptual model, and can be losslessly converted to other SoilWise formats
+SoilWise is an open, community-driven initiative for standardising and exchanging soil observation data across different technical environments. It brings together a shared conceptual model with practical data formats and conversion pathways, enabling organisations to work with the same core information without being locked into a single technology stack.
+
+This approach supports interoperability, reuse, and long-term sustainability: data can be captured in familiar formats, enriched with metadata, and transformed into machine-readable, geospatial, or API-based outputs without losing meaning.
 
 
 ## Data landscape
