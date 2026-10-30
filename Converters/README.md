@@ -5,6 +5,9 @@ Within SoilWise, we support different formats, as well as conversion tools betwe
 
 A [conversion API](https://github.com/soilwise-he/data-download/blob/main/README.md) is provided to transform between these formats.
 
+<img width="1265" height="725" alt="grafik" src="https://github.com/user-attachments/assets/1807a9e7-6a56-4c94-bd2e-02fa659e6fd6" />
+
+
 ### GPkg -> INSPIRE GML
 
 #### SoilWise GPkg -> INSPIRE GML
