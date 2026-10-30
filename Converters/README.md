@@ -31,6 +31,8 @@ Frost server?
 
 ### Excel -> OMS-Metadata-Table
 
+Really just storing the OMS-Metadata-Table as a CSV file. May need checks to assure no offending characters in the content, e.g. no newlines, quotes.
+
 - api: https://api.soilwise-he.eu/csvw/docs
 - source: https://github.com/soilwise-he/data-download
 
