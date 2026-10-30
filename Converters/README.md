@@ -54,9 +54,13 @@ Trivial - store tab as CSV (don't forget to first clean offending symbols, e.g. 
 
 ### R2RML TTL + Data-Table -> SOSA RDF
 
-### SOSA RDF -> OMS-Metadata-Table
-
+### ~~SOSA RDF -> OMS-Metadata-Table~~
+Not sure we need this, can also transform SOSA -> GPkg -> OMS-Metadata-Table
 https://github.com/soilwise-he/data-download/issues/15
+
+### GPKG -> OMS-Metadata-Table
+
+
 
 ### SOSA-RDF -> GPKG
 
