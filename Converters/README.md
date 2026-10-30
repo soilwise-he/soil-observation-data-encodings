@@ -7,21 +7,31 @@ A [conversion API](https://github.com/soilwise-he/data-download/blob/main/README
 
 ### GPkg -> INSPIRE GML
 
+#### SoilWise GPkg -> INSPIRE GML
 <https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gpkg-to-inspire-soil-transformation>
+
+#### EJP-Soil GPkg -> INSPIRE GML
+Somewhere in EJP Soil ancient history
+
+#### RANDOM GPkg -> INSPIRE GML
 
 Another implementation is at:
 - api: https://api.soilwise-he.eu/csvw/docs
+  - MISSING Breadcrumbs on what API aspect to use
+  - https://api.soilwise-he.eu/csvw/docs#/default/return_converted_convert_post
 - source: https://github.com/soilwise-he/data-download
+
+- Not formally INSPIRE compliant, as not using INSPIRE Model
 
 ### INSPIRE GML -> GPkg
 
 https://github.com/soilwise-he/data-download/issues/19
 
-### GPkg -> STA
+### SoilWise GPkg -> STA
 
 https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gpkg-to-sta-transformation/schemas
 
-### STA -> GPkg
+### STA -> SoilWise GPkg
 
 Frost server?
 
@@ -31,9 +41,10 @@ Frost server?
 Need some work as STA Native only supports long format, not wide
 
 ### STA -> SOSA RDF ?
+Bespoke script?
 
 ### SOSA RDF -> STA ?
-
+Bespoke script?
 
 ### Excel -> OMS-Metadata-Table
 
