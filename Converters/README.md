@@ -25,7 +25,7 @@ https://github.com/soilwise-he/soil-observation-data-encodings/tree/main/GPKG/gp
 
 Frost server?
 
-### STA -> OMS-tab (CSV)
+### STA -> OMS-Metadata-Table (CSV)
 
 Frost server?
 
