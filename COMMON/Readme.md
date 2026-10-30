@@ -30,7 +30,7 @@ Based on the soil data models described above, the following explicit encodings 
 
 ### Converters
 
-In order to transform data between the different SoilWise data encodings, a suite of [Converters](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/COMMON/Converters.md) has been implemented.
+In order to transform data between the different SoilWise data encodings, a suite of [Converters](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/COMMON/Converters/README.md) has been implemented.
 
 ## Observed Property++
 
