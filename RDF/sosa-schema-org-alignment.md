@@ -82,3 +82,42 @@ applies only to literal values. Structured results should be represented using `
 Finally, `schema:measurementTechnique` and `schema:measurementMethod` describe techniques and methods used in making measurements. They can correspond to 
 `sosa:usedProcedure` when their values identify an actual procedure. Where these properties contain only textual descriptions of a technique, the correspondence 
 is informational rather than a direct property mapping.
+
+#### 7.2.4.5 Example
+
+An example of an observation expressed in schema.org:
+
+```json
+{
+  "@context": {
+    "schema": "https://schema.org/"
+  },
+  "@type": "schema:Observation",
+  "schema:observationAbout": {
+    "@type": "schema:Place",
+    "schema:name": "Wageningen"
+  },
+  "schema:measuredProperty": {
+    "@id": "https://schema.org/temperature"
+  },
+  "schema:observationDate": "2026-10-31",
+  "schema:value": 15.2,
+  "schema:unitCode": "CEL"
+}
+```
+
+#### 7.2.4.6 Dataset and PropertyValue Alignments
+
+In addition to representing individual observations, Schema.org provides a mechanism for describing the variables measured in a dataset. The property `schema:variableMeasured` can be used on a `schema:Dataset` to indicate the variables measured in that dataset. Its values can be represented using `schema:PropertyValue`, which allows a variable to be described as a property–value pair, or using `schema:StatisticalVariable`.
+
+This provides an additional correspondence with SOSA/SSN. Whereas `schema:Observation` describes an individual observation, `schema:PropertyValue` can be used to describe measured variables at the dataset level, without requiring each measurement to be represented as an individual observation.
+
+The following correspondences are relevant:
+
+* `schema:Dataset` ↔ `sosa:ObservationCollection` (application-level correspondence, where the dataset groups observations).
+* `schema:variableMeasured` ↔ `sosa:observedProperty` (at the level of the variables represented in a dataset).
+* `schema:PropertyValue` ↔ a description of an observed property and its associated metadata, rather than an observation itself.
+
+It should be noted that `schema:variableMeasured` is also available on `schema:Observation`. In this context, Schema.org additionally provides `schema:measuredProperty`, which identifies the particular property measured, typically through a `schema:StatisticalVariable`.
+
+Consequently, `schema:PropertyValue` should not be considered equivalent to `sosa:Observation` or `sosa:Result`. Rather, it provides a complementary means of describing the variables and their associated metadata in Schema.org dataset descriptions.
