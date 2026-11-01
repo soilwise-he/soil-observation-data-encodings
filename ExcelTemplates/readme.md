@@ -57,7 +57,9 @@ erDiagram
 
 ```mermaid
 erDiagram 
-    Metadata ||--|{ Data : describes
+    Metadata ||--|{ DataSpatial : describes
+    Metadata ||--|{ DataSamples : describes
+    Metadata ||--|{ DataValues : describes
     Properties ||--|{ DataSpatial : defines
     Properties ||--|{ DataSamples : defines
     Properties ||--|{ DataValues : defines
@@ -84,20 +86,27 @@ erDiagram
         string sosa-usedProcedure
         string dc-description
     }
-    DataValues {
-        string Sample_ID
+    DataSpatial {
+        string Site_ID
         string Latitude
         string Longitude
+        string Land_Use
+    }
+    DataSamples {
+        string Site_ID
+        string Sample_ID
         string Upper_Depth
         string Lower_Depth
-        string Land_Use
+    }
+    DataValues {
+        string Sample_ID
         string ObservedProperty1
         string ObservedProperty2
     }
 ```
 
 
-## Diagram
+## Diagram Deprecated
 
 ```mermaid
 erDiagram 
