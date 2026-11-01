@@ -14,7 +14,7 @@ The following tables are proposed:
 - Inline Code Lists: while in an ideal world, we can provide an external target for the code lists used in the data, in some cases this is not possible, e.g. code list does not exist, or requires concepts from different vocabularies. For these cases, an additional table with these code list values should be provided
 - Context: where possible we reference semantic resources via their URI. As the full URI reduces readability, we utilize namespaces. The Context table provides the mapping between these short namespaces and the full URI
 
-## Diagram
+## Diagram One Data Table
 
 ```mermaid
 erDiagram 
@@ -53,7 +53,48 @@ erDiagram
     }
 ```
 
+## Diagram Three Data Tables
 
+```mermaid
+erDiagram 
+    Metadata ||--|{ Data : describes
+    Properties ||--|{ DataSpatial : defines
+    Properties ||--|{ DataSamples : defines
+    Properties ||--|{ DataValues : defines
+    DataSpatial
+    DataSamples
+    DataValues
+    Metadata {
+        string property
+        string value
+    }
+    Properties {
+        string table
+        string name
+        string column_type
+        string column_format
+        string concept_type
+        string fk_target
+        string concept
+        string concept_uri
+        string qudt-symbol
+        string qudt-Unit
+        string qudt-QuantityKind
+        string sosa-ObservingProcedure
+        string sosa-usedProcedure
+        string dc-description
+    }
+    DataValues {
+        string Sample_ID
+        string Latitude
+        string Longitude
+        string Upper_Depth
+        string Lower_Depth
+        string Land_Use
+        string ObservedProperty1
+        string ObservedProperty2
+    }
+```
 
 
 ## Diagram
