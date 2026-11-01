@@ -34,12 +34,12 @@ erDiagram
         string fk_target
         string concept
         string concept_uri
-        string qudt:symbol
-        string qudt:Unit
-        string qudt:QuantityKind
-        string sosa:ObservingProcedure
-        string sosa:usedProcedure
-        string dc:description
+        string qudt-symbol
+        string qudt-Unit
+        string qudt-QuantityKind
+        string sosa-ObservingProcedure
+        string sosa-usedProcedure
+        string dc-description
     }
     Data {
         string Sample_ID
