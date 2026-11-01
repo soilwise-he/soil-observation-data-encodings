@@ -106,6 +106,100 @@ erDiagram
 ```
 
 
+## Test the template on your data
+
+- Download the sample Excel sheet in the version suited to your data
+  - [Single Table](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/ExcelTemplates/SoilTemplate_1Tab.xlsx)
+  - [Two tables](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/ExcelTemplates/SoilTemplate_2Tab.xlsx) (Spatial and Data)
+  - [Three tables](https://github.com/soilwise-he/soil-observation-data-encodings/blob/main/ExcelTemplates/SoilTemplate_3Tab.xlsx) (Spatial, Samples and Data)
+- Copy your observation data to the `DataValues` tab.
+- If you are using a separate spatial table, provide the spatial data in the `DataSpatial` tab
+- If you are using a separate samples table, provide the samples data in the `DataSamples` tab
+- For each column in the data tables, add a line to the Properties tab, and complete the field metadata for that column. 
+  - Check relevant vocabularies for available concepts, e.g.:
+    - For Observable Properties and Observing Procedures, [soilvoc](https://w3id.org/eusoilvoc) provides uri's.
+    - For Spatial Object Types, [GloSIS](http://w3id.org/glosis/model/iso28258/2013/) types are valuable
+    - For other concepts, [AgroVoc](http://aims.fao.org/aos/agrovoc/) or the [ENVO](https://obofoundry.org/ontology/envo.html) Ontology can be useful
+    - Note: in the `Context` tab, useful semantic resources have been collected, a namespace provided for more concise notation
+- Export each of the tabs to a CSV file and upload them to Zenodo or upload your excel into the Soilwise annotator tool to validate the excel and download the dataset in alternate formats, before uploading to Zenodo.
+
+## Analysis Table (csv_metadata between filename and .csv suffix)
+- table: Data table name, relevant when multiple data tables are provided
+- name: Column Header from original CSV
+- column_type: Datatype of the column content
+- column_format: Internal formatting of the column content. If the column value is taken from a codelist, the codelist is provided here (either URI or link to CSV representation)
+- concept_type: abstract semantic concept this column represents, e.g. sosa:FeatureOfInterest, sosa:Property, schema:Property
+- fk_target: Added, if concept_type is foreignKey, the fk columns. If concept type has a value from a result codelist, this codeist
+- concept: concept this column represents, e.g. tree, leaf length, soil plot, bulk density
+- concept_uri: Link (URI) to a semantic representation of the concept this column represents
+- qudt:symbol: Unit of Measurement symbol (qudt:symbol)
+- qudt:Unit: Link (URI) to QUDT Unit of Measurement
+- qudt:QuantityKind: Link to QUDT Quantity Kind
+- sosa:ObservingProcedure: methodology used to determine the concept for the case that the concept_type is a sosa:Property. 
+- sosa:usedProcedure: Link (URI) providing more information on the method
+- dc:description: description of the column
+
+### Notes
+**Concept**: in order to differentiate between simple attributes (provided without context) and sosa properties (provided with observational metainformation), we use schema:Property for simple attributes, sosa:Property for properties provided by sosa:Observation.
+
+**column_type**:  DATA_TYPE_OPTIONS = ['anyURI', 'base64Binary', 'boolean', 'date',
+                     'dateTime', 'dateTimeStamp', 'decimal',
+                     'integer', 'long', 'int', 'short', 'byte',
+                     'nonNegativeInteger', 'positiveInteger', 'unsignedLong',
+                     'unsignedInt', 'unsignedShort', 'unsignedByte',
+                     'nonPositiveInteger', 'negativeInteger', 'double',
+                     'number', 'duration', 'dayTimeDuration', 'yearMonthDuration',
+                     'float', 'gDay', 'gMonth', 'gMonthDay', 'gYear', 'gYearMonth',
+                     'hexBinary', 'QName', 'string', 'normalizedString', 'token',
+                     'language', 'Name', 'NMTOKEN', 'time', 'xml', 'html', 'json']
+
+Additional value: 'codelist'
+
+Inspired by the CSVW documentation that pointed to https://www.w3.org/TR/tabular-data-primer/?ref=stevenfirth.com#datatypes
+
+**concept_type**
+
+- Feature of Interest: sosa:FeatureOfInterest
+- Attribute: schema:Property
+- Observed Property: sosa:Property
+- Spatial: geo:Feature
+- Phenomenon Time: sosa:phenomenonTime
+- Foreign Key: Foreign Key
+- ID: ID
+- Object Type: geo:Feature
+
+
+
+
+## Base table fit_for_all_temporal_spatial.csv
+Information that pertains to all columns, e.g. CRS
+
+- table_key: Unique table name (CSV filename, Excel filename|Tab)
+- file_uri: URI to locate the file containing the table
+- kind: spatial|temporal
+- key: Explanation of what the value represents, e.g. "XY reference system", "sosa:PhenomenonTime"
+- value: the value to the key above, e.g. 4326, "2024-05"
+- format: Internal formatting of the value
+
+
+## Context for all URIs
+
+Namespace |	URI
+--- | ---
+GloSIS-com|http://w3id.org/glosis/model/common/
+sosa|http://www.w3.org/ns/sosa/
+qudt|http://qudt.org/1.1/schema/qudt#
+dcterms|http://purl.org/dc/terms/
+geo|http://www.w3.org/2003/01/geo/wgs84_pos#
+rdf|http://www.w3.org/1999/02/22-rdf-syntax-ns#
+iso11074-2025|https://data.geoscience.earth/ncl/ISO11074v2025/
+agrovoc|http://aims.fao.org/aos/agrovoc/
+inrae|http://opendata.inrae.fr/thesaurusINRAE/
+eusoilvoc|https://w3id.org/eusoilvoc/
+gemet|http://www.eionet.europa.eu/gemet/concept/
+ansis|http://anzsoil.org/def/au/scm
+
+
 ## Diagram Deprecated
 
 ```mermaid
@@ -140,14 +234,4 @@ erDiagram
         string Column1
         string Column2
     }
-```
-
-## Test the template on your data
-
-- Download the [sample Excel sheet](https://github.com/soilwise-he/soil-observation-data-encodings/raw/refs/heads/main/SimpleCSV/SoilTemplate.xlsx).
-- Copy your observation data to the `data` tab.
-- Copy your samples data to the `samples` tab (make sure the samples are properly referenced from the data tab).
-- For each observed property column in the data tab, add a line to the ObservableProperties tab, and complete the field metadata. 
-- Check vocabularies such as the [soilvoc](https://w3id.org/eusoilvoc) if relevant uri's are available for the properties and procedures you have used.
-- Export each of the tabs to a CSV file and upload them to Zenodo or upload your excel into the Soilwise annotator tool to validate the excel and download
-  the dataset in alternate formats, before uploading to Zenodo.
+```  
