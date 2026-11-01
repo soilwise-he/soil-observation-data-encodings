@@ -19,6 +19,48 @@ The following tables are proposed:
 ```mermaid
 erDiagram 
     Metadata ||--|{ Data : describes
+    Properties ||--|{ Data : defines
+    Data
+    Metadata {
+        string property
+        string value
+    }
+    Properties {
+        string table
+        string name
+        string column_type
+        string column_format
+        string concept_type
+        string fk_target
+        string concept
+        string concept_uri
+        string qudt:symbol
+        string qudt:Unit
+        string qudt:QuantityKind
+        string sosa:ObservingProcedure
+        string sosa:usedProcedure
+        string dc:description
+    }
+    Data {
+        string Sample_ID
+        string Latitude
+        string Longitude
+        string Upper_Depth
+        string Lower_Depth
+        string Land_Use
+        string ObservedProperty1
+        string ObservedProperty2
+    }
+```
+
+
+
+
+## Diagram
+
+```mermaid
+erDiagram 
+    Metadata ||--|{ Data : describes
     ObservableProperties ||--|{ Data : defines
     Samples ||--|{ Data : locates
     Data
