@@ -165,7 +165,6 @@ Inspired by the CSVW documentation that pointed to https://www.w3.org/TR/tabular
 - Spatial: geo:Feature
 - Phenomenon Time: sosa:phenomenonTime
 - Foreign Key: Foreign Key
-- ID: ID
 - Object Type: geo:Feature
 
 
