@@ -30,7 +30,7 @@ erDiagram
         string name
         string column_type
         string column_format
-        string concept_type
+        string concept_role
         string fk_target
         string concept
         string concept_uri
@@ -75,7 +75,7 @@ erDiagram
         string name
         string column_type
         string column_format
-        string concept_type
+        string concept_role
         string fk_target
         string concept
         string concept_uri
@@ -128,14 +128,14 @@ erDiagram
 - name: Column Header from original CSV
 - column_type: Datatype of the column content
 - column_format: Internal formatting of the column content. If the column value is taken from a codelist, the codelist is provided here (either URI or link to CSV representation)
-- concept_type: abstract semantic concept this column represents, e.g. sosa:FeatureOfInterest, sosa:Property, schema:Property
-- fk_target: Added, if concept_type is foreignKey, the fk columns. If concept type has a value from a result codelist, this codeist
+- concept_role: abstract semantic concept this column represents, e.g. sosa:FeatureOfInterest, sosa:Property, schema:Property
+- fk_target: Added, if concept_role is foreignKey, the fk columns. If concept type has a value from a result codelist, this codeist
 - concept: concept this column represents, e.g. tree, leaf length, soil plot, bulk density
 - concept_uri: Link (URI) to a semantic representation of the concept this column represents
 - qudt:symbol: Unit of Measurement symbol (qudt:symbol)
 - qudt:Unit: Link (URI) to QUDT Unit of Measurement
 - qudt:QuantityKind: Link to QUDT Quantity Kind
-- sosa:ObservingProcedure: methodology used to determine the concept for the case that the concept_type is a sosa:Property. 
+- sosa:ObservingProcedure: methodology used to determine the concept for the case that the concept_role is a sosa:Property. 
 - sosa:usedProcedure: Link (URI) providing more information on the method
 - dc:description: description of the column
 
@@ -157,7 +157,7 @@ Additional value: 'codelist'
 
 Inspired by the CSVW documentation that pointed to https://www.w3.org/TR/tabular-data-primer/?ref=stevenfirth.com#datatypes
 
-**concept_type**
+**concept_role**
 
 - Feature of Interest: sosa:FeatureOfInterest
 - Attribute: schema:Property
