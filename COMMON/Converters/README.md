@@ -57,16 +57,23 @@ Really just storing the OMS-Metadata-Table as a CSV file. May need checks to ass
 - ??? source: https://github.com/soilwise-he/data-download
 
 ### OMS-Metadata-Table -> CSVW JSON
-Trivial - store tab as CSV (don't forget to first clean offending symbols, e.g. newlines, quotes, ;)
+Trivial - store tab as CSV (don't forget to first clean offending symbols, e.g. newlines, quotes, ;) )
+Create script to dump values to CSVW JSON structure (TBD if using virtual columns)
+First attempt at https://github.com/soilwise-he/TabularDataAnnotator-streamlit/blob/dev/util/csvw_profile_api.py
 
 ### OMS-Metadata-Table -> R2RML TTL
-Trivial - store tab as CSV (don't forget to first clean offending symbols, e.g. newlines, quotes, ;)
+Trivial - store tab as CSV (don't forget to first clean offending symbols, e.g. newlines, quotes, ;) )
+Create script to dump values to R2RML TTL structure (can use std. FoI types from Max' list)
 
 ### CSVW JSON + Data-Table -> SOSA RDF
 - api: https://api.soilwise-he.eu/csvw/docs
 - source: https://github.com/soilwise-he/data-download
 
+- Document where we're not aligned with CSVW, what hacks are in place
+
 ### R2RML TTL + Data-Table -> SOSA RDF
+
+TBD - ideally added to api
 
 ### ~~SOSA RDF -> OMS-Metadata-Table~~
 Not sure we need this, can also transform SOSA -> GPkg -> OMS-Metadata-Table
