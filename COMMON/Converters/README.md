@@ -80,13 +80,16 @@ Not sure we need this, can also transform SOSA -> GPkg -> OMS-Metadata-Table
 https://github.com/soilwise-he/data-download/issues/15
 
 ### GPKG -> OMS-Metadata-Table
-
+We NEED TO DO SOMETHING!
+Good start would be creating a set of SQL statements that extract the relevant information
 
 
 ### SOSA-RDF -> GPKG
 
 - api: https://api.soilwise-he.eu/csvw/docs
 - source: https://github.com/soilwise-he/data-download
+
+- Needs to be updated to new GPkg format, still on simple OMS model
 
 ### GPKG -> SOSA-rdf
 
