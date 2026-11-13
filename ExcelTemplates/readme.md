@@ -1,16 +1,23 @@
-# Simple CSV
-A simple approach to providing soil data, where all data is stored either within a single Excel sheet with tabs, alternatively as a set of CSV files.
+# Excel Templates
 
-Notice that this approach is valid for a single campaign only. Only a single method and unit can be used for all observations in a single column. If you need to capture data from different campaigns, using different units or procedures, consider to split the data per campaign. Alternatively, you'll have to create columns per used procedure or unit, e.g. TotalNitrogen-ISO11261 vs. TotalNitrogen-ISO13878. 
+This page lists a number of Excel Templates which we have used to develop [OMS-tab](../OMS-tab/). The templates differ in how the data is structured. Notice that OMS-tab at least is compatible with each of these templates. The general approach indicates to add 2 metadata tables to the project, a metadata table with generic metadata for the project and a Properties-metadata table explaining the various columns in the data tabs.
+
+The 3 templates have both metadata tables, in combination with:
+
+- Template 1 consists of a single data table including both the feature of interest as well as the observed values. 
+- Template 2 consists of 2 related tables, the first table contains the features of interest (sites, profiles, profile-elements) the second table has observations linked to each feature of interest.
+- Template 3 consists of 3 related tables, one for features of interest, one for samples and one for the observations on the samples.
+
+## The tables in more detail
 
 The following tables are proposed:
 
-- Metadata: general metadata applicable to the entire dataset. Includes administrative concepts like title, author, license, as well as other generally applicable concepts such as the Coordinate Reference System (CRS)
-- Properties: list of all columns in the Data table(s) with all relevant information. For each property you can provide the used Methodology and Unit of Measurement.
-- Data: depending on the complexity of the data to be represented, between one and three tables will be required for efficient provision. The Data Values table will always be provided, the other in dependency on the use case:
-  - Data Spatial: the spatial aspects of the dataset, where was data surveyed. This may include artifacts of soil survey, e.g. sites, plots, profiles, profile elements such as layers and horizons.
-  - Data Samples: in cases where dedicated samples, often referred to as specimens, are taken over time, it can be more efficient to expose them in a separate table, thus avoiding duplication of spatial information over all samples. The reference to the spatial location is provided via a foreign key.
-  - Data Values: the actual observation data, columns are the observed properties, rows the samples. In simple surveys, the rows may also contain spatial information
+- `Metadata`: general metadata applicable to the entire dataset. Includes administrative concepts like title, author, license, as well as other generally applicable concepts such as the Coordinate Reference System (CRS)
+- `Properties`: list of all columns in the Data table(s) with all relevant information. For each property you can provide the used Methodology and Unit of Measurement.
+- `Data`: depending on the complexity of the data to be represented, between one or more tables can be used for efficient provision. A single data table will always be provided, the others in dependency on the use case. Data tabs have arbitrary names:
+    - Feature of interest: the feature of interest of the dataset, indicates the observed object or the object from which a sample has been taken, usually a location or place. This may include artifacts of soil survey, e.g. sites, plots, profiles, profile elements such as layers and horizons.
+    - Data Samples: in cases where dedicated samples, often referred to as specimens, are taken over time, it can be more efficient to expose them in a separate table, thus avoiding duplication of spatial information over all samples. The reference to the spatial location is provided via a foreign key.
+    - Data Values: the actual observation data, columns are the observed properties, rows the samples. In simple surveys, the rows may also contain spatial information
 - Inline Code Lists: while in an ideal world, we can provide an external target for the code lists used in the data, in some cases this is not possible, e.g. code list does not exist, or requires concepts from different vocabularies. For these cases, an additional table with these code list values should be provided
 - Context: where possible we reference semantic resources via their URI. As the full URI reduces readability, we utilize namespaces. The Context table provides the mapping between these short namespaces and the full URI
 

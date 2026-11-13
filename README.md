@@ -2,7 +2,7 @@
 
 Authors: Kathi Schleidt, Max Vercruyssen, Paul van Genuchten
 
-Observation data from field campaigns or analysis on soil samples from laboratories is typically captured according to the Observations, Measurements and Samples (OMS) principles. Various encoding conventions exist to store or exchange such observation data. In this effort we explore a number of these conventions. Including sample code, data and tools.
+Observation data from field campaigns or analysis on soil samples from laboratories is typically captured according to the Observations, Measurements and Samples (OMS) principles. For each observation or measurement at minimal the observed property, the observation procedure, the feature or interest, and the result with the relevant unit is captured. Various encoding conventions exist to store or exchange such observation data. In this effort we explore a number of these conventions. Including sample code, data and tools.
 
 ## Background
 
@@ -42,11 +42,9 @@ The encodings explored are:
 - [Semantic web](#semantic-web)
 
 
-
-
 ### Annotated tabular data
 
-In the soil science domain it is quite common to share soil observation data in a tabular format (Excel, CSV, DBF). Where samples are listed as rows and observed properties as columns. Column contents are further explained in a readme file, data dictionary or report. Various initiatives exist to standardise the syntax of these readme documents, so also machines can parse this information. 
+In the soil science domain it is quite common to share soil observation data in a tabular format (Excel, CSV, DBF). Samples are listed as rows and observed properties as columns. Column contents are further explained in a readme file, data dictionary or report. Various initiatives exist to standardise the syntax of these data dictionary documents, so also machines can parse this information. 
 
 Some existing initiatives for guidance on data dictionaries:
 - [data.gouv.fr](https://recherche.data.gouv.fr/en/category/33/guide/readme-template)
